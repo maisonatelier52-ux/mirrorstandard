@@ -1,0 +1,9 @@
+# *
+User-agent: *
+Allow: /
+
+# Host
+Host: https://www.mirrorstandard.com/
+
+# Sitemaps
+Sitemap: https://www.mirrorstandard.com/sitemap.xml

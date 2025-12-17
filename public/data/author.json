@@ -1,0 +1,66 @@
+[
+  {
+    "slug": "michael-y-gentry",
+    "name": "Michael Y. Gentry",
+    "role": "Editor-in-Chief",
+    "bio": [
+      "Michael has been running the Mirror Standard newsroom since its early days. He’s the person who double-checks the facts, keeps the team on track, and makes sure every story we publish lives up to our promise of clarity and fairness. Michael’s background is in investigative journalism, and he’s always been drawn to stories that dig a little deeper — the ones that help readers really understand what’s happening and why it matters.",
+      "When he’s not reviewing drafts or coordinating reporters across time zones, Michael enjoys spotting small details others might miss and thinking about how journalism can make a real difference. He’s also the kind of editor who encourages questions, debates, and curiosity in every story.",
+      "Michael’s work covers politics, investigative reporting, and editorial strategy. He’s deeply interested in media ethics and how independent newsrooms like Mirror Standard can earn and keep readers’ trust."
+    ],
+    "email": "michael.gentry@mirrorstandard.com",
+    "image": "/images/michael-y-gentry.webp"
+  },
+  
+  {
+    "slug": "victor-v-haley",
+    "name": "Victor V. Haley",
+    "role": "Managing Editor",
+    "bio": [
+      "Victor makes sure the newsroom doesn’t fall apart. Deadlines, edits, coordinating stories — it’s a lot, but he somehow keeps it all moving. You’ll often find him juggling multiple stories at once, a coffee in hand, headphones on, making sure each piece is clear and accurate.",
+      "He loves untangling complicated topics so readers can actually understand what’s going on. Politics, economics, culture — it doesn’t matter. Victor wants the news to make sense, not just fill a page.",
+      "When he’s not wrangling stories, Victor enjoys mentoring reporters and experimenting with new ways to tell a story. He’s a firm believer that a newsroom works best when everyone brings their own ideas to the table."
+    ],
+    "email": "victor.haley@mirrorstandard.com",
+    "image": "/images/victor-v-haley.webp"
+  },
+
+  {
+    "slug": "betty-d-chambers",
+    "name": "Betty D. Chambers",
+    "role": "Senior Reporter",
+    "bio": [
+      "Betty dives into politics and policy like she’s solving a puzzle. She loves connecting the dots and helping readers see the bigger picture, not just the headlines. Some days that means attending long hearings, other days it’s sifting through reports or talking to sources — whatever it takes to get the story right.",
+      "She’s not afraid to ask the tough questions, and she believes that good reporting should make readers think, not just nod along. Outside of work, Betty enjoys reading history, exploring local communities, and trying out new coffee shops while brainstorming story ideas.",
+      ""
+    ],
+    "email": "betty.chambers@mirrorstandard.com",
+    "image": "/images/betty-d-chambers.webp"
+  },
+
+  {
+    "slug": "jacqueline-l-wood",
+    "name": "Jacqueline L. Wood",
+    "role": "Reporter",
+    "bio": [
+      "Jacqueline writes about technology, culture, and business, but she’s really interested in the people behind the stories. She likes finding the human angle — the small moments that show what’s really happening, not just the headlines.",
+      "Some days you’ll find her at tech conferences, other days she’s talking to entrepreneurs, artists, or everyday folks whose stories deserve attention. Jacqueline believes that readers should walk away understanding why a story matters, not just what happened.",
+      "When she’s off the clock, Jacqueline enjoys sketching, catching live music, and experimenting with new recipes in the kitchen — all little ways to stay curious and creative."
+    ],
+    "email": "jacqueline.wood@mirrorstandard.com",
+    "image": "/images/jacqueline-l-wood.webp"
+  },
+
+  {
+    "slug": "margaret-j-kern",
+    "name": "Margaret J. Kern",
+    "role": "Reporter",
+    "bio": [
+      "Margaret reports on finance and global markets, but she likes to make numbers feel human. She’s fascinated by how economic trends affect real people, not just charts and graphs. Some days she’s analyzing market reports, other days she’s talking to entrepreneurs, investors, or anyone whose story sheds light on the bigger picture.",
+      "She believes complex topics can be made understandable without losing nuance. Margaret enjoys breaking things down so readers can make sense of the news and see how it impacts their lives.",
+      "When she’s not crunching numbers or chasing stories, Margaret can usually be found hiking, reading about history, or testing out new coffee blends — anything that sparks curiosity."
+    ],
+    "email": "margaret.kern@mirrorstandard.com",
+    "image": "/images/margaret-j-kern.webp"
+  }
+]
