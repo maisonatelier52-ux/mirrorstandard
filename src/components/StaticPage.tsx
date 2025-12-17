@@ -66,7 +66,7 @@ export default function StaticPage({ otherArticles, data }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Sept. 20, 2025",
+    date: "Dec. 17 2025",
     image: "/images/victor-v-haley.webp",
     authorslug:"victor-v-haley",
     twitter: "https://x.com/haley_vict54073",

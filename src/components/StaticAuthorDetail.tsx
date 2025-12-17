@@ -12,7 +12,7 @@ export default function StaticAuthorDetail() {
         </span>{" "}
         •{" "}
         <span className="text-[12px] sm:text-[14px] md:text-[14px]">
-          Sept. 20, 2025
+          Dec. 17 2025
         </span>{" "}
       </p>
       <h1
