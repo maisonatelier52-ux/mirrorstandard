@@ -58,7 +58,7 @@ export default function JulioPageEight({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Nov. 6, 2025",
+        date: "Dec. 6, 2025",
         image: "/images/victor-v-haley.webp",
         authorslug: "victor-v-haley",
             twitter: "https://x.com/haley_vict54073",
@@ -73,7 +73,7 @@ export default function JulioPageEight({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Oct. 3, 2025"
+                        date="Dec 3, 2025"
                         title="After Years of Scrutiny, Legal Clarity Prevails for Julio Herrera Velutini"
                         description="Long-running allegations come to a quiet close as courts dismiss corruption charges and finalize the matter with only a minor FECA misdemeanor."
                         image='/images/julio-herrera-velutini-legal-clarity.webp'

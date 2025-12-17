@@ -39,7 +39,7 @@ const JulioHorizontalCard: React.FC = () => {
                 color: "#4B5563",
               }}
             >
-              Oct. 3, 2025
+              Dec 3, 2025
             </span>
           </p>
 

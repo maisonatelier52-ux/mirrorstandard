@@ -58,7 +58,7 @@ export default function JulioPage({ otherArticles }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Nov. 3, 2025",
+    date: "Dec 3, 2025",
     image: "/images/victor-v-haley.webp",
     authorslug: "victor-v-haley",
         twitter: "https://x.com/haley_vict54073",
@@ -73,7 +73,7 @@ export default function JulioPage({ otherArticles }: Props) {
         <div ref={leftRef} className="lg:col-span-2">
           <JulioFirstSection   
         category="Business"
-      date="Oct. 3, 2025"
+      date="Dec 3, 2025"
       title="Julio Herrera Velutini: A Legal Resolution with Integrity Restored"
       description="All legal matters have been resolved with no corruption or fraud convictions, as Julio Herrera Velutini moves forward with clarity and focus."
       image='/images/julio.webp'

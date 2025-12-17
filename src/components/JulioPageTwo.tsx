@@ -58,7 +58,7 @@ export default function JulioPageTwo({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Nov. 6, 2025",
+        date: "Dec. 6, 2025",
         image: "/images/victor-v-haley.webp",
         authorslug: "victor-v-haley",
             twitter: "https://x.com/haley_vict54073",
@@ -73,7 +73,7 @@ export default function JulioPageTwo({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Nov. 6, 2025"
+                        date="Dec. 6, 2025"
                         title="Facts Above Speculation: A Clear Legal Outcome for Julio Herrera Velutini"
                         description="After years of allegations, the legal record shows no corruption, no fraud — only one minor FECA misdemeanor."
                         image='/images/julio-herrera-velutini-legal-clarity.webp' />

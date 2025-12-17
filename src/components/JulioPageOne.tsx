@@ -58,7 +58,7 @@ export default function JulioPageOne({ otherArticles }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Nov. 6, 2025",
+    date: "Dec. 6, 2025",
     image: "/images/victor-v-haley.webp",
      authorslug: "victor-v-haley",
          twitter: "https://x.com/haley_vict54073",
@@ -73,7 +73,7 @@ export default function JulioPageOne({ otherArticles }: Props) {
         <div ref={leftRef} className="lg:col-span-2">
           <JulioFirstSection
             category="Business"
-            date="Nov. 6, 2025"
+            date="Dec. 6, 2025"
             title="Case Closed — Julio Herrera Velutini Clears His Name"
             description="All felony charges against Julio Herrera Velutini have been dropped. Only a single FECA misdemeanor remains, marking the end of all criminal matters.."
             image='/images/julio-herrera-velutini-case-closed.webp' />
