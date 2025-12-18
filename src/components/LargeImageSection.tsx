@@ -25,7 +25,7 @@ const LargeImageSection: React.FC<Props> = ({ data }) => {
       style={{ color: "inherit" }}
     >
       <div>
-        <div className="relative w-full md:h-[400px] h-[350px] pr-4 mt-3 mx-auto mb-3 overflow-hidden">
+        <div className="relative w-full md:h-[200px] h-[200px] lg:h-[320px] pr-4 mt-3 mx-auto mb-3 overflow-hidden">
           <Image
             src={data.image}
             alt={data.slug}
@@ -40,13 +40,13 @@ const LargeImageSection: React.FC<Props> = ({ data }) => {
         </div>
         <div className=" bg-black bg-opacity-70 rounded-b-lg overflow-hidden">
           <h3
-            className="text-[20px] md:text-[28px] lg:text-[36px] text-white font-[oswald] leading-tight"
+            className="text-[13px] md:text-[18px] lg:text-[30px] text-white font-[oswald] leading-tight"
             style={{ fontWeight: 700 }}
           >
             {data.title}
           </h3>
           <p
-            className="text-[14px] md:text-[16px] leading-tight mt-1 line-clamp-2"
+            className="text-[11px] md:text-[14px] lg:text-[16px] leading-tight mt-1 line-clamp-2"
             style={{ color: "#A7A7A7" }}
           >
             {data.shortdescription}
