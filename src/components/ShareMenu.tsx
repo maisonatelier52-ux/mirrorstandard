@@ -50,11 +50,6 @@ export default function ShareMenu({ title }: { title: string }) {
                             link={`https://wa.me/?text=${encodedTitle}%20${encodedUrl}`}
                         />
 
-                        {/* <ShareItem
-                            icon={<FiMail className="text-black" />}
-                            label="Email"
-                            link={`mailto:?subject=${encodedTitle}&body=${encodedUrl}`}
-                        /> */}
 
                         <ShareItem
                             icon={<SiX className="text-black" />}
