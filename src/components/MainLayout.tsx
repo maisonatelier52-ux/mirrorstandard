@@ -17,24 +17,40 @@ interface Props { data: NewsData[]; }
 const MainLayout: React.FC<Props> = ({ data }) => {
   return (
     <div className="mt-18">
-      <div className="md:h-[800px] h-[700px] lg:h-[570px] bg-black text-white md:p-6 p-3">
-        <div className="flex h-full min-h-0 flex-col lg:flex-row gap-0 md:gap-6">
-          <div className="flex-1 lg:flex-[2] min-h-0 flex flex-col md:border-b pb-5 lg:border-r-0 border-[#313030]">
+      <div className="bg-black text-white p-3 md:p-6">
+        <div className="flex flex-col lg:flex-row gap-6">
+
+          {/* LEFT: NEWS */}
+          <div className="flex-1 lg:flex-[2] flex flex-col border-b lg:border-b-0 border-[#313030] pb-5">
             <SubHeadlineTwo title="News" />
-            <div className="flex-1 overflow-hidden">
-              <LargeImageSection data={data[0]} />
-            </div>
+            <LargeImageSection data={data[0]} />
           </div>
-          <div className="flex-1 lg:flex-1 min-h-0 flex flex-col md:pt-5 lg:pt-0">
+
+          {/* RIGHT: LATEST */}
+          <div className="flex-1 flex flex-col">
             <SubHeadlineTwo title="Latest" />
-            <div className="overflow-y-auto mt-3 custom-scrollbar max-h-[400px] md:max-h-none">
+
+            {/* 
+              Mobile: auto height (no scroll)
+              Desktop: constrained height + scroll
+            */}
+            <div className="
+              mt-3
+              md:max-h-[520px]
+              lg:max-h-[420px]
+              overflow-visible
+              md:overflow-y-auto
+              custom-scrollbar
+            ">
               <RightSidebar data={data.slice(1, 5)} />
             </div>
           </div>
+
         </div>
       </div>
     </div>
   );
 };
+  
 
 export default MainLayout;
