@@ -17,7 +17,7 @@ interface Props { data: NewsData[]; }
 const MainLayout: React.FC<Props> = ({ data }) => {
   return (
     <div className="mt-18">
-      <div className="h-[115vh] md:h-[130vh] lg:h-[95vh] bg-black text-white md:p-6 p-3">
+      <div className="md:h-[800px] h-[700px] lg:h-[570px] bg-black text-white md:p-6 p-3">
         <div className="flex h-full min-h-0 flex-col lg:flex-row gap-0 md:gap-6">
           <div className="flex-1 lg:flex-[2] min-h-0 flex flex-col md:border-b pb-5 lg:border-r-0 border-[#313030]">
             <SubHeadlineTwo title="News" />
