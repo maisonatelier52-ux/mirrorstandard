@@ -45,7 +45,6 @@ const MainLayout: React.FC<Props> = ({ data }) => {
               <RightSidebar data={data.slice(1, 5)} />
             </div>
           </div>
-
         </div>
       </div>
     </div>
