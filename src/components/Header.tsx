@@ -38,9 +38,11 @@ export default function Header() {
       <header className="w-full bg-black h-15 md:h-28 transition-colors duration-300">
         <div className="w-full max-w-7xl px-8 mx-auto flex items-center justify-between h-full">
           <div className="flex items-center">
+            <Link href='/' title="home">
             <span className="md:hidden text-[#ffffff] italic text-lg sm:text-3xl font-black">
               MIRRORSTANDARD
             </span>
+            </Link>
             <button
               type="button"
               aria-label="Open menu"
