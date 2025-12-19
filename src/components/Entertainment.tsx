@@ -1,3 +1,4 @@
+
 import LifestyleCard from "./LifeStyleCard";
 import SubHeadline from "./SubHeadline";
 import TopHorizontalCard from "./TopHorizontalCard";
@@ -25,7 +26,7 @@ const EntertainmentSection: React.FC<Props> = ({ data }) => {
         <div className="lg:col-span-2">
           <LifestyleCard data={data[0]} />
         </div>
-        <div className="mb- md:mb-0">
+        <div className="mb-8 md:mb-0">
           <VibeNewsCard data={data[1]} />
         </div>
       </div>

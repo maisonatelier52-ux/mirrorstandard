@@ -8,6 +8,7 @@ import RightSidebar from "./RightSidebar";
 import MoreSideCard from "./MoreSideCard";
 import TopHorizontalCard from "./TopHorizontalCard";
 import VibeNewsCard from "./VibeNewsCard";
+import VibeNewsCard2 from "./VibeNewscard2";
 
 interface NewsData {
   slug: string;

@@ -16,23 +16,23 @@ interface Props {
   data: NewsData;
 }
 
-const VibeNewsCard: React.FC<Props> = ({ data }) => {
+const VibeNewsCard2: React.FC<Props> = ({ data }) => {
   return (  
     <Link
       href={`/${data.category}/${data.slug}`}
       title={data.title}
     >
-      <div className="relative w-full h-70 sm:h-64 md:h-96 overflow-hidden">
+      <div className="relative w-full h-full">
         <Image
           src={data.image}
-          alt={data.title}
+          alt="MirrorStandard"
           fill
           quality={75}
           placeholder="blur"
-          blurDataURL="data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAQAcJaQAA3AA/vuUAAA="
+          blurDataURL="data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAQAcJaQAA3AA/vuUAAA=" // example tiny placeholder
+
           className="object-cover"
         />
-
         <div className="absolute top-0 left-0 w-full h-full flex flex-col justify-between p-4 text-white">
           <p>
             <span className="text-[14px] capitalize" style={{ fontWeight: 700 }}>{data.category}</span>{" "}
@@ -49,4 +49,4 @@ const VibeNewsCard: React.FC<Props> = ({ data }) => {
   );
 };
 
-export default VibeNewsCard;
+export default VibeNewsCard2;
