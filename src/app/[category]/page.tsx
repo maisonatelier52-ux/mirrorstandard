@@ -105,6 +105,13 @@ export async function generateMetadata({
       ? firstArticle.image
       : `${siteUrl}${firstArticle?.image || "/images/mirrorstandard-logo.webp"}`;
 
+
+  if (!firstArticle) {
+    return {
+      title: 'Category Not Found',
+      description: 'The requested category could not be found.',
+    };
+  }
   return {
     title: meta.title,
     description: meta.description,
@@ -146,9 +153,14 @@ export default async function CategoryPage({
 
   if (!data) {
     return (
-      <div className="container py-5">
-        <p>Category not found</p>
-      </div>
+      <main className="max-w-7xl mx-auto h-screen px-6 flex flex-col items-center justify-center text-center">
+        <h1 className="text-3xl font-bold">
+          404 – Page Not Found
+        </h1>
+        <p className="mt-4 text-gray-600">
+          The category you’re looking for doesn’t exist.
+        </p>
+      </main>
     );
   }
 

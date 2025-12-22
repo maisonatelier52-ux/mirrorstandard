@@ -160,19 +160,32 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
     if (!data) {
         return (
-            <main className="max-w-7xl mx-auto max-h-screen px-6 py-20 text-center">
-                <h1 className="text-3xl font-serif font-bold">404 – Page Not Found</h1>
+            <main className="max-w-7xl mx-auto h-screen px-6 flex flex-col items-center justify-center text-center">
+                <h1 className="text-3xl font-bold">
+                    404 – Page Not Found
+                </h1>
                 <p className="mt-4 text-gray-600">
-                    The category you’re looking for doesn’t exist.
+                    The article you’re looking for doesn’t exist.
                 </p>
             </main>
+
         );
     }
 
 
     const article = data.find(item => item.slug === slug);
     if (!article) {
-        return <div className="p-4">No article found for slug {slug}</div>;
+        return (
+            <main className="max-w-7xl mx-auto h-screen px-6 flex flex-col items-center justify-center text-center">
+                <h1 className="text-3xl font-bold">
+                    404 – Page Not Found
+                </h1>
+                <p className="mt-4 text-gray-600">
+                    The article you’re looking for doesn’t exist.
+                </p>
+            </main>
+
+        );
     }
 
     const otherArticles = data.filter(item => item.slug !== slug);
