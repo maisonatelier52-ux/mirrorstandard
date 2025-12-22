@@ -101,7 +101,6 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
         };
     }
 
-
     return {
         title: article.title,
         description: article.shortdescription,
