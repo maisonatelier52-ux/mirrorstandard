@@ -160,7 +160,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
     if (!data) {
         return (
-            <main className="max-w-7xl mx-auto px-6 py-20 text-center">
+            <main className="max-w-7xl mx-auto max-h-screen px-6 py-20 text-center">
                 <h1 className="text-3xl font-serif font-bold">404 – Page Not Found</h1>
                 <p className="mt-4 text-gray-600">
                     The category you’re looking for doesn’t exist.
