@@ -158,7 +158,17 @@ export default async function DetailPage({ params }: DetailPageProps) {
     const { category, slug } = await params;
     const data = allData[category?.toLowerCase()];
 
-    if (!data) return notFound();
+    if (!data) {
+        return (
+            <main className="max-w-7xl mx-auto px-6 py-20 text-center">
+                <h1 className="text-3xl font-serif font-bold">404 – Page Not Found</h1>
+                <p className="mt-4 text-gray-600">
+                    The category you’re looking for doesn’t exist.
+                </p>
+            </main>
+        );
+    }
+
 
     const article = data.find(item => item.slug === slug);
     if (!article) {
