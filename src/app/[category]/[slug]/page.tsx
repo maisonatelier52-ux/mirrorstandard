@@ -268,7 +268,6 @@ export default async function DetailPage({ params }: DetailPageProps) {
                         })
                     }}
                 />
-
                 <Script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{
