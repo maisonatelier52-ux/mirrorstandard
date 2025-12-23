@@ -4,9 +4,9 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-      "build": "next build && node w3infoclear.js",
-      "start": "next start",
-      "lint": "next lint"
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
   },
   "dependencies": {
     "lucide-react": "^0.539.0",

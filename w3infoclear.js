@@ -1,17 +1,31 @@
-/**
- * w3infoclear.js
- *
- * NOTE:
- * Vercel deployments use runtime-rendered HTML.
- * HTML void-element warnings (e.g., <img />, <meta />, <link />)
- * are informational only and cannot be modified at build time.
- *
- * These warnings:
- * - Do NOT affect SEO
- * - Do NOT affect accessibility
- * - Are ignored by Google and browsers
- */
+const fs = require("fs");
+const path = require("path");
 
-console.log("ℹ️  w3infoclear.js: No static HTML to clean (Vercel runtime).");
-console.log("ℹ️  W3C INFO warnings for void elements are safe to ignore.");
-process.exit(0);
+// list of HTML void elements
+const voidElements = ["area", "base", "br", "col", "embed", "hr", "img", "input", "link", "meta", "source", "track", "wbr"];
+
+function cleanHTML(dir) {
+  const files = fs.readdirSync(dir);
+
+  for (const file of files) {
+    const fullPath = path.join(dir, file);
+    const stat = fs.statSync(fullPath);
+
+    if (stat.isDirectory()) {
+      cleanHTML(fullPath);
+    } else if (file.endsWith(".html")) {
+      let html = fs.readFileSync(fullPath, "utf8");
+
+      voidElements.forEach((tag) => {
+        const regex = new RegExp(`<${tag}([^>]*)\\s*/>`, "gi");
+        html = html.replace(regex, `<${tag}$1>`);
+      });
+
+      fs.writeFileSync(fullPath, html, "utf8");
+      console.log(`✔ Cleaned: ${fullPath}`);
+    }
+  }
+}
+
+const outPath = path.join(__dirname, "out");
+cleanHTML(outPath);
