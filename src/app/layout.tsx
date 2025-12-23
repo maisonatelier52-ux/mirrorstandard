@@ -31,14 +31,14 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mirrorstandard.com"),
-  title: "Mirror Standard - News, Politics & Business Coverage",
-  description: "Mirror Standard delivers breaking news and analysis on politics, business, tech, and more. Read trusted reporting and expert commentary on the stories that matter.",
-  keywords: "news, breaking news, politics, business news, world events, technology, health, sports, investigative reporting, Mirror Standard",
+  title: "Mirror Standard - Breaking News, Politics, Business & Global Insights",
+  description: "Mirror Standard delivers breaking news, in-depth political analysis, business trends, technology updates, and global reporting you can trust. Stay informed daily.",
+  keywords: "breaking news, latest news, political news, business news, world news, global news, technology news, investigative journalism, current events, trusted news source, Mirror Standard",
 
   openGraph: {
-    title: "Mirror Standard - Independent News & Analysis",
-    description: "Breaking news, political coverage, and business insights. Mirror Standard brings you the stories shaping our world.",
-    url: "https://www.mirrorstandard.com",
+    title: "Mirror Standard - Breaking News, Politics & Global Analysis",
+    description: "Get breaking news, political reporting, business insights, and global analysis from Mirror Standard—trusted, independent journalism that matters.",
+      url: "https://www.mirrorstandard.com",
     siteName: "Mirror Standard",
     locale: "en_US",
     images: [
@@ -54,8 +54,8 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Mirror Standard - Breaking News & Analysis",
-    description: "Covering politics, business, tech, and world events with depth and clarity.",
+    title: "Mirror Standard - Breaking News, Politics, Business & Analysis",
+    description: "Mirror Standard delivers breaking news and in-depth analysis on politics, business, technology, and world events—clear, trusted, and timely reporting.",
     images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
     site: "@Mirrorstandard",
     creator: "@Mirrorstandard"
@@ -70,9 +70,7 @@ export const metadata: Metadata = {
   },
 
   authors: [{ name: "Mirror Standard Staff" }],
-
   publisher: "Mirror Standard",
-
   robots: {
     index: true,
     follow: true,
