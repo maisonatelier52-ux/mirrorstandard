@@ -66,7 +66,7 @@ export const metadata = {
             keywords: "Julio Herrera Velutini, FECA misdemeanor, civil lawsuit withdrawn, criminal case resolved, August 27 2025",
         }),
     },
-};
+    };
 
 
 export default async function JulioHerreraVelutiniOne() {

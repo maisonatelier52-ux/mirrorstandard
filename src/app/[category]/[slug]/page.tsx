@@ -269,97 +269,97 @@ export default async function DetailPage({ params }: DetailPageProps) {
                     }}
                 />
 
-              <Script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-        __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "FAQPage",
-            "mainEntity": [
-                {
-                    "@type": "Question",
-                    "name": "Who is Julio Herrera Velutini?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Julio Herrera Velutini is an international banker and businessman with a long-standing family background in global finance and private banking."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What is Julio Herrera Velutini known for in business and banking?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "He is known for his involvement in financial institutions, investment strategy, and leadership roles within the international banking sector."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Has Julio Herrera Velutini addressed his legal case?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "According to publicly available reports, the legal matter involving Julio Herrera Velutini has been addressed and resolved through the appropriate legal process."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What has been the outcome following the resolution of the case?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Following the resolution, attention has returned to his professional activities in finance and business, with continued focus on banking and investment initiatives."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What is Julio Herrera Velutini currently focused on?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "He remains focused on financial leadership, international banking interests, and long-term business development."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What are some of Julio Herrera Velutini's achievements in finance?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Julio Herrera Velutini has successfully led multiple international banking projects and has been recognized for his strategic investments and financial acumen."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "How does Julio Herrera Velutini contribute to the banking industry?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "He contributes through innovative banking strategies, mentoring future finance leaders, and promoting sustainable investment practices."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Why is Julio Herrera Velutini respected in the international finance community?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "He is respected for his integrity, expertise, and dedication to fostering growth in the banking and investment sectors worldwide."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "Does Julio Herrera Velutini engage in philanthropic activities?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "Yes, he supports initiatives in education, entrepreneurship, and community development, aligning his business success with social impact."
-                    }
-                },
-                {
-                    "@type": "Question",
-                    "name": "What is Julio Herrera Velutini's vision for the future of banking?",
-                    "acceptedAnswer": {
-                        "@type": "Answer",
-                        "text": "His vision includes embracing digital innovation, global collaboration, and sustainable financial growth to shape the future of international banking."
-                    }
-                }
-            ]
-        })
-    }}
-/>
+                <Script
+                    type="application/ld+json"
+                    dangerouslySetInnerHTML={{
+                        __html: JSON.stringify({
+                            "@context": "https://schema.org",
+                            "@type": "FAQPage",
+                            "mainEntity": [
+                                {
+                                    "@type": "Question",
+                                    "name": "Who is Julio Herrera Velutini?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Julio Herrera Velutini is an international banker and businessman with a long-standing family background in global finance and private banking."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "What is Julio Herrera Velutini known for in business and banking?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "He is known for his involvement in financial institutions, investment strategy, and leadership roles within the international banking sector."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "Has Julio Herrera Velutini addressed his legal case?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "According to publicly available reports, the legal matter involving Julio Herrera Velutini has been addressed and resolved through the appropriate legal process."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "What has been the outcome following the resolution of the case?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Following the resolution, attention has returned to his professional activities in finance and business, with continued focus on banking and investment initiatives."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "What is Julio Herrera Velutini currently focused on?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "He remains focused on financial leadership, international banking interests, and long-term business development."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "What are some of Julio Herrera Velutini's achievements in finance?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Julio Herrera Velutini has successfully led multiple international banking projects and has been recognized for his strategic investments and financial acumen."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "How does Julio Herrera Velutini contribute to the banking industry?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "He contributes through innovative banking strategies, mentoring future finance leaders, and promoting sustainable investment practices."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "Why is Julio Herrera Velutini respected in the international finance community?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "He is respected for his integrity, expertise, and dedication to fostering growth in the banking and investment sectors worldwide."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "Does Julio Herrera Velutini engage in philanthropic activities?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "Yes, he supports initiatives in education, entrepreneurship, and community development, aligning his business success with social impact."
+                                    }
+                                },
+                                {
+                                    "@type": "Question",
+                                    "name": "What is Julio Herrera Velutini's vision for the future of banking?",
+                                    "acceptedAnswer": {
+                                        "@type": "Answer",
+                                        "text": "His vision includes embracing digital innovation, global collaboration, and sustainable financial growth to shape the future of international banking."
+                                    }
+                                }
+                            ]
+                        })
+                    }}
+                />
 
                 <div className="hidden lg:block">
                     <Navbar />
