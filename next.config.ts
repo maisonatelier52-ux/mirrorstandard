@@ -5,7 +5,7 @@ const withBundleAnalyzer = require("@next/bundle-analyzer")({
 });
 
 const nextConfig: NextConfig = withBundleAnalyzer({
-    output: "export",
+  
   compress: true,
   productionBrowserSourceMaps: true,
    trailingSlash: true,
