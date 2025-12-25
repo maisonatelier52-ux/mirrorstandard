@@ -1,30 +1,50 @@
 import { Mail, ArrowRight, Check } from 'lucide-react';
 import Link from 'next/link';
+import Script from "next/script";
 
 export default function EditorialPolicy() {
   const transparencyPoints = [
-    "Clearly distinguish between news, opinion, and analysis",
-    "Publish under an individual reporter's byline whenever possible",
-    "Use a \"Mirror Standard Staff\" byline for collaborative or team-written stories"
+    "Clearly distinguish between news reporting, opinion, and analysis",
+    "Publish articles under an individual journalist’s byline whenever possible",
+    "Use a “Mirror Standard Staff” byline for collaborative reporting"
   ];
 
   const ethicalStandards = [
     {
-      title: "No hidden conflicts of interest",
-      description: "Our reporters disclose personal or financial ties when relevant."
+      title: "No undisclosed conflicts of interest",
+      description: "Journalists disclose relevant personal or financial relationships when applicable."
     },
     {
-      title: "No undisclosed sponsored content",
-      description: "If a piece is paid for, it will be labeled clearly."
+      title: "No hidden sponsored content",
+      description: "Paid or sponsored material is clearly labeled and separated from news coverage."
     },
     {
       title: "Respect for privacy",
-      description: "We balance the public's right to know with the rights of individuals."
+      description: "We balance the public’s right to know with individual rights and personal dignity."
     }
   ];
 
   return (
     <div className="min-h-screen">
+
+      {/* ✅ EDITORIAL POLICY STRUCTURED DATA (CRITICAL FOR GOOGLE NEWS) */}
+      <Script
+        id="structured-data-editorial-policy"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "WebPage",
+            "name": "Editorial Policy | Mirror Standard",
+            "url": "https://www.mirrorstandard.com/editorial-policy",
+            "publisher": {
+              "@type": "NewsMediaOrganization",
+              "@id": "https://www.mirrorstandard.com/#organization"
+            }
+          })
+        }}
+      />
+
       <div className="max-w-4xl mx-auto px-6 py-16">
         <header className="text-center mb-20">
           <h1 className="text-6xl font-light mb-4 tracking-tight">
@@ -32,60 +52,75 @@ export default function EditorialPolicy() {
           </h1>
           <div className="w-16 h-[2px] bg-gray-600 mx-auto mb-8"></div>
         </header>
+
         <section className="mb-10">
           <p className="text-lg leading-relaxed mb-8 font-light">
-            At Mirror Standard, our job is simple but vital: report the news with honesty, clarity, and fairness. We are an independent group of journalists who collaborate online — not a corporate newsroom — and our editorial standards reflect that independence.
+            Mirror Standard is an independent digital newsroom committed to factual,
+            transparent, and accountable journalism. Our editorial standards exist to
+            ensure that readers can trust our reporting and understand how our stories
+            are produced.
           </p>
         </section>
+
         <section className="mb-10">
           <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
-            Independence and Integrity
+            Editorial Independence
           </h2>
           <p className="text-lg leading-relaxed font-light">
-            We do not accept money, favors, or influence in exchange for coverage. Every story we publish is chosen because it matters, not because it benefits a sponsor or political interest. Our reporters and editors are free to pursue the truth without interference.
+            We do not accept payment, favors, or influence in exchange for coverage.
+            Editorial decisions are made solely by journalists and editors, free from
+            corporate, political, or government interference.
           </p>
         </section>
+
         <section className="mb-10">
           <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
-            Accuracy First
+            Accuracy and Verification
           </h2>
           <p className="text-lg leading-relaxed font-light">
-            We believe <strong className="font-medium">accuracy is more important than being first</strong>. Our journalists verify information through credible sources, fact-check data, and clearly attribute quotes or statistics. When facts are uncertain, we say so. When mistakes happen, we correct them openly (see our <Link href='/corrections-policy' title="corrections policy" className='text-blue-500'>Corrections Policy</Link>).
+            Accuracy is more important than speed. Our journalists verify information
+            using reliable sources, document-based reporting, and direct attribution.
+            When information cannot be independently confirmed, that uncertainty is
+            clearly stated. Errors are corrected transparently in accordance with our{" "}
+            <Link href="/corrections-policy" className="text-blue-500">
+              Corrections Policy
+            </Link>.
           </p>
         </section>
+
         <section className="mb-10">
           <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
             Fairness and Balance
           </h2>
           <p className="text-lg leading-relaxed font-light">
-            We aim to reflect multiple perspectives on complex issues. That doesn't mean giving equal weight to misinformation, but it does mean seeking out voices that help readers understand the full picture.
+            We seek diverse perspectives on complex issues while avoiding false balance.
+            Claims are evaluated on evidence and credibility, not ideology.
           </p>
         </section>
+
         <section className="mb-10">
           <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
             Transparency
           </h2>
           <p className="text-lg leading-relaxed mb-8 font-light">
-            Our readers deserve to know how stories are produced. That's why we:
+            Readers deserve to know how reporting decisions are made. We commit to the
+            following practices:
           </p>
+
           <div className="space-y-4">
             {transparencyPoints.map((point, index) => (
               <div key={index} className="flex items-start space-x-3">
-                <Check className="w-5 h-5 flex-shrink-0 mt-0.5" />
-                <span className="text-lg font-light leading-relaxed">
-                  {point}
-                </span>
+                <Check className="w-5 h-5 mt-0.5" />
+                <span className="text-lg font-light">{point}</span>
               </div>
             ))}
           </div>
         </section>
+
         <section className="mb-10">
           <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
             Ethical Standards
           </h2>
-          <p className="text-lg leading-relaxed mb-8 font-light">
-            Mirror Standard follows widely accepted journalistic ethics:
-          </p>
 
           <div className="space-y-8">
             {ethicalStandards.map((standard, index) => (
@@ -100,36 +135,32 @@ export default function EditorialPolicy() {
             ))}
           </div>
         </section>
+
         <section className="mb-10">
           <h2 className="text-2xl font-light mb-8 pb-3 border-b">
-            Reader Involvement
+            Reader Feedback and Accountability
           </h2>
-          <div className="space-y-6">
-            <p className="text-lg leading-relaxed font-light">
-              We believe journalism should be a conversation. If you have feedback, criticism, or a perspective we missed, please reach out. Your insights help us do better.
-            </p>
-
-            <div className="pt-4">
-              <a
-                href="mailto:editorial@mirrorstandard.com"
-                title='mail'
-                className="inline-flex items-center space-x-3 text-lg hover:opacity-70 transition-opacity group"
-              >
-                <Mail className="w-5 h-5" />
-                <span className="border-b border-transparent transition-colors">
-                  editorial@mirrorstandard.com
-                </span>
-                <ArrowRight className="w-4 h-4 opacity-0 group-hover:opacity-100 transition-opacity" />
-              </a>
-            </div>
-          </div>
-        </section>
-        <div className="bg-gray-500 h-px mx-auto mb-4"></div>
-        <section className="">
-          <p className="text-lg leading-relaxed font-light max-w-2xl mx-auto italic">
-            We promise to stay independent, fact-based, and transparent — because our loyalty is to the truth, and to you, our readers.
+          <p className="text-lg leading-relaxed font-light mb-6">
+            Journalism improves through dialogue. Readers are encouraged to contact our
+            editorial team with feedback, corrections, or concerns.
           </p>
+
+          <a
+            href="mailto:editorial@mirrorstandard.com"
+            className="inline-flex items-center space-x-3 text-lg hover:opacity-70"
+          >
+            <Mail className="w-5 h-5" />
+            <span>editorial@mirrorstandard.com</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
         </section>
+
+        <div className="border-t border-gray-200 pt-10 mt-16 text-center">
+          <p className="text-lg font-light italic max-w-2xl mx-auto">
+            Our commitment is to independent, fact-based journalism — accountable to
+            readers and guided by evidence.
+          </p>
+        </div>
       </div>
     </div>
   );

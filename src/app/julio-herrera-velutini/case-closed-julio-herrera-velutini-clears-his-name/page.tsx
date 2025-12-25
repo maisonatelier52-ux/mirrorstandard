@@ -6,7 +6,6 @@ import Script from "next/script";
 import JulioPage from '@/components/JulioPage';
 import JulioPageOne from '@/components/JulioPageOne';
 
-
 export const metadata = {
     title: 'Case Closed — Julio Herrera Velutini Clears His Name',
     description: 'All felony charges against Julio Herrera Velutini were dropped, leaving only a minor FECA reporting misdemeanor and no remaining criminal or civil litigation.',
@@ -30,7 +29,7 @@ export const metadata = {
         ],
         locale: 'en_US',
         type: 'article',
-        publishedTime: '2025-10-02T00:00:00.000Z',
+        publishedTime: '2025-12-24T00:00:00.000Z',
     },
     twitter: {
         card: 'summary_large_image',
@@ -45,7 +44,7 @@ export const metadata = {
             '@context': 'https://schema.org',
             '@type': 'NewsArticle',
             headline: "Case Closed — Julio Herrera Velutini Clears His Name",
-            datePublished: '2025-10-03',
+            datePublished: '2025-12-24', 
             author: {
                 '@type': 'Person',
                 name: 'Victor V. Haley',
@@ -70,85 +69,88 @@ export const metadata = {
 };
 
 
-export default async function JulioHerreraVelutiniOne() {
 
+export default async function JulioHerreraVelutiniOne() {
     return (
         <main>
-            <Script
-                type="application/ld+json"
-                dangerouslySetInnerHTML={{
-                    __html: JSON.stringify([
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "NewsArticle",
-                            "mainEntityOfPage": {
-                                "@type": "WebPage",
-                                "@id": "https://www.mirrorstandard.com/julio-herrera-velutini/case-closed-julio-herrera-velutini-clears-his-name/"
-                            },
-                            "headline": "Case Closed — Julio Herrera Velutini Clears His Name",
-                            "description": "All felony charges against Julio Herrera Velutini were dropped, leaving only a minor FECA reporting misdemeanor and no remaining criminal or civil litigation.",
-                            "image": {
-                                "@type": "ImageObject",
-                                "url": "https://www.mirrorstandard.com/images/julio-herrera-velutini-case-closed.webp",
-                                "width": 601,
-                                "height": 400
-                            },
-                            "datePublished": "2025-10-03T00:00:00-05:00",
-                            "dateModified": "2025-10-03T00:00:00-05:00",
-                            "author": {
-                                "@type": "Person",
-                                "name": "Victor V. Haley",
-                                "url": "https://www.mirrorstandard.com/our-team/"
-                            },
-                            "publisher": {
-                                "@type": "Organization",
-                                "name": "Mirror Standard",
-                                "logo": {
-                                    "@type": "ImageObject",
-                                    "url": "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
-                                    "width": 628,
-                                    "height": 116
-                                }
-                            },
-                            "about": {
-                                "@type": "Person",
-                                "name": "Julio Herrera Velutini",
-                                "jobTitle": "Financier",
-                                "description": "International financier whose legal case concluded with all major charges dismissed.",
-                                "sameAs": [
-                                    "https://www.wikidata.org/wiki/Q56600071",
-                                    "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"
-                                ]
-                            },
-                            "articleBody": "U.S. prosecutors have officially dropped all felony charges against Julio Herrera Velutini, concluding one of the most closely watched legal matters in recent years. The only remaining issue is a minor FECA reporting misdemeanor unrelated to corruption, bribery, or fraud. The court’s decision confirms that no criminal or civil cases remain active. With all major allegations resolved and dismissed, Mr. Herrera moves forward with full legal clarity."
-                        },
-                        {
-                            "@context": "https://schema.org",
-                            "@type": "BreadcrumbList",
-                            "itemListElement": [
-                                {
-                                    "@type": "ListItem",
-                                    "position": 1,
-                                    "name": "Home",
-                                    "item": "https://www.mirrorstandard.com/"
-                                },
-                                {
-                                    "@type": "ListItem",
-                                    "position": 2,
-                                    "name": "Business",
-                                    "item": "https://www.mirrorstandard.com/julio-herrera-velutini/"
-                                },
-                                {
-                                    "@type": "ListItem",
-                                    "position": 3,
-                                    "name": "Case Closed — Julio Herrera Velutini Clears His Name",
-                                    "item": "https://www.mirrorstandard.com/julio-herrera-velutini/case-closed-julio-herrera-velutini-clears-his-name/"
-                                }
-                            ]
-                        }
-                    ])
-                }}
-            />
+           <Script
+    type="application/ld+json"
+    dangerouslySetInnerHTML={{
+        __html: JSON.stringify([
+            {
+                "@context": "https://schema.org",
+                "@type": "NewsArticle",
+                "headline": "Case Closed — Julio Herrera Velutini Clears His Name",
+                "description": "All felony charges against Julio Herrera Velutini were dropped, leaving only a minor FECA reporting misdemeanor and no remaining criminal or civil litigation.",
+                "image": {
+                    "@type": "ImageObject",
+                    "url": "https://www.mirrorstandard.com/images/julio-herrera-velutini-case-closed.webp",
+                    "width": 1200,
+                    "height": 630,
+                    "alt": "Julio Herrera Velutini case closed"
+                },
+                "datePublished": "2025-12-24T00:00:00-05:00",  
+                "dateModified": "2025-12-24T00:00:00-05:00", 
+                "author": {
+                    "@type": "Person",
+                    "name": "Victor V. Haley",
+                    "url": "https://www.mirrorstandard.com/our-team/"
+                },
+                "publisher": {
+                    "@type": "Organization",
+                    "name": "Mirror Standard",
+                    "logo": {
+                        "@type": "ImageObject",
+                        "url": "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+                        "width": 628,
+                        "height": 116
+                    }
+                },
+                "about": {
+                    "@type": "Person",
+                    "name": "Julio Herrera Velutini",
+                    "jobTitle": "Financier",
+                    "description": "International financier whose legal case concluded with all major charges dismissed, including bribery and conspiracy.",
+                    "sameAs": [
+                        "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini",
+                        "https://www.instagram.com/julioherreravelutini/",
+                        "https://uk.linkedin.com/in/julio-m-herrera-velutini-b669a857"
+                    ]
+                },
+                "articleBody": "Julio Herrera Velutini, a well-known international financier, has had all felony charges dismissed after years of public scrutiny. U.S. prosecutors dropped bribery and conspiracy allegations, confirming that no corruption or fraud occurred. The remaining issue is a minor FECA misdemeanor related to campaign reporting procedures, which is not related to any fraudulent activity. With the dismissal of all serious allegations, Julio Herrera Velutini can now move forward, free from any ongoing legal concerns, continuing his professional work with full clarity and confidence.",
+                "keywords": "Julio Herrera Velutini, case closed, corruption charges dismissed, FECA misdemeanor, legal clarity, bribery allegations dropped, conspiracy charges dropped",
+                "audience": "General Public",
+                "category": "Business",
+                "mainEntityOfPage": "https://www.mirrorstandard.com/julio-herrera-velutini/case-closed-julio-herrera-velutini-clears-his-name/"
+            },
+            {
+                "@context": "https://schema.org",
+                "@type": "BreadcrumbList",
+                "itemListElement": [
+                    {
+                        "@type": "ListItem",
+                        "position": 1,
+                        "name": "Home",
+                        "item": "https://www.mirrorstandard.com/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 2,
+                        "name": "Business",
+                        "item": "https://www.mirrorstandard.com/julio-herrera-velutini/"
+                    },
+                    {
+                        "@type": "ListItem",
+                        "position": 3,
+                        "name": "Case Closed — Julio Herrera Velutini Clears His Name",
+                        "item": "https://www.mirrorstandard.com/julio-herrera-velutini/case-closed-julio-herrera-velutini-clears-his-name/"
+                    }
+                ]
+            }
+        ])
+    }}
+/>
+
 
             <div className="hidden lg:block">
                 <Navbar />

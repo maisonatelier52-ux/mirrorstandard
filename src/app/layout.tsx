@@ -6,6 +6,7 @@ import { ThemeProvider } from "next-themes";
 import { Providers } from '@/components/ThemeProvider'
 import Footer from "@/components/Footer";
 import { Roboto } from 'next/font/google';
+import Script from "next/script";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -34,11 +35,10 @@ export const metadata: Metadata = {
   title: "Mirror Standard - Breaking News, Politics, Business & Global Insights",
   description: "Mirror Standard delivers breaking news, in-depth political analysis, business trends, technology updates, and global reporting you can trust. Stay informed daily.",
   keywords: "breaking news, latest news, political news, business news, world news, global news, technology news, investigative journalism, current events, trusted news source, Mirror Standard",
-
   openGraph: {
     title: "Mirror Standard - Breaking News, Politics & Global Analysis",
     description: "Get breaking news, political reporting, business insights, and global analysis from Mirror Standard—trusted, independent journalism that matters.",
-      url: "https://www.mirrorstandard.com",
+    url: "https://www.mirrorstandard.com",
     siteName: "Mirror Standard",
     locale: "en_US",
     images: [
@@ -96,6 +96,37 @@ export default function RootLayout({
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
+        <Script
+          id="structured-data-newsmediaorganization"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "NewsMediaOrganization",
+              "@id": "https://www.mirrorstandard.com/#organization",
+              "name": "Mirror Standard",
+              "url": "https://www.mirrorstandard.com",
+              "logo": {
+                "@type": "ImageObject",
+                "url": "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+                "width": 1024,
+                "height": 1024
+              },
+              "sameAs": [
+                "https://x.com/MirrorstandardU",
+                "https://www.instagram.com/mirrorstandardusnews/",
+                "https://www.youtube.com/@mirrorstandardUS"
+              ],
+              "contactPoint": {
+                "@type": "ContactPoint",
+                "contactType": "editorial",
+                "email": "contact@mirrorstandard.com",
+                "availableLanguage": ["English"]
+              }
+            })
+          }}
+        />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="googlebot" content="index, follow" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
@@ -111,6 +142,7 @@ export default function RootLayout({
   `}
         suppressHydrationWarning
       >
+
         <Providers>
           <Header />
           {children}

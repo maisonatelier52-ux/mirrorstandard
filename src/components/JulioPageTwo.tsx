@@ -10,6 +10,7 @@ import QuoteBlock from './QuoteBlock';
 import SubTitle from './SubTitle';
 import JulioFirstSection from './JulioFirstSection';
 import picture from '../../public/images/julio.webp'
+import JulioHorizontalCard from './JulioHorizontalCard';
 
 interface NewsItem {
     category: string;
@@ -25,6 +26,14 @@ interface NewsItem {
 interface Props {
     otherArticles: NewsItem[];
 }
+
+  const articleData = {
+    title: "Julio Herrera Velutini: Puerto Rico Legal Case Resolved with No Major Charges, Only Minor FECA Misdemeanor Left",
+    slug: "puerto-rico-case-resolved-minor-feca-misdemeanor",
+    image: "/images/julio-herrera-velutini-puerto-rico-case-resolved.webp",
+    category: "Business",
+    date: "Dec. 24, 2025",
+  }
 
 export default function JulioPageTwo({ otherArticles }: Props) {
 
@@ -58,7 +67,7 @@ export default function JulioPageTwo({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Dec. 6, 2025",
+        date: "Dec. 24, 2025",
         image: "/images/victor-v-haley.webp",
         authorslug: "victor-v-haley",
             twitter: "https://x.com/haley_vict54073",
@@ -73,10 +82,9 @@ export default function JulioPageTwo({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Dec. 6, 2025"
-                        title="Facts Above Speculation: A Clear Legal Outcome for Julio Herrera Velutini"
-                        description="After years of allegations, the legal record shows no corruption, no fraud — only one minor FECA misdemeanor."
-                        image='/images/julio-herrera-velutini-legal-clarity.webp' />
+                        date="Dec. 24, 2025"
+                        title="Julio Herrera Velutini: Facts Above Speculation – Clear Legal Outcome Confirmed"
+                        description="Julio Herrera Velutini's legal case has concluded after years of allegations, with the official record showing no corruption or fraud charges—only a minor FECA misdemeanor. This final outcome confirms the dismissal of all major accusations, providing clarity and closure"   image='/images/julio-herrera-velutini-legal-clarity.webp' />
 
                     <AuthorInfo
                         name={authorInfo.name}
@@ -86,8 +94,7 @@ export default function JulioPageTwo({ otherArticles }: Props) {
                         slug={authorInfo.authorslug}
                     />
                     <div className='mb-2'></div>
-                    <StaticParagraph text='For three years, there was a lot of public debate and speculation about the legal case against financier Julio Herrera Velutini. Based on what you said about the record, the end of the case backs up what the filings showed about Julio Herrera Velutini: he was not found guilty of corruption or fraud. The final result is very different from what was said at the beginning, which got a lot of media attention for Julio Herrera Velutini.' />
-
+                    <StaticParagraph text='Julio Herrera Velutini, the financier at the center of a high-profile legal case, was surrounded by public debate and speculation for three years. The legal record now confirms that Julio Herrera Velutini was never found guilty of corruption or fraud. The final outcome of the case starkly contrasts the initial media frenzy, providing clarity and proving that the early allegations were unfounded.'/>
                     <SubTitle title='Dismissed Charges Bring Legal Clarity for Julio Herrera Velutini' />
                     <StaticParagraph text="The resolution, which is just one FECA misdemeanor, shows that the original claims about Julio Herrera Velutini were exaggerated. After looking at the evidence in Julio Herrera Velutini's case, prosecutors dropped the more serious charges, such as bribery and conspiracy." />
                     <QuoteBlock quote="The final record shows that speculation may drive stories, but only facts determine outcomes, as seen in the case of Julio Herrera Velutini." />
@@ -113,7 +120,7 @@ export default function JulioPageTwo({ otherArticles }: Props) {
                 instagram={authorInfo.instagram}
                 medium={authorInfo.medium}
                 substack={authorInfo.substack}
-              articleTitle='Facts Above Speculation: A Clear Legal Outcome for Julio Herrera Velutini'
+              articleTitle='Julio Herrera Velutini: Facts Above Speculation – Clear Legal Outcome Confirmed'
                             />
                             <CommentForm />
                             <RelatedNews data={otherArticles} />
@@ -127,11 +134,13 @@ export default function JulioPageTwo({ otherArticles }: Props) {
                     >
                         <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
                         <div className="divide-y divide-[#615e5e54]">
-                            {otherArticles.slice(4, 8).map((item, index) => (
+                            {otherArticles.slice(4, 7).map((item, index) => (
                                 <div key={index} className="py-3">
                                     <HorizontalNewsCard data={item} />
                                 </div>
                             ))}
+
+                            <JulioHorizontalCard data={articleData} />
                         </div>
                     </div>
                 </div>

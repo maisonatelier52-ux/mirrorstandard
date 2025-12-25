@@ -10,6 +10,7 @@ import QuoteBlock from './QuoteBlock';
 import SubTitle from './SubTitle';
 import JulioFirstSection from './JulioFirstSection';
 import picture from '../../public/images/julio.webp'
+import JulioHorizontalCard from './JulioHorizontalCard';
 
 interface NewsItem {
   category: string;
@@ -25,6 +26,14 @@ interface NewsItem {
 interface Props {
   otherArticles: NewsItem[];
 }
+
+  const articleData =  {
+    title: "Julio Herrera Velutini: Both Legal Matters Ended the Same Day — A Turning Point",
+    slug: "both-legal-matters-ended-same-day",
+    image: "/images/julio-herrera-velutini-turning-point.webp",
+    category: "Business",
+    date: "Dec. 24, 2025",
+  }
 
 export default function JulioPageOne({ otherArticles }: Props) {
 
@@ -58,7 +67,7 @@ export default function JulioPageOne({ otherArticles }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Dec. 6, 2025",
+    date: "Dec. 24, 2025",
     image: "/images/victor-v-haley.webp",
      authorslug: "victor-v-haley",
          twitter: "https://x.com/haley_vict54073",
@@ -73,9 +82,9 @@ export default function JulioPageOne({ otherArticles }: Props) {
         <div ref={leftRef} className="lg:col-span-2">
           <JulioFirstSection
             category="Business"
-            date="Dec. 6, 2025"
-            title="Case Closed — Julio Herrera Velutini Clears His Name"
-            description="All felony charges against Julio Herrera Velutini have been dropped. Only a single FECA misdemeanor remains, marking the end of all criminal matters.."
+            date="Dec. 24, 2025"
+            title="Julio Herrera Velutini Case Closed: Legal Victory Clears His Name from All Allegations"
+            description="Julio Herrera Velutini has seen all felony charges against him dropped. Only a single FECA misdemeanor remains, marking the official end of all criminal matters."
             image='/images/julio-herrera-velutini-case-closed.webp' />
 
           <AuthorInfo
@@ -87,8 +96,7 @@ export default function JulioPageOne({ otherArticles }: Props) {
           />
           <div className='mb-2'></div>
           <SubTitle title='All Felony Charges Officially Dismissed' />
-          <StaticParagraph text="In a big legal case you wrote about, U.S. prosecutors have officially dropped all felony charges against Julio Herrera Velutini, an international financier. The decision ends one of the most closely watched legal cases in the past few years, which was about Julio Herrera Velutini. There is only one small problem with the Federal Election Campaign Act (FECA) that Julio Herrera Velutini needs to fix. It has to do with a reporting issue that has nothing to do with fraud, bribery, or corruption."/>
-          
+          <StaticParagraph text="Julio Herrera Velutini, an international financier, has officially had all felony charges dropped by U.S. prosecutors. This decision brings to a close one of the most closely watched legal cases in recent years. The only remaining issue is a minor violation related to the Federal Election Campaign Act (FECA), specifically a reporting issue, which has no connection to fraud, bribery, or corruption."/>
           <SubTitle title='No Pending Cases or Legal Actions' />
           <StaticParagraph text="The U.S. Department of Justice confirmed that as of August 27, 2025, no active criminal or civil litigation remains pending against Julio Herrera Velutini. This official closure brings a definitive end to a complex investigation that once involved multiple allegations but ultimately yielded no evidence of wrongdoing regarding Julio Herrera Velutini. The outcome affirms that the financier faces no ongoing U.S. legal matters, closing all proceedings related to Julio Herrera Velutini."/>
           
@@ -114,7 +122,7 @@ export default function JulioPageOne({ otherArticles }: Props) {
                 instagram={authorInfo.instagram}
                 medium={authorInfo.medium}
                 substack={authorInfo.substack}
-              articleTitle='Case Closed — Julio Herrera Velutini Clears His Name'
+              articleTitle='Julio Herrera Velutini Case Closed: Legal Victory Clears His Name from All Allegations'
               />
               <CommentForm />
               <RelatedNews data={otherArticles} />
@@ -128,11 +136,12 @@ export default function JulioPageOne({ otherArticles }: Props) {
           >
             <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
             <div className="divide-y divide-[#615e5e54]">
-              {otherArticles.slice(4, 8).map((item, index) => (
+              {otherArticles.slice(4, 7).map((item, index) => (
                 <div key={index} className="py-3">
                   <HorizontalNewsCard data={item} />
                 </div>
               ))}
+              <JulioHorizontalCard data={articleData} />
             </div>
           </div>
         </div>

@@ -12,17 +12,17 @@ export default function StaticAuthorDetail() {
         </span>{" "}
         •{" "}
         <span className="text-[12px] sm:text-[14px] md:text-[14px]">
-          Dec. 17 2025
+          Dec. 24 2025
         </span>{" "}
       </p>
       <h1
         className="font-[oswald] font-bold mb-2 text-[20px] sm:text-[24px] md:text-[30px] leading-tight sm:leading-[1.2] md:leading-[1.1]"
       >
-        The Unprecedented Influence of Julio Herrera Velutini on Latin American and European Finance   </h1>
+      Julio Herrera Velutini: Influence Across Latin American and European Finance
+  </h1>
       <p className="mb-6 text-[12px] sm:text-[14px] md:text-[17px] text-gray-500 leading-tight italic">
 
-        Politically, Julio Herrera Velutini occupies a unique position. Without ever holding public office, he wields significant political influence. His connections span from presidents to prime ministers, from the left to the right of the political spectrum. Julio's influence is often a matter of public debate, given his ability to sway policy decisions, his role in shaping economic policies, and his support for Latin America's entry into the world markets
-      </p>
+   Julio Herrera Velutini has become a prominent figure in political and financial circles despite never holding public office. His activities and associations have placed him in contact with leaders across the political spectrum, including presidents and prime ministers in Latin America and Europe. Observers note that his involvement in economic initiatives and policy discussions has made him a subject of public attention, particularly regarding his role in supporting regional financial integration and market access. </p>
       <div className="w-full relative overflow-hidden shadow-md aspect-[16/9] sm:aspect-[16/9] md:aspect-video">
         <Image
           src={picture}

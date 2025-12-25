@@ -189,7 +189,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
     const otherArticles = data.filter(item => item.slug !== slug);
 
-    if (slug == 'unprecedented-influence-of-julio-herrera-velutini-on-latin-american-european-finance') {
+    if (slug == 'julio-herrera-velutini-finance-influence') {
         return (
             <main>
                 <Script
@@ -200,13 +200,13 @@ export default async function DetailPage({ params }: DetailPageProps) {
                             "@graph": [
                                 {
                                     "@type": "NewsArticle",
-                                    "@id": "https://www.mirrorstandard.com/business/unprecedented-influence-of-julio-herrera-velutini-on-latin-american-european-finance/#newsarticle",
+                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/#newsarticle",
                                     "mainEntityOfPage": {
                                         "@type": "WebPage",
-                                        "@id": "https://www.mirrorstandard.com/business/unprecedented-influence-of-julio-herrera-velutini-on-latin-american-european-finance/"
+                                        "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/"
                                     },
-                                    "headline": "The Unprecedented Influence of Julio Herrera Velutini on Latin American and European Finance",
-                                    "description": "Julio Herrera Velutini is widely recognized for his influence in international banking and finance, with long-standing involvement across Latin American and European financial sectors.",
+                                    "headline": "Julio Herrera Velutini: Influence Across Latin American and European Finance",
+                                    "description": "Julio Herrera Velutini is a banker and business figure whose activities have drawn attention across Latin America and Europe due to his involvement in financial institutions and cross-border economic initiatives.",
                                     "image": {
                                         "@type": "ImageObject",
                                         "url": "https://www.mirrorstandard.com/images/Julio-Herrera.webp",
@@ -217,7 +217,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
                                     "dateModified": "2025-08-14T00:00:00-05:00",
                                     "author": {
                                         "@type": "Person",
-                                        "name": "Victor V. Haley",
+                                        "name": "Jacqueline L. Wood",
                                         "url": "https://www.mirrorstandard.com/our-team/"
                                     },
                                     "publisher": {
@@ -233,16 +233,18 @@ export default async function DetailPage({ params }: DetailPageProps) {
                                     "about": {
                                         "@type": "Person",
                                         "name": "Julio Herrera Velutini",
-                                        "description": "Julio Herrera Velutini is an international banker and businessman known for his involvement in private banking, finance, and cross-border investment initiatives.",
+                                        "description": "Julio Herrera Velutini is an international banker and businessman associated with private banking, finance, and cross-border investment activity in Latin America and Europe.",
                                         "sameAs": [
-                                            "https://www.wikidata.org/wiki/Q56600071"
+                                            "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini",
+                                            "https://www.instagram.com/julioherreravelutini/",
+                                            "https://uk.linkedin.com/in/julio-m-herrera-velutini-b669a857"
                                         ]
                                     },
-                                    "articleBody": "Julio Herrera Velutini has played a notable role in international finance, particularly across Latin American and European markets, where his influence has been linked to banking, investment, and economic strategy."
+                                    "articleBody": "Julio Herrera Velutini is a banker and business figure whose activities have drawn sustained attention in Latin America and parts of Europe due to his involvement in financial institutions, political dialogue, and cross-border economic initiatives. Born in 1971 into the Herrera-Velutini banking family, he assumed a senior leadership role within the family’s financial enterprises before the age of 30. Financial entities linked to the family expanded across multiple Latin American markets during the early 2000s, a period associated with regional economic growth and financial stabilization. His traditional banking approach has drawn both support and criticism amid differing economic models across the region."
                                 },
                                 {
                                     "@type": "BreadcrumbList",
-                                    "@id": "https://www.mirrorstandard.com/business/unprecedented-influence-of-julio-herrera-velutini-on-latin-american-european-finance/#breadcrumb",
+                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/#breadcrumb",
                                     "itemListElement": [
                                         {
                                             "@type": "ListItem",
@@ -259,8 +261,8 @@ export default async function DetailPage({ params }: DetailPageProps) {
                                         {
                                             "@type": "ListItem",
                                             "position": 3,
-                                            "name": "The Unprecedented Influence of Julio Herrera Velutini on Latin American and European Finance",
-                                            "item": "https://www.mirrorstandard.com/business/unprecedented-influence-of-julio-herrera-velutini-on-latin-american-european-finance/"
+                                            "name": "Julio Herrera Velutini: Influence Across Latin American and European Finance",
+                                            "item": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/"
                                         }
                                     ]
                                 }
@@ -268,6 +270,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
                         })
                     }}
                 />
+
                 <Script
                     type="application/ld+json"
                     dangerouslySetInnerHTML={{

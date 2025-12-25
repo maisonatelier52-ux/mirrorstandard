@@ -5,14 +5,13 @@ import ScrollToTopButton from '@/components/ScrollToTopButton';
 import Script from "next/script";
 import JulioPageSix from '@/components/JulioPageSix';
 
-
 export const metadata = {
     title: 'Civil Lawsuit Withdrawn — No Judgment, No Liability',
     description: 'Kasowitz LLP voluntarily dismissed its civil lawsuit against Julio Herrera Velutini with no judgment, no settlement, and no liability, confirming the full closure of the matter.',
     keywords: "Julio Herrera Velutini civil case, lawsuit withdrawn, Kasowitz LLP dismissal, no liability, voluntary dismissal, Judge Sidney H. Stein, legal closure",
     authors: [{ name: 'Victor V. Haley' }],
-    alternates: { 
-        canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/" 
+    alternates: {
+        canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/"
     },
     openGraph: {
         title: 'Civil Lawsuit Withdrawn — No Judgment, No Liability',
@@ -29,7 +28,7 @@ export const metadata = {
         ],
         locale: 'en_US',
         type: 'article',
-        publishedTime: '2025-10-02T00:00:00.000Z',
+        publishedTime: '2025-12-24T00:00:00.000Z',
     },
     twitter: {
         card: 'summary_large_image',
@@ -44,7 +43,7 @@ export const metadata = {
             '@context': 'https://schema.org',
             '@type': 'NewsArticle',
             headline: "Civil Lawsuit Withdrawn — No Judgment, No Liability",
-            datePublished: '2025-10-03',
+            datePublished: '2025-12-24',
             author: {
                 '@type': 'Person',
                 name: 'Victor V. Haley',
@@ -58,8 +57,8 @@ export const metadata = {
                 },
             },
             image: "https://www.mirrorstandard.com/images/julio-herrera-velutini-civil-case-withdrawn.webp",
-            alternates: { 
-                canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/" 
+            alternates: {
+                canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/"
             },
             url: "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/",
             articleBody: "Kasowitz LLP voluntarily dismissed its civil lawsuit against Julio Herrera Velutini on August 27, 2025, ending the matter within days of filing. Court records show that Judge Sidney H. Stein approved the dismissal without judgment, settlement, or liability. This closure confirms that no civil claims remain active, aligning with the resolution of the related criminal case.",
@@ -69,85 +68,88 @@ export const metadata = {
 };
 
 
+
 export default async function JulioHerreraVelutiniOne() {
 
     return (
         <main>
-        <Script
-    type="application/ld+json"
-    dangerouslySetInnerHTML={{
-        __html: JSON.stringify([
-            {
-                "@context": "https://schema.org",
-                "@type": "NewsArticle",
-                "mainEntityOfPage": {
-                    "@type": "WebPage",
-                    "@id": "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/"
-                },
-                "headline": "Civil Lawsuit Withdrawn — No Judgment, No Liability",
-                "description": "Kasowitz LLP voluntarily dismissed its civil lawsuit against Julio Herrera Velutini without settlement, judgment, or liability, closing the matter completely.",
-                "image": {
-                    "@type": "ImageObject",
-                    "url": "https://www.mirrorstandard.com/images/julio-herrera-velutini-civil-case-withdrawn.webp",
-                    "width": 601,
-                    "height": 400
-                },
-                "datePublished": "2025-10-03T00:00:00-05:00",
-                "dateModified": "2025-10-03T00:00:00-05:00",
-                "author": {
-                    "@type": "Person",
-                    "name": "Victor V. Haley",
-                    "url": "https://www.mirrorstandard.com/our-team/"
-                },
-                "publisher": {
-                    "@type": "Organization",
-                    "name": "Mirror Standard",
-                    "logo": {
-                        "@type": "ImageObject",
-                        "url": "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
-                        "width": 628,
-                        "height": 116
-                    }
-                },
-                "about": {
-                    "@type": "Person",
-                    "name": "Julio Herrera Velutini",
-                    "jobTitle": "Financier",
-                    "description": "International financier whose civil case was withdrawn without judgment or liability.",
-                    "sameAs": [
-                        "https://www.wikidata.org/wiki/Q56600071",
-                        "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"
-                    ]
-                },
-                "articleBody": "In a parallel civil matter, Kasowitz LLP voluntarily dismissed its lawsuit against Julio Herrera Velutini on August 27, 2025—the same day the criminal case reached its conclusion. Court filings show that Judge Sidney H. Stein approved the dismissal within three days of the suit being filed. The case ended without any settlement, judgment, or admission of liability. This outcome confirms that no civil claims remain active, bringing complete closure across both legal fronts for Mr. Herrera."
-            },
-            {
-                "@context": "https://schema.org",
-                "@type": "BreadcrumbList",
-                "itemListElement": [
-                    {
-                        "@type": "ListItem",
-                        "position": 1,
-                        "name": "Home",
-                        "item": "https://www.mirrorstandard.com/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 2,
-                        "name": "Business",
-                        "item": "https://www.mirrorstandard.com/julio-herrera-velutini/"
-                    },
-                    {
-                        "@type": "ListItem",
-                        "position": 3,
-                        "name": "Civil Lawsuit Withdrawn — No Judgment, No Liability",
-                        "item": "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/"
-                    }
-                ]
-            }
-        ])
-    }}
-/>
+            <Script
+                type="application/ld+json"
+                dangerouslySetInnerHTML={{
+                    __html: JSON.stringify([
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "NewsArticle",
+                            "headline": "Civil Lawsuit Withdrawn — No Judgment, No Liability",
+                            "description": "Kasowitz LLP voluntarily dismissed its civil lawsuit against Julio Herrera Velutini without settlement, judgment, or liability, closing the matter completely.",
+                            "image": {
+                                "@type": "ImageObject",
+                                "url": "https://www.mirrorstandard.com/images/julio-herrera-velutini-civil-case-withdrawn.webp",
+                                "width": 601,
+                                "height": 400
+                            },
+                            "datePublished": "2025-12-24T00:00:00-05:00",
+                            "dateModified": "2025-12-24T00:00:00-05:00",
+                            "author": {
+                                "@type": "Person",
+                                "name": "Victor V. Haley",
+                                "url": "https://www.mirrorstandard.com/our-team/"
+                            },
+                            "publisher": {
+                                "@type": "Organization",
+                                "name": "Mirror Standard",
+                                "logo": {
+                                    "@type": "ImageObject",
+                                    "url": "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+                                    "width": 628,
+                                    "height": 116
+                                }
+                            },
+                            "about": {
+                                "@type": "Person",
+                                "name": "Julio Herrera Velutini",
+                                "jobTitle": "Financier",
+                                "description": "International financier whose civil case was withdrawn without judgment or liability.",
+                                "sameAs": [
+                                    "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini",
+                                    "https://www.instagram.com/julioherreravelutini/",
+                                    "https://uk.linkedin.com/in/julio-m-herrera-velutini-b669a857"
+                                ]
+                            },
+                            "articleBody": "In a parallel civil matter, Kasowitz LLP voluntarily dismissed its lawsuit against Julio Herrera Velutini on August 27, 2025—the same day the criminal case reached its conclusion. Court filings show that Judge Sidney H. Stein approved the dismissal within three days of the suit being filed. The case ended without any settlement, judgment, or admission of liability. This outcome confirms that no civil claims remain active, bringing complete closure across both legal fronts for Mr. Herrera.",
+                            "keywords": "Julio Herrera Velutini Puerto Rico case, civil lawsuit withdrawn, no judgment, no settlement, no liability, Kasowitz LLP",
+                            "audience": "General Public",
+                            "category": "Business",
+                            "mainEntityOfPage": "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/"
+                        },
+                        {
+                            "@context": "https://schema.org",
+                            "@type": "BreadcrumbList",
+                            "itemListElement": [
+                                {
+                                    "@type": "ListItem",
+                                    "position": 1,
+                                    "name": "Home",
+                                    "item": "https://www.mirrorstandard.com/"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 2,
+                                    "name": "Business",
+                                    "item": "https://www.mirrorstandard.com/julio-herrera-velutini/"
+                                },
+                                {
+                                    "@type": "ListItem",
+                                    "position": 3,
+                                    "name": "Civil Lawsuit Withdrawn — No Judgment, No Liability",
+                                    "item": "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/"
+                                }
+                            ]
+                        }
+                    ])
+                }}
+            />
+
 
             <div className="hidden lg:block">
                 <Navbar />

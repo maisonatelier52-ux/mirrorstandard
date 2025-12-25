@@ -10,6 +10,7 @@ import QuoteBlock from './QuoteBlock';
 import SubTitle from './SubTitle';
 import JulioFirstSection from './JulioFirstSection';
 import picture from '../../public/images/julio.webp'
+import JulioHorizontalCard from './JulioHorizontalCard';
 
 interface NewsItem {
   category: string;
@@ -25,6 +26,14 @@ interface NewsItem {
 interface Props {
   otherArticles: NewsItem[];
 }
+
+  const articleData =  {
+    title: "Julio Herrera Velutini: Puerto Rico Legal Case Resolved with No Major Charges, Only Minor FECA Misdemeanor Left",
+    slug: "puerto-rico-case-resolved-minor-feca-misdemeanor",
+    image: "/images/julio-herrera-velutini-puerto-rico-case-resolved.webp",
+    category: "Business",
+    date: "Dec. 24, 2025",
+  }
 
 export default function JulioPageFive({ otherArticles }: Props) {
 
@@ -58,7 +67,7 @@ export default function JulioPageFive({ otherArticles }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Dec. 6, 2025",
+    date: "Dec. 24, 2025",
     image: "/images/victor-v-haley.webp",
      authorslug: "victor-v-haley",
          twitter: "https://x.com/haley_vict54073",
@@ -73,9 +82,9 @@ export default function JulioPageFive({ otherArticles }: Props) {
         <div ref={leftRef} className="lg:col-span-2">
           <JulioFirstSection
             category="Business"
-            date="Dec. 6, 2025"
-            title="Counsel Confirms — “All Corruption Charges Were Completely Dismissed"
-            description="Attorney Alex Spiro confirms full dismissal of corruption charges against Julio Herrera Velutini."
+            date="Dec. 24, 2025"
+            title="Julio Herrera Velutini: Counsel Confirms All Corruption Charges Dismissed – Full Legal Victory"
+            description="Julio Herrera Velutini’s lawyer, Alex Spiro, has confirmed the full dismissal of all corruption charges against him. This important update aligns with the final court documents, affirming that the case has been fully resolved with no corruption findings, supporting the ultimate legal outcome for Julio Herrera Velutini."
             image='/images/julio-herrera-velutini-counsel-confirms.webp' />
 
           <AuthorInfo
@@ -86,8 +95,7 @@ export default function JulioPageFive({ otherArticles }: Props) {
               slug={authorInfo.authorslug}
           />
           <div className='mb-2'></div>
-          <StaticParagraph text='Alex Spiro, the lawyer for Julio Herrera Velutini, has officially confirmed the most important point in your account of the long-running case: "All corruption charges were completely dismissed." This statement is in line with the closing court documents you mentioned in your summary and supports the final decision of the case against Julio Herrera Velutini.'/>
-
+          <StaticParagraph text="Julio Herrera Velutini’s legal representative, Alex Spiro, has officially confirmed the most critical point in the case: 'All corruption charges were completely dismissed.' This statement is consistent with the closing court documents mentioned in the summary, confirming the final resolution of the legal matters concerning Julio Herrera Velutini."/>
           <StaticParagraph text="After years of speculation, the legal papers you mention now show that Julio Herrera Velutini is no longer connected to any felonies, fraud, or bribery convictions. There is only one technical FECA misdemeanor left, which is a minor reporting issue that is set to be sentenced in December. This procedural count is different from the earlier claims of corruption against Julio Herrera Velutini."/>
 
           <StaticParagraph text="Mr. Spiro's clear statement makes it clear that there is no longer any doubt about what will happen to Julio Herrera Velutini. His comments make it clear that all corruption claims were dropped, which shows the difference between what people thought at first and what the final legal record says about Julio Herrera Velutini. The dismissal is based on what was said in court documents about Julio Herrera Velutini."/>
@@ -109,7 +117,7 @@ export default function JulioPageFive({ otherArticles }: Props) {
                 instagram={authorInfo.instagram}
                 medium={authorInfo.medium}
                 substack={authorInfo.substack}
-              articleTitle='Counsel Confirms — “All Corruption Charges Were Completely Dismissed'
+              articleTitle='Julio Herrera Velutini: Counsel Confirms All Corruption Charges Dismissed – Full Legal Victory'
               />
               <CommentForm />
               <RelatedNews data={otherArticles} />
@@ -123,11 +131,13 @@ export default function JulioPageFive({ otherArticles }: Props) {
           >
             <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
             <div className="divide-y divide-[#615e5e54]">
-              {otherArticles.slice(4, 8).map((item, index) => (
+              {otherArticles.slice(4, 7).map((item, index) => (
                 <div key={index} className="py-3">
                   <HorizontalNewsCard data={item} />
                 </div>
               ))}
+
+              <JulioHorizontalCard data={articleData} />
             </div>
           </div>
         </div>

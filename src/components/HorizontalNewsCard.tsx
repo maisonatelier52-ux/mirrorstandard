@@ -25,15 +25,19 @@ const HorizontalNewsCard: React.FC<Props> = ({ data }) => {
     >
       <div className="flex w-full lg:max-w-md">
         <div className="flex-shrink-0 relative w-[95px] sm:w-[105px] aspect-[105/95] overflow-hidden group">
-          <Image
-            src={data.image}
-            alt={data.title}
-            fill
-            quality={75}
-            placeholder="blur"
-            blurDataURL="data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAQAcJaQAA3AA/vuUAAA="
-            className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
-          />
+            <Image
+                   src={data.image || ""}
+                   alt={data.title}
+                   title={data.title}
+                   width={110}
+                   height={75}
+                   style={{
+                     width: '110px',
+                     height: '95px',
+                     objectFit: 'cover',
+                     flexShrink: 0,
+                   }}
+                 />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 ease-in-out" />
         </div>
         <div className="ml-3 flex flex-col justify-center">

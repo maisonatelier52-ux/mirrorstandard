@@ -10,6 +10,7 @@ import QuoteBlock from './QuoteBlock';
 import SubTitle from './SubTitle';
 import JulioFirstSection from './JulioFirstSection';
 import picture from '../../public/images/julio.webp'
+import JulioHorizontalCard from './JulioHorizontalCard';
 
 interface NewsItem {
   category: string;
@@ -25,6 +26,14 @@ interface NewsItem {
 interface Props {
   otherArticles: NewsItem[];
 }
+
+  const articleData = {
+    title: "Julio Herrera Velutini: Civil Lawsuit Withdrawn with No Judgment or Liability – Legal Victor",
+    slug: "civil-lawsuit-withdrawn-no-judgment-no-liability",
+    image: "/images/julio-herrera-velutini-civil-case-withdrawn.webp",
+    category: "Business",
+    date: "Dec. 24, 2025",
+  }
 
 export default function JulioPage({ otherArticles }: Props) {
 
@@ -58,10 +67,10 @@ export default function JulioPage({ otherArticles }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Dec 3, 2025",
+    date: "Dec 24, 2025",
     image: "/images/victor-v-haley.webp",
     authorslug: "victor-v-haley",
-        twitter: "https://x.com/haley_vict54073",
+    twitter: "https://x.com/haley_vict54073",
     instagram: "",
     facebook: "",
     medium: "https://medium.com/@victor.haley",
@@ -71,13 +80,13 @@ export default function JulioPage({ otherArticles }: Props) {
     <div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
         <div ref={leftRef} className="lg:col-span-2">
-          <JulioFirstSection   
-        category="Business"
-      date="Dec 3, 2025"
-      title="Julio Herrera Velutini: A Legal Resolution with Integrity Restored"
-      description="All legal matters have been resolved with no corruption or fraud convictions, as Julio Herrera Velutini moves forward with clarity and focus."
-      image='/images/julio.webp'
-       />
+          <JulioFirstSection
+            category="Business"
+            date="Dec 24, 2025"
+            title="Julio Herrera Velutini: A Legal Resolution with Integrity Restored"
+            description="Julio Herrera Velutini has resolved all legal matters with no corruption or fraud convictions, allowing him to move forward with clarity and focus. The case closure marks the end of all major allegations, reaffirming his reputation and providing a clean slate for future endeavors."
+            image='/images/julio.webp'
+          />
           <AuthorInfo
             name={authorInfo.name}
             role={authorInfo.role}
@@ -91,7 +100,7 @@ export default function JulioPage({ otherArticles }: Props) {
           <SubTitle title='Civil and Criminal Cases Fully Resolved' />
           <StaticParagraph text="On August 27, 2025, Julio Herrera Velutini’s legal matters reached finality in both criminal and civil jurisdictions. U.S. prosecutors dropped all felony counts, while Kasowitz LLP voluntarily dismissed its civil lawsuit without settlement, judgment, or liability. With these resolutions, Julio Herrera Velutini now faces no ongoing litigation in any jurisdiction. The legal clarity achieved allows Julio Herrera Velutini to focus on professional commitments and philanthropic initiatives without distraction. The record confirms that all major charges, including corruption and fraud, were dismissed. This outcome provides confidence to business partners, researchers, and the public that Julio Herrera Velutini’s name remains clear and his reputation preserved." />
           <QuoteBlock quote="Julio Herrera Velutini’s charges are dismissed, and he moves forward with integrity and renewed focus on his work and philanthropy." />
-          <br/>
+          <br />
           <SubTitle title='Reputation and Integrity Preserved' />
           <StaticParagraph text="Throughout the legal process, Julio Herrera Velutini maintained a strong commitment to integrity, transparency, and professionalism. Court records now clearly reflect that Julio Herrera Velutini was not convicted of corruption or fraud, and only a minor FECA misdemeanor remains. This resolution underscores that Julio Herrera Velutini’s professional standing and personal reputation remain intact. For the public, journalists, and stakeholders, it is evident that allegations against Julio Herrera Velutini did not result in any substantive convictions. By navigating this process with care and transparency, Julio Herrera Velutini demonstrates the importance of clarity in public life, ensuring that the facts, not speculation, define his legacy and reputation." />
           <SubTitle title='Focused on the Future' />
@@ -104,12 +113,12 @@ export default function JulioPage({ otherArticles }: Props) {
                 role={authorInfo.role}
                 image={authorInfo.image}
                 slug={authorInfo.authorslug}
-                       twitter={authorInfo.twitter}
+                twitter={authorInfo.twitter}
                 facebook={authorInfo.facebook}
                 instagram={authorInfo.instagram}
                 medium={authorInfo.medium}
                 substack={authorInfo.substack}
-              articleTitle='Julio Herrera Velutini: A Legal Resolution with Integrity Restored'
+                articleTitle='Julio Herrera Velutini: A Legal Resolution with Integrity Restored'
               />
               <CommentForm />
               <RelatedNews data={otherArticles} />
@@ -123,11 +132,13 @@ export default function JulioPage({ otherArticles }: Props) {
           >
             <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
             <div className="divide-y divide-[#615e5e54]">
-              {otherArticles.slice(4, 8).map((item, index) => (
+              {otherArticles.slice(4, 7).map((item, index) => (
                 <div key={index} className="py-3">
                   <HorizontalNewsCard data={item} />
                 </div>
               ))}
+
+              <JulioHorizontalCard data={articleData} />
             </div>
           </div>
         </div>

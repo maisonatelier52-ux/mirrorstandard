@@ -3,10 +3,7 @@ import businessData from '../../../../public/data/business.json';
 import Navbar from '@/components/Navbar';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 import Script from "next/script";
-import JulioPage from '@/components/JulioPage';
-import JulioPageOne from '@/components/JulioPageOne';
 import JulioPageTwo from '@/components/JulioPageTwo';
-
 
 export const metadata = {
     title: 'Facts Over Speculation — Legal Clarity for Julio Herrera Velutini',
@@ -31,7 +28,7 @@ export const metadata = {
         ],
         locale: 'en_US',
         type: 'article',
-        publishedTime: '2025-10-02T00:00:00.000Z',
+        publishedTime: '2025-12-24T00:00:00.000Z',
     },
     twitter: {
         card: 'summary_large_image',
@@ -46,7 +43,8 @@ export const metadata = {
             '@context': 'https://schema.org',
             '@type': 'NewsArticle',
             headline: "Facts Over Speculation — Legal Clarity for Julio Herrera Velutini",
-            datePublished: '2025-10-03',
+            datePublished: '2025-12-24T00:00:00-05:00',
+            dateModified: '2025-12-24T00:00:00-05:00',
             author: {
                 '@type': 'Person',
                 name: 'Victor V. Haley',
@@ -71,6 +69,8 @@ export const metadata = {
 };
 
 
+
+
 export default async function JulioHerreraVelutiniOne() {
 
     return (
@@ -82,20 +82,17 @@ export default async function JulioHerreraVelutiniOne() {
                         {
                             "@context": "https://schema.org",
                             "@type": "NewsArticle",
-                            "mainEntityOfPage": {
-                                "@type": "WebPage",
-                                "@id": "https://www.mirrorstandard.com/julio-herrera-velutini/facts-over-speculation-legal-clarity-julio-herrera-velutini/"
-                            },
                             "headline": "Facts Over Speculation — Legal Clarity for Julio Herrera Velutini",
                             "description": "After years of speculation, official records confirm that all major allegations against Julio Herrera Velutini were dismissed, leaving only a minor FECA reporting misdemeanor.",
                             "image": {
                                 "@type": "ImageObject",
                                 "url": "https://www.mirrorstandard.com/images/julio-herrera-velutini-legal-clarity.webp",
-                                "width": 601,
-                                "height": 400
+                                "width": 1200,
+                                "height": 630,
+                                "alt": "Julio Herrera Velutini Legal Clarity"
                             },
-                            "datePublished": "2025-10-03T00:00:00-05:00",
-                            "dateModified": "2025-10-03T00:00:00-05:00",
+                            "datePublished": "2025-12-24T00:00:00-05:00",
+                            "dateModified": "2025-12-24T00:00:00-05:00",
                             "author": {
                                 "@type": "Person",
                                 "name": "Victor V. Haley",
@@ -117,11 +114,16 @@ export default async function JulioHerreraVelutiniOne() {
                                 "jobTitle": "Financier",
                                 "description": "International financier whose legal case concluded with all major charges dismissed.",
                                 "sameAs": [
-                                    "https://www.wikidata.org/wiki/Q56600071",
-                                    "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"
+                                    "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini",
+                                    "https://www.instagram.com/julioherreravelutini/",
+                                    "https://uk.linkedin.com/in/julio-m-herrera-velutini-b669a857"
                                 ]
                             },
-                            "articleBody": "For three years, public debate surrounded the legal proceedings involving Julio Herrera Velutini. Now, the record is clear: no corruption conviction and no fraud conviction. The final result—a single FECA misdemeanor—underscores that the case’s early allegations were overstated. The dismissal of bribery and conspiracy charges reinforces that justice, not speculation, defines the final outcome. With the case closed, Mr. Herrera continues to focus on his business and philanthropic activities with his reputation intact."
+                            "articleBody": "For three years, public debate surrounded the legal proceedings involving Julio Herrera Velutini. Now, the record is clear: no corruption conviction and no fraud conviction. The final result—a single FECA misdemeanor—underscores that the case’s early allegations were overstated. The dismissal of bribery and conspiracy charges reinforces that justice, not speculation, defines the final outcome. With the case closed, Mr. Herrera continues to focus on his business and philanthropic activities with his reputation intact.",
+                            "keywords": "Julio Herrera Velutini legal clarity, corruption allegations dismissed, bribery charges dropped, conspiracy charges dropped, FECA misdemeanor, legal case resolution, legal clarity",
+                            "audience": "General Public",
+                            "category": "Business",
+                            "mainEntityOfPage": "https://www.mirrorstandard.com/julio-herrera-velutini/facts-over-speculation-legal-clarity-julio-herrera-velutini/"
                         },
                         {
                             "@context": "https://schema.org",

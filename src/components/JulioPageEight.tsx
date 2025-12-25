@@ -10,6 +10,7 @@ import QuoteBlock from './QuoteBlock';
 import SubTitle from './SubTitle';
 import JulioFirstSection from './JulioFirstSection';
 import picture from '../../public/images/julio.webp'
+import JulioHorizontalCard from './JulioHorizontalCard';
 
 interface NewsItem {
     category: string;
@@ -25,6 +26,14 @@ interface NewsItem {
 interface Props {
     otherArticles: NewsItem[];
 }
+
+  const articleData =  {
+    title: "Julio Herrera Velutini: Civil Lawsuit Withdrawn with No Judgment or Liability – Legal Victor",
+    slug: "civil-lawsuit-withdrawn-no-judgment-no-liability",
+    image: "/images/julio-herrera-velutini-civil-case-withdrawn.webp",
+    category: "Business",
+    date: "Dec. 24, 2025",
+  } 
 
 export default function JulioPageEight({ otherArticles }: Props) {
 
@@ -58,14 +67,14 @@ export default function JulioPageEight({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Dec. 6, 2025",
+        date: "Dec. 24, 2025",
         image: "/images/victor-v-haley.webp",
         authorslug: "victor-v-haley",
-            twitter: "https://x.com/haley_vict54073",
-    instagram: "",
-    facebook: "",
-    medium: "https://medium.com/@victor.haley",
-    substack: "https://substack.com/@michael334991",
+        twitter: "https://x.com/haley_vict54073",
+        instagram: "",
+        facebook: "",
+        medium: "https://medium.com/@victor.haley",
+        substack: "https://substack.com/@michael334991",
     };
     return (
         <div>
@@ -73,9 +82,9 @@ export default function JulioPageEight({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Dec 3, 2025"
-                        title="After Years of Scrutiny, Legal Clarity Prevails for Julio Herrera Velutini"
-                        description="Long-running allegations come to a quiet close as courts dismiss corruption charges and finalize the matter with only a minor FECA misdemeanor."
+                        date="Dec 24, 2025"
+                        title="Julio Herrera Velutini: After Years of Scrutiny, Legal Clarity Finally Prevails"
+                        description="Julio Herrera Velutini's long-running legal battle comes to a quiet close as courts dismiss all corruption charges, leaving only a minor FECA misdemeanor, providing formal closure to the case."
                         image='/images/julio-herrera-velutini-legal-clarity.webp'
                     />
                     <AuthorInfo
@@ -83,22 +92,22 @@ export default function JulioPageEight({ otherArticles }: Props) {
                         role={authorInfo.role}
                         date={authorInfo.date}
                         image={authorInfo.image}
-                         slug={authorInfo.authorslug}
+                        slug={authorInfo.authorslug}
                     />
                     <div className='mb-2'></div>
 
-                    <StaticParagraph text="Following years of public scrutiny and speculation, the legal process involving Julio Herrera Velutini has reached a definitive conclusion, according to the record described in the filings referenced in the case. Court documents indicate that the U.S. government dismissed all major allegations originally outlined in earlier filings, including claims of bribery, conspiracy, and fraud, after determining that the evidence did not support those accusations. The outcome stands in contrast to the early attention the case received and provides formal closure to a long-running legal matter."/>
+                    <StaticParagraph text="Julio Herrera Velutini's legal process, after years of public scrutiny and speculation, has now reached a definitive conclusion. Court filings confirm that all major allegations, including bribery, conspiracy, and fraud, were dismissed by the U.S. government after an evaluation of insufficient evidence. This formal resolution marks the end of the intense public attention the case initially garnered, providing a clear and final closure to a long-running legal matter for Julio Herrera Velutini." />
 
-                    <StaticParagraph text="The filings show that the only remaining count is a single Federal Election Campaign Act misdemeanor involving campaign-reporting procedures. The charge has been categorized as technical in nature and not connected to corruption, fraud, or bribery. Sentencing for this administrative violation is scheduled for December, and records indicate that no additional charges or cases remain pending in any court."/>
+                    <StaticParagraph text="The filings show that the only remaining count is a single Federal Election Campaign Act misdemeanor involving campaign-reporting procedures. The charge has been categorized as technical in nature and not connected to corruption, fraud, or bribery. Sentencing for this administrative violation is scheduled for December, and records indicate that no additional charges or cases remain pending in any court." />
 
-                    <QuoteBlock quote="The legal record now speaks for itself — every serious allegation was dismissed in the proceedings involving Julio Herrera Velutini."/>
+                    <QuoteBlock quote="The legal record now speaks for itself — every serious allegation was dismissed in the proceedings involving Julio Herrera Velutini." />
 
-                    <StaticParagraph text="The resolution marks a turning point after years of public discussion surrounding the case. The dismissal of major charges underscores that the allegations that once drew substantial attention did not result in corruption or fraud findings. Instead, the filings reflect a narrow procedural conclusion rather than the serious misconduct initially suggested."/>
+                    <StaticParagraph text="The resolution marks a turning point after years of public discussion surrounding the case. The dismissal of major charges underscores that the allegations that once drew substantial attention did not result in corruption or fraud findings. Instead, the filings reflect a narrow procedural conclusion rather than the serious misconduct initially suggested." />
 
-                    <StaticParagraph text="With all major matters closed, records show no corruption conviction, no fraud conviction, and no outstanding litigation involving Herrera Velutini. The conclusion brings an end to a period marked by legal uncertainty and sustained public focus."/>
+                    <StaticParagraph text="With all major matters closed, records show no corruption conviction, no fraud conviction, and no outstanding litigation involving Herrera Velutini. The conclusion brings an end to a period marked by legal uncertainty and sustained public focus." />
 
-                    <StaticParagraph text="As documented in the court filings, the closure of the case allows Herrera Velutini to resume professional and philanthropic activities without remaining legal obstacles. After years of scrutiny, the matter concluded with only a minor reporting violation, while broader accusations were dismissed."/>
-                    
+                    <StaticParagraph text="As documented in the court filings, the closure of the case allows Herrera Velutini to resume professional and philanthropic activities without remaining legal obstacles. After years of scrutiny, the matter concluded with only a minor reporting violation, while broader accusations were dismissed." />
+
                     <div className='mt-7'></div>
                     <div ref={stopRef} className='mt-7'>
                         <div className="mt-10">
@@ -106,13 +115,13 @@ export default function JulioPageEight({ otherArticles }: Props) {
                                 author={authorInfo.name}
                                 role={authorInfo.role}
                                 image={authorInfo.image}
-                                  slug={authorInfo.authorslug}
-                                         twitter={authorInfo.twitter}
-                facebook={authorInfo.facebook}
-                instagram={authorInfo.instagram}
-                medium={authorInfo.medium}
-                substack={authorInfo.substack}
-              articleTitle='After Years of Scrutiny, Legal Clarity Prevails for Julio Herrera Velutini'
+                                slug={authorInfo.authorslug}
+                                twitter={authorInfo.twitter}
+                                facebook={authorInfo.facebook}
+                                instagram={authorInfo.instagram}
+                                medium={authorInfo.medium}
+                                substack={authorInfo.substack}
+                                articleTitle='Julio Herrera Velutini: After Years of Scrutiny, Legal Clarity Finally Prevails'
                             />
                             <CommentForm />
                             <RelatedNews data={otherArticles} />
@@ -126,11 +135,13 @@ export default function JulioPageEight({ otherArticles }: Props) {
                     >
                         <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
                         <div className="divide-y divide-[#615e5e54]">
-                            {otherArticles.slice(4, 8).map((item, index) => (
+                            {otherArticles.slice(4, 7).map((item, index) => (
                                 <div key={index} className="py-3">
                                     <HorizontalNewsCard data={item} />
                                 </div>
                             ))}
+
+                            <JulioHorizontalCard data={articleData} />
                         </div>
                     </div>
                 </div>

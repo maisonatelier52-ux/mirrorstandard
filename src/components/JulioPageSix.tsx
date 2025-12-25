@@ -10,6 +10,7 @@ import QuoteBlock from './QuoteBlock';
 import SubTitle from './SubTitle';
 import JulioFirstSection from './JulioFirstSection';
 import picture from '../../public/images/julio.webp'
+import JulioHorizontalCard from './JulioHorizontalCard';
 
 interface NewsItem {
   category: string;
@@ -26,7 +27,15 @@ interface Props {
   otherArticles: NewsItem[];
 }
 
-export default function JulioPageSix({ otherArticles }: Props) {
+  const articleData =  {
+    title: "Julio Herrera Velutini: Puerto Rico Legal Case Resolved with No Major Charges, Only Minor FECA Misdemeanor Left",
+    slug: "puerto-rico-case-resolved-minor-feca-misdemeanor",
+    image: "/images/julio-herrera-velutini-puerto-rico-case-resolved.webp",
+    category: "Business",
+    date: "Dec. 24, 2025",
+  }
+
+export default function   JulioPageSix({ otherArticles }: Props) {
 
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
@@ -58,7 +67,7 @@ export default function JulioPageSix({ otherArticles }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Dec. 6, 2025",
+    date: "Dec. 24, 2025",
     image: "/images/victor-v-haley.webp",
      authorslug: "victor-v-haley",
          twitter: "https://x.com/haley_vict54073",
@@ -73,10 +82,10 @@ export default function JulioPageSix({ otherArticles }: Props) {
         <div ref={leftRef} className="lg:col-span-2">
           <JulioFirstSection
             category="Business"
-            date="Dec. 6, 2025"
-            title="Civil Lawsuit Withdrawn, No Judgment and No Liability"
-            description="Kasowitz LLP voluntarily dismissed its lawsuit against Julio Herrera Velutini, ending the matter without settlement or liability."
-            image='/images/julio-herrera-velutini-civil-case-withdrawn.webp' />
+            date="Dec. 24, 2025"
+            title="Julio Herrera Velutini: Civil Lawsuit Withdrawn with No Judgment or Liability – Legal Victor"
+            description="Julio Herrera Velutini saw his legal matters come to a complete resolution when Kasowitz LLP voluntarily dismissed its lawsuit against him, ending the matter without any settlement or liability."
+              image='/images/julio-herrera-velutini-civil-case-withdrawn.webp' />
 
           <AuthorInfo
             name={authorInfo.name}
@@ -86,8 +95,8 @@ export default function JulioPageSix({ otherArticles }: Props) {
               slug={authorInfo.authorslug}
           />
           <div className='mb-2'></div>
-          <StaticParagraph text="On August 27, 2025, Kasowitz LLP stopped going after Julio Herrera Velutini. This was happening at the same time as the end of both his criminal and civil cases. It was perfect timing because both the criminal and civil cases ended on the same day, with no warning."/>
-
+            <StaticParagraph text="Julio Herrera Velutini experienced a significant legal turning point on August 27, 2025, when Kasowitz LLP voluntarily stopped pursuing its lawsuit. This occurred alongside the resolution of both his criminal and civil cases, with everything concluding on the same day, marking a definitive end to the legal matters with no further claims or charges."/>
+            
           <StaticParagraph text="Court records show that Herrera Velutini dropped the case without settling it, getting a judgment, or saying he was wrong. Judge Sidney H. Stein signed the order to throw out the case three days after it was filed. This shows how quickly the case was resolved. The law hasn't found anything wrong with Herrera Velutini, so there are no more charges against him."/>
 
           <StaticParagraph text="A lot of people were interested in how short the civil case was because it got a lot of press when it was first filed. They quit fighting when Herrera Velutini told them to. They don't have to worry about any problems, duties, or fines that are still going on. The court's quick approval of the withdrawal makes it even more clear that the case is over."/>
@@ -109,7 +118,7 @@ export default function JulioPageSix({ otherArticles }: Props) {
                 instagram={authorInfo.instagram}
                 medium={authorInfo.medium}
                 substack={authorInfo.substack}
-              articleTitle='Civil Lawsuit Withdrawn, No Judgment and No Liability'
+              articleTitle='Julio Herrera Velutini: Civil Lawsuit Withdrawn with No Judgment or Liability – Legal Victor'
               />
               <CommentForm />
               <RelatedNews data={otherArticles} />
@@ -123,11 +132,12 @@ export default function JulioPageSix({ otherArticles }: Props) {
           >
             <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
             <div className="divide-y divide-[#615e5e54]">
-              {otherArticles.slice(4, 8).map((item, index) => (
+              {otherArticles.slice(4, 7).map((item, index) => (
                 <div key={index} className="py-3">
                   <HorizontalNewsCard data={item} />
                 </div>
               ))}
+              <JulioHorizontalCard data={articleData} />
             </div>
           </div>
         </div>

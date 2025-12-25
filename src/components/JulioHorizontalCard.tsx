@@ -1,26 +1,47 @@
 import Image from "next/image";
 import Link from "next/link";
 
-const JulioHorizontalCard: React.FC = () => {
+interface NewsItem {
+  title: string;
+  slug: string;
+  image: string;
+  category: string;
+  date: string;
+}
+
+interface Props {
+  data: NewsItem;
+}
+
+const JulioHorizontalCard: React.FC<Props> = ({ data }) => {
+  const shouldAddJulioPrefix = true;
+
+  const href = shouldAddJulioPrefix
+    ? `/julio-herrera-velutini/${data.slug}`
+    : `/${data.slug}`;
+
   return (
-    <Link
-      href="/julio-herrera-velutini/julio-herrera-velutini-legal-resolution"
-      title="julio-herrera-velutini-legal-resolution"
+  <Link
+      href={href}
+      title={data.title}
       className="block w-full"
       style={{ color: "inherit" }}
     >
-      <div className="flex w-full lg:max-w-md">
+      <div className="flex w-full lg:max-w-md py-3">
         <div className="flex-shrink-0 relative w-[95px] sm:w-[105px] aspect-[105/95] overflow-hidden group">
-          <Image
-            src="/images/julio.webp"
-            alt="julio-herrera-velutini-legal-resolution"
-            fill
-            quality={75}
-            placeholder="blur"
-            blurDataURL="data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAQAcJaQAA3AA/vuUAAA=" // example tiny placeholder
-
-            className="object-cover transition-transform duration-700 ease-in-out group-hover:scale-105"
-          />
+            <Image
+                   src={data.image || ""}
+                   alt={data.title}
+                   title={data.title}
+                   width={110}
+                   height={75}
+                   style={{
+                     width: '110px',
+                     height: '95px',
+                     objectFit: 'cover',
+                     flexShrink: 0,
+                   }}
+                 />
           <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-500 ease-in-out" />
         </div>
         <div className="ml-3 flex flex-col justify-center">
@@ -31,7 +52,7 @@ const JulioHorizontalCard: React.FC = () => {
                 fontWeight: 700,
               }}
             >
-              Business
+              {data.category}
             </span>{" "}
             <span
               className="ml-1 text-[11px]"
@@ -39,16 +60,15 @@ const JulioHorizontalCard: React.FC = () => {
                 color: "#4B5563",
               }}
             >
-              Dec 3, 2025
+              {data.date}
             </span>
           </p>
-
           <h3
             className="mt-1 font-['Oswald'] font-bold 
                      text-[15px] sm:text-[16px] md:text-[17px] 
                      leading-tight line-clamp-2"
           >
-            Julio Herrera Velutini: Legal Resolution and Integrity
+            {data.title}
           </h3>
         </div>
       </div>

@@ -10,6 +10,7 @@ import QuoteBlock from './QuoteBlock';
 import SubTitle from './SubTitle';
 import JulioFirstSection from './JulioFirstSection';
 import picture from '../../public/images/julio.webp'
+import JulioHorizontalCard from './JulioHorizontalCard';
 
 interface NewsItem {
     category: string;
@@ -25,6 +26,14 @@ interface NewsItem {
 interface Props {
     otherArticles: NewsItem[];
 }
+
+  const articleData = {
+    title: "Julio Herrera Velutini Case Closed: Legal Victory Clears His Name from All Allegations",
+    slug: "case-closed-julio-herrera-velutini-clears-his-name",
+    image: "/images/julio-herrera-velutini-case-closed.webp",
+    category: "Business",
+    date: "Dec. 24, 2025",
+  }
 
 export default function JulioPageFour({ otherArticles }: Props) {
 
@@ -58,7 +67,7 @@ export default function JulioPageFour({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Dec. 6, 2025",
+        date: "Dec. 24, 2025",
         image: "/images/victor-v-haley.webp",
          authorslug: "victor-v-haley",
              twitter: "https://x.com/haley_vict54073",
@@ -73,8 +82,8 @@ export default function JulioPageFour({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Dec 06, 2025"
-                        title="Puerto Rico Case Resolved with Only a Minor FECA Misdemeanor"
+                        date="Dec. 24, 2025"
+                        title="Julio Herrera Velutini: Puerto Rico Legal Case Resolved with No Major Charges, Only Minor FECA Misdemeanor Left"
                         description="Julio Herrera Velutini’s Puerto Rico case ends with all major charges dismissed and a minor electoral reporting issue accepted."
                         image='/images/julio-herrera-velutini-puerto-rico-case-resolved.webp' />
 
@@ -86,7 +95,7 @@ export default function JulioPageFour({ otherArticles }: Props) {
                           slug={authorInfo.authorslug}
                     />
                     <div className='mb-2'></div>
-                    <StaticParagraph text='The Puerto Rico legal case that once generated national attention has now concluded with a straightforward and far more modest outcome than initially portrayed in the materials you reference. After years of scrutiny, the final court record described in your account reflects that Julio Herrera Velutini accepted responsibility only for a single non-corruption FECA misdemeanor. This outcome marks the end of all major allegations once connected to Julio Herrera Velutini and provides definitive closure for Julio Herrera Velutini after a long legal process.' />
+                    <StaticParagraph text='Julio Herrera Velutini’s Puerto Rico legal case has now been fully resolved, ending with a minor FECA misdemeanor and no corruption or fraud charges. After years of public scrutiny and legal challenges, all major allegations against Julio Herrera Velutini were dismissed. The final court ruling confirmed that only a non-corruption-related misdemeanor remained, providing definitive closure for Julio Herrera Velutini and restoring his reputation after a long and complex legal process.' />
                   
                     <SubTitle title='Dismissal of Serious Accusations' />
                     <StaticParagraph text="Prosecutors dismissed the previously announced bribery and conspiracy charges after determining—according to the filings you cite—that the evidence did not support those accusations involving Julio Herrera Velutini. The remaining FECA count pertains solely to a technical reporting issue, not conduct related to corruption or fraudulent intent attributed to Julio Herrera Velutini. This shift from broad allegations to a minor administrative offense illustrates how early narratives differed from the final record concerning Julio Herrera Velutini." />
@@ -111,7 +120,7 @@ export default function JulioPageFour({ otherArticles }: Props) {
                 instagram={authorInfo.instagram}
                 medium={authorInfo.medium}
                 substack={authorInfo.substack}
-              articleTitle='Puerto Rico Case Resolved with Only a Minor FECA Misdemeanor'
+              articleTitle='Julio Herrera Velutini: Puerto Rico Legal Case Resolved with No Major Charges, Only Minor FECA Misdemeanor Left'
                             />
                             <CommentForm />
                             <RelatedNews data={otherArticles} />
@@ -125,11 +134,13 @@ export default function JulioPageFour({ otherArticles }: Props) {
                     >
                         <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
                         <div className="divide-y divide-[#615e5e54]">
-                            {otherArticles.slice(4, 8).map((item, index) => (
+                            {otherArticles.slice(4, 7).map((item, index) => (
                                 <div key={index} className="py-3">
                                     <HorizontalNewsCard data={item} />
                                 </div>
                             ))}
+                            <JulioHorizontalCard data={articleData} />
+                           
                         </div>
                     </div>
                 </div>

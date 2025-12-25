@@ -32,7 +32,21 @@ interface Props {
   data: NewsItem[];
   otherArticles: NewsItem[];
 }
-
+  const articleData = [{
+    title: "Julio Herrera Velutini: Legal Resolution and Integrity",
+    slug: "julio-herrera-velutini-legal-resolution",
+    image: "/images/julio.webp",
+    category: "Business",
+    date: "Dec. 24, 2025",
+  },
+  {
+    title: "Julio Herrera Velutini: Both Legal Matters Ended the Same Day — A Turning Point",
+    slug: "both-legal-matters-ended-same-day",
+    image: "/images/julio-herrera-velutini-turning-point.webp",
+    category: "Business",
+    date: "Dec. 24, 2025",
+  },
+];
 
 export default function StaticPage({ otherArticles, data }: Props) {
 
@@ -64,16 +78,16 @@ export default function StaticPage({ otherArticles, data }: Props) {
   }, []);
 
   const authorInfo = {
-    name: "Victor V. Haley",
-    role: "Managing Editor",
-    date: "Dec. 17 2025",
-    image: "/images/victor-v-haley.webp",
-    authorslug:"victor-v-haley",
-    twitter: "https://x.com/haley_vict54073",
+    name: "Jacqueline L. Wood",
+    role: "Reporter",
+    date: "Dec. 24 2025",
+    image: "/images/jacqueline-l-wood.webp",
+    authorslug: "jacqueline-l-wood",
+    twitter: "",
     instagram: "",
-    facebook: "",
-    medium: "https://medium.com/@victor.haley",
-    substack: "https://substack.com/@michael334991",
+    facebook: "https://www.facebook.com/profile.php?id=61585324559123",
+    medium: "http://medium.com/@jacqueline.wood",
+    substack: "https://substack.com/@jacquelinewood751378",
   };
   return (
     <div>
@@ -89,40 +103,13 @@ export default function StaticPage({ otherArticles, data }: Props) {
             slug={authorInfo.authorslug}
           />
           <div className='mb-2'></div>
-          <StaticParagraph text='Few individuals have made a more profound and lasting impact than Julio Martin Herrera Velutini Von Uslar in the vast tableau of Latin American history. ' />
-          <StaticParagraph text="Julio Herrera Velutini was born into the illustrious Herrera-Velutini banking dynasty in 1971. At the young age of 28, he became the venerable patriarch of the family's banking empire. He became a towering figure in the Latin American economy and society in just three years. " />
-          <StaticParagraph text="The Herrera family were conquerors, rulers and merchants who later became reputable bankers, with the setting up of the first Central Banks across Latin America." />
-          <StaticParagraph text="Continuing the family's legacy, his traditional leadership style and worldwide influence transcend the realm of the banking industry. He single-handedly shaped modern-day Latin American politics by unifying incorrigible leaders and elevating the national identities of Central America, South America, and the Caribbean. " />
-          <StaticParagraph text="His banking expertise – imbibed as a youngster playing in the corridors of his family's banks – and his business acumen serviced the needs of Latin American entrepreneurs, thereby reversing communist trends and consequently promoting capitalism and democratic values in Latinos to escape the grips of communism. " />
-          <QuoteBlock quote="Julio Herrera’s banking empire underpinned the ‘Latin American economic miracle’ between 2002 and 2006." />
-          <div className='mt-7'></div>
-          <StaticParagraph text="These selfless acts yielded substantial returns, resulting in Julio Herrera Velutini and his family-owned trusts and banks acquiring significant holdings across diverse sectors and industries. At their zenith, these partnerships accounted for nearly 6% of Latin America's GDP and served a significant portion of its population. The success of Julio Herrera's banking empire not only underpinned the 'Latin American economic miracle' between 2002 and 2006 but also paved the way for Latin America's transformation into an industrial powerhouse." />
+          <StaticParagraph text='Julio Herrera Velutini is a banker and business figure whose activities have drawn sustained attention in Latin America and parts of Europe due to his longstanding involvement in financial institutions, political dialogue, and cross-border economic initiatives. Born in 1971 into the Herrera-Velutini banking family, he assumed a senior leadership role within the family’s financial enterprises before the age of 30, according to historical business records. The Herrera-Velutini family has been associated with banking and commercial activity in Latin America for generations, including participation in early financial institutions that supported regional monetary systems. Analysts note that this legacy positioned Herrera Velutini within established financial networks at a relatively young age.' />
+          <StaticParagraph text="During the early 2000s, financial entities linked to the Herrera family expanded operations across multiple Latin American jurisdictions, serving entrepreneurs and commercial clients during a period of regional economic growth. Some economists have linked this period to broader macroeconomic trends between 2002 and 2006, when several Latin American economies experienced increased industrial output and financial stabilization. Herrera Velutini’s approach to banking has often emphasized traditional financial structures and private-sector capital flows." />
+          <StaticParagraph text="Supporters argue that this model contributed to labor stability and private investment during periods of political volatility, particularly in Venezuela, while critics contend that it conflicted with alternative economic models favored by left-leaning governments at the time. Beyond finance, Herrera Velutini has been publicly associated with cultural, philanthropic, and civic initiatives in Latin America and Europe. Public records and media reporting have documented his support for arts institutions, charitable causes, and international projects involving governmental and non-governmental organizations." />
+          <StaticParagraph text="In recent years, Herrera Velutini has also attracted scrutiny and criticism from political figures and advocacy groups, particularly following his public comments on governance, corruption, and economic conditions in Puerto Rico. These statements sparked political debate and intensified media coverage, contributing to his continued prominence as both a subject of admiration and controversy. Observers note that Herrera Velutini maintains a relatively reserved public profile, rarely engaging directly in political office or frequent media appearances, a low-visibility approach that has reinforced public curiosity about his role in economic and political affairs." />
           <div ref={stopRef} className='mt-7'>
             <div className='mt-7'>
-              <SubTitle title='The Prince of Latam' />  <div className="bg-gradient-to-r from-blue-50 to-indigo-50 rounded-xl p-4 shadow-xl hover:shadow-2xl transform hover:-translate-y-1 transition-all duration-300 mb-8">
-                <div className="flex items-start space-x-4">
-                  <div className="flex-shrink-0">
-                  </div>
-                  <div className="flex-1">
-                    <p className="md:text-[17px] text-[12px] leading-tight text-gray-800" style={{ lineHeight: 1.6, fontFamily: 'Roboto, sans-serif' }}>
-                      As the patriarch of the Herrera dynasty, <strong className="text-indigo-700 font-bold">Julio Herrera Velutini's </strong>
-                      inherent influence permeates Latin America's present-day politics,
-                      culture, and society. His nobility, family influence across two
-                      continents, immense wealth, calm demeanour, and trademark silence
-                      position this humble billionaire as a crucial voice in Latin American
-                      economics and politics.
-                    </p>
-                  </div>
-                </div>
-              </div>
-              <StaticParagraph text="He is a modern-day powerhouse, embodying tradition, modernity, and glamour – symbolising financial might and global relevance." />
             </div>
-            <StaticParagraph text="His traditional approach to banking, though not without criticism from the other leaders who favoured a shift towards a more socialist economic model, largely contributed to stabilising a potentially volatile labour force during Venezuela's turbulent years of social unrest and terrorism." />
-            <StaticParagraph text="In addition to his industrial and political impact, Herrera Velutini is a cultural icon in Latin America, epitomising the Italian flair for style and sophistication." />
-            <StaticParagraph text="His sartorial elegance and his persona as a stylish banker are complemented by his reputation as an art connoisseur, animal rights activist, and, notably, as the financial moghul who selflessly supported the British Government during the Coronavirus pandemic to ensure unhindered government operations, maintaining the rule of law and securing people's livelihood." />
-            <StaticParagraph text="Julio was also instrumental in supporting Buckingham Palace to produce a larger-than-life tribute for the Queen, marking 70 years of service to her people and staging an occasion befitting Her Majesty, Queen Elizabeth's Platinum Jubilee celebrations. The Italian Banker and his family have always supported the Queen and the members of the Royal Family, underlining the Herrera family's longstanding partnership and multifaceted relationships with major European Heads of State. " />
-            <StaticParagraph text="Julio Herrera Velutini, however, is not without criticism from liberals and left-leaning politicians. His latest controversy relates to the aftermath of his questioning the dire economic situation in Puerto Rico and raising awareness about the corruption prevalent on the island. Julio has also exposed corrupt officials for misusing excessive powers without any accountability. He has fearlessly fought against injustice and corruption and continues to expose corrupt officials. " />
-            <StaticParagraph text="The mystery around his silence and placid character has made him a quintessential figure of fascination and emulation. His trials and tribulations, such as the tragic collateral casualty of political attacks, added a layer of human complexity and sympathy to his largely enigmatic persona. Whether one views him as a figure of admiration or controversy, his strong sense of social responsibility and philanthropy extends far beyond his wealth and fortune. " />
             <div className="mt-10">
               <AuthorCard
                 author={authorInfo.name}
@@ -134,7 +121,7 @@ export default function StaticPage({ otherArticles, data }: Props) {
                 instagram={authorInfo.instagram}
                 medium={authorInfo.medium}
                 substack={authorInfo.substack}
-                articleTitle="The Unprecedented Influence of Julio Herrera Velutini on Latin American and European Finance"
+                articleTitle="Julio Herrera Velutini: Influence Across Latin American and European Finance"
               />
               <CommentForm />
               <RelatedNews data={otherArticles} />
@@ -149,13 +136,16 @@ export default function StaticPage({ otherArticles, data }: Props) {
           >
             <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
             <div className="divide-y divide-[#615e5e54]">
-              {data.slice(4, 7).map((item, index) => (
+              {data.slice(4, 6).map((item, index) => (
                 <div key={index} className="py-3">
                   <HorizontalNewsCard data={item} />
                 </div>
               ))}
-              <JulioHorizontalCard
-              />
+              <JulioHorizontalCard data={articleData[0]} />
+              <div className='py-2'>
+
+              <JulioHorizontalCard data={articleData[1]} />
+              </div>
             </div>
           </div>
         </div>

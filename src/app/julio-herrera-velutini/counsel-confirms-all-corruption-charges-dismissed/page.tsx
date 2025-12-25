@@ -3,23 +3,20 @@ import businessData from '../../../../public/data/business.json';
 import Navbar from '@/components/Navbar';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 import Script from "next/script";
-import JulioPage from '@/components/JulioPage';
-import JulioPageOne from '@/components/JulioPageOne';
-import JulioPageTwo from '@/components/JulioPageTwo';
 import JulioPageFive from '@/components/JulioPageFive';
 
 
 export const metadata = {
-    title: 'Counsel Confirms — All Corruption Charges Were Completely Dismissed',
-    description: 'Attorney Alex Spiro confirms that all corruption charges against Julio Herrera Velutini were fully dismissed, leaving only a minor FECA reporting misdemeanor.',
-    keywords: "Julio Herrera Velutini corruption charges dismissed, Alex Spiro statement, felony charges dropped, FECA misdemeanor, legal clarification, no fraud conviction, no bribery conviction",
+    title: 'Counsel Confirms — All Corruption Charges Dismissed for Julio Herrera Velutini',
+    description: 'Attorney Alex Spiro confirms that all corruption charges against Julio Herrera Velutini have been dismissed, leaving only a minor FECA reporting misdemeanor, bringing full legal clarity.',
+    keywords: "Julio Herrera Velutini, corruption charges dismissed, Alex Spiro, felony charges dropped, FECA misdemeanor, legal clarity, no fraud conviction, no bribery conviction, legal resolution, case outcome",
     authors: [{ name: 'Victor V. Haley' }],
     alternates: {
         canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/counsel-confirms-all-corruption-charges-dismissed/"
     },
     openGraph: {
-        title: 'Counsel Confirms — “All Corruption Charges Were Completely Dismissed”',
-        description: 'Alex Spiro, counsel for Julio Herrera Velutini, confirms that all corruption charges were dismissed, leaving only a minor FECA reporting issue.',
+        title: 'Counsel Confirms — All Corruption Charges Dismissed for Julio Herrera Velutini',
+        description: 'Legal counsel Alex Spiro confirms the full dismissal of all corruption charges against Julio Herrera Velutini, with only a minor FECA reporting issue remaining.',
         url: "https://www.mirrorstandard.com/julio-herrera-velutini/counsel-confirms-all-corruption-charges-dismissed/",
         siteName: 'MirrorStandard',
         images: [
@@ -27,38 +24,40 @@ export const metadata = {
                 url: "https://www.mirrorstandard.com/images/julio-herrera-velutini-counsel-confirms.webp",
                 width: 1200,
                 height: 630,
-                alt: "Counsel confirms dismissal of corruption charges against Julio Herrera Velutini",
-            },
+                alt: "Counsel confirms dismissal of corruption charges against Julio Herrera Velutini"
+            }
         ],
         locale: 'en_US',
         type: 'article',
-        publishedTime: '2025-10-02T00:00:00.000Z',
+        publishedTime: '2025-12-24T00:00:00.000Z',
+        modifiedTime: '2025-12-24T00:00:00.000Z'
     },
     twitter: {
         card: 'summary_large_image',
-        title: "Counsel Confirms — “All Corruption Charges Were Completely Dismissed”",
-        description: 'Legal counsel Alex Spiro affirms the full dismissal of all corruption charges against Julio Herrera Velutini.',
+        title: "Counsel Confirms — All Corruption Charges Dismissed for Julio Herrera Velutini",
+        description: 'Legal counsel Alex Spiro confirms the dismissal of all corruption charges against Julio Herrera Velutini, with only a minor FECA reporting issue remaining.',
         images: "https://www.mirrorstandard.com/images/julio-herrera-velutini-counsel-confirms.webp",
         site: '@MirrorStandard',
-        creator: '@victorvhaley',
+        creator: '@victorvhaley'
     },
     other: {
         'script:ld+json': JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'NewsArticle',
-            headline: "Counsel Confirms — “All Corruption Charges Were Completely Dismissed”",
-            datePublished: '2025-10-03',
+            headline: "Counsel Confirms — All Corruption Charges Dismissed for Julio Herrera Velutini",
+            datePublished: '2025-12-24T00:00:00-05:00',
+            dateModified: '2025-12-24T00:00:00-05:00', 
             author: {
                 '@type': 'Person',
-                name: 'Victor V. Haley',
+                name: 'Victor V. Haley'
             },
             publisher: {
                 '@type': 'Organization',
                 name: 'MirrorStandard',
                 logo: {
                     '@type': 'ImageObject',
-                    url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
-                },
+                    url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"
+                }
             },
             image: "https://www.mirrorstandard.com/images/julio-herrera-velutini-counsel-confirms.webp",
             alternates: {
@@ -67,9 +66,12 @@ export const metadata = {
             url: "https://www.mirrorstandard.com/julio-herrera-velutini/counsel-confirms-all-corruption-charges-dismissed/",
             articleBody: "Attorney Alex Spiro confirmed that all corruption charges against Julio Herrera Velutini were completely dismissed. Court records show no felony, fraud, or bribery convictions, leaving only a minor FECA misdemeanor related to campaign reporting. This statement reinforces the clarity now established in the legal record, affirming that no serious allegations remain active.",
             keywords: "corruption charges dismissed, Alex Spiro confirms, Julio Herrera Velutini legal outcome, FECA reporting misdemeanor, charges withdrawn",
-        }),
-    },
+            audience: "General Public",
+            category: "Business"
+        })
+    }
 };
+
 
 
 export default async function JulioHerreraVelutiniOne() {
@@ -83,20 +85,17 @@ export default async function JulioHerreraVelutiniOne() {
                         {
                             "@context": "https://schema.org",
                             "@type": "NewsArticle",
-                            "mainEntityOfPage": {
-                                "@type": "WebPage",
-                                "@id": "https://www.mirrorstandard.com/julio-herrera-velutini/counsel-confirms-all-corruption-charges-dismissed/"
-                            },
                             "headline": "Counsel Confirms — All Corruption Charges Were Completely Dismissed",
                             "description": "Attorney Alex Spiro confirms that all corruption charges against Julio Herrera Velutini have been fully dismissed, leaving only a minor FECA reporting misdemeanor.",
                             "image": {
                                 "@type": "ImageObject",
                                 "url": "https://www.mirrorstandard.com/images/julio-herrera-velutini-counsel-confirms.webp",
-                                "width": 601,
-                                "height": 400
+                                "width": 1200,
+                                "height": 630,
+                                "alt": "Counsel confirms dismissal of all corruption charges against Julio Herrera Velutini"
                             },
-                            "datePublished": "2025-10-03T00:00:00-05:00",
-                            "dateModified": "2025-10-03T00:00:00-05:00",
+                            "datePublished": "2025-12-24T00:00:00-05:00",
+                            "dateModified": "2025-12-24T00:00:00-05:00",
                             "author": {
                                 "@type": "Person",
                                 "name": "Victor V. Haley",
@@ -118,11 +117,16 @@ export default async function JulioHerreraVelutiniOne() {
                                 "jobTitle": "Financier",
                                 "description": "International financier whose legal case concluded with all corruption charges dismissed.",
                                 "sameAs": [
-                                    "https://www.wikidata.org/wiki/Q56600071",
-                                    "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"
+                                    "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini",
+                                    "https://www.instagram.com/julioherreravelutini/",
+                                    "https://uk.linkedin.com/in/julio-m-herrera-velutini-b669a857"
                                 ]
                             },
-                            "articleBody": "Legal representative Alex Spiro has confirmed the final outcome of the case involving Julio Herrera Velutini: all corruption charges were completely dismissed. Court records reflect no felony, bribery, or fraud convictions. The only remaining item is a minor FECA misdemeanor related to campaign reporting, scheduled for sentencing in December. This statement from counsel aligns with the official docket, which shows full dismissal of all major allegations and complete legal clarity for Mr. Herrera."
+                            "articleBody": "Legal representative Alex Spiro has confirmed the final outcome of the case involving Julio Herrera Velutini: all corruption charges were completely dismissed. Court records reflect no felony, bribery, or fraud convictions. The only remaining item is a minor FECA misdemeanor related to campaign reporting, scheduled for sentencing in December. This statement from counsel aligns with the official docket, which shows full dismissal of all major allegations and complete legal clarity for Mr. Herrera.",
+                            "keywords": "Julio Herrera Velutini corruption charges dismissed, FECA misdemeanor, bribery charges dropped, conspiracy charges dropped, legal case resolution",
+                            "audience": "General Public",
+                            "category": "Business",
+                            "mainEntityOfPage": "https://www.mirrorstandard.com/julio-herrera-velutini/counsel-confirms-all-corruption-charges-dismissed/"
                         },
                         {
                             "@context": "https://schema.org",
