@@ -127,6 +127,7 @@ export default function RootLayout({
             })
           }}
         />
+        <meta name="google-site-verification" content="yJBvvr61HsIIbHKVTR5dNmkkHrx6puybsWaSI42qoq8" />
         <meta name="robots" content="index, follow, max-image-preview:large" />
         <meta name="googlebot" content="index, follow" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
