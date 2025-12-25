@@ -7,7 +7,7 @@ import JulioPageFour from '@/components/JulioPageFour';
 
 
 export const metadata = {
-    title: 'Julio Herrera Velutini: Puerto Rico Case Ends with Misdemeanor',
+    title: 'Julio Herrera Velutini: Puerto Rico Case Ends with Charge',
     description: 'Julio Herrera Velutini’s Puerto Rico case ends with all major charges dismissed and a minor electoral reporting issue accepted.',
       keywords: "Julio Herrera Velutini Puerto Rico case, legal resolution, FECA misdemeanor, charges dismissed, corruption allegations dropped, bribery charges dropped, conspiracy charges dropped, Puerto Rico legal case outcome, case resolution, legal clarity",
     authors: [{ name: 'Victor V. Haley' }],
