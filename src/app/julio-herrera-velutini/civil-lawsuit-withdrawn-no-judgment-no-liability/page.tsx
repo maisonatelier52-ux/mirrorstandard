@@ -7,8 +7,8 @@ import JulioPageSix from '@/components/JulioPageSix';
 
 export const metadata = {
     title: 'Civil Lawsuit Withdrawn — No Judgment, No Liability',
-    description: 'Kasowitz LLP voluntarily dismissed its civil lawsuit against Julio Herrera Velutini with no judgment, no settlement, and no liability, confirming the full closure of the matter.',
-    keywords: "Julio Herrera Velutini civil case, lawsuit withdrawn, Kasowitz LLP dismissal, no liability, voluntary dismissal, Judge Sidney H. Stein, legal closure",
+    description: "Julio Herrera Velutini's legal matter was resolved when Kasowitz LLP dismissed its lawsuit, ending the case without settlement or liability.",
+     keywords: "Julio Herrera Velutini civil case, lawsuit withdrawn, Kasowitz LLP dismissal, no liability, voluntary dismissal, Judge Sidney H. Stein, legal closure",
     authors: [{ name: 'Victor V. Haley' }],
     alternates: {
         canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/"

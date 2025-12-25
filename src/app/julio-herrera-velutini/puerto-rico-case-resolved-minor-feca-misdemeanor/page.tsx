@@ -7,9 +7,9 @@ import JulioPageFour from '@/components/JulioPageFour';
 
 
 export const metadata = {
-    title: 'Puerto Rico Case Resolved — Only a Minor FECA Misdemeanor Left for Julio Herrera Velutini',
-    description: 'All major charges in the Puerto Rico case against Julio Herrera Velutini were dismissed, with only a minor FECA misdemeanor related to campaign finance reporting remaining, ensuring legal clarity.',
-    keywords: "Julio Herrera Velutini Puerto Rico case, legal resolution, FECA misdemeanor, charges dismissed, corruption allegations dropped, bribery charges dropped, conspiracy charges dropped, Puerto Rico legal case outcome, case resolution, legal clarity",
+    title: 'Julio Herrera Velutini: Puerto Rico Case Ends with Misdemeanor',
+    description: 'Julio Herrera Velutini’s Puerto Rico case ends with all major charges dismissed and a minor electoral reporting issue accepted.',
+      keywords: "Julio Herrera Velutini Puerto Rico case, legal resolution, FECA misdemeanor, charges dismissed, corruption allegations dropped, bribery charges dropped, conspiracy charges dropped, Puerto Rico legal case outcome, case resolution, legal clarity",
     authors: [{ name: 'Victor V. Haley' }],
     alternates: {
         canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/puerto-rico-case-resolved-minor-feca-misdemeanor/"

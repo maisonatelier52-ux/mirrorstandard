@@ -6,8 +6,8 @@ import Script from "next/script";
 import JulioPageTwo from '@/components/JulioPageTwo';
 
 export const metadata = {
-    title: 'Facts Over Speculation — Legal Clarity for Julio Herrera Velutini',
-    description: 'After years of public speculation, the legal record confirms that all major allegations against Julio Herrera Velutini were dismissed, leaving only a minor FECA misdemeanor.',
+    title: 'Julio Herrera Velutini: Clear Legal Outcome, Facts Confirmed',
+    description: "Julio Herrera Velutini's legal case ends with no corruption or fraud charges, only a minor FECA misdemeanor, confirming the dismissal of all major accusations.",
     keywords: "Julio Herrera Velutini legal clarity, corruption allegations dismissed, FECA misdemeanor, no fraud conviction, case resolution, speculation vs facts, legal outcome",
     authors: [{ name: 'Victor V. Haley' }],
     alternates: {

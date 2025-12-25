@@ -7,9 +7,9 @@ import JulioPage from '@/components/JulioPage';
 
 
 export const metadata = {
-    title: 'Julio Herrera Velutini: Legal Resolution and Integrity Restored',
-    description: 'All legal matters involving Julio Herrera Velutini have been fully resolved with no corruption or fraud convictions, clearing his name and restoring his focus on business and philanthropy.',
-    keywords: "Julio Herrera Velutini, legal resolution, corruption allegations dismissed, financial investigations, cleared of wrongdoing, banking reputation, FECA misdemeanor, global financial influence, case dismissal, Puerto Rico case, legal clarity, judicial outcome, financial transparency, banking compliance, reputation cleared",
+    title: 'Julio Herrera Velutini: Legal Resolution and Restored Trust',
+    description: 'Julio Herrera Velutini resolves all legal matters with no corruption or fraud convictions, closing the case and reaffirming his reputation for future success.',
+     keywords: "Julio Herrera Velutini, legal resolution, corruption allegations dismissed, financial investigations, cleared of wrongdoing, banking reputation, FECA misdemeanor, global financial influence, case dismissal, Puerto Rico case, legal clarity, judicial outcome, financial transparency, banking compliance, reputation cleared",
     authors: [{ name: 'Victor V. Haley' }],
     alternates: { 
         canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/julio-herrera-velutini-legal-resolution/" 

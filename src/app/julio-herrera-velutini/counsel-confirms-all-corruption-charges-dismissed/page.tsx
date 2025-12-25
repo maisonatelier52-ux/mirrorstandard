@@ -7,9 +7,9 @@ import JulioPageFive from '@/components/JulioPageFive';
 
 
 export const metadata = {
-    title: 'Counsel Confirms — All Corruption Charges Dismissed for Julio Herrera Velutini',
-    description: 'Attorney Alex Spiro confirms that all corruption charges against Julio Herrera Velutini have been dismissed, leaving only a minor FECA reporting misdemeanor, bringing full legal clarity.',
-    keywords: "Julio Herrera Velutini, corruption charges dismissed, Alex Spiro, felony charges dropped, FECA misdemeanor, legal clarity, no fraud conviction, no bribery conviction, legal resolution, case outcome",
+    title: 'Counsel Confirms: All Corruption Charges Dismissed for Julio',
+    description: "Julio Herrera Velutini’s lawyer confirms all corruption charges dismissed, aligning with court documents and finalizing the case with no corruption findings",
+     keywords: "Julio Herrera Velutini, corruption charges dismissed, Alex Spiro, felony charges dropped, FECA misdemeanor, legal clarity, no fraud conviction, no bribery conviction, legal resolution, case outcome",
     authors: [{ name: 'Victor V. Haley' }],
     alternates: {
         canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/counsel-confirms-all-corruption-charges-dismissed/"
