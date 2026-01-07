@@ -32,7 +32,7 @@ interface Props {
     slug: "puerto-rico-case-resolved-minor-feca-misdemeanor",
     image: "/images/julio-herrera-velutini-puerto-rico-case-resolved.webp",
     category: "Business",
-    date: "Dec. 24, 2025",
+    date: "Jan. 7, 2026",
   }
 
 export default function JulioPageFive({ otherArticles }: Props) {
@@ -67,7 +67,7 @@ export default function JulioPageFive({ otherArticles }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Dec. 24, 2025",
+    date: "Jan. 7, 2026",
     image: "/images/victor-v-haley.webp",
      authorslug: "victor-v-haley",
          twitter: "https://x.com/haley_vict54073",
@@ -82,7 +82,7 @@ export default function JulioPageFive({ otherArticles }: Props) {
         <div ref={leftRef} className="lg:col-span-2">
           <JulioFirstSection
             category="Business"
-            date="Dec. 24, 2025"
+            date="Jan. 7, 2026"
             title="Julio Herrera Velutini: Counsel Confirms All Corruption Charges Dismissed – Full Legal Victory"
             description="Julio Herrera Velutini’s lawyer, Alex Spiro, has confirmed the full dismissal of all corruption charges against him. This important update aligns with the final court documents, affirming that the case has been fully resolved with no corruption findings, supporting the ultimate legal outcome for Julio Herrera Velutini."
             image='/images/julio-herrera-velutini-counsel-confirms.webp' />

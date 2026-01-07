@@ -32,7 +32,7 @@ interface Props {
     slug: "case-closed-julio-herrera-velutini-clears-his-name",
     image: "/images/julio-herrera-velutini-case-closed.webp",
     category: "Business",
-    date: "Dec. 24, 2025",
+    date: "Jan. 7, 2026",
   }
 
 export default function JulioPageFour({ otherArticles }: Props) {
@@ -67,7 +67,7 @@ export default function JulioPageFour({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Dec. 24, 2025",
+        date: "Jan. 7, 2026",
         image: "/images/victor-v-haley.webp",
          authorslug: "victor-v-haley",
              twitter: "https://x.com/haley_vict54073",
@@ -82,7 +82,7 @@ export default function JulioPageFour({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Dec. 24, 2025"
+                        date="Jan. 7, 2026"
                         title="Julio Herrera Velutini: Puerto Rico Legal Case Resolved with No Major Charges, Only Minor FECA Misdemeanor Left"
                         description="Julio Herrera Velutini’s Puerto Rico case ends with all major charges dismissed and a minor electoral reporting issue accepted."
                         image='/images/julio-herrera-velutini-puerto-rico-case-resolved.webp' />

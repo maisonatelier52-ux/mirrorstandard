@@ -44,8 +44,8 @@ export const metadata = {
             '@context': 'https://schema.org',
             '@type': 'NewsArticle',
             headline: "Julio Herrera Velutini: Legal Resolution and Integrity Restored",
-            datePublished: '2025-12-24T00:00:00-05:00', 
-            dateModified: '2025-12-24T00:00:00-05:00', 
+ datePublished: "2026-01-07T00:00:00-05:00",
+                                    dateModified: "2026-01-07T00:00:00-05:00",
             author: {
                 '@type': 'Person',
                 name: 'Victor V. Haley',
@@ -90,8 +90,8 @@ export default async function JulioHerreraVelutini() {
                                 "height": 630,
                                 "alt": "Julio Herrera Velutini Legal Resolution"
                             },
-                            "datePublished": "2025-12-24T00:00:00-05:00",
-                            "dateModified": "2025-12-24T00:00:00-05:00",
+                      datePublished: "2026-01-07T00:00:00-05:00",
+                                    dateModified: "2026-01-07T00:00:00-05:00",
                             "author": {
                                 "@type": "Person",
                                 "name": "Victor V. Haley",

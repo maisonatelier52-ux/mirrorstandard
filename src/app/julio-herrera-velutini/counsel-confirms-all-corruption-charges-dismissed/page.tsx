@@ -45,8 +45,8 @@ export const metadata = {
             '@context': 'https://schema.org',
             '@type': 'NewsArticle',
             headline: "Counsel Confirms — All Corruption Charges Dismissed for Julio Herrera Velutini",
-            datePublished: '2025-12-24T00:00:00-05:00',
-            dateModified: '2025-12-24T00:00:00-05:00', 
+datePublished: "2026-01-07T00:00:00-05:00",
+                                    dateModified: "2026-01-07T00:00:00-05:00",
             author: {
                 '@type': 'Person',
                 name: 'Victor V. Haley'
@@ -94,8 +94,8 @@ export default async function JulioHerreraVelutiniOne() {
                                 "height": 630,
                                 "alt": "Counsel confirms dismissal of all corruption charges against Julio Herrera Velutini"
                             },
-                            "datePublished": "2025-12-24T00:00:00-05:00",
-                            "dateModified": "2025-12-24T00:00:00-05:00",
+                     "datePublished": "2026-01-07T00:00:00-05:00",
+                                    "dateModified": "2026-01-07T00:00:00-05:00",
                             "author": {
                                 "@type": "Person",
                                 "name": "Victor V. Haley",

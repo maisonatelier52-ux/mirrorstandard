@@ -32,9 +32,9 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mirrorstandard.com"),
-  title: "Mirror Standard - Breaking News, Politics, Business & Global Insights",
-  description: "Mirror Standard delivers breaking news, in-depth political analysis, business trends, technology updates, and global reporting you can trust. Stay informed daily.",
-  keywords: "breaking news, latest news, political news, business news, world news, global news, technology news, investigative journalism, current events, trusted news source, Mirror Standard",
+  title: "Mirror Standard - News, Politics, Business & Insights",
+  description: "Mirror Standard delivers breaking news, political analysis, business trends, tech updates, and trusted global reporting. Stay informed daily.",
+   keywords: "breaking news, latest news, political news, business news, world news, global news, technology news, investigative journalism, current events, trusted news source, Mirror Standard",
   openGraph: {
     title: "Mirror Standard - Breaking News, Politics & Global Analysis",
     description: "Get breaking news, political reporting, business insights, and global analysis from Mirror Standard—trusted, independent journalism that matters.",

@@ -32,7 +32,7 @@ interface Props {
     slug: "civil-lawsuit-withdrawn-no-judgment-no-liability",
     image: "/images/julio-herrera-velutini-civil-case-withdrawn.webp",
     category: "Business",
-    date: "Dec. 24, 2025",
+    date: "Jan. 7, 2026",
   }
 
 export default function JulioPage({ otherArticles }: Props) {
@@ -67,7 +67,7 @@ export default function JulioPage({ otherArticles }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Dec 24, 2025",
+    date: "Jan. 7, 2026",
     image: "/images/victor-v-haley.webp",
     authorslug: "victor-v-haley",
     twitter: "https://x.com/haley_vict54073",
@@ -82,7 +82,7 @@ export default function JulioPage({ otherArticles }: Props) {
         <div ref={leftRef} className="lg:col-span-2">
           <JulioFirstSection
             category="Business"
-            date="Dec 24, 2025"
+            date="Jan. 7, 2026"
             title="Julio Herrera Velutini: A Legal Resolution with Integrity Restored"
             description="Julio Herrera Velutini has resolved all legal matters with no corruption or fraud convictions, allowing him to move forward with clarity and focus. The case closure marks the end of all major allegations, reaffirming his reputation and providing a clean slate for future endeavors."
             image='/images/julio.webp'

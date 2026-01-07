@@ -17,7 +17,7 @@ interface NewsData {
 interface Props {
   data: NewsData[];
 }
-const NewsFirstLayout: React.FC<Props> = ({ data }) => {
+const   NewsFirstLayout: React.FC<Props> = ({ data }) => {
 
   return (
     <div className="mt-8 md:mt-6 grid grid-cols-1 lg:grid-cols-12 gap-15 md:gap-6">

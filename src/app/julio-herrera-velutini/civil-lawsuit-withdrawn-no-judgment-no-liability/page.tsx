@@ -28,7 +28,8 @@ export const metadata = {
         ],
         locale: 'en_US',
         type: 'article',
-        publishedTime: '2025-12-24T00:00:00.000Z',
+        datePublished: "2026-01-07T00:00:00-05:00",
+        dateModified: "2026-01-07T00:00:00-05:00",
     },
     twitter: {
         card: 'summary_large_image',
@@ -88,8 +89,8 @@ export default async function JulioHerreraVelutiniOne() {
                                 "width": 601,
                                 "height": 400
                             },
-                            "datePublished": "2025-12-24T00:00:00-05:00",
-                            "dateModified": "2025-12-24T00:00:00-05:00",
+                           "datePublished": "2026-01-07T00:00:00-05:00",
+                                    "dateModified": "2026-01-07T00:00:00-05:00",
                             "author": {
                                 "@type": "Person",
                                 "name": "Victor V. Haley",

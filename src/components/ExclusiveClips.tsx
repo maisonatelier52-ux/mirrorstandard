@@ -24,7 +24,7 @@ const ExclusiveClips: React.FC<Props> = ({ data }) => {
         <div className="mt-15">
             <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 mt-4 border-b border-[#615e5e54] pb-3">
                 <div className="lg:col-span-4 space-y-4">
-                    <SubHeadline title="Exclusive clips" />
+                    <SubHeadline title="Exclusive News" />
                     <div className="md:border-b border-[#615e5e54] md:pb-2 md:pr-3">
                         <TopHorizontalCard data={data[0]} />
                     </div>

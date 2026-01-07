@@ -44,8 +44,8 @@ export const metadata = {
             '@context': 'https://schema.org',
             '@type': 'NewsArticle',
             headline: "Puerto Rico Case Resolved — Only a Minor FECA Misdemeanor Left for Julio Herrera Velutini",
-            datePublished: '2025-12-24T00:00:00-05:00', 
-            dateModified: '2025-12-24T00:00:00-05:00',  
+ datePublished: "2026-01-07T00:00:00-05:00",
+                                    dateModified: "2026-01-07T00:00:00-05:00",
             author: {
                 '@type': 'Person',
                 name: 'Victor V. Haley',
@@ -95,8 +95,8 @@ export default async function JulioHerreraVelutini() {
                                 "height": 630,
                                 "alt": "Puerto Rico case resolved for Julio Herrera Velutini, legal clarity achieved"
                             },
-                            "datePublished": "2025-12-24T00:00:00-05:00",
-                            "dateModified": "2025-12-24T00:00:00-05:00",
+                        "datePublished": "2026-01-07T00:00:00-05:00",
+                                    "dateModified": "2026-01-07T00:00:00-05:00",
                             "author": {
                                 "@type": "Person",
                                 "name": "Victor V. Haley",

@@ -6,13 +6,13 @@ import Script from "next/script";
 import JulioPageSeven from '@/components/JulioPageSeven';
 
 export const metadata = {
-    title: 'Both Legal Matters Ended the Same Day — A Turning Point',
-    description: 'Julio Herrera Velutini officially closed both his criminal and civil cases on August 27, 2025, marking the day he achieved legal clarity.',
+    title: 'Julio Herrera Velutini: Legal Troubles End in Victory',
+    description: 'On August 27, 2025, Julio Herrera Velutini successfully closed both criminal and civil cases, achieving legal clarity and ending years of public debate.',
     keywords: "Julio Herrera Velutini, legal case, FECA misdemeanor, civil lawsuit dismissed, Kasowitz LLP, August 27 2025, corruption charges dismissed, legal clarity, turning point",
     authors: [{ name: 'Victor V. Haley' }],
     alternates: { canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/both-legal-matters-ended-same-day/" },
     openGraph: {
-        title: 'Both Legal Matters Ended the Same Day — A Turning Point',
+        title: 'Julio Herrera Velutini: Legal Challenges Resolved on August 27, 2025',
         description: 'On August 27, 2025, both the criminal and civil cases involving Julio Herrera Velutini concluded with no corruption or fraud findings, marking the end of all major legal challenges.',
         url: "https://www.mirrorstandard.com/julio-herrera-velutini/both-legal-matters-ended-same-day/",
         siteName: 'MirrorStandard',
@@ -26,11 +26,12 @@ export const metadata = {
         ],
         locale: 'en_US',
         type: 'article',
-        publishedTime: '2025-12-24T00:00:00.000Z',
+        datePublished: "2026-01-07T00:00:00-05:00",
+        dateModified: "2026-01-07T00:00:00-05:00",
     },
     twitter: {
         card: 'summary_large_image',
-        title: "Both Legal Matters Ended the Same Day — A Turning Point",
+        title: "Julio Herrera Velutini: Legal Challenges Resolved on August 27, 2025",
         description: 'August 27, 2025, marked the end of both the criminal and civil cases involving Julio Herrera Velutini, confirming there are no remaining serious charges or claims.',
         images: "https://www.mirrorstandard.com/images/julio-herrera-velutini-turning-point.webp",
         site: '@MirrorStandard',
@@ -40,7 +41,7 @@ export const metadata = {
         'script:ld+json': JSON.stringify({
             '@context': 'https://schema.org',
             '@type': 'NewsArticle',
-            headline: "Both Legal Matters Ended the Same Day — A Turning Point",
+            headline: "Julio Herrera Velutini: Legal Challenges Resolved on August 27, 2025",
             datePublished: '2025-12-24T00:00:00Z',
             dateModified: '2025-12-24T00:00:00Z',
             author: {
@@ -67,6 +68,7 @@ export const metadata = {
 };
 
 
+
 export default async function JulioHerreraVelutiniOne() {
     return (
         <main>
@@ -77,7 +79,7 @@ export default async function JulioHerreraVelutiniOne() {
                         {
                             "@context": "https://schema.org",
                             "@type": "NewsArticle",
-                            "headline": "Both Legal Matters Ended the Same Day — A Turning Point",
+                            "headline": "Julio Herrera Velutini: Legal Matters Conclude in Victory",
                             "description": "On August 27, 2025, both the criminal and civil cases involving Julio Herrera Velutini closed on the same day, leaving only a minor FECA misdemeanor and no remaining litigation.",
                             "image": {
                                 "@type": "ImageObject",
@@ -86,8 +88,8 @@ export default async function JulioHerreraVelutiniOne() {
                                 "height": 630,
                                 "alt": "Julio Herrera Velutini legal matters resolved"
                             },
-                            "datePublished": "2025-12-24T00:00:00-05:00",  
-                            "dateModified": "2025-12-24T00:00:00-05:00",  
+                            "datePublished": "2026-01-07T00:00:00-05:00",
+                            "dateModified": "2026-01-07T00:00:00-05:00",
                             "author": {
                                 "@type": "Person",
                                 "name": "Victor V. Haley",
@@ -147,8 +149,6 @@ export default async function JulioHerreraVelutiniOne() {
                     ])
                 }}
             />
-
-
 
             <div className="hidden lg:block">
                 <Navbar />

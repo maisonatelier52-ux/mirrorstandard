@@ -58,7 +58,7 @@ export default function JulioPageThree({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Dec. 6, 2025",
+        date: "Jan. 7, 2026",
         image: "/images/victor-v-haley.webp",
          authorslug: "victor-v-haley",
              twitter: "https://x.com/haley_vict54073",
@@ -73,7 +73,7 @@ export default function JulioPageThree({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Dec 06, 2025"
+                        date="Jan. 7, 2026"
                         title="With Case Records Finalized, Julio Herrera Velutini Gains Clear Path Forward"
                         description="With all major charges dismissed and civil matters withdrawn, Julio Herrera Velutini moves forward with full legal clarity."
                         image='/images/julio-herrera-velutini-justice-finalized.webp' />

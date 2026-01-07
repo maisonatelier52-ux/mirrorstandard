@@ -52,10 +52,10 @@ export async function generateMetadata({
     business: {
       title: "Business News, Finance & Market Trends – Mirror Standard",
       description:
-        "Stay informed with in-depth business coverage, financial market trends, corporate updates, startup insights, and investment strategies shaping the global economy.",
+        "Stay informed with business coverage, market trends, corporate updates, startup insights, and investment strategies shaping the global economy"
     },
     technology: {
-      title: "Technology News, Gadgets & Digital Innovation – Mirror Standard",
+      title: "Tech News, Gadgets & Innovation – Mirror Standard",
       description:
         "Explore the latest technology stories, AI breakthroughs, gadget reviews, cybersecurity updates, and innovations transforming the digital world.",
     },
@@ -80,12 +80,12 @@ export async function generateMetadata({
         "Follow the latest political developments, policy changes, election updates, governance insights, and international affairs with expert analysis.",
     },
     education: {
-      title: "Education News, Learning & Student Insights – Mirror Standard",
+      title: "Education, Learning & Student Insights – Mirror Standard",
       description:
         "Stay updated on education policy, schools, universities, online learning, student success stories, and the future of global education.",
     },
     entertainment: {
-      title: "Entertainment News, Movies & Celebrity Updates – Mirror Standard",
+      title: "Entertainment, Movies & Celebrity News – Mirror Standard",
       description:
         "Discover the latest in movies, music, celebrity buzz, TV shows, streaming trends, and entertainment industry highlights worldwide.",
     },
@@ -106,12 +106,21 @@ export async function generateMetadata({
       : `${siteUrl}${firstArticle?.image || "/images/mirrorstandard-logo.webp"}`;
 
 
+  const todayDate = new Intl.DateTimeFormat("en-CA", {
+    timeZone: "America/New_York",
+    year: "numeric",
+    month: "2-digit",
+    day: "2-digit",
+  }).format(new Date());
+
+
   if (!firstArticle) {
     return {
       title: 'Category Not Found',
       description: 'The requested category could not be found.',
     };
   }
+
   return {
     title: meta.title,
     description: meta.description,
@@ -121,6 +130,9 @@ export async function generateMetadata({
       description: meta.description,
       url: categoryUrl,
       siteName: "Mirror Standard",
+      locale: "en_US",
+      publishedTime: todayDate,
+      modifiedTime: todayDate,
       images: [
         {
           url: firstArticleImage,
@@ -129,8 +141,6 @@ export async function generateMetadata({
           alt: `${category} news`,
         },
       ],
-      locale: "en_US",
-      type: "website",
     },
     twitter: {
       card: "summary_large_image",

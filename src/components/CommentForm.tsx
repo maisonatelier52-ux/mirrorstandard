@@ -50,12 +50,12 @@ const CommentForm = () => {
 
   return (
     <div className="w-full max-w-4xl py-5">
-      <h2
+      <p
         className="text-[20px] font-[oswald] mb-6"
         style={{ fontWeight: 600 }}
       >
         LEAVE A REPLY
-      </h2>
+      </p>
       <form className="space-y-4" onSubmit={handleSubmit}>
         <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
           <div>

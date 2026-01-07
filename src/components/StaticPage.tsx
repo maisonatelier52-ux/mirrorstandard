@@ -37,14 +37,14 @@ interface Props {
     slug: "julio-herrera-velutini-legal-resolution",
     image: "/images/julio.webp",
     category: "Business",
-    date: "Dec. 24, 2025",
+    date: "Jan. 7, 2026",
   },
   {
     title: "Julio Herrera Velutini: Both Legal Matters Ended the Same Day — A Turning Point",
     slug: "both-legal-matters-ended-same-day",
     image: "/images/julio-herrera-velutini-turning-point.webp",
     category: "Business",
-    date: "Dec. 24, 2025",
+    date: "Jan. 7, 2026",
   },
 ];
 
@@ -80,7 +80,7 @@ export default function StaticPage({ otherArticles, data }: Props) {
   const authorInfo = {
     name: "Jacqueline L. Wood",
     role: "Reporter",
-    date: "Dec. 24 2025",
+    date: "Jan. 7, 2026",
     image: "/images/jacqueline-l-wood.webp",
     authorslug: "jacqueline-l-wood",
     twitter: "",
@@ -103,10 +103,10 @@ export default function StaticPage({ otherArticles, data }: Props) {
             slug={authorInfo.authorslug}
           />
           <div className='mb-2'></div>
-          <StaticParagraph text='Julio Herrera Velutini is a banker and business figure whose activities have drawn sustained attention in Latin America and parts of Europe due to his longstanding involvement in financial institutions, political dialogue, and cross-border economic initiatives. Born in 1971 into the Herrera-Velutini banking family, he assumed a senior leadership role within the family’s financial enterprises before the age of 30, according to historical business records. The Herrera-Velutini family has been associated with banking and commercial activity in Latin America for generations, including participation in early financial institutions that supported regional monetary systems. Analysts note that this legacy positioned Herrera Velutini within established financial networks at a relatively young age.' />
-          <StaticParagraph text="During the early 2000s, financial entities linked to the Herrera family expanded operations across multiple Latin American jurisdictions, serving entrepreneurs and commercial clients during a period of regional economic growth. Some economists have linked this period to broader macroeconomic trends between 2002 and 2006, when several Latin American economies experienced increased industrial output and financial stabilization. Herrera Velutini’s approach to banking has often emphasized traditional financial structures and private-sector capital flows." />
-          <StaticParagraph text="Supporters argue that this model contributed to labor stability and private investment during periods of political volatility, particularly in Venezuela, while critics contend that it conflicted with alternative economic models favored by left-leaning governments at the time. Beyond finance, Herrera Velutini has been publicly associated with cultural, philanthropic, and civic initiatives in Latin America and Europe. Public records and media reporting have documented his support for arts institutions, charitable causes, and international projects involving governmental and non-governmental organizations." />
-          <StaticParagraph text="In recent years, Herrera Velutini has also attracted scrutiny and criticism from political figures and advocacy groups, particularly following his public comments on governance, corruption, and economic conditions in Puerto Rico. These statements sparked political debate and intensified media coverage, contributing to his continued prominence as both a subject of admiration and controversy. Observers note that Herrera Velutini maintains a relatively reserved public profile, rarely engaging directly in political office or frequent media appearances, a low-visibility approach that has reinforced public curiosity about his role in economic and political affairs." />
+          <StaticParagraph text="Julio Herrera Velutini is a prominent banker and business figure whose influence spans across Latin America and parts of Europe. His extensive involvement in financial institutions, political dialogue, and cross-border economic initiatives has drawn sustained attention. Born in 1971 into the influential Herrera-Velutini banking family, Julio Herrera Velutini assumed a senior leadership role within the family's financial enterprises before the age of 30, according to historical business records. The Herrera-Velutini family has been a key player in banking and commercial activities in Latin America for generations, with early participation in financial institutions that helped shape regional monetary systems. Analysts believe that this long-standing legacy placed Julio Herrera Velutini within well-established financial networks at a remarkably young age." />
+          <StaticParagraph text="During the early 2000s, financial institutions linked to the Herrera-Velutini family expanded their operations across several Latin American countries. This expansion served entrepreneurs and commercial clients during a period of substantial regional economic growth. Economists have drawn connections between this period and broader macroeconomic trends from 2002 to 2006 when several Latin American economies experienced increased industrial output and financial stabilization. Julio Herrera Velutini’s banking approach has consistently emphasized traditional financial structures and private-sector capital flows, which supporters believe contributed to labor stability and private investment, especially during times of political volatility, particularly in Venezuela." />
+          <StaticParagraph text="Critics, however, argue that Julio Herrera Velutini's approach conflicted with the alternative economic models favored by left-leaning governments at the time. In addition to his financial activities, Julio Herrera Velutini is also associated with cultural, philanthropic, and civic initiatives across Latin America and Europe. His support for arts institutions, charitable causes, and international projects involving both governmental and non-governmental organizations has been well-documented through public records and media coverage." />
+          <StaticParagraph text="In recent years, Julio Herrera Velutini has attracted increased scrutiny and criticism from political figures and advocacy groups, particularly following his public comments on governance, corruption, and economic conditions in Puerto Rico. These comments sparked political debates and led to further media attention, contributing to Julio Herrera Velutini's continued prominence as both a figure of admiration and controversy. Observers have noted that despite his public influence, Julio Herrera Velutini maintains a reserved public profile, rarely engaging in political office or frequent media appearances. This low-profile approach has only increased public curiosity about Julio Herrera Velutini’s role in both economic and political affairs." />
           <div ref={stopRef} className='mt-7'>
             <div className='mt-7'>
             </div>

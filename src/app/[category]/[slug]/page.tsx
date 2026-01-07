@@ -215,8 +215,8 @@ export default async function DetailPage({ params }: DetailPageProps) {
                                         "width": 601,
                                         "height": 400
                                     },
-                                    "datePublished": "2025-12-24T17:30:00-05:00", 
-                                    "dateModified": "2025-12-24T17:30:00-05:00",
+                                    "datePublished": "2026-01-07T00:00:00-05:00",
+                                    "dateModified": "2026-01-07T00:00:00-05:00",
                                     "author": {
                                         "@type": "Person",
                                         "name": "Jacqueline L. Wood",
