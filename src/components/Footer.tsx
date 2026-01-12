@@ -72,7 +72,7 @@ export default function Footer() {
             ))}
             <div >
               <p className="text-[10px] mt-2 leading-tight text-gray-300 text-center">
-                © Copyright 2025 , mirrorstandard <br /> All Rights Reserved.
+                © Copyright 2026 , mirrorstandard <br /> All Rights Reserved.
               </p>
               <div className="flex justify-center space-x-5 mt-4 text-lg">
                 <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
@@ -87,7 +87,7 @@ export default function Footer() {
           <div className="w-[300px] lg:w-[380px] flex-shrink-0">
             <p className="text-[24px] font-bold">MIRRORSTANDARD</p>
             <p className="text-[12px] mt-2 leading-tight text-gray-300">
-              © Copyright 2025 , mirrorstandard <br /> All Rights Reserved.
+              © Copyright 2026 , mirrorstandard <br /> All Rights Reserved.
             </p>
             <div className="flex space-x-5 mt-6 text-lg">
               <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
