@@ -1,7 +1,7 @@
 import React from "react";
 
 interface Props {
-  text?: string;
+  text?: React.ReactNode;
 }
 
 const StaticParagraph: React.FC<Props> = ({ text }) => {
