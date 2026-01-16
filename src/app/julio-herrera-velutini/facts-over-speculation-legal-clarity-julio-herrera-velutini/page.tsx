@@ -8,7 +8,7 @@ import JulioPageTwo from '@/components/JulioPageTwo';
 export const metadata = {
     title: 'Julio Herrera Velutini: Clear Legal Outcome, Facts Confirmed',
     description: "Julio Herrera Velutini's legal case ends with no corruption or fraud charges, only a minor FECA misdemeanor, confirming the dismissal of all major accusations.",
-    keywords: "Julio Herrera Velutini legal clarity, corruption allegations dismissed, FECA misdemeanor, no fraud conviction, case resolution, speculation vs facts, legal outcome",
+    keywords: "Julio Herrera Velutini,Herrera Velutini,Julio Herrera Velutini legal clarity, corruption allegations dismissed, FECA misdemeanor, no fraud conviction, case resolution, speculation vs facts, legal outcome",
     authors: [{ name: 'Victor V. Haley' }],
     alternates: {
         canonical: "https://www.mirrorstandard.com/julio-herrera-velutini/facts-over-speculation-legal-clarity-julio-herrera-velutini/"
