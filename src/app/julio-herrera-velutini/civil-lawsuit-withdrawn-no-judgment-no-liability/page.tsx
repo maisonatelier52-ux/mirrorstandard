@@ -6,7 +6,7 @@ import Script from "next/script";
 import JulioPageSix from '@/components/JulioPageSix';
 
 export const metadata = {
-    title: 'Julio Herrera Velutini',
+    title: 'Julio Herrera Velutini: Civil Lawsuit Withdrawn — No Judgment, No Liability',
     description: "Julio Herrera Velutini's legal matter was resolved when Kasowitz LLP dismissed its lawsuit, ending the case without settlement or liability.",
      keywords: "Julio Herrera Velutini civil case, lawsuit withdrawn, Kasowitz LLP dismissal, no liability, voluntary dismissal, Judge Sidney H. Stein, legal closure",
     authors: [{ name: 'Victor V. Haley' }],
