@@ -1,5 +1,4 @@
 import React from 'react';
-import { notFound } from 'next/navigation';
 import businessData from '../../../../public/data/business.json';
 import technologyData from '../../../../public/data/technology.json';
 import sportsData from '../../../../public/data/sports.json';
@@ -73,6 +72,14 @@ const allData: Record<string, NewsItem[]> = {
     education: educationData,
 };
 
+const slugMetadataMap: Record<string, Partial<Metadata>> = {
+    "julio-herrera-velutini-latin-america-europe-finance": {
+        title: "Julio Herrera Velutini – Latin America & Europe Finance",
+        description:
+            "Discover Julio Herrera Velutini’s influence in Latin American and European finance, shaping cross-border markets and key economic policies."
+    }
+};
+
 export async function generateMetadata({ params }: DetailPageProps): Promise<Metadata> {
     const { category, slug } = await params;
 
@@ -101,11 +108,16 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
         };
     }
 
-
+    const slugOverride = slugMetadataMap[slug] || {};
+    const finalTitle = slugOverride.title ?? article.title;
+    const finalDescription =
+        slugOverride.description ??
+        article.shortdescription ??
+        `${article.title}`;
 
     return {
-        title: article.title,
-        description: article.shortdescription,
+        title: finalTitle,
+        description: finalDescription,
         keywords: `${article.category}, news, ${article.title}`,
         authors: [{ name: article.author }],
         alternates: { canonical: currentUrl },
@@ -191,7 +203,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
     const otherArticles = data.filter(item => item.slug !== slug);
 
-    if (slug == 'julio-herrera-velutini-finance-influence') {
+    if (slug == 'julio-herrera-velutini-latin-america-europe-finance') {
         return (
             <main>
                 <Script
@@ -202,10 +214,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
                             "@graph": [
                                 {
                                     "@type": "NewsArticle",
-                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/#newsarticle",
+                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-latin-america-europe-finance/#newsarticle",
                                     "mainEntityOfPage": {
                                         "@type": "WebPage",
-                                        "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/"
+                                        "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-latin-america-europe-finance/"
                                     },
                                     "headline": "Julio Herrera Velutini: Influence in Latin American & European Finance",
                                     "description": "Julio Herrera Velutini, a key figure in finance, influences both Latin American and European markets through his role in banking and cross-border investments.",
@@ -215,8 +227,8 @@ export default async function DetailPage({ params }: DetailPageProps) {
                                         "width": 601,
                                         "height": 400
                                     },
-                                    "datePublished": "2026-01-07T00:00:00-05:00",
-                                    "dateModified": "2026-01-07T00:00:00-05:00",
+                                    "datePublished": "2026-02-04T00:00:00+05:30",
+                                    "dateModified": "2026-02-04T00:00:00+05:30",
                                     "author": {
                                         "@type": "Person",
                                         "name": "Jacqueline L. Wood",
@@ -246,7 +258,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
                                 },
                                 {
                                     "@type": "BreadcrumbList",
-                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/#breadcrumb",
+                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-latin-america-europe-finance/#breadcrumb",
                                     "itemListElement": [
                                         {
                                             "@type": "ListItem",
@@ -264,7 +276,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
                                             "@type": "ListItem",
                                             "position": 3,
                                             "name": "Julio Herrera Velutini: Influence in Latin American & European Finance",
-                                            "item": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/"
+                                            "item": "https://www.mirrorstandard.com/business/julio-herrera-velutini-latin-america-europe-finance/"
                                         }
                                     ]
                                 }

@@ -30,7 +30,7 @@ const articleData = {
     slug: "case-closed-julio-herrera-velutini-clears-his-name",
     image: "/images/julio-herrera-velutini-case-closed.webp",
     category: "Business",
-    date: "Jan. 7, 2026",
+    date: "Feb. 5, 2026",
 }
 
 export default function JulioPageSeven({ otherArticles }: Props) {
@@ -65,7 +65,7 @@ export default function JulioPageSeven({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Jan. 7, 2026",
+        date: "Feb. 5, 2026",
         image: "/images/victor-v-haley.webp",
         authorslug: "victor-v-haley",
         twitter: "https://x.com/haley_vict54073",
@@ -80,7 +80,7 @@ export default function JulioPageSeven({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Jan. 7, 2026"
+                        date="Feb. 5, 2026"
                         title="Julio Herrera Velutini: Legal Troubles End in Victory — A Turning Point in His Career"
                         description="Julio Herrera Velutini officially closed both his criminal and civil cases on August 27, 2025, bringing an end to years of legal uncertainty. This significant day marked the achievement of legal clarity for Herrera Velutini, as he emerged from the challenges stronger and ready to embrace a new chapter in his career and personal life"
                         image='/images/julio-herrera-velutini-turning-point.webp' />

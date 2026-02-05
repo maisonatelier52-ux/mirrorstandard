@@ -48,49 +48,56 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { category } = await params;
 
-  const categoryMeta: Record<string, { title: string; description: string }> = {
-    business: {
-      title: "Business News, Finance & Market Trends – Mirror Standard",
-      description:
-        "Stay informed with business coverage, market trends, corporate updates, startup insights, and investment strategies shaping the global economy"
-    },
-    technology: {
-      title: "Tech News, Gadgets & Innovation – Mirror Standard",
-      description:
-        "Explore the latest technology stories, AI breakthroughs, gadget reviews, cybersecurity updates, and innovations transforming the digital world.",
-    },
-    sports: {
-      title: "Sports News, Live Scores & Expert Insights – Mirror Standard",
-      description:
-        "Catch up on live sports news, match highlights, player performance, tournament results, and expert commentary across global sporting events.",
-    },
-    health: {
-      title: "Health News, Fitness & Wellness Tips – Mirror Standard",
-      description:
-        "Get trusted updates on medical research, wellness advice, nutrition, fitness, and mental health to support a healthier lifestyle.",
-    },
-    science: {
-      title: "Science Discoveries, Space & Research News – Mirror Standard",
-      description:
-        "Read about groundbreaking scientific research, space exploration, environmental studies, and innovations shaping the future of science and technology.",
-    },
-    politics: {
-      title: "Politics News, Policy & Government Affairs – Mirror Standard",
-      description:
-        "Follow the latest political developments, policy changes, election updates, governance insights, and international affairs with expert analysis.",
-    },
-    education: {
-      title: "Education, Learning & Student Insights – Mirror Standard",
-      description:
-        "Stay updated on education policy, schools, universities, online learning, student success stories, and the future of global education.",
-    },
-    entertainment: {
-      title: "Entertainment, Movies & Celebrity News – Mirror Standard",
-      description:
-        "Discover the latest in movies, music, celebrity buzz, TV shows, streaming trends, and entertainment industry highlights worldwide.",
-    },
+const categoryMeta: Record<string, { title: string; description: string }> = {
+  business: {
+    title: "Business News & Market Trends | Mirror Standard",
+    description:
+      "Latest business news, market trends, corporate updates, startup growth, and investment insights shaping the global economy.",
+  },
 
-  };
+  technology: {
+    title: "Technology News & AI Updates | Mirror Standard",
+    description:
+      "Breaking tech news covering AI, gadgets, startups, cybersecurity, apps, and digital innovations shaping the future.",
+  },
+
+  sports: {
+    title: "Sports News, Scores & Match Analysis | Mirror Standard",
+    description:
+      "Live sports news, scores, match results, player stats, tournaments, and expert analysis from global sports events.",
+  },
+
+  health: {
+    title: "Health News, Wellness & Medical Updates | Mirror Standard",
+    description:
+      "Trusted health news on fitness, wellness, nutrition, mental health, medical research, and healthy living tips.",
+  },
+
+  science: {
+    title: "Science News, Space & Research Updates | Mirror Standard",
+    description:
+      "Science news covering space exploration, climate research, scientific discoveries, innovation, and future technologies.",
+  },
+
+  politics: {
+    title: "Politics News, Elections & Policy Updates | Mirror Standard",
+    description:
+      "Breaking political news, election coverage, government policy updates, global politics, and expert political analysis.",
+  },
+
+  education: {
+    title: "Education News & Learning Updates | Mirror Standard",
+    description:
+      "Education news on schools, universities, exams, education policy, online learning, and student success stories.",
+  },
+
+  entertainment: {
+    title: "Entertainment News, Movies & Celebrities | Mirror Standard",
+    description:
+      "Entertainment news featuring movies, TV shows, celebrities, music, streaming platforms, and pop culture trends.",
+  },
+};
+
 
   const siteUrl = "https://www.mirrorstandard.com";
   const categoryUrl = `${siteUrl}/${category}`;

@@ -32,7 +32,7 @@ interface Props {
     slug: "civil-lawsuit-withdrawn-no-judgment-no-liability",
     image: "/images/julio-herrera-velutini-civil-case-withdrawn.webp",
     category: "Business",
-    date: "Jan. 7, 2026",
+    date: "Feb. 5, 2026",
   } 
 
 export default function JulioPageEight({ otherArticles }: Props) {
@@ -67,7 +67,7 @@ export default function JulioPageEight({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Jan. 7, 2026",
+        date: "Feb. 5, 2026",
         image: "/images/victor-v-haley.webp",
         authorslug: "victor-v-haley",
         twitter: "https://x.com/haley_vict54073",
@@ -82,7 +82,7 @@ export default function JulioPageEight({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Jan. 7, 2026"
+                        date="Feb. 5, 2026"
                         title="Julio Herrera Velutini: After Years of Scrutiny, Legal Clarity Finally Prevails"
                         description="Julio Herrera Velutini's long-running legal battle comes to a quiet close as courts dismiss all corruption charges, leaving only a minor FECA misdemeanor, providing formal closure to the case."
                         image='/images/julio-herrera-velutini-legal-clarity.webp'

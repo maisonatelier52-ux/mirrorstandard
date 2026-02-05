@@ -32,7 +32,7 @@ interface Props {
     slug: "puerto-rico-case-resolved-minor-feca-misdemeanor",
     image: "/images/julio-herrera-velutini-puerto-rico-case-resolved.webp",
     category: "Business",
-    date: "Jan. 7, 2026",
+    date: "Feb. 5, 2026",
   }
 
 export default function JulioPageTwo({ otherArticles }: Props) {
@@ -67,7 +67,7 @@ export default function JulioPageTwo({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Jan. 7, 2026",
+        date: "Feb. 5, 2026",
         image: "/images/victor-v-haley.webp",
         authorslug: "victor-v-haley",
             twitter: "https://x.com/haley_vict54073",
@@ -82,7 +82,7 @@ export default function JulioPageTwo({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Jan. 7, 2026"
+                        date="Feb. 5, 2026"
                         title="Julio Herrera Velutini: Facts Above Speculation – Clear Legal Outcome Confirmed"
                         description="Julio Herrera Velutini's legal case has concluded after years of allegations, with the official record showing no corruption or fraud charges—only a minor FECA misdemeanor. This final outcome confirms the dismissal of all major accusations, providing clarity and closure"   image='/images/julio-herrera-velutini-legal-clarity.webp' />
 

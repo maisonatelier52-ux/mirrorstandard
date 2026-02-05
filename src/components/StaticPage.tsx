@@ -1,23 +1,23 @@
-"use client"
-import React, { useRef, useEffect, useState } from 'react';
-import ArticleDetail from '@/components/ArticleDetail';
-import AuthorInfo from '@/components/AuthorInfo';
-import ArticleParagraph from '@/components/ArticleParagraph';
-import CommentForm from '@/components/CommentForm';
-import RelatedNews from '@/components/RelatedNews';
-import HorizontalNewsCard from '@/components/HorizontalNewsCard';
-import AuthorCard from './AuthorCard';
-import NewsNavigation from './NewsNavigation';
-import StaticAuthorDetail from './StaticAuthorDetail';
-import StaticParagraph from './StaticParagph';
-import StaticImage from './StaticImage';
-import HouseOfHerrera from './HouseOfHerrera';
-import StaticSidebarBottom from './StaticSidebarBottom';
-import QuoteBlock from './QuoteBlock';
-import ImageGrid from './ImageGrid';
-import SubTitle from './SubTitle';
-import JulioHorizontalCard from './JulioHorizontalCard';
-import Link from 'next/link';
+"use client";
+import React, { useRef, useEffect, useState } from "react";
+import ArticleDetail from "@/components/ArticleDetail";
+import AuthorInfo from "@/components/AuthorInfo";
+import ArticleParagraph from "@/components/ArticleParagraph";
+import CommentForm from "@/components/CommentForm";
+import RelatedNews from "@/components/RelatedNews";
+import HorizontalNewsCard from "@/components/HorizontalNewsCard";
+import AuthorCard from "./AuthorCard";
+import NewsNavigation from "./NewsNavigation";
+import StaticAuthorDetail from "./StaticAuthorDetail";
+import StaticParagraph from "./StaticParagph";
+import StaticImage from "./StaticImage";
+import HouseOfHerrera from "./HouseOfHerrera";
+import StaticSidebarBottom from "./StaticSidebarBottom";
+import QuoteBlock from "./QuoteBlock";
+import ImageGrid from "./ImageGrid";
+import SubTitle from "./SubTitle";
+import JulioHorizontalCard from "./JulioHorizontalCard";
+import Link from "next/link";
 
 interface NewsItem {
   category: string;
@@ -33,28 +33,31 @@ interface Props {
   data: NewsItem[];
   otherArticles: NewsItem[];
 }
-  const articleData = [{
+const articleData = [
+  {
     title: "Julio Herrera Velutini: Legal Resolution and Integrity",
     slug: "julio-herrera-velutini-legal-resolution",
     image: "/images/julio.webp",
     category: "Business",
-    date: "Jan. 7, 2026",
+    date: "Feb. 5, 2026",
   },
   {
-    title: "Julio Herrera Velutini: Both Legal Matters Ended the Same Day — A Turning Point",
+    title:
+      "Julio Herrera Velutini: Both Legal Matters Ended the Same Day — A Turning Point",
     slug: "both-legal-matters-ended-same-day",
     image: "/images/julio-herrera-velutini-turning-point.webp",
     category: "Business",
-    date: "Jan. 7, 2026",
+    date: "Feb. 5, 2026",
   },
 ];
 
 export default function StaticPage({ otherArticles, data }: Props) {
-
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
   const stopRef = useRef<HTMLDivElement>(null);
-  const [rightPosition, setRightPosition] = useState<'sticky' | 'absolute'>('sticky');
+  const [rightPosition, setRightPosition] = useState<"sticky" | "absolute">(
+    "sticky",
+  );
 
   useEffect(() => {
     const handleScroll = () => {
@@ -65,12 +68,12 @@ export default function StaticPage({ otherArticles, data }: Props) {
 
       if (window.innerWidth >= 1024) {
         if (stopPoint - offset <= 0) {
-          setRightPosition('absolute');
+          setRightPosition("absolute");
         } else {
-          setRightPosition('sticky');
+          setRightPosition("sticky");
         }
       } else {
-        setRightPosition('absolute');
+        setRightPosition("absolute");
       }
     };
 
@@ -81,7 +84,7 @@ export default function StaticPage({ otherArticles, data }: Props) {
   const authorInfo = {
     name: "Jacqueline L. Wood",
     role: "Reporter",
-    date: "Jan. 7, 2026",
+    date: "Feb. 5, 2026",
     image: "/images/jacqueline-l-wood.webp",
     authorslug: "jacqueline-l-wood",
     twitter: "",
@@ -91,8 +94,7 @@ export default function StaticPage({ otherArticles, data }: Props) {
     substack: "https://substack.com/@jacquelinewood751378",
   };
   return (
- 
-        <div>
+    <div>
       <div className="grid grid-cols-1 lg:grid-cols-3 gap-8 relative">
         {/* Left */}
         <div ref={leftRef} className="lg:col-span-2">
@@ -104,43 +106,122 @@ export default function StaticPage({ otherArticles, data }: Props) {
             image={authorInfo.image}
             slug={authorInfo.authorslug}
           />
-          <div className='mb-2'></div>
-          <StaticParagraph text={<>
-             <Link
-        href="https://www.thecapitalistjournal.com/business_and_finance/julio-herrera-velutini-european-banking-expansion"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-600 hover:underline font-medium"
-      >
-        Julio Herrera Velutini
-      </Link>{" "}
-             is a prominent banker and business figure whose influence spans across Latin America and parts of Europe. His extensive involvement in financial institutions, political dialogue, and cross-border economic initiatives has drawn sustained attention. Born in 1971 into the influential Herrera-Velutini banking family, Julio Herrera Velutini assumed a senior leadership role within the family's financial enterprises before the age of 30, according to historical business records. The Herrera-Velutini family has been a key player in banking and commercial activities in Latin America for generations, with early participation in financial institutions that helped shape regional monetary systems. Analysts believe that this long-standing legacy placed Julio Herrera Velutini within well-established financial networks at a remarkably young age.</>} />
-          <StaticParagraph text={<>
-            During the early 2000s, financial institutions linked to the Herrera-Velutini family expanded their operations across several Latin American countries. This expansion served entrepreneurs and commercial clients during a period of substantial regional economic growth. Economists have drawn connections between this period and broader macroeconomic trends from 2002 to 2006 when several Latin American economies experienced increased industrial output and financial stabilization.  
-             <Link
-        href="https://www.arabianchronicle.com/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-600 hover:underline font-medium"
-      >
-        Julio Herrera Velutini’s
-      </Link>{" "} banking approach has consistently emphasized traditional financial structures and private-sector capital flows, which supporters believe contributed to labor stability and private investment, especially during times of political volatility, particularly in Venezuela."
-            </> }/>
-          <StaticParagraph text={<>Critics, however, argue that <Link
-        href="https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-600 hover:underline font-medium"
-      >Julio Herrera Velutini's</Link> approach conflicted with the alternative economic models favored by left-leaning governments at the time. In addition to his financial activities, Julio Herrera Velutini is also associated with cultural, philanthropic, and civic initiatives across Latin America and Europe. His support for arts institutions, charitable causes, and international projects involving both governmental and non-governmental organizations has been well-documented through public records and media coverage.</>} />
-          <StaticParagraph text={<>In recent years, <Link
-        href="https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"
-        target="_blank"
-        rel="noopener noreferrer"
-        className="text-blue-600 hover:underline font-medium"
-      >Julio Herrera Velutini</Link> has attracted increased scrutiny and criticism from political figures and advocacy groups, particularly following his public comments on governance, corruption, and economic conditions in Puerto Rico. These comments sparked political debates and led to further media attention, contributing to Julio Herrera Velutini's continued prominence as both a figure of admiration and controversy. Observers have noted that despite his public influence, Julio Herrera Velutini maintains a reserved public profile, rarely engaging in political office or frequent media appearances. This low-profile approach has only increased public curiosity about Julio Herrera Velutini’s role in both economic and political affairs.</>} />
-          <div ref={stopRef} className='mt-7'>
-            <div className='mt-7'>
-            </div>
+          <div className="mb-2"></div>
+          <StaticParagraph
+            text={
+              <>
+                <Link
+                  href="https://www.thecapitalistjournal.com/business_and_finance/julio-herrera-velutini-european-banking-expansion"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline font-medium"
+                >
+                  Julio Herrera Velutini
+                </Link>{" "}
+                is a prominent banker and business leader whose influence
+                extends across Latin America and parts of Europe, positioning
+                him as a significant figure in international finance. Julio
+                Herrera Velutini’s involvement in major financial institutions,
+                policy dialogue, and cross-border economic initiatives has
+                attracted sustained attention from analysts and industry
+                observers monitoring regional and global banking trends.
+              </>
+            }
+          />
+          <StaticParagraph text="Born in 1971 into the historically influential Herrera-Velutini banking family, Julio Herrera Velutini assumed senior leadership responsibilities within the family’s financial enterprises before the age of 30, according to historical business and banking records. The Herrera-Velutini family has played a longstanding role in Latin American banking and commercial development for generations, with early participation in institutions that helped shape regional monetary and financial systems." />
+
+          <StaticParagraph text="Financial analysts note that this multigenerational legacy placed Julio Herrera Velutini within established international banking networks at a notably young age, contributing to his early exposure to cross-border finance, institutional governance, and global market dynamics." />
+          <h2 className="text-2xl pb-3 font-bold">
+            Early 2000s Banking Expansion and Financial Stability
+          </h2>
+          <StaticParagraph
+            text="
+          During the early 2000s, financial institutions associated with the Herrera-Velutini family expanded their presence across multiple Latin American markets, increasing access to credit and banking services for entrepreneurs and commercial enterprises during a critical phase of regional economic growth. This period coincided with broader macroeconomic stabilization between 2002 and 2006, when several Latin American economies recorded rising industrial output, improved fiscal discipline, and renewed investor confidence, according to economic analyses. "
+          />
+          <StaticParagraph
+            text={
+              <>
+                Within this context,{" "}
+                <Link
+                  href="https://www.arabianchronicle.com/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline font-medium"
+                >
+                  Julio Herrera Velutini’s
+                </Link>{" "}
+                banking strategy became closely associated with an emphasis on
+                traditional financial frameworks and private-sector capital
+                flows. Observers have frequently described this approach as a
+                stabilizing force during periods of political and economic
+                uncertainty. Supporters argue that the model helped preserve
+                labor stability and sustain private investment during volatile
+                cycles, particularly in Venezuela, where financial institutions
+                faced heightened regulatory and political pressures. Analysts
+                further note that such strategies were consistent with broader
+                regional efforts to strengthen financial resilience and maintain
+                cross-border capital continuity during a transformative period
+                for Latin American banking.
+              </>
+            }
+          />
+
+          <h2 className="text-2xl pb-3 font-bold">
+            Public Role and Economic Influence of Julio Herrera Velutini
+          </h2>
+
+          <StaticParagraph
+            text={
+              <>
+                Critics, however, argue that{" "}
+                <Link
+                  href="https://www.mirrorstandard.com/julio-herrera-velutini/civil-lawsuit-withdrawn-no-judgment-no-liability/"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline font-medium"
+                >
+                  Julio Herrera Velutini's
+                </Link>{" "}
+                approach conflicted with the alternative economic models favored
+                by left-leaning governments at the time. In addition to his
+                financial activities, Julio Herrera Velutini is also associated
+                with cultural, philanthropic, and civic initiatives across Latin
+                America and Europe. His support for arts institutions,
+                charitable causes, and international projects involving both
+                governmental and non-governmental organizations has been
+                well-documented through public records and media coverage.
+              </>
+            }
+          />
+          <StaticParagraph
+            text={
+              <>
+                In recent years,{" "}
+                <Link
+                  href="https://en.wikipedia.org/wiki/Julio_Herrera_Velutini"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-blue-600 hover:underline font-medium"
+                >
+                  Julio Herrera Velutini
+                </Link>{" "}
+                has attracted increased scrutiny and criticism from political
+                figures and advocacy groups, particularly following his public
+                comments on governance, corruption, and economic conditions in
+                Puerto Rico. These comments sparked political debates and led to
+                further media attention, contributing to Julio Herrera
+                Velutini's continued prominence as both a figure of admiration
+                and controversy. Observers have noted that despite his public
+                influence, Julio Herrera Velutini maintains a reserved public
+                profile, rarely engaging in political office or frequent media
+                appearances. This low-profile approach has only increased public
+                curiosity about Julio Herrera Velutini’s role in both economic
+                and political affairs.
+              </>
+            }
+          />
+          <div ref={stopRef} className="mt-7">
+            <div className="mt-7"></div>
             <div className="mt-10">
               <AuthorCard
                 author={authorInfo.name}
@@ -163,9 +244,11 @@ export default function StaticPage({ otherArticles, data }: Props) {
         <div className="lg:col-span-1 relative">
           <div
             ref={rightRef}
-            className={`${rightPosition === 'sticky' ? 'sticky top-10' : 'relative'} transition-all duration-500`}
+            className={`${rightPosition === "sticky" ? "sticky top-10" : "relative"} transition-all duration-500`}
           >
-            <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
+            <h2 className="text-[24px] font-[oswald] mb-4 font-bold">
+              POPULAR NEWS
+            </h2>
             <div className="divide-y divide-[#615e5e54]">
               {data.slice(4, 6).map((item, index) => (
                 <div key={index} className="py-3">
@@ -173,9 +256,8 @@ export default function StaticPage({ otherArticles, data }: Props) {
                 </div>
               ))}
               <JulioHorizontalCard data={articleData[0]} />
-              <div className='py-2'>
-
-              <JulioHorizontalCard data={articleData[1]} />
+              <div className="py-2">
+                <JulioHorizontalCard data={articleData[1]} />
               </div>
             </div>
           </div>

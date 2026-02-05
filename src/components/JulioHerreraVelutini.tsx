@@ -56,7 +56,7 @@ export default function JulioHerreraVelutni({ otherArticles }: Props) {
     const authorInfo = {
         name: "Victor V. Haley",
         role: "Managing Editor",
-        date: "Jan. 7, 2026",
+        date: "Feb. 5, 2026",
         image: "/images/victor-v-haley.webp",
          authorslug: "victor-v-haley",
              twitter: "https://x.com/haley_vict54073",
@@ -71,7 +71,7 @@ export default function JulioHerreraVelutni({ otherArticles }: Props) {
                 <div ref={leftRef} className="lg:col-span-2">
                     <JulioFirstSection
                         category="Business"
-                        date="Jan. 7, 2026"
+                        date="Feb. 5, 2026"
                         title="Both Legal Matters Ended the Same Day — A Turning Point"
                         description="August 27, 2025, marks the day both criminal and civil cases involving Julio Herrera Velutini officially ended."
                         image='/images/julio-herrera-velutini-turning-point.webp' />

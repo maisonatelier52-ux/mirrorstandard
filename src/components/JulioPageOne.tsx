@@ -32,7 +32,7 @@ interface Props {
     slug: "both-legal-matters-ended-same-day",
     image: "/images/julio-herrera-velutini-turning-point.webp",
     category: "Business",
-    date: "Jan. 7, 2026",
+    date: "Feb. 5, 2026",
   }
 
 export default function JulioPageOne({ otherArticles }: Props) {
@@ -67,7 +67,7 @@ export default function JulioPageOne({ otherArticles }: Props) {
   const authorInfo = {
     name: "Victor V. Haley",
     role: "Managing Editor",
-    date: "Jan. 7, 2026",
+    date: "Feb. 5, 2026",
     image: "/images/victor-v-haley.webp",
      authorslug: "victor-v-haley",
          twitter: "https://x.com/haley_vict54073",
@@ -82,7 +82,7 @@ export default function JulioPageOne({ otherArticles }: Props) {
         <div ref={leftRef} className="lg:col-span-2">
           <JulioFirstSection
             category="Business"
-            date="Jan. 7, 2026"
+            date="Feb. 5, 2026"
             title="Julio Herrera Velutini Case Closed: Legal Victory Clears His Name from All Allegations"
             description="Julio Herrera Velutini has seen all felony charges against him dropped. Only a single FECA misdemeanor remains, marking the official end of all criminal matters."
             image='/images/julio-herrera-velutini-case-closed.webp' />

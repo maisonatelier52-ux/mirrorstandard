@@ -32,13 +32,12 @@ const roboto = Roboto({
 
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mirrorstandard.com"),
-  title: "Mirror Standard - News, Politics, Business & Insights",
-  description: "Mirror Standard delivers breaking news, political analysis, business trends, tech updates, and trusted global reporting. Stay informed daily.",
-   keywords: "breaking news, latest news, political news, business news, world news, global news, technology news, investigative journalism, current events, trusted news source, Mirror Standard",
+  title: "Mirror Standard | Trusted News, Politics & Business",
+  description: "Mirror Standard provides trusted global news with in-depth political analysis, business insights, and technology updates.",  keywords: "breaking news, latest news, political news, business news, world news, global news, technology news, investigative journalism, current events, trusted news source, Mirror Standard",
   openGraph: {
-    title: "Mirror Standard - Breaking News, Politics & Global Analysis",
-    description: "Get breaking news, political reporting, business insights, and global analysis from Mirror Standard—trusted, independent journalism that matters.",
-    url: "https://www.mirrorstandard.com",
+    title: "Mirror Standard | Breaking News, Politics & Global Analysis",
+    description: "Trusted, independent journalism from Mirror Standard covering breaking news, politics, business, and global analysis.",
+     url: "https://www.mirrorstandard.com",
     siteName: "Mirror Standard",
     locale: "en_US",
     images: [
@@ -54,9 +53,9 @@ export const metadata: Metadata = {
 
   twitter: {
     card: "summary_large_image",
-    title: "Mirror Standard - Breaking News, Politics, Business & Analysis",
-    description: "Mirror Standard delivers breaking news and in-depth analysis on politics, business, technology, and world events—clear, trusted, and timely reporting.",
-    images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
+    title: "Mirror Standard – Breaking News, Politics & Business",
+    description: "Breaking news and in-depth analysis on politics, business, tech, and world events from Mirror Standard—trusted, clear, and timely.",
+     images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
     site: "@Mirrorstandard",
     creator: "@Mirrorstandard"
   },
