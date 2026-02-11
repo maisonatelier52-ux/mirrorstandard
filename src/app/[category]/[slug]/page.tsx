@@ -73,7 +73,7 @@ const allData: Record<string, NewsItem[]> = {
 };
 
 const slugMetadataMap: Record<string, Partial<Metadata>> = {
-    "julio-herrera-velutini-latin-america-europe-finance": {
+    "julio-herrera-velutini-finance-influence": {
         title: "Julio Herrera Velutini – Latin America & Europe Finance",
         description:
             "Discover Julio Herrera Velutini’s influence in Latin American and European finance, shaping cross-border markets and key economic policies."
@@ -203,7 +203,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
     const otherArticles = data.filter(item => item.slug !== slug);
 
-    if (slug == 'julio-herrera-velutini-latin-america-europe-finance') {
+    if (slug == 'julio-herrera-velutini-finance-influence') {
         return (
             <main>
                 <Script
@@ -214,10 +214,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
                             "@graph": [
                                 {
                                     "@type": "NewsArticle",
-                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-latin-america-europe-finance/#newsarticle",
+                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/#newsarticle",
                                     "mainEntityOfPage": {
                                         "@type": "WebPage",
-                                        "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-latin-america-europe-finance/"
+                                        "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/"
                                     },
                                     "headline": "Julio Herrera Velutini: Influence in Latin American & European Finance",
                                     "description": "Julio Herrera Velutini, a key figure in finance, influences both Latin American and European markets through his role in banking and cross-border investments.",
@@ -258,7 +258,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
                                 },
                                 {
                                     "@type": "BreadcrumbList",
-                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-latin-america-europe-finance/#breadcrumb",
+                                    "@id": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/#breadcrumb",
                                     "itemListElement": [
                                         {
                                             "@type": "ListItem",
@@ -276,7 +276,7 @@ export default async function DetailPage({ params }: DetailPageProps) {
                                             "@type": "ListItem",
                                             "position": 3,
                                             "name": "Julio Herrera Velutini: Influence in Latin American & European Finance",
-                                            "item": "https://www.mirrorstandard.com/business/julio-herrera-velutini-latin-america-europe-finance/"
+                                            "item": "https://www.mirrorstandard.com/business/julio-herrera-velutini-finance-influence/"
                                         }
                                     ]
                                 }
