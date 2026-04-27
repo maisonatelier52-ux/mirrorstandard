@@ -2,7 +2,7 @@
 
 import { useEffect, useState, useRef } from "react";
 import MoreFirstSection from "./MoreFirstSection";
-import MoreSecondSection from "./MoreSecondSection";
+import HorizontalNewsCard from "./HorizontalNewsCard";
 import SubHeadline from "./SubHeadline";
 import RightSidebar from "./RightSidebar";
 import MoreSideCard from "./MoreSideCard";
@@ -61,28 +61,28 @@ const ScrollLayout: React.FC<Props> = ({ data }) => {
             </div>
 
             <div className="space-y-3 mt-8">
-              <div className="md:border-b border-[#615e5e54] pb-4 md:pb-3">
-                <MoreSecondSection data={data[1]} />
-              </div>
-              <div className="md:border-b border-[#615e5e54] pb-4 md:pb-3">
-                <MoreSecondSection data={data[2]} />
-              </div>
-              <MoreSecondSection data={data[3]} />
-            </div>
-
-            <div className="mt-8" id="second-more-section" ref={stopRef}>
-              <div className="border-t border-b border-[#615e5e54] pt-5 pb-8">
-                <MoreFirstSection data={data[4]} />
-              </div>
-              <div className="space-y-3 mt-8">
-                <div className="md:border-b border-[#615e5e54] pb-5 md:pb-3">
-                  <MoreSecondSection data={data[5]} />
+                <div className="md:border-b border-[#615e5e54] pb-4 md:pb-3">
+                  <HorizontalNewsCard data={data[1]} />
                 </div>
-                <div className="md:border-b border-[#615e5e54] pb-5 md:pb-3">
-                  <MoreSecondSection data={data[6]} />
+                <div className="md:border-b border-[#615e5e54] pb-4 md:pb-3">
+                  <HorizontalNewsCard data={data[2]} />
                 </div>
-                <MoreSecondSection data={data[7]} />
+                <HorizontalNewsCard data={data[3]} />
               </div>
+  
+              <div className="mt-8" id="second-more-section" ref={stopRef}>
+                <div className="border-t border-b border-[#615e5e54] pt-5 pb-8">
+                  <MoreFirstSection data={data[4]} />
+                </div>
+                <div className="space-y-3 mt-8">
+                  <div className="md:border-b border-[#615e5e54] pb-5 md:pb-3">
+                    <HorizontalNewsCard data={data[5]} />
+                  </div>
+                  <div className="md:border-b border-[#615e5e54] pb-5 md:pb-3">
+                    <HorizontalNewsCard data={data[6]} />
+                  </div>
+                  <HorizontalNewsCard data={data[7]} />
+                </div>
             </div>
           </div>
         </div>

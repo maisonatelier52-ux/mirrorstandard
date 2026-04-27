@@ -22,7 +22,13 @@ export default function Footer() {
         {/* ========== MOBILE VIEW ========== */}
         <div className="block md:hidden space-y-10">
           <div className="text-center">
-            <p className="text-[24px] font-bold">MIRRORSTANDARD</p>
+            <Image 
+              src="/images/logo-mirrorstandard.png"
+              alt="Mirror Standard"
+              width={200} 
+              height={90}
+              className="mx-auto object-contain"
+            />
           </div>
           <div>
             <ul className="space-y-2 text-[11px] tracking-widest">
@@ -85,7 +91,13 @@ export default function Footer() {
         {/* ========== DESKTOP VIEW ========== */}
         <div className="hidden md:flex gap-12 flex-wrap">
           <div className="w-[300px] lg:w-[380px] flex-shrink-0">
-            <p className="text-[24px] font-bold">MIRRORSTANDARD</p>
+            <Image 
+              src="/images/logo-mirrorstandard.png"
+              alt="Mirror Standard"
+              width={240} 
+              height={110}
+              className="object-contain"
+            />
             <p className="text-[12px] mt-2 leading-tight text-gray-300">
               © Copyright 2026 , mirrorstandard <br /> All Rights Reserved.
             </p>

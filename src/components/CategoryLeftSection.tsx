@@ -1,4 +1,4 @@
-import MoreSecondSection from "./MoreSecondSection";
+import CategoryArticleCard from "./CategoryArticleCard";
 
 interface NewsData {
   category: string;
@@ -18,13 +18,13 @@ const CategoryLeftSection: React.FC<Props> = ({ data }) => {
   return (
     <div>
       <div className="md:mt-12 mt-7" id="second-more-section">
-        <div className="space-y-5">
+        <div className="space-y-10">
           {data.map((item, index) => (
             <div
-         key={`${item.slug}-${index}`}
-              className={index !== data.length - 1 ? "border-b border-[#615e5e54] pb-5" : ""}
+              key={`${item.slug}-${index}`}
+              className={index !== data.length - 1 ? "border-b border-gray-100 pb-10" : ""}
             >
-              <MoreSecondSection data={item} />
+              <CategoryArticleCard data={item} />
             </div>
           ))}
         </div>
