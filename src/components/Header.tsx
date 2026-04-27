@@ -39,9 +39,14 @@ export default function Header() {
         <div className="w-full max-w-7xl px-8 mx-auto flex items-center justify-between h-full">
           <div className="flex items-center">
             <Link href='/' title="home">
-            <span className="md:hidden text-[#ffffff] italic text-lg sm:text-3xl font-black">
-              MIRRORSTANDARD
-            </span>
+            <Image 
+              src="/images/logo-mirrorstandard.png"
+              alt="Mirror Standard"
+              width={160} 
+              height={45}
+              className="md:hidden object-contain"
+              priority
+            />
             </Link>
             <button
               type="button"
