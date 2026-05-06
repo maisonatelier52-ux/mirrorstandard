@@ -12,11 +12,32 @@ import politicsData from '../../public/data/politics.json';
 import scienceData from '../../public/data/science.json';
 import entertainmentData from '../../public/data/entertainment.json';
 import educationData from '../../public/data/education.json';
+import lifestyleData from '../../public/data/lifestyle.json';
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa"
 
-const news = [businessData[0], sportsData[0], politicsData[0], healthData[0], technologyData[0], scienceData[0], educationData[0], entertainmentData[0]];
+const allNews = [
+  ...businessData,
+  ...technologyData,
+  ...sportsData,
+  ...healthData,
+  ...politicsData,
+  ...scienceData,
+  ...entertainmentData,
+  ...educationData,
+  ...lifestyleData,
+];
+
+// Helper to parse dates like "Jan. 28 2026" or "Dec. 26, 2025"
+const parseDate = (dateStr: string) => {
+  const cleanedDate = dateStr.replace('.', '');
+  const timestamp = Date.parse(cleanedDate);
+  return isNaN(timestamp) ? 0 : timestamp;
+};
+
+const sortedNews = [...allNews].sort((a, b) => parseDate(b.date) - parseDate(a.date));
+const news = sortedNews.slice(0, 8);
 
 export default function Header() {
   const [isSearchOpen, setIsSearchOpen] = useState(false);

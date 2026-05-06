@@ -166,9 +166,9 @@ export default async function CategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category } = await params;
-  const data = allData[category];
+  const categoryData = allData[category];
 
-  if (!data) {
+  if (!categoryData) {
     return (
       <main className="max-w-7xl mx-auto h-screen px-6 flex flex-col items-center justify-center text-center">
         <h1 className="text-3xl font-bold">
@@ -180,6 +180,15 @@ export default async function CategoryPage({
       </main>
     );
   }
+
+  // Helper to parse dates like "Jan. 28 2026" or "Dec. 26, 2025"
+  const parseDate = (dateStr: string) => {
+    const cleanedDate = dateStr.replace('.', '');
+    const timestamp = Date.parse(cleanedDate);
+    return isNaN(timestamp) ? 0 : timestamp;
+  };
+
+  const data = [...categoryData].sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
   return (
     <>

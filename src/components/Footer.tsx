@@ -1,5 +1,13 @@
 import { FaInstagram, FaXTwitter, FaVk, FaYoutube } from "react-icons/fa6";
+import businessData from "../../public/data/business.json";
+import technologyData from "../../public/data/technology.json";
+import sportsData from "../../public/data/sports.json";
+import healthData from "../../public/data/health.json";
 import politicsData from "../../public/data/politics.json";
+import scienceData from "../../public/data/science.json";
+import entertainmentData from "../../public/data/entertainment.json";
+import educationData from "../../public/data/education.json";
+import lifestyleData from "../../public/data/lifestyle.json";
 import Link from "next/link";
 import Image from "next/image";
 
@@ -13,6 +21,28 @@ const categories = [
   "EDUCATION",
   "ENTERTAINMENT"
 ];
+
+const allNews = [
+  ...businessData,
+  ...technologyData,
+  ...sportsData,
+  ...healthData,
+  ...politicsData,
+  ...scienceData,
+  ...entertainmentData,
+  ...educationData,
+  ...lifestyleData,
+];
+
+// Helper to parse dates like "Jan. 28 2026" or "Dec. 26, 2025"
+const parseDate = (dateStr: string) => {
+  const cleanedDate = dateStr.replace('.', '');
+  const timestamp = Date.parse(cleanedDate);
+  return isNaN(timestamp) ? 0 : timestamp;
+};
+
+const sortedNews = [...allNews].sort((a, b) => parseDate(b.date) - parseDate(a.date));
+const editorPicks = sortedNews.slice(0, 2);
 
 export default function Footer() {
   return (
@@ -47,24 +77,24 @@ export default function Footer() {
           </div>
           <div>
             <p className="text-xl font-bold text-yellow-500 mb-4 text-center">Editor Picks</p>
-            {[0, 1].map((i) => (
+            {editorPicks.map((item, i) => (
               <Link
                 key={i}
-                href={`/${politicsData[i].category}/${politicsData[i].slug}`}
-                title={politicsData[i].slug}
+                href={`/${item.category}/${item.slug}`}
+                title={item.slug}
                 className="block w-full"
                 style={{ color: "inherit" }}
               >
                 <div className="flex justify-between items-start mb-6">
                   <div className="flex-1 pr-4">
                     <p className="text-[12px] font-semibold leading-snug hover:text-yellow-500 cursor-pointer line-clamp-3">
-                      {politicsData[i].title}
+                      {item.title}
                     </p>
-                    <p className="text-[11px] text-gray-400 mt-1">{politicsData[i].date}</p>
+                    <p className="text-[11px] text-gray-400 mt-1">{item.date}</p>
                   </div>
                   <Image
-                    src={politicsData[i].image}
-                    alt={politicsData[i].title}
+                    src={item.image}
+                    alt={item.title}
                     width={64}
                     height={64}
                     quality={75}
@@ -78,7 +108,7 @@ export default function Footer() {
             ))}
             <div >
               <p className="text-[10px] mt-2 leading-tight text-gray-300 text-center">
-                © Copyright 2026 , mirrorstandard <br /> All Rights Reserved.
+                © Copyright 2026 , Mirrorstandard <br /> All Rights Reserved.
               </p>
               <div className="flex justify-center space-x-5 mt-4 text-lg">
                 <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
@@ -99,7 +129,7 @@ export default function Footer() {
               className="object-contain"
             />
             <p className="text-[12px] mt-2 leading-tight text-gray-300">
-              © Copyright 2026 , mirrorstandard <br /> All Rights Reserved.
+              © Copyright 2026 , Mirrorstandard <br /> All Rights Reserved.
             </p>
             <div className="flex space-x-5 mt-6 text-lg">
               <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
@@ -138,24 +168,24 @@ export default function Footer() {
             </div>
             <div className="col-span-2 lg:col-span-1">
               <p className="text-xl font-bold text-yellow-500 mb-4">Editor Picks</p>
-              {[0, 1].map((i) => (
+              {editorPicks.map((item, i) => (
                 <Link
                   key={i}
-                  href={`/${politicsData[i].category}/${politicsData[i].slug}`}
-                  title={politicsData[i].title}
+                  href={`/${item.category}/${item.slug}`}
+                  title={item.title}
                   className="block w-full"
                   style={{ color: "inherit" }}
                 >
                   <div className="flex justify-between items-start mb-6">
                     <div className="flex-1 pr-4">
                       <p className="text-[12px] font-semibold leading-snug hover:text-yellow-500 cursor-pointer line-clamp-3">
-                        {politicsData[i].title}
+                        {item.title}
                       </p>
-                      <p className="text-[11px] text-gray-400 mt-1">{politicsData[i].date}</p>
+                      <p className="text-[11px] text-gray-400 mt-1">{item.date}</p>
                     </div>
                     <Image
-                      src={politicsData[i].image}
-                      alt={politicsData[i].title}
+                      src={item.image}
+                      alt={item.title}
                       width={64}
                       height={64}
                       quality={75}

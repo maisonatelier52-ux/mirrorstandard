@@ -22,56 +22,77 @@
   import DynamicSection from "@/components/DynamicSection";
 
   export default async function Home() {
-    return (
-      <main>
-        <Script
-          id="structured-data-site-navigation"
-          type="application/ld+json"
-          strategy="afterInteractive"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "SiteNavigationElement",
-              "name": [
-                "Home",
-                "Business",
-                "Politics",
-                "Technology",
-                "Science",
-                "Sports",
-                "Health",
-                "Education",
-                "Entertainment"
-              ],
-              "url": [
-                "https://www.mirrorstandard.com/",
-                "https://www.mirrorstandard.com/business/",
-                "https://www.mirrorstandard.com/politics/",
-                "https://www.mirrorstandard.com/technology/",
-                "https://www.mirrorstandard.com/science/",
-                "https://www.mirrorstandard.com/sports/",
-                "https://www.mirrorstandard.com/health/",
-                "https://www.mirrorstandard.com/education/",
-                "https://www.mirrorstandard.com/entertainment/"
-              ]
-            })
-          }}
-        />
-        <div className="hidden lg:block">
-          <Navbar />
-        </div>
-        <div className="w-full max-w-7xl md:px-8 px-4 mx-auto">
-          <NewsFirstLayout data={[businessData[0], healthData[13], scienceData[9], politicsData[0], educationData[12], technologyData[0], sportsData[0], businessData[3], educationData[14], businessData[14]]} />
-          <ArticleLayout data={[politicsData[16], politicsData[1], politicsData[2], politicsData[10], politicsData[4], politicsData[5]]} />
-          <ArticlesGrid data={[educationData[1], scienceData[1], technologyData[4], educationData[3]]} />
-          <DynamicSection data={[politicsData[17], politicsData[7], politicsData[15], politicsData[11], politicsData[9], politicsData[6], healthData[8], healthData[3], healthData[0], healthData[1], healthData[2], healthData[5], healthData[6], scienceData[4], scienceData[2], scienceData[0], scienceData[8], scienceData[3], scienceData[5], educationData[4], educationData[11], educationData[0], educationData[9], educationData[2], educationData[6], businessData[11], businessData[12], businessData[2], businessData[7], businessData[6], businessData[5]]} />
-          <MoreTopHeadlines data={[sportsData[12], educationData[8], politicsData[3], sportsData[3], technologyData[3], educationData[5], businessData[8], healthData[7], educationData[10], sportsData[9], sportsData[11]]} />
-          <ExclusiveClips data={[entertainmentData[9], healthData[9], sportsData[4], technologyData[8], politicsData[8], educationData[17], businessData[9], entertainmentData[2], businessData[4], entertainmentData[1], entertainmentData[0]]} />
-          <MainLayout data={[politicsData[12], educationData[18], healthData[11], sportsData[10], educationData[16]]} />
-          <EntertainmentSection data={[healthData[16], healthData[14], healthData[12], healthData[10], healthData[4]]} />
-          <ScrollLayout data={[politicsData[14], sportsData[1], businessData[13], technologyData[2], educationData[7], healthData[15], scienceData[7], politicsData[13], scienceData[15], scienceData[16], scienceData[12], entertainmentData[4], entertainmentData[3], entertainmentData[5], technologyData[1]]} />
-          <ScrollToTopButton />
-        </div>
-      </main>
-    );
-  }
+    const allNews = [
+    ...businessData,
+    ...educationData,
+    ...entertainmentData,
+    ...healthData,
+    ...lifestyleData,
+    ...politicsData,
+    ...scienceData,
+    ...technologyData,
+    ...sportsData,
+  ];
+
+  // Helper to parse dates like "Jan. 28 2026" or "Dec. 26, 2025"
+  const parseDate = (dateStr: string) => {
+    const cleanedDate = dateStr.replace('.', '');
+    const timestamp = Date.parse(cleanedDate);
+    return isNaN(timestamp) ? 0 : timestamp;
+  };
+
+  const sortedNews = [...allNews].sort((a, b) => parseDate(b.date) - parseDate(a.date));
+
+  return (
+    <main>
+      <Script
+        id="structured-data-site-navigation"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "SiteNavigationElement",
+            "name": [
+              "Home",
+              "Business",
+              "Politics",
+              "Technology",
+              "Science",
+              "Sports",
+              "Health",
+              "Education",
+              "Entertainment"
+            ],
+            "url": [
+              "https://www.mirrorstandard.com/",
+              "https://www.mirrorstandard.com/business/",
+              "https://www.mirrorstandard.com/politics/",
+              "https://www.mirrorstandard.com/technology/",
+              "https://www.mirrorstandard.com/science/",
+              "https://www.mirrorstandard.com/sports/",
+              "https://www.mirrorstandard.com/health/",
+              "https://www.mirrorstandard.com/education/",
+              "https://www.mirrorstandard.com/entertainment/"
+            ]
+          })
+        }}
+      />
+      <div className="hidden lg:block">
+        <Navbar />
+      </div>
+      <div className="w-full max-w-7xl md:px-8 px-4 mx-auto">
+        <NewsFirstLayout data={sortedNews.slice(0, 10)} />
+        <ArticleLayout data={sortedNews.slice(10, 16)} />
+        <ArticlesGrid data={sortedNews.slice(16, 20)} />
+        <DynamicSection data={sortedNews.slice(20, 51)} />
+        <MoreTopHeadlines data={sortedNews.slice(51, 62)} />
+        <ExclusiveClips data={sortedNews.slice(62, 73)} />
+        <MainLayout data={sortedNews.slice(73, 78)} />
+        <EntertainmentSection data={sortedNews.slice(78, 83)} />
+        <ScrollLayout data={sortedNews.slice(83, 98)} />
+        <ScrollToTopButton />
+      </div>
+    </main>
+  );
+}

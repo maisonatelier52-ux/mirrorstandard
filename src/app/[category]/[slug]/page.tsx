@@ -189,7 +189,16 @@ export default async function DetailPage({ params }: DetailPageProps) {
         );
     }
 
-    const otherArticles = data.filter(item => item.slug !== slug);
+  // Helper to parse dates like "Jan. 28 2026" or "Dec. 26, 2025"
+  const parseDate = (dateStr: string) => {
+    const cleanedDate = dateStr.replace('.', '');
+    const timestamp = Date.parse(cleanedDate);
+    return isNaN(timestamp) ? 0 : timestamp;
+  };
+
+  const otherArticles = data
+    .filter(item => item.slug !== slug)
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
 
 

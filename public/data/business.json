@@ -1,6 +1,23 @@
 [
-  
-    {
+  {
+    "category": "business",
+    "title": "US Rights Agency Files Lawsuit Against New York Times Over Alleged Bias Against White Employee",
+    "slug": "us-rights-agency-lawsuit-new-york-times-reverse-discrimination-promotion-case",
+    "image": "/images/us-rights-agency-lawsuit-new-york-times-promotion-case.webp",
+    "date": "May. 6 2026",
+    "shortdescription": "A US civil rights agency has filed a lawsuit against The New York Times alleging discrimination against a white employee who was reportedly passed over for a promotion, intensifying national debate over workplace diversity policies, hiring practices, and equal employment protections.",
+    "description": "The U.S. Equal Employment Opportunity Commission has filed a discrimination lawsuit against The New York Times, accusing the newspaper of passing over a white male employee for a promotion because of its diversity goals. The case centers on a deputy real estate editor position that was filled in 2025. According to the lawsuit, the employee claimed he was excluded from the final round of interviews while several other candidates, including women and a Black applicant, were advanced instead. The federal agency argues that the decision violated Title VII of the Civil Rights Act of 1964, which bans workplace discrimination based on race, sex, religion or national origin. The lawsuit alleges that the newspaper’s diversity policies influenced hiring and promotion decisions inside the newsroom. Investigators pointed to public diversity targets announced by the company, including a plan introduced in 2021 that aimed to increase the number of Black and Latino employees in leadership positions. Andrea Lucas, chair of the EEOC, said workplace discrimination laws apply equally to everyone, including white male employees. She argued that companies cannot legally use race or gender as factors in hiring or promotion decisions, even when pursuing diversity goals. The newspaper strongly denied the allegations and described the lawsuit as politically motivated. Company spokeswoman Danielle Rhoades Ha said race and gender played no role in the hiring decision and that the organization selected the candidate it believed was best qualified for the position. Court documents claim the woman who received the promotion had limited experience in real estate journalism, while the employee who filed the complaint had previously worked on real estate coverage and had been employed at the newspaper since 2014. The lawsuit also cited comments from interviewers questioning whether the selected candidate had enough experience for the role. The lawsuit is part of a broader effort by EEOC Chair Andrea Lucas to challenge workplace diversity policies that she believes may unfairly influence hiring and promotion decisions. Over the past few months, the agency has examined several major companies over concerns that race or gender may have been considered during employment decisions.People who support diversity initiatives say that these regulations help fix the unfair job opportunities that have been around for a long time. They think that these kinds of activities are vital for getting more women and people of color into high-level jobs. Others, on the other hand, think that employers shouldn't take race or gender into account when recruiting or promoting people. They say that hiring decisions should solely be based on qualifications and experience.",
+    "author": "Betty D. Chambers",
+    "authorslug": "betty-d-chambers",
+    "authorImage": "/images/betty-d-chambers.webp",
+    "role": "Senior Reporter",
+    "twitter": "",
+    "instagram": "https://www.instagram.com/betty.chambers2025/",
+    "facebook": "https://www.facebook.com/profile.php?id=61585248032934",
+    "medium": "https://medium.com/@betty.chambers",
+    "substack": "https://substack.com/@bettychambers946840"
+  },
+  {
     "category": "business",
     "title": "UPS to Cut 30,000 Jobs in 2026, Scaling Back Amazon Deliveries and Closing Facilities",
     "slug": "ups-layoffs-30k-2026-cost-cutting-amazon-delivery-reduction",
@@ -72,7 +89,6 @@
     "image": "/images/nyc‑metrocard‑omny‑fare‑switch.webp",
     "slug": "nyc-subway-metrocard-tap-and-go"
   },
- 
   {
     "category": "business",
     "title": "Asian shares slip after Wall Street logs its worst day in 3 weeks",
