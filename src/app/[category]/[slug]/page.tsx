@@ -71,6 +71,17 @@ const allData: Record<string, NewsItem[]> = {
     education: educationData,
 };
 
+const allNews: NewsItem[] = [
+    ...businessData,
+    ...technologyData,
+    ...sportsData,
+    ...healthData,
+    ...politicsData,
+    ...scienceData,
+    ...entertainmentData,
+    ...educationData,
+];
+
 
 export async function generateMetadata({ params }: DetailPageProps): Promise<Metadata> {
     const { category, slug } = await params;
@@ -82,7 +93,7 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
         sports: sportsData,
         science: scienceData,
         health: healthData,
-        eduction: educationData,
+        education: educationData,
         entertainment: entertainmentData,
     };
 
@@ -200,6 +211,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
     .filter(item => item.slug !== slug)
     .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
+  const globalLatest = allNews
+    .filter(item => item.slug !== slug)
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
+
 
 
     return (
@@ -248,7 +263,11 @@ export default async function DetailPage({ params }: DetailPageProps) {
                 <Navbar />
             </div>
             <div className="w-full max-w-7xl px-5 md:px-8 mx-auto md:mt-7 mt-4 mb-12">
-                <DetailSection article={article} otherArticles={otherArticles} data={data} />
+                <DetailSection 
+                    article={article} 
+                    otherArticles={otherArticles} 
+                    globalLatest={globalLatest}
+                />
             </div>
             <ScrollToTopButton />
         </main>

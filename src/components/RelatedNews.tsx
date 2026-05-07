@@ -21,9 +21,9 @@ const RelatedNews: React.FC<Props> = ({ data }) => {
       <SubHeadline title="Related News" />
         <div className="lg:col-span-9">
           <div className="grid grid-cols-1 md:grid-cols-3 gap-4 mt-3">
-            <NewsCard data={data[0]} />
-            <NewsCard data={data[1]} />
-            <NewsCard data={data[2]} />
+            {data?.filter(item => item).map((item, index) => (
+                <NewsCard key={index} data={item} />
+            ))}
           </div>
         </div>
     </div>

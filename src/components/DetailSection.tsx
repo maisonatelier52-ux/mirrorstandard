@@ -32,10 +32,10 @@ interface NewsItem {
 interface Props {
   article: NewsItem;
   otherArticles: NewsItem[];
-  data: NewsItem[];
+  globalLatest: NewsItem[];
 }
 
-export default function DetailSection({ article, otherArticles, data }: Props) {
+export default function DetailSection({ article, otherArticles, globalLatest }: Props) {
   const leftRef = useRef<HTMLDivElement>(null);
   const rightRef = useRef<HTMLDivElement>(null);
   const stopRef = useRef<HTMLDivElement>(null);
@@ -61,6 +61,18 @@ export default function DetailSection({ article, otherArticles, data }: Props) {
     window.addEventListener("scroll", handleScroll, { passive: true });
     return () => window.removeEventListener("scroll", handleScroll);
   }, []);
+
+  const popularNews = globalLatest.slice(0, 6);
+  const relatedNews = globalLatest.slice(6, 9);
+  
+  // Navigation should ideally be category-based, but we must avoid repetition with the sections above
+  const usedSlugs = new Set([
+    article.slug,
+    ...popularNews.map(a => a.slug),
+    ...relatedNews.map(a => a.slug)
+  ]);
+  
+  const navigationNews = otherArticles.filter(a => !usedSlugs.has(a.slug)).slice(0, 2);
 
   return (
     <div>
@@ -88,9 +100,9 @@ export default function DetailSection({ article, otherArticles, data }: Props) {
               medium={article.medium}
               substack={article.substack}
             />
-            <NewsNavigation data={[otherArticles[0], otherArticles[1]]} />
+            <NewsNavigation data={navigationNews} />
             <CommentForm />
-            <RelatedNews data={[otherArticles[2], otherArticles[3], otherArticles[4]]} />
+            <RelatedNews data={relatedNews} />
           </div>
         </div>
         <div className="lg:col-span-1 relative">
@@ -98,9 +110,9 @@ export default function DetailSection({ article, otherArticles, data }: Props) {
             ref={rightRef}
             className={`${rightPosition === 'sticky' ? 'sticky top-10' : 'relative'} transition-all duration-500`}
           >
-            <h2 className="text-[24px] font-[oswald] mb-4 font-bold">POPULAR NEWS</h2>
+            <h2 className="text-[24px] font-[oswald] mb-4 font-bold uppercase">Popular News</h2>
             <div className="divide-y divide-[#615e5e54]">
-              {data.slice(5, 9).map((item, index) => (
+              {popularNews.map((item, index) => (
                 <div key={index} className="py-3">
                   <HorizontalNewsCard data={item} />
                 </div>
