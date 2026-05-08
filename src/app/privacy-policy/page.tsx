@@ -173,7 +173,14 @@ export default function PrivacyPolicy() {
             to support journalism, and never sells personal data.
           </p>
         </div>
+        {/* ✅ AUTHORITY SIGNAL: LAST UPDATED */}
+        <section className="mt-16 pt-8 border-t border-gray-100 text-center">
+          <p className="text-xs text-gray-400 font-light italic">
+            Last Updated: May 8, 2026
+          </p>
+        </section>
       </div>
     </div>
+
   );
 }
