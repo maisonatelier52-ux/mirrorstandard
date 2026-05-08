@@ -22,10 +22,10 @@ const  NewsFirstLayout: React.FC<Props> = ({ data }) => {
   return (
     <div className="mt-8 md:mt-6 grid grid-cols-1 lg:grid-cols-12 gap-15 md:gap-6">
       <div className="lg:col-span-3 md:space-y-3 space-y-4">
-        {/* <SubHeadline title="what's happenging" /> */}
+        {/* <SubHeadline title="Latest News & Updates" /> */}
          <div className="flex items-center w-full">
       <h1 className="font-[oswald] text-[20px] uppercase tracking-wide" style={{ fontWeight: 600 }}>
-       what's happenging
+       Latest News & Updates
       </h1>
       <div
         className="flex-1 h-[0.5px] ml-2 mt-4 bg-[#646464]"
