@@ -1,4 +1,22 @@
 [
+    {
+    "category": "education",
+    "title": "Cyberattack Disrupts Canvas System Used by Thousands of Schools Before Finals",
+    "shortdescription": "A major cyberattack has disrupted the Canvas learning management system used by thousands of schools and universities just as final exams approach. The Canvas outage is raising concerns among students, teachers, and administrators over access to coursework, exams, and academic records.",
+    "description": "A widespread cyberattack disrupted the Canvas learning management system on Thursday, leaving thousands of schools and universities across the world struggling to operate as students prepared for final exams. The outage created confusion on campuses as students lost access to course materials, assignments, lecture slides, grades, and study resources stored on the platform. Cybersecurity analysts said the hacking group known as ShinyHunters claimed responsibility for the attack. Luke Connolly, a threat analyst at cybersecurity firm Emisoft, said the group alleged that nearly 9,000 schools worldwide were affected and that billions of private messages and educational records may have been accessed during the breach. Canvas, developed by Instructure, is one of the most widely used digital learning systems in schools and universities. The company had not released a detailed public statement about the outage or confirmed whether the platform was taken offline intentionally as a precaution against further damage. Students across several universities turned to social media after they were suddenly unable to open study notes, assignments, and lecture materials ahead of final exams. Universities such as Virginia Tech, the University of New Mexico, and the University of Iowa informed students and staff about the outage and cautioned them against suspicious emails or fake Canvas messages linked to the cyberattack. The outage also forced schools to quickly change their exam plans. The University of Texas at San Antonio postponed some finals scheduled for Friday, while many professors began sharing coursework and study materials through email and other online services to keep classes running. The incident has renewed concerns about how heavily schools and universities rely on online systems for daily academic activities. Education institutions store large amounts of student and staff information digitally, making them frequent targets for hackers. Similar attacks in recent years have also impacted Minneapolis Public Schools and the Los Angeles Unified School District. Connolly noted similarities between the Canvas breach and a previous attack involving education technology company PowerSchool. He described ShinyHunters as a loosely connected hacking group made up largely of teenagers and young adults based in the United States and the United Kingdom. The group has also been linked to high-profile cyberattacks targeting major companies, including Ticketmaster.",
+    "image": "/images/cyberattack-canvas-school-system-finals.webp",
+    "slug": "cyberattack-canvas-school-system-finals",
+    "author": "Jacqueline L. Wood",
+    "authorslug": "jacqueline-l-wood",
+    "authorImage": "/images/jacqueline-l-wood.webp",
+    "role": "Reporter",
+    "twitter": "",
+    "instagram": "",
+    "facebook": "https://www.facebook.com/profile.php?id=61585324559123",
+    "medium": "http://medium.com/@jacqueline.wood",
+    "substack": "https://substack.com/@jacquelinewood751378",
+    "date": "May. 8, 2026"
+  },
   {
     "category": "education",
     "title": "University of Michigan Professor Faces Backlash Over Speech Supporting Pro-Palestinian Students",

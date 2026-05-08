@@ -12,6 +12,7 @@ import Navbar from '@/components/Navbar';
 import { Metadata } from 'next';
 import CategorySection from '@/components/CategorySection';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
+import Script from 'next/script';
 
 interface NewsItem {
   category: string;
@@ -48,55 +49,55 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { category } = await params;
 
-const categoryMeta: Record<string, { title: string; description: string }> = {
-  business: {
-    title: "Business News & Market Trends | Mirror Standard",
-    description:
-      "Latest business news, market trends, corporate updates, startup growth, and investment insights shaping the global economy.",
-  },
+  const categoryMeta: Record<string, { title: string; description: string }> = {
+    business: {
+      title: "Business News & Market Trends | Mirror Standard",
+      description:
+        "Latest business news, market trends, corporate updates, startup growth, and investment insights shaping the global economy.",
+    },
 
-  technology: {
-    title: "Technology News & AI Updates | Mirror Standard",
-    description:
-      "Breaking tech news covering AI, gadgets, startups, cybersecurity, apps, and digital innovations shaping the future.",
-  },
+    technology: {
+      title: "Technology News & AI Updates | Mirror Standard",
+      description:
+        "Breaking tech news covering AI, gadgets, startups, cybersecurity, apps, and digital innovations shaping the future.",
+    },
 
-  sports: {
-    title: "Sports News, Scores & Match Analysis | Mirror Standard",
-    description:
-      "Live sports news, scores, match results, player stats, tournaments, and expert analysis from global sports events.",
-  },
+    sports: {
+      title: "Sports News, Scores & Match Analysis | Mirror Standard",
+      description:
+        "Live sports news, scores, match results, player stats, tournaments, and expert analysis from global sports events.",
+    },
 
-  health: {
-    title: "Health News, Wellness & Medical Updates | Mirror Standard",
-    description:
-      "Trusted health news on fitness, wellness, nutrition, mental health, medical research, and healthy living tips.",
-  },
+    health: {
+      title: "Health News, Wellness & Medical Updates | Mirror Standard",
+      description:
+        "Trusted health news on fitness, wellness, nutrition, mental health, medical research, and healthy living tips.",
+    },
 
-  science: {
-    title: "Science News, Space & Research Updates | Mirror Standard",
-    description:
-      "Science news covering space exploration, climate research, scientific discoveries, innovation, and future technologies.",
-  },
+    science: {
+      title: "Science News, Space & Research Updates | Mirror Standard",
+      description:
+        "Science news covering space exploration, climate research, scientific discoveries, innovation, and future technologies.",
+    },
 
-  politics: {
-    title: "Politics News, Elections & Policy Updates | Mirror Standard",
-    description:
-      "Breaking political news, election coverage, government policy updates, global politics, and expert political analysis.",
-  },
+    politics: {
+      title: "Politics News, Elections & Policy Updates | Mirror Standard",
+      description:
+        "Breaking political news, election coverage, government policy updates, global politics, and expert political analysis.",
+    },
 
-  education: {
-    title: "Education News & Learning Updates | Mirror Standard",
-    description:
-      "Education news on schools, universities, exams, education policy, online learning, and student success stories.",
-  },
+    education: {
+      title: "Education News & Learning Updates | Mirror Standard",
+      description:
+        "Education news on schools, universities, exams, education policy, online learning, and student success stories.",
+    },
 
-  entertainment: {
-    title: "Entertainment News, Movies & Celebrities | Mirror Standard",
-    description:
-      "Entertainment news featuring movies, TV shows, celebrities, music, streaming platforms, and pop culture trends.",
-  },
-};
+    entertainment: {
+      title: "Entertainment News, Movies & Celebrities | Mirror Standard",
+      description:
+        "Entertainment news featuring movies, TV shows, celebrities, music, streaming platforms, and pop culture trends.",
+    },
+  };
 
 
   const siteUrl = "https://www.mirrorstandard.com";
@@ -181,7 +182,6 @@ export default async function CategoryPage({
     );
   }
 
-  // Helper to parse dates like "Jan. 28 2026" or "Dec. 26, 2025"
   const parseDate = (dateStr: string) => {
     const cleanedDate = dateStr.replace('.', '');
     const timestamp = Date.parse(cleanedDate);
@@ -191,7 +191,26 @@ export default async function CategoryPage({
   const data = [...categoryData].sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
   return (
-    <>
+    <main itemScope itemType="https://schema.org/CollectionPage">
+      <Script
+        id="structured-data-category"
+        type="application/ld+json"
+        strategy="afterInteractive"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "ItemList",
+            "name": `${category.charAt(0).toUpperCase() + category.slice(1)} News | Mirror Standard`,
+            "description": `Latest ${category} news and updates from Mirror Standard.`,
+            "url": `https://www.mirrorstandard.com/${category}`,
+            "itemListElement": data.slice(0, 10).map((n, i) => ({
+              "@type": "ListItem",
+              "position": i + 1,
+              "url": `https://www.mirrorstandard.com/${n.category}/${n.slug}`
+            }))
+          })
+        }}
+      />
       <div className="hidden lg:block">
         <Navbar />
       </div>
@@ -199,8 +218,7 @@ export default async function CategoryPage({
         <CategoryHeader category={category} />
         <CategorySection data={data} />
         <ScrollToTopButton />
-
       </div>
-    </>
+    </main>
   );
 }

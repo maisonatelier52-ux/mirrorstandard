@@ -19,10 +19,9 @@ interface Props {
 }
 
 const DynamicSection: React.FC<Props> = ({ data }) => {
-  const [selectedCategory, setSelectedCategory] = useState("politics");
-
+  const [selectedCategory, setSelectedCategory] = useState("all");
   const filteredData = useMemo(() => {
-    if (selectedCategory === "All") return data;
+    if (selectedCategory === "all") return data;
     return data.filter((item) => item.category === selectedCategory);
   }, [selectedCategory, data]);
 

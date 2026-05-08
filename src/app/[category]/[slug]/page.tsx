@@ -200,20 +200,19 @@ export default async function DetailPage({ params }: DetailPageProps) {
         );
     }
 
-  // Helper to parse dates like "Jan. 28 2026" or "Dec. 26, 2025"
-  const parseDate = (dateStr: string) => {
-    const cleanedDate = dateStr.replace('.', '');
-    const timestamp = Date.parse(cleanedDate);
-    return isNaN(timestamp) ? 0 : timestamp;
-  };
+    const parseDate = (dateStr: string) => {
+        const cleanedDate = dateStr.replace('.', '');
+        const timestamp = Date.parse(cleanedDate);
+        return isNaN(timestamp) ? 0 : timestamp;
+    };
 
-  const otherArticles = data
-    .filter(item => item.slug !== slug)
-    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
+    const otherArticles = data
+        .filter(item => item.slug !== slug)
+        .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
-  const globalLatest = allNews
-    .filter(item => item.slug !== slug)
-    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
+    const globalLatest = allNews
+        .filter(item => item.slug !== slug)
+        .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
 
 
@@ -263,9 +262,9 @@ export default async function DetailPage({ params }: DetailPageProps) {
                 <Navbar />
             </div>
             <div className="w-full max-w-7xl px-5 md:px-8 mx-auto md:mt-7 mt-4 mb-12">
-                <DetailSection 
-                    article={article} 
-                    otherArticles={otherArticles} 
+                <DetailSection
+                    article={article}
+                    otherArticles={otherArticles}
                     globalLatest={globalLatest}
                 />
             </div>

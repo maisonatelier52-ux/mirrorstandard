@@ -2,7 +2,6 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header";
-import { ThemeProvider } from "next-themes";
 import { Providers } from '@/components/ThemeProvider'
 import Footer from "@/components/Footer";
 import { Roboto } from 'next/font/google';
@@ -33,11 +32,12 @@ const roboto = Roboto({
 export const metadata: Metadata = {
   metadataBase: new URL("https://www.mirrorstandard.com"),
   title: "Mirror Standard | Trusted News, Politics & Business",
-  description: "Mirror Standard provides trusted global news with in-depth political analysis, business insights, and technology updates.",  keywords: "breaking news, latest news, political news, business news, world news, global news, technology news, investigative journalism, current events, trusted news source, Mirror Standard",
+  description: "Mirror Standard provides trusted global news with in-depth political analysis, business insights, and technology updates.",
+  keywords: "breaking news, latest news, political news, business news, world news, global news, technology news, investigative journalism, current events, trusted news source, Mirror Standard",
   openGraph: {
     title: "Mirror Standard | Breaking News, Politics & Global Analysis",
     description: "Trusted, independent journalism from Mirror Standard covering breaking news, politics, business, and global analysis.",
-     url: "https://www.mirrorstandard.com",
+    url: "https://www.mirrorstandard.com",
     siteName: "Mirror Standard",
     locale: "en_US",
     images: [
@@ -50,16 +50,14 @@ export const metadata: Metadata = {
     ],
     type: "website",
   },
-
   twitter: {
     card: "summary_large_image",
     title: "Mirror Standard – Breaking News, Politics & Business",
     description: "Breaking news and in-depth analysis on politics, business, tech, and world events from Mirror Standard—trusted, clear, and timely.",
-     images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
+    images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
     site: "@Mirrorstandard",
     creator: "@Mirrorstandard"
   },
-
   alternates: {
     canonical: "https://www.mirrorstandard.com",
     languages: {
@@ -67,7 +65,6 @@ export const metadata: Metadata = {
       "x-default": "https://www.mirrorstandard.com",
     },
   },
-
   authors: [{ name: "Mirror Standard Staff" }],
   publisher: "Mirror Standard",
   robots: {
@@ -81,7 +78,9 @@ export const metadata: Metadata = {
       'max-snippet': -1,
     },
   },
-
+  verification: {
+    google: "yJBvvr61HsIIbHKVTR5dNmkkHrx6puybsWaSI42qoq8",
+  },
   icons: {
     icon: "/favicon.ico"
   },
@@ -96,39 +95,57 @@ export default function RootLayout({
     <html lang="en" suppressHydrationWarning>
       <head>
         <Script
-          id="structured-data-newsmediaorganization"
+          id="structured-data-common"
           type="application/ld+json"
           strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "NewsMediaOrganization",
-              "@id": "https://www.mirrorstandard.com/#organization",
-              "name": "Mirror Standard",
-              "url": "https://www.mirrorstandard.com",
-              "logo": {
-                "@type": "ImageObject",
-                "url": "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
-                "width": 1024,
-                "height": 1024
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "NewsMediaOrganization",
+                "@id": "https://www.mirrorstandard.com/#organization",
+                "name": "Mirror Standard",
+                "url": "https://www.mirrorstandard.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+                  "width": 1024,
+                  "height": 1024
+                },
+                "sameAs": [
+                  "https://x.com/MirrorstandardU",
+                  "https://www.instagram.com/mirrorstandardusnews/",
+                  "https://www.youtube.com/@mirrorstandardUS"
+                ],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "contactType": "editorial",
+                  "email": "contact@mirrorstandard.com",
+                  "availableLanguage": ["English"]
+                }
               },
-              "sameAs": [
-                "https://x.com/MirrorstandardU",
-                "https://www.instagram.com/mirrorstandardusnews/",
-                "https://www.youtube.com/@mirrorstandardUS"
-              ],
-              "contactPoint": {
-                "@type": "ContactPoint",
-                "contactType": "editorial",
-                "email": "contact@mirrorstandard.com",
-                "availableLanguage": ["English"]
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://www.mirrorstandard.com/#website",
+                "url": "https://www.mirrorstandard.com",
+                "name": "Mirror Standard",
+                "description": "Trusted News, Politics & Business Analysis",
+                "publisher": {
+                  "@id": "https://www.mirrorstandard.com/#organization"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://www.mirrorstandard.com/search?query={search_term_string}"
+                  },
+                  "query-input": "required name=search_term_string"
+                }
               }
-            })
+            ])
           }}
         />
-        <meta name="google-site-verification" content="yJBvvr61HsIIbHKVTR5dNmkkHrx6puybsWaSI42qoq8" />
-        <meta name="robots" content="index, follow, max-image-preview:large" />
-        <meta name="googlebot" content="index, follow" />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
       </head>
       <body

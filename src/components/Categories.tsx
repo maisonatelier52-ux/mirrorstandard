@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 
-const categories = ["politics", "health", "science", "business", "education"];
+const categories = ["all", "politics", "health", "science", "business", "education"];
 
 interface Props {
     selected: string;

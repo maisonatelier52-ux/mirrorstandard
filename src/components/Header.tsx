@@ -127,10 +127,19 @@ export default function Header() {
           }`}
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-700 h-16">
-          <span className="text-[#ffffff] italic text-xl md:text-2xl font-black">MIRRORSTANDARD</span>
+          <Link href='/' title="home">
+            <Image 
+              src="/images/logo-mirrorstandard.png"
+              alt="Mirror Standard"
+              width={160} 
+              height={45}
+              className="object-contain"
+              priority
+            />
+            </Link>
           <button
             onClick={() => setIsMenuOpen(false)}
-            aria-label="twitter"
+            aria-label="Close menu"
             className="text-gray-400 hover:text-white"
           >
             <X className="inline ml-2" size={22} />
