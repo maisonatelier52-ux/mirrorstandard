@@ -56,13 +56,13 @@ const NewsCard: React.FC<Props> = ({ data }) => {
             <span className="ml-1 text-[11px]">{data.date}</span>
           </p>
 
-          <h3
+          <h2
             className="font-['Oswald'] font-bold line-clamp-2 
                        text-[17px] sm:text-[24px] lg:text-[24px] 
                        leading-tight"
           >
             {data.title}
-          </h3>
+          </h2>
         </div>
       </Link>
     </div>
