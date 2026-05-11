@@ -107,8 +107,11 @@ export default function Footer() {
               </Link>
             ))}
             <div >
-              <p className="text-[10px] mt-2 leading-tight text-gray-300 text-center">
-                © Copyright 2026 , Mirror Standard | Trusted News <br /> All Rights Reserved.
+               <p className="text-[10px] mt-2 leading-tight text-gray-300 text-center">
+                © Copyright 2026 
+              </p>
+              <p className="text-[10px] mt-4 leading-relaxed text-gray-400 text-center px-4">
+                Mirror Standard provides trusted global news, in-depth politics analysis, and business insights. Our mission is to deliver accurate reporting on the forces shaping our world.
               </p>
               <div className="flex justify-center space-x-5 mt-4 text-lg">
                 <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
@@ -129,7 +132,10 @@ export default function Footer() {
               className="object-contain"
             />
             <p className="text-[12px] mt-2 leading-tight text-gray-300">
-              © Copyright 2026 , Mirror Standard | Trusted News <br /> All Rights Reserved.
+              © Copyright 2026 
+            </p>
+            <p className="text-[11px] mt-4 leading-relaxed text-gray-400">
+              Mirror Standard provides trusted global news, in-depth politics analysis, and business insights. Our mission is to deliver accurate reporting on the forces shaping our world.
             </p>
             <div className="flex space-x-5 mt-6 text-lg">
               <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>

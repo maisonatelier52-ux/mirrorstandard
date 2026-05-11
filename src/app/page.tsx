@@ -116,6 +116,14 @@
           <NewsFirstLayout data={newsFirstData} />
           <ArticleLayout data={articleLayoutData} />
           <ArticlesGrid data={articlesGridData} />
+          <div className="py-8 border-b border-gray-200 mb-8">
+            <h2 className="text-2xl md:text-3xl font-[Oswald] font-bold uppercase tracking-tight">
+              Mirror Standard | Business, Politics & Global Analysis
+            </h2>
+            <p className="text-gray-500 mt-2 font-light">
+              Trusted independent journalism covering the most significant stories in politics and business today.
+            </p>
+          </div>
           <DynamicSection data={afterTop20} />
           <MoreTopHeadlines data={remainingForOthers.slice(0, 11)} />
           <ExclusiveClips data={remainingForOthers.slice(11, 22)} />
