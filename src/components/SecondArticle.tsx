@@ -58,12 +58,12 @@ const SecondArticle: React.FC<Props> = ({ data }) => {
               {data.date}
             </span>
           </p>
-          <h2
+          <p
             className="font-[oswald] text-[22px] sm:text-[28px] md:text-[32px] lg:text-[36px] leading-tight line-clamp-2"
             style={{ fontWeight: 700 }}
           >
             {data.title}
-          </h2>
+          </p>
           <p
             className="mt-2 text-[14px] text-gray-500 md:text-[16px] leading-tight"
             style={{
