@@ -147,6 +147,7 @@ export default function RootLayout({
           }}
         />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </head>
       <body
         className={`

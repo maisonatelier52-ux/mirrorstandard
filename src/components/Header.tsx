@@ -87,6 +87,7 @@ export default function Header() {
               className="hidden md:block object-contain"
               priority
             />
+            <span className="sr-only">Mirror Standard – Trusted News, Politics & Business</span>
           </Link>
           <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-3">

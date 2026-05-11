@@ -68,6 +68,7 @@
 
     return (
       <main itemScope itemType="https://schema.org/CollectionPage">
+        <h1 className="sr-only">Mirror Standard | Trusted News, Politics & Business</h1>
         <Script
           id="structured-data-homepage"
           type="application/ld+json"

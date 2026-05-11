@@ -108,7 +108,7 @@ export default function Footer() {
             ))}
             <div >
               <p className="text-[10px] mt-2 leading-tight text-gray-300 text-center">
-                © Copyright 2026 , Mirrorstandard <br /> All Rights Reserved.
+                © Copyright 2026 , Mirror Standard | Trusted News <br /> All Rights Reserved.
               </p>
               <div className="flex justify-center space-x-5 mt-4 text-lg">
                 <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
@@ -129,7 +129,7 @@ export default function Footer() {
               className="object-contain"
             />
             <p className="text-[12px] mt-2 leading-tight text-gray-300">
-              © Copyright 2026 , Mirrorstandard <br /> All Rights Reserved.
+              © Copyright 2026 , Mirror Standard | Trusted News <br /> All Rights Reserved.
             </p>
             <div className="flex space-x-5 mt-6 text-lg">
               <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
