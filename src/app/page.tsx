@@ -3,44 +3,20 @@
   import NewsFirstLayout from "@/components/NewsFristLayout";
   import ArticleLayout from "@/components/ArticleLayout";
   import ArticlesGrid from "@/components/ArticlesGrid";
-  import MoreTopHeadlines from "@/components/MoreTopHeadlines";
-  import ExclusiveClips from "@/components/ExclusiveClips";
-  import MainLayout from "@/components/MainLayout";
-  import EntertainmentSection from "@/components/Entertainment";
-  import ScrollLayout from "@/components/ScrollLayout";
-  import ScrollToTopButton from "@/components/ScrollToTopButton";
+  import dynamic from "next/dynamic";
+
+  const MoreTopHeadlines = dynamic(() => import("@/components/MoreTopHeadlines"));
+  const ExclusiveClips = dynamic(() => import("@/components/ExclusiveClips"));
+  const MainLayout = dynamic(() => import("@/components/MainLayout"));
+  const EntertainmentSection = dynamic(() => import("@/components/Entertainment"));
+  const ScrollLayout = dynamic(() => import("@/components/ScrollLayout"));
+  const ScrollToTopButton = dynamic(() => import("@/components/ScrollToTopButton"));
   import Script from "next/script";
-  import businessData from '../../public/data/business.json'
-  import educationData from '../../public/data/education.json'
-  import entertainmentData from '../../public/data/entertainment.json'
-  import healthData from '../../public/data/health.json'
-  import lifestyleData from '../../public/data/lifestyle.json'
-  import politicsData from '../../public/data/politics.json'
-  import scienceData from '../../public/data/science.json'
-  import technologyData from '../../public/data/technology.json'
-  import sportsData from '../../public/data/sports.json'
   import DynamicSection from "@/components/DynamicSection";
+  import { getSortedNews } from "@/lib/news";
 
   export default async function Home() {
-    const allNews = [
-      ...businessData,
-      ...educationData,
-      ...entertainmentData,
-      ...healthData,
-      ...lifestyleData,
-      ...politicsData,
-      ...scienceData,
-      ...technologyData,
-      ...sportsData,
-    ];
-
-    const parseDate = (dateStr: string) => {
-      const cleanedDate = dateStr.replace('.', '');
-      const timestamp = Date.parse(cleanedDate);
-      return isNaN(timestamp) ? 0 : timestamp;
-    };
-
-    const sortedNews = [...allNews].sort((a, b) => parseDate(b.date) - parseDate(a.date));
+    const sortedNews = getSortedNews();
 
     const newsFirstData = sortedNews.slice(0, 10);
     const articleLayoutData = sortedNews.slice(10, 16);

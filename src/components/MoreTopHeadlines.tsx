@@ -1,10 +1,8 @@
 import SubHeadline from "./SubHeadline";
-import NewsCard from "./NewsCard";
-import FeaturedArticle from "./FeaturedArticle";
 import OverlayArticleCard from "./OverlayArticleCard";
 import HorizontalNewsCard from "./HorizontalNewsCard";
-import SecondArticle from "./SecondArticle";
 import MoreFeaturedArticle from "./MoreFeaturedArticle";
+import NewsCardFirst from "./NewsCardFirst";
 
 
 interface NewsData {
@@ -48,12 +46,12 @@ const MoreTopHeadlines: React.FC<Props> = ({ data }) => {
           <MoreFeaturedArticle data={data[5]} />
           <div className="grid grid-cols-1 md:grid-cols-3 gap-6 md:gap-4 mt-4 pb-7 md:pb-0 border-b border-[#615e5e54]">
            <div className="md:border-r border-[#615e5e54] md:pb-7 md:pr-4">
-            <NewsCard data={data[6]} />
+            <NewsCardFirst data={data[6]} />
            </div>
             <div className="md:border-r border-[#615e5e54] md:pr-4">
-            <NewsCard data={data[7]} />
+            <NewsCardFirst data={data[7]} />
             </div>
-            <NewsCard data={data[8]} />
+            <NewsCardFirst data={data[8]} />
           </div>
         </div>
       </div>

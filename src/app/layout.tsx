@@ -86,11 +86,15 @@ export const metadata: Metadata = {
   },
 };
 
+import { getLatestNews } from "@/lib/news";
+
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const latestNews = getLatestNews(10);
+
   return (
     <html lang="en" suppressHydrationWarning>
       <head>
@@ -162,7 +166,7 @@ export default function RootLayout({
       >
 
         <Providers>
-          <Header />
+          <Header latestNews={latestNews} />
           {children}
           <Footer />
         </Providers>

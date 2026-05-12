@@ -4,46 +4,25 @@ import { Menu, Search, X } from "lucide-react";
 import { useState } from "react";
 import { useRouter } from "next/navigation";
 import ThemeToggle from "./ThemeToggle";
-import businessData from '../../public/data/business.json';
-import technologyData from '../../public/data/technology.json';
-import sportsData from '../../public/data/sports.json';
-import healthData from '../../public/data/health.json';
-import politicsData from '../../public/data/politics.json';
-import scienceData from '../../public/data/science.json';
-import entertainmentData from '../../public/data/entertainment.json';
-import educationData from '../../public/data/education.json';
-import lifestyleData from '../../public/data/lifestyle.json';
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa"
 
-const allNews = [
-  ...businessData,
-  ...technologyData,
-  ...sportsData,
-  ...healthData,
-  ...politicsData,
-  ...scienceData,
-  ...entertainmentData,
-  ...educationData,
-  ...lifestyleData,
-];
+interface NewsData {
+  slug: string;
+  category: string;
+  title: string;
+  date: string;
+  image: string;
+}
 
-// Helper to parse dates like "Jan. 28 2026" or "Dec. 26, 2025"
-const parseDate = (dateStr: string) => {
-  const cleanedDate = dateStr.replace('.', '');
-  const timestamp = Date.parse(cleanedDate);
-  return isNaN(timestamp) ? 0 : timestamp;
-};
-
-const sortedNews = [...allNews].sort((a, b) => parseDate(b.date) - parseDate(a.date));
-const news = sortedNews.slice(0, 8);
-
-export default function Header() {
+export default function Header({ latestNews = [] }: { latestNews?: NewsData[] }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMenuOpen, setIsMenuOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
+
+  const news = latestNews.slice(0, 8);
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();

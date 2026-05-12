@@ -3,7 +3,7 @@ import NewsCard from "./NewsCard";
 import FeaturedArticle from "./FeaturedArticle";
 import OverlayArticleCard from "./OverlayArticleCard";
 import HorizontalNewsCard from "./HorizontalNewsCard";
-
+import NewsCardFirst from "./NewsCardFirst";
 interface NewsData {
   slug: string;
   category: string;
@@ -31,9 +31,9 @@ const  NewsFirstLayout: React.FC<Props> = ({ data }) => {
         className="flex-1 h-[0.5px] ml-2 mt-4 bg-[#646464]"
       ></div>
     </div>
-        <NewsCard data={data[0]} />
-        <NewsCard data={data[1]} />
-        <NewsCard data={data[2]} />
+        <NewsCardFirst data={data[0]} priority={true} />
+        <NewsCardFirst data={data[1]} />
+        <NewsCardFirst data={data[2]} />
       </div>
       <div className="lg:col-span-6">
         <FeaturedArticle data={data[3]} />

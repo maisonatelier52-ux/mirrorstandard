@@ -1,15 +1,7 @@
 import { FaInstagram, FaXTwitter, FaVk, FaYoutube } from "react-icons/fa6";
-import businessData from "../../public/data/business.json";
-import technologyData from "../../public/data/technology.json";
-import sportsData from "../../public/data/sports.json";
-import healthData from "../../public/data/health.json";
-import politicsData from "../../public/data/politics.json";
-import scienceData from "../../public/data/science.json";
-import entertainmentData from "../../public/data/entertainment.json";
-import educationData from "../../public/data/education.json";
-import lifestyleData from "../../public/data/lifestyle.json";
 import Link from "next/link";
 import Image from "next/image";
+import { getSortedNews } from "@/lib/news";
 
 const categories = [
   "BUSINESS",
@@ -22,29 +14,10 @@ const categories = [
   "ENTERTAINMENT"
 ];
 
-const allNews = [
-  ...businessData,
-  ...technologyData,
-  ...sportsData,
-  ...healthData,
-  ...politicsData,
-  ...scienceData,
-  ...entertainmentData,
-  ...educationData,
-  ...lifestyleData,
-];
-
-// Helper to parse dates like "Jan. 28 2026" or "Dec. 26, 2025"
-const parseDate = (dateStr: string) => {
-  const cleanedDate = dateStr.replace('.', '');
-  const timestamp = Date.parse(cleanedDate);
-  return isNaN(timestamp) ? 0 : timestamp;
-};
-
-const sortedNews = [...allNews].sort((a, b) => parseDate(b.date) - parseDate(a.date));
-const editorPicks = sortedNews.slice(0, 2);
-
 export default function Footer() {
+  const sortedNews = getSortedNews();
+  const editorPicks = sortedNews.slice(0, 2);
+
   return (
     <footer className="bg-black text-white py-5">
       <div className="max-w-7xl mx-auto px-5 mt-5">
@@ -135,8 +108,8 @@ export default function Footer() {
               © Copyright 2026 
             </p>
             <p className="text-[11px] mt-4 leading-relaxed text-gray-400">
-              Mirror Standard provides trusted global news, in-depth politics analysis, and business insights. Our mission is to deliver accurate reporting on the forces shaping our world.
-            </p>
+         Mirror Standard provides the latest news and updates from around the world, including in-depth politics analysis, business insights, and accurate reporting on the forces shaping our world.
+</p>
             <div className="flex space-x-5 mt-6 text-lg">
               <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
               <Link href="https://www.instagram.com/mirrorstandardusnews/" title="instagram"><FaInstagram /></Link>

@@ -1,12 +1,5 @@
 import React from 'react';
-import businessData from '../../../public/data/business.json';
-import technologyData from '../../../public/data/technology.json';
-import sportsData from '../../../public/data/sports.json';
-import healthData from '../../../public/data/health.json';
-import politicsData from '../../../public/data/politics.json';
-import scienceData from '../../../public/data/science.json';
-import entertainmentData from '../../../public/data/entertainment.json';
-import educationData from '../../../public/data/education.json';
+import { getSortedNews } from '@/lib/news';
 import CategoryHeader from '@/components/CategoryHeader';
 import Navbar from '@/components/Navbar';
 import { Metadata } from 'next';
@@ -14,32 +7,11 @@ import CategorySection from '@/components/CategorySection';
 import ScrollToTopButton from '@/components/ScrollToTopButton';
 import Script from 'next/script';
 
-interface NewsItem {
-  category: string;
-  title: string;
-  shortdescription: string;
-  description: string;
-  image: string;
-  slug: string;
-  date: string;
-}
-
-const allData: Record<string, NewsItem[]> = {
-  business: businessData,
-  technology: technologyData,
-  sports: sportsData,
-  health: healthData,
-  politics: politicsData,
-  science: scienceData,
-  entertainment: entertainmentData,
-  education: educationData,
-};
-
 export async function generateStaticParams() {
-  return Object.keys(allData).map((category) => ({
+  const categories = ['business', 'technology', 'sports', 'health', 'politics', 'science', 'entertainment', 'education'];
+  return categories.map((category) => ({
     category,
   }));
-
 }
 
 export async function generateMetadata({
@@ -107,7 +79,9 @@ export async function generateMetadata({
     description: `Latest updates and breaking stories in ${category}.`,
   };
 
-  const firstArticle = allData[category]?.[0];
+  const sortedNews = getSortedNews();
+  const categoryArticles = sortedNews.filter(n => n.category === category);
+  const firstArticle = categoryArticles[0];
   const firstArticleImage =
     firstArticle?.image?.startsWith("http")
       ? firstArticle.image
@@ -167,9 +141,10 @@ export default async function CategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category } = await params;
-  const categoryData = allData[category];
+  const sortedNews = getSortedNews();
+  const data = sortedNews.filter(n => n.category === category);
 
-  if (!categoryData) {
+  if (data.length === 0) {
     return (
       <main className="max-w-7xl mx-auto h-screen px-6 flex flex-col items-center justify-center text-center">
         <h1 className="text-3xl font-bold">
@@ -181,14 +156,6 @@ export default async function CategoryPage({
       </main>
     );
   }
-
-  const parseDate = (dateStr: string) => {
-    const cleanedDate = dateStr.replace('.', '');
-    const timestamp = Date.parse(cleanedDate);
-    return isNaN(timestamp) ? 0 : timestamp;
-  };
-
-  const data = [...categoryData].sort((a, b) => parseDate(b.date) - parseDate(a.date));
 
   return (
     <main itemScope itemType="https://schema.org/CollectionPage">
