@@ -8,10 +8,15 @@
       "When he’s not reviewing drafts or coordinating reporters across time zones, Michael enjoys spotting small details others might miss and thinking about how journalism can make a real difference. He’s also the kind of editor who encourages questions, debates, and curiosity in every story.",
       "Michael’s work covers politics, investigative reporting, and editorial strategy. He’s deeply interested in media ethics and how independent newsrooms like Mirror Standard can earn and keep readers’ trust."
     ],
-    "email": "michael.gentry@mirrorstandard.com",
-    "image": "/images/michael-y-gentry.webp"
+    "email": "michaelgentry@news-editors.com",
+    "image": "/images/michael-y-gentry.webp",
+    "social": {
+      "reddit": "https://www.reddit.com/user/michaelgentry_01/",
+      "medium": "https://medium.com/@michaelgentry_69256",
+      "quora": "https://www.quora.com/profile/Michael-Gentry-190",
+      "substack": "https://substack.com/@michaelgentry3"
+    }
   },
-  
   {
     "slug": "victor-v-haley",
     "name": "Victor V. Haley",
@@ -21,10 +26,15 @@
       "He loves untangling complicated topics so readers can actually understand what’s going on. Politics, economics, culture — it doesn’t matter. Victor wants the news to make sense, not just fill a page.",
       "When he’s not wrangling stories, Victor enjoys mentoring reporters and experimenting with new ways to tell a story. He’s a firm believer that a newsroom works best when everyone brings their own ideas to the table."
     ],
-    "email": "victor.haley@mirrorstandard.com",
-    "image": "/images/victor-v-haley.webp"
+    "email": "victorhaley@news-editors.com",
+    "image": "/images/victor-v-haley.webp",
+    "social": {
+      "reddit": "https://www.reddit.com/user/victorhaley/",
+      "medium": "https://medium.com/@victorhaley",
+      "quora": "https://www.quora.com/profile/Victor-Haley-5",
+      "substack": "https://substack.com/@victorhaley1"
+    }
   },
-
   {
     "slug": "betty-d-chambers",
     "name": "Betty D. Chambers",
@@ -34,23 +44,32 @@
       "She’s not afraid to ask the tough questions, and she believes that good reporting should make readers think, not just nod along. Outside of work, Betty enjoys reading history, exploring local communities, and trying out new coffee shops while brainstorming story ideas.",
       ""
     ],
-    "email": "betty.chambers@mirrorstandard.com",
-    "image": "/images/betty-d-chambers.webp"
+    "email": "bettychambers@news-editors.com",
+    "image": "/images/betty-d-chambers.webp",
+    "social": {
+      "reddit": "https://www.reddit.com/user/bettychamber200/",
+      "medium": "https://medium.com/@bettychambers_27622",
+      "quora": "https://www.quora.com/profile/Betty-Chambers-43",
+      "substack": "https://substack.com/@bettychambers2"
+    }
   },
-
   {
     "slug": "jacqueline-l-wood",
     "name": "Jacqueline L. Wood",
     "role": "Reporter",
     "bio": [
       "Jacqueline writes about technology, culture, and business, but she’s really interested in the people behind the stories. She likes finding the human angle — the small moments that show what’s really happening, not just the headlines.",
-      "Some days you’ll find her at tech conferences, other days she’s talking to entrepreneurs, artists, or everyday folks whose stories deserve attention. Jacqueline believes that readers should walk away understanding why a story matters, not just what happened.",
+      "Some days you'll find her at tech conferences, other days she’s talking to entrepreneurs, artists, or everyday folks whose stories deserve attention. Jacqueline believes that readers should walk away understanding why a story matters, not just what happened.",
       "When she’s off the clock, Jacqueline enjoys sketching, catching live music, and experimenting with new recipes in the kitchen — all little ways to stay curious and creative."
     ],
-    "email": "jacqueline.wood@mirrorstandard.com",
-    "image": "/images/jacqueline-l-wood.webp"
+    "email": "jacquelinewood@news-editors.com",
+    "image": "/images/jacqueline-l-wood.webp",
+    "social": {
+      "medium": "https://medium.com/@jacquelinewood_56787",
+      "quora": "https://www.quora.com/profile/Jacqueline-Wood-139",
+      "substack": "https://substack.com/@jacquelinewood964898"
+    }
   },
-
   {
     "slug": "margaret-j-kern",
     "name": "Margaret J. Kern",
@@ -60,7 +79,13 @@
       "She believes complex topics can be made understandable without losing nuance. Margaret enjoys breaking things down so readers can make sense of the news and see how it impacts their lives.",
       "When she’s not crunching numbers or chasing stories, Margaret can usually be found hiking, reading about history, or testing out new coffee blends — anything that sparks curiosity."
     ],
-    "email": "margaret.kern@mirrorstandard.com",
-    "image": "/images/margaret-j-kern.webp"
+    "email": "margaretkern@news-editors.com",
+    "image": "/images/margaret-j-kern.webp",
+    "social": {
+      "reddit": "https://www.reddit.com/user/margaretkern/",
+      "medium": "https://medium.com/@margaretkern_69856",
+      "quora": "https://www.quora.com/profile/Margaret-Kern-7",
+      "substack": "https://substack.com/@margaretkern1"
+    }
   }
 ]

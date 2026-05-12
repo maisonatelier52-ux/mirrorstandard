@@ -3,6 +3,8 @@ import authors from "../../../../public/data/author.json";
 import Link from "next/link";
 import Script from "next/script";
 import { Metadata } from "next";
+import { FaReddit, FaQuora } from "react-icons/fa";
+import { SiSubstack, SiMedium } from "react-icons/si";
 
 interface Author {
   slug: string;
@@ -10,6 +12,12 @@ interface Author {
   role: string;
   bio: string[];
   email: string;
+  social?: {
+    reddit?: string;
+    substack?: string;
+    medium?: string;
+    quora?: string;
+  };
 }
 
 export async function generateStaticParams() {
@@ -64,6 +72,28 @@ export default async function AuthorPage({
           <div>
             <h1 className="text-3xl font-bold ">{author.name}</h1>
             <p className="text-gray-600 mt-1">{author.role}</p>
+            <div className="flex items-center gap-4 mt-3">
+              {author.social?.reddit && (
+                <a href={author.social.reddit} target="_blank" rel="noopener noreferrer" title="Reddit" className="text-[#FF4500] hover:opacity-80 transition-opacity">
+                  <FaReddit size={24} />
+                </a>
+              )}
+              {author.social?.substack && (
+                <a href={author.social.substack} target="_blank" rel="noopener noreferrer" title="Substack" className="text-[#FF6719] hover:opacity-80 transition-opacity">
+                  <SiSubstack size={22} />
+                </a>
+              )}
+              {author.social?.medium && (
+                <a href={author.social.medium} target="_blank" rel="noopener noreferrer" title="Medium" className="text-[#00ab6c] hover:opacity-80 transition-opacity">
+                  <SiMedium size={22} />
+                </a>
+              )}
+              {author.social?.quora && (
+                <a href={author.social.quora} target="_blank" rel="noopener noreferrer" title="Quora" className="text-[#B92B27] hover:opacity-80 transition-opacity">
+                  <FaQuora size={24} />
+                </a>
+              )}
+            </div>
           </div>
         </div>
         <section className="mb-12 space-y-4 text-gray-500 leading-relaxed text-lg">
