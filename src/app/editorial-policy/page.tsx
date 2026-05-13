@@ -1,6 +1,49 @@
 import { Mail, ArrowRight, Check } from 'lucide-react';
 import Link from 'next/link';
 import Script from "next/script";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Editorial Policy | Mirror Standard | Journalism Standards",
+  description: "Read Mirror Standard's editorial policy. We are committed to accuracy, transparency, and independent journalism through strict editorial standards.",
+  keywords: "editorial policy, journalism standards, mirror standard ethics, independent news policy, factual reporting standards",
+  alternates: { canonical: "https://www.mirrorstandard.com/editorial-policy" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: "Editorial Policy | Mirror Standard | Journalism Standards",
+    description: "Read Mirror Standard's editorial policy. Committed to accuracy, transparency, and independent journalism.",
+    url: "https://www.mirrorstandard.com/editorial-policy",
+    siteName: "Mirror Standard",
+    images: [
+      {
+        url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mirror Standard Editorial Policy",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Editorial Policy | Mirror Standard | Journalism Standards",
+    description: "Read Mirror Standard's editorial policy. Committed to accuracy, transparency, and independent journalism.",
+    images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
+    site: "@Mirrorstandard",
+    creator: "@Mirrorstandard",
+  },
+};
 
 export default function EditorialPolicy() {
   const transparencyPoints = [
@@ -25,23 +68,42 @@ export default function EditorialPolicy() {
   ];
 
   return (
-    <div className="min-h-screen">
-
+    <div className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
       {/* ✅ EDITORIAL POLICY STRUCTURED DATA (CRITICAL FOR GOOGLE NEWS) */}
       <Script
         id="structured-data-editorial-policy"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Editorial Policy | Mirror Standard",
-            "url": "https://www.mirrorstandard.com/editorial-policy",
-            "publisher": {
-              "@type": "NewsMediaOrganization",
-              "@id": "https://www.mirrorstandard.com/#organization"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Editorial Policy | Mirror Standard",
+              "url": "https://www.mirrorstandard.com/editorial-policy",
+              "publisher": {
+                "@type": "NewsMediaOrganization",
+                "@id": "https://www.mirrorstandard.com/#organization"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mirrorstandard.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Editorial Policy",
+                  "item": "https://www.mirrorstandard.com/editorial-policy"
+                }
+              ]
             }
-          })
+          ])
         }}
       />
 
@@ -146,11 +208,11 @@ export default function EditorialPolicy() {
           </p>
 
           <a
-            href="mailto:editorial@mirrorstandard.com"
+            href="mailto:mirrorstandardnews@gmail.com"
             className="inline-flex items-center space-x-3 text-lg hover:opacity-70"
           >
             <Mail className="w-5 h-5" />
-            <span>editorial@mirrorstandard.com</span>
+            <span>mirrorstandardnews@gmail.com</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </section>

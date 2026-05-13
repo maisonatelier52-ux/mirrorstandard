@@ -1,49 +1,96 @@
 import Link from "next/link";
 import Script from "next/script";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Mirror Standard Staff | Collaborative Newsroom Byline",
+  description: "Learn about the Mirror Standard Staff byline. When you see this, it represents the collective effort of our independent newsroom, ensuring accuracy and accountability.",
+  keywords: "mirror standard staff, newsroom byline, collaborative journalism, editorial standards, independent media staff",
+  alternates: {
+    canonical: "https://www.mirrorstandard.com/our-team/mirror-standard-staff",
+  },
+  openGraph: {
+    title: "Mirror Standard Staff | Collaborative Newsroom Byline",
+    description: "Learn about the Mirror Standard Staff byline. It represents the collective effort of our independent newsroom.",
+    url: "https://www.mirrorstandard.com/our-team/mirror-standard-staff",
+    siteName: "Mirror Standard",
+    images: [
+      {
+        url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mirror Standard Staff",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mirror Standard Staff | Collaborative Newsroom Byline",
+    description: "Learn about the Mirror Standard Staff byline. It represents the collective effort of our independent newsroom.",
+    images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
+    site: "@Mirrorstandard",
+    creator: "@Mirrorstandard",
+  },
+};
 
 export default function StaffByline() {
-  // Structured data for the 'Mirror Standard Staff' page
-  const structuredData = {
-    "@context": "https://schema.org",
-    "@type": "NewsArticle",
-    "headline": "Mirror Standard Staff Byline",
-    "description": "When a story carries the byline 'Mirror Standard Staff', it means the article was a team effort, reflecting the collective work of our newsroom.",
-    "url": "https://www.mirrorstandard.com/staff-byline", // Adjust the URL based on your site structure
-    "publisher": {
-      "@type": "Organization",
-      "name": "Mirror Standard",
-      "url": "https://www.mirrorstandard.com",
-      "logo": {
-        "@type": "ImageObject",
-        "url": "https://www.mirrorstandard.com/logo.png" // Adjust logo URL
-      }
-    },
-    "author": {
-      "@type": "Organization",
-      "name": "Mirror Standard Editorial Team"
-    },
-    "mainEntityOfPage": "https://www.mirrorstandard.com/staff-byline",
-  };
-
   return (
-    <>
+    <div itemScope itemType="https://schema.org/AboutPage">
       <Script
         id="structured-data-staff-byline"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify(structuredData),
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "AboutPage",
+              "name": "Mirror Standard Staff Byline",
+              "description": "Information about the collective byline used by Mirror Standard's editorial team.",
+              "url": "https://www.mirrorstandard.com/our-team/mirror-standard-staff",
+              "publisher": {
+                "@type": "NewsMediaOrganization",
+                "@id": "https://www.mirrorstandard.com/#organization"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mirrorstandard.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Our Team",
+                  "item": "https://www.mirrorstandard.com/our-team"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 3,
+                  "name": "Staff Byline",
+                  "item": "https://www.mirrorstandard.com/our-team/mirror-standard-staff"
+                }
+              ]
+            }
+          ])
         }}
       />
       <article className="max-w-4xl mx-auto overflow-hidden mb-12 py-4">
         <div className="px-8 py-12 text-center">
-          <h1 className="text-3xl md:text-4xl font-bold mb-4">
+          <h1 className="text-3xl md:text-4xl font-bold mb-4" itemProp="name">
             Mirror Standard Staff
           </h1>
           <div className="w-16 h-[2px] bg-gray-600 mx-auto mb-6"></div>
         </div>
         <div className="px-8">
           <div className="prose prose-lg max-w-none mb-12">
-            <p className="text-gray-600 text-xl leading-relaxed mb-6">
+            <p className="text-gray-600 text-xl leading-relaxed mb-6" itemProp="description">
               When a story carries the byline{" "}
               <strong className="text-gray-500">Mirror Standard Staff</strong>, it means the article was a team effort. Sometimes multiple reporters and editors collaborated on a piece, other times an external journalist we trust contributed. Either way, it reflects the work of our newsroom as a whole.
             </p>
@@ -116,7 +163,7 @@ export default function StaffByline() {
               Our editorial team is always ready to hear from you.
             </p>
             <a
-              href="mailto:admin@mirrorstandard.com"
+              href="mailto:mirrorstandardnews@gmail.com"
               aria-label="mail"
               title="mail"
               className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200"
@@ -129,6 +176,6 @@ export default function StaffByline() {
           </div>
         </div>
       </article>
-    </>
+    </div>
   );
 }

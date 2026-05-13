@@ -8,38 +8,92 @@ import Link from "next/link";
 import Script from "next/script";
 
 export const metadata: Metadata = {
-  title: "Terms & Conditions | Mirror Standard",
-  description:
-    "The terms and conditions governing use of Mirror Standard, including content usage, accuracy standards, and reader responsibilities.",
+  title: "Terms & Conditions | Mirror Standard | Content Usage Policy",
+  description: "The terms and conditions governing the use of Mirror Standard. Learn about our content usage policy, accuracy standards, and reader responsibilities.",
+  keywords: "terms and conditions, content usage, mirror standard legal, news copyright, journalism ethics",
   alternates: {
-    canonical: "https://www.mirrorstandard.com/terms-conditions",
+    canonical: "https://www.mirrorstandard.com/terms-and-conditions",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: "Terms & Conditions | Mirror Standard | Content Usage Policy",
+    description: "The terms and conditions governing the use of Mirror Standard.",
+    url: "https://www.mirrorstandard.com/terms-and-conditions",
+    siteName: "Mirror Standard",
+    images: [
+      {
+        url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mirror Standard Terms & Conditions",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Terms & Conditions | Mirror Standard | Content Usage Policy",
+    description: "The terms and conditions governing the use of Mirror Standard.",
+    images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
+    site: "@Mirrorstandard",
+    creator: "@Mirrorstandard",
   },
 };
 
 export default function TermsConditions() {
   return (
-    <div className="min-h-screen">
-
+    <div className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
       <Script
         id="structured-data-terms"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Terms & Conditions | Mirror Standard",
-            "url": "https://www.mirrorstandard.com/terms-conditions",
-            "publisher": {
-              "@type": "NewsMediaOrganization",
-              "@id": "https://www.mirrorstandard.com/#organization"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Terms & Conditions | Mirror Standard",
+              "url": "https://www.mirrorstandard.com/terms-and-conditions",
+              "publisher": {
+                "@type": "NewsMediaOrganization",
+                "@id": "https://www.mirrorstandard.com/#organization"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mirrorstandard.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Terms & Conditions",
+                  "item": "https://www.mirrorstandard.com/terms-and-conditions"
+                }
+              ]
             }
-          })
+          ])
         }}
       />
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <header className="text-center mb-16">
-          <h1 className="text-6xl font-light mb-4 tracking-tight">
+          <h1 className="text-6xl font-light mb-4 tracking-tight" itemProp="name">
             Terms &amp; Conditions
           </h1>
           <div className="w-16 h-[2px] bg-gray-600 mx-auto"></div>
@@ -67,11 +121,11 @@ export default function TermsConditions() {
             For permissions or republication inquiries, contact:
           </p>
           <a
-            href="mailto:press@mirrorstandard.com"
+            href="mailto:mirrorstandardnews@gmail.com"
             className="inline-flex items-center space-x-3 text-lg hover:opacity-70 mt-4"
           >
             <Mail className="w-5 h-5" />
-            <span>press@mirrorstandard.com</span>
+            <span>mirrorstandardnews@gmail.com</span>
             <FileText className="w-4 h-4" />
           </a>
         </section>
@@ -151,11 +205,11 @@ export default function TermsConditions() {
             If you have questions about these Terms, contact us:
           </p>
           <a
-            href="mailto:contact@mirrorstandard.com"
+            href="mailto:mirrorstandardnews@gmail.com"
             className="inline-flex items-center space-x-3 text-lg hover:opacity-70"
           >
             <Mail className="w-5 h-5" />
-            <span>contact@mirrorstandard.com</span>
+            <span>mirrorstandardnews@gmail.com</span>
             <MessageSquare className="w-4 h-4" />
           </a>
         </section>

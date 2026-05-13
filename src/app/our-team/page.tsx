@@ -1,14 +1,50 @@
 import { User, ArrowRight } from "lucide-react";
 import Link from "next/link";
 import Script from "next/script";
+import authors from "../../../public/data/author.json";
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "Our Team | Mirror Standard",
-  description:
-    "Meet the journalists and editors behind Mirror Standard. Our newsroom is made up of experienced reporters committed to independent, factual journalism.",
+  title: "Meet Our Team | Mirror Standard Editorial Newsroom",
+  description: "Meet the journalists, editors, and researchers behind Mirror Standard. Our newsroom is committed to independent journalism, factual reporting, and accountability.",
+  keywords: "mirror standard team, editorial staff, Michael Y. Gentry, Victor V. Haley, investigative journalists, newsroom staff, independent media",
   alternates: {
     canonical: "https://www.mirrorstandard.com/our-team",
+  },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: "Meet Our Team | Mirror Standard Editorial Newsroom",
+    description: "Meet the journalists and editors behind Mirror Standard. Committed to independent, factual journalism.",
+    url: "https://www.mirrorstandard.com/our-team",
+    siteName: "Mirror Standard",
+    images: [
+      {
+        url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mirror Standard Team",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Meet Our Team | Mirror Standard Editorial Newsroom",
+    description: "Meet the journalists and editors behind Mirror Standard. Committed to independent, factual journalism.",
+    images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
+    site: "@Mirrorstandard",
+    creator: "@Mirrorstandard",
   },
 };
 
@@ -23,79 +59,59 @@ export default function OurTeam() {
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" itemScope itemType="https://schema.org/AboutPage">
       <Script
         id="structured-data-our-team"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": "Mirror Standard Editorial Team",
-            "url": "https://www.mirrorstandard.com/our-team",
-            "itemListElement": [
-              {
-                "@type": "Person",
-                "name": "Michael Y. Gentry",
-                "jobTitle": "Editor-in-Chief",
-                "url": "https://www.mirrorstandard.com/our-team/michael-y-gentry",
-                "worksFor": {
-                  "@type": "NewsMediaOrganization",
-                  "@id": "https://www.mirrorstandard.com/#organization"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": "Mirror Standard Editorial Team",
+              "description": "Meet the professional journalists and editors at Mirror Standard.",
+              "url": "https://www.mirrorstandard.com/our-team",
+              "itemListElement": authors.map((author, index) => ({
+                "@type": "ListItem",
+                "position": index + 1,
+                "item": {
+                  "@type": "Person",
+                  "name": author.name,
+                  "jobTitle": author.role,
+                  "url": `https://www.mirrorstandard.com/our-team/${author.slug}`,
+                  "sameAs": author.social ? Object.values(author.social) : []
                 }
-              },
-              {
-                "@type": "Person",
-                "name": "Victor V. Haley",
-                "jobTitle": "Managing Editor",
-                "url": "https://www.mirrorstandard.com/our-team/victor-v-haley",
-                "worksFor": {
-                  "@type": "NewsMediaOrganization",
-                  "@id": "https://www.mirrorstandard.com/#organization"
+              }))
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mirrorstandard.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Our Team",
+                  "item": "https://www.mirrorstandard.com/our-team"
                 }
-              },
-              {
-                "@type": "Person",
-                "name": "Betty D. Chambers",
-                "jobTitle": "Reporter",
-                "url": "https://www.mirrorstandard.com/our-team/betty-d-chambers",
-                "worksFor": {
-                  "@type": "NewsMediaOrganization",
-                  "@id": "https://www.mirrorstandard.com/#organization"
-                }
-              },
-              {
-                "@type": "Person",
-                "name": "Jacqueline L. Wood",
-                "jobTitle": "Reporter",
-                "url": "https://www.mirrorstandard.com/our-team/jacqueline-l-wood",
-                "worksFor": {
-                  "@type": "NewsMediaOrganization",
-                  "@id": "https://www.mirrorstandard.com/#organization"
-                }
-              },
-              {
-                "@type": "Person",
-                "name": "Margaret J. Kern",
-                "jobTitle": "Reporter",
-                "url": "https://www.mirrorstandard.com/our-team/margaret-j-kern",
-                "worksFor": {
-                  "@type": "NewsMediaOrganization",
-                  "@id": "https://www.mirrorstandard.com/#organization"
-                }
-              }
-            ]
-          })
+              ]
+            }
+          ])
         }}
       />
       <div className="max-w-4xl mx-auto px-6 py-16">
         <header className="text-center relative">
-          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thin tracking-tighter mb-4 md:mb-4 leading-none">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-thin tracking-tighter mb-4 md:mb-4 leading-none" itemProp="name">
             Our Team
           </h1>
           <div className="w-20 h-[2px] bg-gray-600 mx-auto mb-4"></div>
         </header>
-        <section className="mb-7 sm:mb-6">
+        <section className="mb-7 sm:mb-6" itemProp="description">
           <div className="bg-white/5 backdrop-blur-sm rounded-3xl p-6 sm:p-10 md:p-12 transition-all duration-500 group">
             <div className="max-w-4xl mx-auto">
               <div className="flex items-center gap-4 mb-4 sm:mb-4">
@@ -225,7 +241,7 @@ function EditorCard({ name, title, desc, linkText, index, slug }: {
   slug: string;
 }) {
   return (
-    <div className="group cursor-pointer">
+    <div className="group cursor-pointer" itemScope itemType="https://schema.org/Person">
       <div className="bg-white/5 backdrop-blur-sm rounded-2xl p-8 border border-[#615e5e54]  transition-all duration-500 h-full">
         <div className="flex items-start justify-between mb-6">
           <div className="text-6xl font-thin text-gray-500 transition-colors duration-300">
@@ -236,10 +252,10 @@ function EditorCard({ name, title, desc, linkText, index, slug }: {
           </div>
         </div>
         <Link key={slug} href={`/our-team/${slug}`} title={name} className="text-primary">
-          <h3 className="text-2xl font-light mb-2  transition-colors duration-300">{name}</h3>
+          <h3 className="text-2xl font-light mb-2  transition-colors duration-300" itemProp="name">{name}</h3>
         </Link>
-        <div className="text-sm font-medium text-gray-500 mb-6 tracking-wider uppercase">{title}</div>
-        <p className="text-gray-500 leading-relaxed mb-8 font-light">{desc}</p>
+        <div className="text-sm font-medium text-gray-500 mb-6 tracking-wider uppercase" itemProp="jobTitle">{title}</div>
+        <p className="text-gray-500 leading-relaxed mb-8 font-light" itemProp="description">{desc}</p>
         <button className="inline-flex items-center gap-3 hover:gap-6 transition-all duration-300 border-b border-[#615e5e54] pb-1">
           <span className="text-sm font-medium tracking-wide">{linkText}</span>
           <Link key={slug} href={`/our-team/${slug}`} title={name} className="text-primary ">
@@ -260,7 +276,7 @@ function ReporterCard({ name, specialty, desc, linkText, index, slug }: {
   slug: string;
 }) {
   return (
-    <div className="group cursor-pointer">
+    <div className="group cursor-pointer" itemScope itemType="https://schema.org/Person">
       <div className=" backdrop-blur-sm rounded-2xl p-8 border border-[#615e5e54] transition-all duration-500 flex items-start gap-8">
         <div className="text-6xl font-thin text-gray-500 transition-colors duration-300 mt-2">
           {index}
@@ -271,9 +287,10 @@ function ReporterCard({ name, specialty, desc, linkText, index, slug }: {
             <div className="text-xs font-medium text-gray-500 uppercase tracking-widest">{specialty}</div>
           </div>
           <Link key={slug} href={`/our-team/${slug}`} title={name} className="text-primary">
-            <h3 className="text-2xl font-light mb-4 transition-colors duration-300">{name}</h3>
+            <h3 className="text-2xl font-light mb-4 transition-colors duration-300" itemProp="name">{name}</h3>
           </Link>
-          <p className="text-gray-500 leading-relaxed mb-6 font-light">{desc}</p>
+          <div className="hidden" itemProp="jobTitle">Reporter</div>
+          <p className="text-gray-500 leading-relaxed mb-6 font-light" itemProp="description">{desc}</p>
           <button className="inline-flex items-center gap-3 hover:gap-6 transition-all duration-300 border-b border-[#615e5e54] pb-1">
             <span className="text-sm font-medium tracking-wide">{linkText}</span>
             <Link key={slug} href={`/our-team/${slug}`} title={name} className="text-primary">

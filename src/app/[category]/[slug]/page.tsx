@@ -49,11 +49,10 @@ interface NewsItem {
     role: string;
     authorImage: string;
     authorslug: string;
-    twitter: string;
-    facebook: string;
-    instagram: string;
-    medium: string;
-    substack: string;
+    reddit?: string;
+    medium?: string;
+    quora?: string;
+    substack?: string;
 }
 
 interface DetailPageProps {
@@ -117,9 +116,20 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
     return {
         title: finalTitle,
         description: finalDescription,
-        keywords: `${article.category}, news, ${article.title}`,
+        keywords: `${article.category}, news, ${article.title}, Mirror Standard`,
         authors: [{ name: article.author }],
         alternates: { canonical: currentUrl },
+        robots: {
+            index: true,
+            follow: true,
+            googleBot: {
+                index: true,
+                follow: true,
+                'max-video-preview': -1,
+                'max-image-preview': 'large',
+                'max-snippet': -1,
+            },
+        },
         openGraph: {
             title: article.title,
             description: article.shortdescription,
@@ -135,6 +145,17 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
             ],
             locale: 'en_US',
             type: 'article',
+            publishedTime: article.date,
+            authors: [article.author],
+            section: article.category,
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: article.title,
+            description: article.shortdescription,
+            images: [imageUrl],
+            site: "@Mirrorstandard",
+            creator: "@Mirrorstandard",
         },
         other: {
             'script:ld+json': JSON.stringify({
@@ -145,13 +166,20 @@ export async function generateMetadata({ params }: DetailPageProps): Promise<Met
                 author: {
                     '@type': 'Person',
                     name: article.author,
+                    url: `https://www.mirrorstandard.com/our-team/${article.authorslug}`,
+                    sameAs: [
+                        article.reddit,
+                        article.medium,
+                        article.quora,
+                        article.substack
+                    ].filter(Boolean) as string[],
                 },
                 publisher: {
                     '@type': 'Organization',
                     name: 'Mirror Standard',
                     logo: {
                         '@type': 'ImageObject',
-                        url: `${siteUrl}/mirrorstandard-logo.webp`,
+                        url: `${siteUrl}/images/mirrorstandard-logo.webp`,
                     },
                 },
                 image: imageUrl,
@@ -239,9 +267,15 @@ export default async function DetailPage({ params }: DetailPageProps) {
                             "height": 630
                         },
                         "author": {
-                            "@type": "Organization",
-                            "name": "Mirror Standard",
-                            "url": "https://www.mirrorstandard.com/"
+                            "@type": "Person",
+                            "name": article.author,
+                            "url": `https://www.mirrorstandard.com/our-team/${article.authorslug}`,
+                            "sameAs": [
+                                article.reddit,
+                                article.medium,
+                                article.quora,
+                                article.substack
+                            ].filter(Boolean) as string[]
                         },
                         "publisher": {
                             "@type": "Organization",

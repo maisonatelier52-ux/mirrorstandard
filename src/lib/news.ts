@@ -6,7 +6,7 @@ import politicsData from '../../public/data/politics.json';
 import scienceData from '../../public/data/science.json';
 import entertainmentData from '../../public/data/entertainment.json';
 import educationData from '../../public/data/education.json';
-import lifestyleData from '../../public/data/lifestyle.json';
+
 
 export interface NewsData {
   slug: string;
@@ -26,8 +26,7 @@ export const allNews: NewsData[] = [
   ...politicsData,
   ...scienceData,
   ...entertainmentData,
-  ...educationData,
-  ...lifestyleData,
+  ...educationData
 ];
 
 export const parseDate = (dateStr: string) => {

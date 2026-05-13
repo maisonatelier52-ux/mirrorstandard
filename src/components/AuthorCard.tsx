@@ -1,8 +1,8 @@
 import Link from "next/link";
 import Image from "next/image";
 import ShareMenu from "./ShareMenu";
-import { FaTwitter, FaInstagram, FaFacebookF, FaMedium } from "react-icons/fa";
-import { SiSubstack } from "react-icons/si";
+import { FaReddit, FaQuora } from "react-icons/fa";
+import { SiSubstack, SiMedium } from "react-icons/si";
 
 interface AuthorProps {
   author: string;
@@ -11,10 +11,9 @@ interface AuthorProps {
   slug: string;
   articleTitle: string;
 
-  twitter?: string;
-  instagram?: string;
-  facebook?: string;
+  reddit?: string;
   medium?: string;
+  quora?: string;
   substack?: string;
 }
 const AuthorCard: React.FC<AuthorProps> = ({
@@ -23,17 +22,15 @@ const AuthorCard: React.FC<AuthorProps> = ({
   image,
   slug,
   articleTitle,
-  twitter,
-  instagram,
-  facebook,
+  reddit,
   medium,
+  quora,
   substack,
 }) => {
   const socialLinks = [
-    { icon: <FaTwitter />, url: twitter },
-    { icon: <FaInstagram />, url: instagram },
-    { icon: <FaFacebookF />, url: facebook },
-    { icon: <FaMedium />, url: medium },
+    { icon: <FaReddit />, url: reddit },
+    { icon: <SiMedium />, url: medium },
+    { icon: <FaQuora />, url: quora },
     { icon: <SiSubstack />, url: substack },
   ];
 
@@ -59,27 +56,26 @@ const AuthorCard: React.FC<AuthorProps> = ({
           </p>
 
           {/* Social + Share row */}
-          <div className="flex items-center mt-2">
+          <div className="flex items-center mt-4">
             {/* Social Icons */}
-            <div className="flex gap-3">
+            <div className="flex items-center gap-3">
               {socialLinks.map(
-                (link, idx) =>
-                  link.url && (
-                    <Link
-                      key={idx}
-                      href={link.url}
+                (social, index) =>
+                  social.url && (
+                    <a
+                      key={index}
+                      href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="text-gray-500  transition-colors text-sm"
-                    >
-                      {link.icon}
-                    </Link>
+                  className="text-gray-500  transition-colors text-lg"   >
+                      {social.icon}
+                    </a>
                   )
               )}
             </div>
 
             {/* Share Button pushed to right */}
-            <div className="ml-auto scale-90">
+            <div className="ml-auto scale-95">
               <ShareMenu title={articleTitle} />
             </div>
           </div>

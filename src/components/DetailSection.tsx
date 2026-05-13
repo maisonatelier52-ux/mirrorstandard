@@ -21,11 +21,10 @@ interface NewsItem {
   authorImage: string;
   role: string;
   authorslug: string;
-  twitter: string;
-  facebook: string;
-  instagram: string;
-  medium: string;
-  substack: string;
+  reddit?: string;
+  medium?: string;
+  quora?: string;
+  substack?: string;
 
 }
 
@@ -94,10 +93,9 @@ export default function DetailSection({ article, otherArticles, globalLatest }: 
               image={article.authorImage}
               slug={article.authorslug}
               articleTitle={article.title}
-              twitter={article.twitter}
-              facebook={article.facebook}
-              instagram={article.instagram}
+              reddit={article.reddit}
               medium={article.medium}
+              quora={article.quora}
               substack={article.substack}
             />
             <NewsNavigation data={navigationNews} />

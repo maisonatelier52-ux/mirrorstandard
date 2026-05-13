@@ -3,63 +3,115 @@ import Link from "next/link";
 import Script from "next/script";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Contact Mirror Standard | Reach Our Editorial Team & Newsroom",
+  description: "Get in touch with Mirror Standard. Send us news tips, feedback, or media inquiries. Our editorial team is dedicated to transparent and accountable reporting.",
+  keywords: "contact mirror standard, news tips, media inquiries, press contact, editorial team, newsroom contact",
+  alternates: { canonical: "https://www.mirrorstandard.com/contact" },
+  openGraph: {
+    title: "Contact Mirror Standard | Reach Our Editorial Team & Newsroom",
+    description: "Get in touch with Mirror Standard. Send us news tips, feedback, or media inquiries.",
+    url: "https://www.mirrorstandard.com/contact",
+    siteName: "Mirror Standard",
+    images: [
+      {
+        url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Contact Mirror Standard",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Contact Mirror Standard | Reach Our Editorial Team & Newsroom",
+    description: "Get in touch with Mirror Standard. Send us news tips, feedback, or media inquiries.",
+    images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
+    site: "@Mirrorstandard",
+    creator: "@Mirrorstandard",
+  },
+};
 
 export default function Contact() {
   const contacts = [
     {
       title: "Editorial & General Contact",
       description: "Questions about our reporting, coverage ideas, or editorial matters.",
-      email: "contact@mirrorstandard.com",
+      email: "mirrorstandardnews@gmail.com",
       icon: Mail,
     },
     {
       title: "Confidential News Tips",
       description: "Share information that you believe should be investigated or reported.",
-      email: "tips@mirrorstandard.com",
+      email: "mirrorstandardnews@gmail.com",
       icon: Send,
     },
     {
       title: "Corrections",
       description: "If you believe we made an error, please notify us so we can correct it promptly.",
-      email: "corrections@mirrorstandard.com",
+      email: "mirrorstandardnews@gmail.com",
       icon: AlertCircle,
     },
     {
       title: "Media & Press Inquiries",
       description: "Journalists, researchers, or organizations seeking collaboration.",
-      email: "press@mirrorstandard.com",
+      email: "mirrorstandardnews@gmail.com",
       icon: Users,
     },
   ];
 
   return (
-    <div className="min-h-screen">
+    <div className="min-h-screen" itemScope itemType="https://schema.org/ContactPage">
 
       {/* ✅ CONTACT PAGE STRUCTURED DATA (CRITICAL) */}
       <Script
         id="structured-data-contactpage"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ContactPage",
-            "name": "Contact Mirror Standard",
-            "url": "https://www.mirrorstandard.com/contact",
-            "publisher": {
-              "@type": "NewsMediaOrganization",
-              "@id": "https://www.mirrorstandard.com/#organization"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "ContactPage",
+              "name": "Contact Mirror Standard",
+              "description": "Contact page for Mirror Standard newsroom. Reach out for tips, corrections, or media inquiries.",
+              "url": "https://www.mirrorstandard.com/contact",
+              "mainEntity": {
+                "@id": "https://www.mirrorstandard.com/#organization"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mirrorstandard.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Contact",
+                  "item": "https://www.mirrorstandard.com/contact"
+                }
+              ]
             }
-          })
+          ])
         }}
       />
 
       <div className="max-w-4xl mx-auto px-6 py-16">
         <header className="text-center mb-20">
-          <h1 className="text-5xl font-light mb-4 tracking-tight">
-            Get in Touch
+          <h1 className="text-5xl font-light mb-4 tracking-tight" itemProp="name">
+            Get in Touch with Mirror Standard
           </h1>
           <div className="w-20 h-[2px] bg-gray-600 mx-auto mb-8"></div>
-          <p className="text-lg leading-relaxed max-w-2xl mx-auto font-light">
+          <p className="text-lg leading-relaxed max-w-2xl mx-auto font-light" itemProp="description">
             Mirror Standard is an independent newsroom. We welcome tips, corrections,
             and communication from readers, journalists, and organizations.
           </p>
@@ -70,10 +122,13 @@ export default function Contact() {
             <div
               key={idx}
               className="p-6 rounded-2xl shadow-sm border border-gray-200 hover:shadow-md transition-shadow"
+              itemProp="contactPoint"
+              itemScope
+              itemType="https://schema.org/ContactPoint"
             >
               <div className="flex items-center space-x-3 mb-4">
                 <item.icon className="w-6 h-6" />
-                <h2 className="text-xl font-medium">
+                <h2 className="text-xl font-medium" itemProp="contactType">
                   {item.title}
                 </h2>
               </div>
@@ -83,6 +138,7 @@ export default function Contact() {
               <a
                 href={`mailto:${item.email}`}
                 className="inline-block text-sm px-4 py-2 rounded-full border border-gray-300 hover:opacity-80 transition"
+                itemProp="email"
               >
                 {item.email}
               </a>

@@ -6,12 +6,24 @@ export async function generateMetadata(): Promise<Metadata> {
   const url = "https://www.mirrorstandard.com/privacy-policy";
 
   return {
-    title: "Privacy Policy | Mirror Standard",
+    title: "Privacy Policy | Mirror Standard | Trusted Data Protection",
     description:
-      "How Mirror Standard collects, uses, and protects personal information while delivering independent journalism.",
+      "Learn how Mirror Standard collects, uses, and protects your personal information. We are committed to transparency and safeguarding reader privacy.",
+    keywords: "privacy policy, data protection, mirror standard privacy, user data safety, independent news privacy",
     alternates: { canonical: url },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
-      title: "Privacy Policy | Mirror Standard",
+      title: "Privacy Policy | Mirror Standard | Trusted Data Protection",
       description:
         "Learn how Mirror Standard protects your privacy and handles personal information responsibly.",
       url,
@@ -21,18 +33,19 @@ export async function generateMetadata(): Promise<Metadata> {
           url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
           width: 1200,
           height: 630,
-          alt: "Mirror Standard Logo",
+          alt: "Mirror Standard Privacy Policy",
         },
       ],
       type: "website",
     },
     twitter: {
       card: "summary_large_image",
-      title: "Privacy Policy | Mirror Standard",
+      title: "Privacy Policy | Mirror Standard | Trusted Data Protection",
       description:
         "How Mirror Standard safeguards privacy while delivering independent news.",
       images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
-      site: "@MirrorstandardU",
+      site: "@Mirrorstandard",
+      creator: "@Mirrorstandard",
     },
   };
 }
@@ -46,29 +59,46 @@ export default function PrivacyPolicy() {
   ];
 
   return (
-    <div className="min-h-screen">
-
-      {/* ✅ PRIVACY POLICY STRUCTURED DATA */}
+    <div className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
       <Script
         id="structured-data-privacy-policy"
         type="application/ld+json"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "WebPage",
-            "name": "Privacy Policy | Mirror Standard",
-            "url": "https://www.mirrorstandard.com/privacy-policy",
-            "publisher": {
-              "@type": "NewsMediaOrganization",
-              "@id": "https://www.mirrorstandard.com/#organization"
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Privacy Policy | Mirror Standard",
+              "url": "https://www.mirrorstandard.com/privacy-policy",
+              "publisher": {
+                "@type": "NewsMediaOrganization",
+                "@id": "https://www.mirrorstandard.com/#organization"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mirrorstandard.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Privacy Policy",
+                  "item": "https://www.mirrorstandard.com/privacy-policy"
+                }
+              ]
             }
-          })
+          ])
         }}
       />
-
       <div className="max-w-4xl mx-auto px-6 py-16">
         <header className="text-center mb-10">
-          <h1 className="text-6xl font-light mb-4 tracking-tight">
+          <h1 className="text-6xl font-light mb-4 tracking-tight" itemProp="name">
             Privacy Policy
           </h1>
           <div className="w-16 h-[2px] bg-gray-600 mx-auto mb-8"></div>

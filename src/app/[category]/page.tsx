@@ -21,106 +21,106 @@ export async function generateMetadata({
 }): Promise<Metadata> {
   const { category } = await params;
 
-  const categoryMeta: Record<string, { title: string; description: string }> = {
+  const categoryMeta: Record<string, { title: string; description: string; keywords: string }> = {
     business: {
       title: "Business News & Market Trends | Mirror Standard",
       description:
         "Latest business news, market trends, corporate updates, startup growth, and investment insights shaping the global economy.",
+      keywords: "business news, market trends, corporate updates, startup news, investment insights, global economy",
     },
 
     technology: {
       title: "Technology News & AI Updates | Mirror Standard",
       description:
         "Breaking tech news covering AI, gadgets, startups, cybersecurity, apps, and digital innovations shaping the future.",
+      keywords: "tech news, AI updates, artificial intelligence, gadgets, cybersecurity, digital innovation, startups",
     },
 
     sports: {
       title: "Sports News, Scores & Match Analysis | Mirror Standard",
       description:
         "Live sports news, scores, match results, player stats, tournaments, and expert analysis from global sports events.",
+      keywords: "sports news, live scores, match analysis, player stats, tournaments, sports updates",
     },
 
     health: {
       title: "Health News, Wellness & Medical Updates | Mirror Standard",
       description:
         "Trusted health news on fitness, wellness, nutrition, mental health, medical research, and healthy living tips.",
+      keywords: "health news, wellness tips, medical updates, fitness, nutrition, mental health, medical research",
     },
 
     science: {
       title: "Science News, Space & Research Updates | Mirror Standard",
       description:
         "Science news covering space exploration, climate research, scientific discoveries, innovation, and future technologies.",
+      keywords: "science news, space exploration, climate research, scientific discoveries, innovation, future tech",
     },
 
     politics: {
       title: "Politics News, Elections & Policy Updates | Mirror Standard",
       description:
         "Breaking political news, election coverage, government policy updates, global politics, and expert political analysis.",
+      keywords: "politics news, election coverage, government policy, global politics, political analysis",
     },
 
     education: {
       title: "Education News & Learning Updates | Mirror Standard",
       description:
         "Education news on schools, universities, exams, education policy, online learning, and student success stories.",
+      keywords: "education news, learning updates, school news, university updates, online learning, student success",
     },
 
     entertainment: {
       title: "Entertainment News, Movies & Celebrities | Mirror Standard",
       description:
         "Entertainment news featuring movies, TV shows, celebrities, music, streaming platforms, and pop culture trends.",
+      keywords: "entertainment news, movie reviews, celebrity news, pop culture, TV shows, streaming news",
     },
   };
 
 
   const siteUrl = "https://www.mirrorstandard.com";
   const categoryUrl = `${siteUrl}/${category}`;
+  const logoUrl = `${siteUrl}/images/mirrorstandard-logo.webp`;
+  
   const meta = categoryMeta[category] || {
     title: `${category.charAt(0).toUpperCase() + category.slice(1)} News – Mirror Standard`,
     description: `Latest updates and breaking stories in ${category}.`,
+    keywords: `${category} news, latest ${category} updates, breaking ${category} news`,
   };
 
-  const sortedNews = getSortedNews();
-  const categoryArticles = sortedNews.filter(n => n.category === category);
-  const firstArticle = categoryArticles[0];
-  const firstArticleImage =
-    firstArticle?.image?.startsWith("http")
-      ? firstArticle.image
-      : `${siteUrl}${firstArticle?.image || "/images/mirrorstandard-logo.webp"}`;
 
-
-  const todayDate = new Intl.DateTimeFormat("en-CA", {
-    timeZone: "America/New_York",
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  }).format(new Date());
-
-
-  if (!firstArticle) {
-    return {
-      title: 'Category Not Found',
-      description: 'The requested category could not be found.',
-    };
-  }
 
   return {
     title: meta.title,
     description: meta.description,
+    keywords: meta.keywords,
     alternates: { canonical: categoryUrl },
+    robots: {
+      index: true,
+      follow: true,
+      googleBot: {
+        index: true,
+        follow: true,
+        'max-video-preview': -1,
+        'max-image-preview': 'large',
+        'max-snippet': -1,
+      },
+    },
     openGraph: {
       title: meta.title,
       description: meta.description,
       url: categoryUrl,
       siteName: "Mirror Standard",
       locale: "en_US",
-      publishedTime: todayDate,
-      modifiedTime: todayDate,
+      type: "website",
       images: [
         {
-          url: firstArticleImage,
+          url: logoUrl,
           width: 1200,
           height: 630,
-          alt: `${category} news`,
+          alt: "Mirror Standard Logo",
         },
       ],
     },
@@ -128,8 +128,9 @@ export async function generateMetadata({
       card: "summary_large_image",
       title: meta.title,
       description: meta.description,
-      images: [firstArticleImage],
+      images: [logoUrl],
       site: "@Mirrorstandard",
+      creator: "@Mirrorstandard",
     },
   };
 }
@@ -164,18 +165,38 @@ export default async function CategoryPage({
         type="application/ld+json"
         strategy="afterInteractive"
         dangerouslySetInnerHTML={{
-          __html: JSON.stringify({
-            "@context": "https://schema.org",
-            "@type": "ItemList",
-            "name": `${category.charAt(0).toUpperCase() + category.slice(1)} News | Mirror Standard`,
-            "description": `Latest ${category} news and updates from Mirror Standard.`,
-            "url": `https://www.mirrorstandard.com/${category}`,
-            "itemListElement": data.slice(0, 10).map((n, i) => ({
-              "@type": "ListItem",
-              "position": i + 1,
-              "url": `https://www.mirrorstandard.com/${n.category}/${n.slug}`
-            }))
-          })
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "ItemList",
+              "name": `${category.charAt(0).toUpperCase() + category.slice(1)} News | Mirror Standard`,
+              "description": `Latest ${category} news and updates from Mirror Standard.`,
+              "url": `https://www.mirrorstandard.com/${category}`,
+              "itemListElement": data.slice(0, 10).map((n, i) => ({
+                "@type": "ListItem",
+                "position": i + 1,
+                "url": `https://www.mirrorstandard.com/${n.category}/${n.slug}`
+              }))
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mirrorstandard.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": category.charAt(0).toUpperCase() + category.slice(1),
+                  "item": `https://www.mirrorstandard.com/${category}`
+                }
+              ]
+            }
+          ])
         }}
       />
       <div className="hidden lg:block">
