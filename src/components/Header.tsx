@@ -71,7 +71,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
           </Link>
           <div className="flex items-center gap-3">
             <div className="hidden md:flex items-center gap-3">
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               <button
                 type="button"
                 aria-label="search"
