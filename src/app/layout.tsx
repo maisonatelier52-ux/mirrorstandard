@@ -166,11 +166,9 @@ export default function RootLayout({
         suppressHydrationWarning
       >
 
-        <Providers>
-          <Header latestNews={latestNews} />
-          {children}
-          <Footer />
-        </Providers>
+        <Header latestNews={latestNews} />
+        {children}
+        <Footer />
       </body>
     </html>
 
