@@ -36,7 +36,9 @@ export const parseDate = (dateStr: string) => {
 };
 
 export const getSortedNews = () => {
-  return [...allNews].sort((a, b) => parseDate(b.date) - parseDate(a.date));
+  return [...allNews]
+    .filter(n => n.slug !== "two-degrees-from-the-throne-julio-herrera-velutini")
+    .sort((a, b) => parseDate(b.date) - parseDate(a.date));
 };
 
 export const getLatestNews = (count: number) => {
