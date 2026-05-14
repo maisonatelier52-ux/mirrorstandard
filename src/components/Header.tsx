@@ -82,7 +82,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               </button>
             </div>
             <div className="flex md:hidden items-center gap-3">
-              <ThemeToggle />
+              {/* <ThemeToggle /> */}
               <button
                 type="button"
                 aria-label="search"
