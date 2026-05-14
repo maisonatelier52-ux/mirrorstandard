@@ -7,6 +7,7 @@ import ThemeToggle from "./ThemeToggle";
 import Link from "next/link";
 import Image from "next/image";
 import { FaTwitter, FaInstagram, FaYoutube } from "react-icons/fa"
+import { SiSubstack } from "react-icons/si";
 
 interface NewsData {
   slug: string;
@@ -39,14 +40,14 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
         <div className="w-full max-w-7xl px-8 mx-auto flex items-center justify-between h-full">
           <div className="flex items-center">
             <Link href='/' title="home">
-            <Image 
-              src="/images/logo-mirrorstandard.png"
-              alt="Mirror Standard"
-              width={160} 
-              height={45}
-              className="md:hidden object-contain"
-              priority
-            />
+              <Image
+                src="/images/logo-mirrorstandard.png"
+                alt="Mirror Standard"
+                width={160}
+                height={45}
+                className="md:hidden object-contain"
+                priority
+              />
             </Link>
             <button
               type="button"
@@ -58,10 +59,10 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
             </button>
           </div>
           <Link href='/' title="home">
-            <Image 
+            <Image
               src="/images/logo-mirrorstandard.png"
               alt="Mirror Standard"
-              width={240} 
+              width={240}
               height={110}
               className="hidden md:block object-contain"
               priority
@@ -108,15 +109,15 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
       >
         <div className="flex items-center justify-between p-6 border-b border-gray-700 h-16">
           <Link href='/' title="home">
-            <Image 
+            <Image
               src="/images/logo-mirrorstandard.png"
               alt="Mirror Standard"
-              width={160} 
+              width={160}
               height={45}
               className="object-contain"
               priority
             />
-            </Link>
+          </Link>
           <button
             onClick={() => setIsMenuOpen(false)}
             aria-label="Close menu"
@@ -161,14 +162,17 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
             ))}
           </div>
           <div className="flex items-center gap-5 py-3 text-[#404040]">
-            <Link href="https://x.com/MirrorstandardU" title="twitter" target="_blank" rel="noopener noreferrer">
+            <Link href="https://x.com/Mirrorstan68694" title="twitter" target="_blank" rel="noopener noreferrer">
               <FaTwitter size={22} className="hover:text-[#ffff] transition-colors" />
             </Link>
-            <Link href="https://www.instagram.com/mirrorstandardusnews/" title="instagram" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.instagram.com/mirrorstandardnews2026/" title="instagram" target="_blank" rel="noopener noreferrer">
               <FaInstagram size={22} className="hover:text-[#ffff] transition-colors" />
             </Link>
             <Link href="https://www.youtube.com/@mirrorstandardUS" title="youtube" target="_blank" rel="noopener noreferrer">
               <FaYoutube size={22} className="hover:text-[#ffff] transition-colors" />
+            </Link>
+            <Link href="https://substack.com/@mirrorstandardnews" title="substack" target="_blank" rel="noopener noreferrer">
+              <SiSubstack size={22} className="hover:text-[#ffff] transition-colors" />
             </Link>
           </div>
         </div>

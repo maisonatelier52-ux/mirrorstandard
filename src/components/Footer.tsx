@@ -1,4 +1,5 @@
 import { FaInstagram, FaXTwitter, FaVk, FaYoutube } from "react-icons/fa6";
+import { SiSubstack } from "react-icons/si";
 import Link from "next/link";
 import Image from "next/image";
 import { getSortedNews } from "@/lib/news";
@@ -25,10 +26,10 @@ export default function Footer() {
         {/* ========== MOBILE VIEW ========== */}
         <div className="block md:hidden space-y-10">
           <div className="text-center">
-            <Image 
+            <Image
               src="/images/logo-mirrorstandard.png"
               alt="Mirror Standard"
-              width={200} 
+              width={200}
               height={90}
               className="mx-auto object-contain"
             />
@@ -72,7 +73,7 @@ export default function Footer() {
                     height={64}
                     quality={75}
                     placeholder="blur"
-                      blurDataURL="data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAQAcJaQAA3AA/vuUAAA=" // example tiny placeholder
+                    blurDataURL="data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAQAcJaQAA3AA/vuUAAA=" // example tiny placeholder
 
                     className="object-cover"
                   />
@@ -80,16 +81,17 @@ export default function Footer() {
               </Link>
             ))}
             <div >
-               <p className="text-[10px] mt-2 leading-tight text-gray-300 text-center">
-                © Copyright 2026 
+              <p className="text-[10px] mt-2 leading-tight text-gray-300 text-center">
+                © Copyright 2026
               </p>
               <p className="text-[10px] mt-4 leading-relaxed text-gray-400 text-center px-4">
                 Mirror Standard provides trusted global news, in-depth politics analysis, and business insights. Our mission is to deliver accurate reporting on the forces shaping our world.
               </p>
               <div className="flex justify-center space-x-5 mt-4 text-lg">
-                <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
-                <Link href="https://www.instagram.com/mirrorstandardusnews/" title="instagram"><FaInstagram /></Link>
-                <Link href="https://www.youtube.com/@mirrorstandardUS" title="youtube"><FaYoutube /></Link>
+                <Link href="https://x.com/Mirrorstan68694" title="twitter" target="_blank" rel="noopener noreferrer"><FaXTwitter /></Link>
+                <Link href="https://www.instagram.com/mirrorstandardnews2026/" title="instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></Link>
+                <Link href="https://www.youtube.com/@mirrorstandardUS" title="youtube" target="_blank" rel="noopener noreferrer"><FaYoutube /></Link>
+                <Link href="https://substack.com/@mirrorstandardnews" title="substack" target="_blank" rel="noopener noreferrer"><SiSubstack /></Link>
               </div>
             </div>
           </div>
@@ -97,23 +99,24 @@ export default function Footer() {
         {/* ========== DESKTOP VIEW ========== */}
         <div className="hidden md:flex gap-12 flex-wrap">
           <div className="w-[300px] lg:w-[380px] flex-shrink-0">
-            <Image 
+            <Image
               src="/images/logo-mirrorstandard.png"
               alt="Mirror Standard"
-              width={240} 
+              width={240}
               height={110}
               className="object-contain"
             />
             <p className="text-[12px] mt-2 leading-tight text-gray-300">
-              © Copyright 2026 
+              © Copyright 2026
             </p>
             <p className="text-[11px] mt-4 leading-relaxed text-gray-400">
-         Mirror Standard provides the latest news and updates from around the world, including in-depth politics analysis, business insights, and accurate reporting on the forces shaping our world.
-</p>
+              Mirror Standard provides the latest news and updates from around the world, including in-depth politics analysis, business insights, and accurate reporting on the forces shaping our world.
+            </p>
             <div className="flex space-x-5 mt-6 text-lg">
-              <Link href="https://x.com/MirrorstandardU" title="twitter"><FaXTwitter /></Link>
-              <Link href="https://www.instagram.com/mirrorstandardusnews/" title="instagram"><FaInstagram /></Link>
-              <Link href="https://www.youtube.com/@mirrorstandardUS" title="youtube"><FaYoutube /></Link>
+              <Link href="https://x.com/Mirrorstan68694" title="twitter" target="_blank" rel="noopener noreferrer"><FaXTwitter /></Link>
+              <Link href="https://www.instagram.com/mirrorstandardnews2026/" title="instagram" target="_blank" rel="noopener noreferrer"><FaInstagram /></Link>
+              <Link href="https://www.youtube.com/@mirrorstandardUS" title="youtube" target="_blank" rel="noopener noreferrer"><FaYoutube /></Link>
+              <Link href="https://substack.com/@mirrorstandardnews" title="substack" target="_blank" rel="noopener noreferrer"><SiSubstack /></Link>
             </div>
           </div>
           <div className="grid grid-cols-2 lg:grid-cols-3 flex-1 gap-8">
@@ -169,7 +172,7 @@ export default function Footer() {
                       height={64}
                       quality={75}
                       placeholder="blur"
-                        blurDataURL="data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAQAcJaQAA3AA/vuUAAA=" // example tiny placeholder
+                      blurDataURL="data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAQAcJaQAA3AA/vuUAAA=" // example tiny placeholder
                       className="object-cover"
                     />
                   </div>

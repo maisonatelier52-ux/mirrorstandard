@@ -87,9 +87,10 @@ export default function AboutUs() {
                 "url": "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"
               },
               "sameAs": [
-                "https://x.com/MirrorstandardU",
-                "https://www.instagram.com/mirrorstandardusnews/",
-                "https://www.youtube.com/@mirrorstandardUS"
+                "https://x.com/Mirrorstan68694",
+                "https://www.instagram.com/mirrorstandardnews2026/",
+                "https://www.youtube.com/@mirrorstandardUS",
+                "https://substack.com/@mirrorstandardnews"
               ],
               "contactPoint": {
                 "@type": "ContactPoint",

@@ -1,5 +1,22 @@
 [
-   {
+  {
+    "category": "technology",
+    "title": "Instagram Launches “Instants” App to Rival Snapchat and BeReal",
+    "shortdescription": "Instagram launched Instants, a new disappearing-photo feature and standalone app designed to compete with Snapchat and BeReal through casual and private sharing.",
+    "description": "Instagram has officially launched a new feature and standalone app called “Instants,” introducing disappearing photo sharing that closely resembles features popularized by Snapchat and BeReal. The rollout marks Meta’s latest attempt to push users toward more casual and private social sharing experiences. According to Instagram, Instants allows users to send photos that disappear after they are viewed or automatically expire after 24 hours. The feature is integrated into Instagram’s messaging system and is also being tested as a separate standalone app in select countries. Meta said Instants is designed to help people “share in the moment” with close friends or mutual followers without the pressure often associated with traditional Instagram posts. Users cannot upload photos from their camera roll and are not allowed to heavily edit images before sending them. Instagram chief Adam Mosseri said the company has observed a major shift in user behavior away from polished public feeds and toward private, temporary, and more authentic sharing formats. The Verge reported that Mosseri described Instants as part of a broader effort to encourage “casual sharing” between friends. Photos sent through Instants can only be viewed once and disappear after opening, though users can save their own Instants inside a personal archive for up to one year. Instagram said archived Instants can later be reposted as Stories or combined into recap collections. The launch represents Instagram’s latest evolution in ephemeral content after Stories, disappearing Direct messages, and earlier standalone messaging experiments like Threads. The new feature immediately sparked comparisons to Snapchat, BeReal, Locket, and other apps centered around temporary and spontaneous sharing. The Verge described Instants as Instagram “hitting the copy button again,” noting that the platform has repeatedly borrowed popular features from rival social apps over the past decade. Wired called Instants “a Snapchat clone for thirst traps,” arguing that the app’s disappearing-photo design naturally encourages more intimate, flirtatious, or risqué interactions. The publication noted that Snapchat experienced similar usage patterns during its rapid rise among younger users. Like Snapchat, Instants blocks screenshots by default and allows users to unsend images before they are viewed. The app focuses heavily on privacy and ephemerality, with photos disappearing after viewing and limited visibility outside close friend circles. The Verge and TechCrunch both noted similarities to BeReal because of Instants’ emphasis on unfiltered and authentic content. Users cannot apply extensive filters or upload polished media from their camera roll, creating a more spontaneous sharing environment. Industry analysts said the launch reflects a larger social-media trend away from permanent public posting and toward private, temporary communication. Younger users increasingly favor smaller group sharing, direct messaging, and disappearing content over highly curated profile feeds. Meta has a long history of adapting successful features from competitors. Instagram Stories itself was heavily inspired by Snapchat Stories when it launched in 2016 and eventually became even more popular than Snapchat’s original feature. The release of Instants therefore continues Meta’s strategy of integrating popular social behaviors directly into Instagram rather than allowing rival platforms to dominate emerging trends Meta described Instants as part of a broader effort to make online sharing feel less performative and less centered around influencer culture. According to Instagram’s announcement, users cannot apply edits or beautification tools before sharing photos through Instants. The standalone Instants app opens directly into the camera interface, encouraging users to quickly capture and send photos without scrolling through feeds or editing content extensively. Wired reported that the simplicity of Instants stands out at a time when Meta is heavily investing in AI-generated content, recommendation systems, and algorithmic feeds across its other platforms. The publication described Instants as unusually stripped-down compared with many of Meta’s recent feature launches. Instagram executives said the feature is intended to reduce pressure associated with posting publicly on the main Instagram feed, where users often feel expected to share highly polished or aesthetically perfect content. TechCrunch reported that Instants allows users to react to photos with emoji responses or direct messages while keeping interactions centered around close personal circles rather than public engagement metrics. The app also introduces a homescreen widget that lets users access Instants quickly and view recent interactions from close friends. Observers noted similarities to apps like Locket and Airbuds, which focus on lightweight social interaction between smaller groups of users. Meta has increasingly emphasized private messaging and smaller-group communication in recent years as growth on public social feeds slows. Instagram already integrated disappearing messages and Close Friends features before launching Instants. The company appears to believe that more spontaneous, temporary sharing may help Instagram maintain relevance among younger users who increasingly view traditional social-media feeds as overly curated and exhausting. Reaction to Instants has been sharply divided across social media and technology communities. Some users praised the feature for making Instagram feel more casual and personal again, while others criticized Meta for once again copying competing apps. The Sun reported that many Instagram users complained about the feature appearing directly inside the app’s messaging interface, calling the addition “annoying” and accusing Instagram of making the platform increasingly cluttered with overlapping features. At the same time, other users said the temporary and private format feels more comfortable than posting publicly to Instagram’s main feed. Some described Instants as closer to how Instagram originally felt before the rise of influencer culture and algorithm-driven engagement. Wired suggested that Instants may quickly become associated with flirtation and “thirst trap” behavior because of its disappearing-photo design and emphasis on close-friend sharing. The publication argued that apps built around temporary communication often evolve toward more intimate uses regardless of the company’s original intentions. Privacy experts also noted that while disappearing content can feel safer, temporary messaging platforms still raise concerns around moderation, harassment, explicit content, and screenshot workarounds. Instagram said Instants remains governed by the company’s standard community guidelines and safety policies. Meta has not confirmed whether Instants will remain a standalone app long-term or eventually become fully integrated into Instagram itself. Previous standalone Instagram apps, including Threads and Bolt, were eventually discontinued or folded back into the main platform. Still, analysts said the launch reflects how aggressively Meta continues adapting to shifts in social-media behavior. The company appears determined to compete simultaneously with Snapchat, TikTok, BeReal, and newer private-sharing apps by expanding Instagram into multiple types of communication experiences. ",
+    "image": "/images/instagram-instants-disappearing-photo-app.webp",
+    "slug": "instagram-instants-disappearing-photo-app",
+    "author": "Betty D. Chambers",
+    "authorslug": "betty-d-chambers",
+    "reddit": "https://www.reddit.com/user/bettychamber200/",
+    "medium": "https://medium.com/@bettychambers_27622",
+    "quora": "https://www.quora.com/profile/Betty-Chambers-43",
+    "substack": "https://substack.com/@bettychambers2",
+    "authorImage": "/images/betty-d-chambers.webp",
+    "role": "Senior Reporter",
+    "date": "May. 13, 2026"
+  },
+  {
     "category": "technology",
     "title": "Man Charged in Attack on OpenAI CEO Sam Altman’s Home Pleads Not Guilty to Attempted Murder",
     "shortdescription": "A man accused of attacking the home of OpenAI CEO Sam Altman has pleaded not guilty to attempted murder charges, as authorities continue investigating the high-profile case involving one of the technology industry’s most influential AI leaders.",
@@ -14,8 +31,6 @@
     "substack": "https://substack.com/@bettychambers2",
     "authorImage": "/images/betty-d-chambers.webp",
     "role": "Senior Reporter",
-    
-    
     "date": "May. 6, 2026"
   },
   {
@@ -32,8 +47,6 @@
     "substack": "https://substack.com/@jacquelinewood964898",
     "authorImage": "/images/jacqueline-l-wood.webp",
     "role": "Reporter",
-    
-    
     "date": "May. 6, 2026"
   },
   {
@@ -51,8 +64,6 @@
     "substack": "https://substack.com/@bettychambers2",
     "authorImage": "/images/betty-d-chambers.webp",
     "role": "Senior Reporter",
-    
-    
     "date": "May. 5, 2026"
   },
   {
@@ -69,11 +80,8 @@
     "substack": "https://substack.com/@jacquelinewood964898",
     "authorImage": "/images/jacqueline-l-wood.webp",
     "role": "Reporter",
-    
-    
     "date": "May. 5, 2026"
   },
- 
   {
     "category": "technology",
     "title": "iRobot Launches AI-Powered Pet Robot to Transform Smart Home Companionship",
@@ -89,8 +97,6 @@
     "substack": "https://substack.com/@bettychambers2",
     "authorImage": "/images/betty-d-chambers.webp",
     "role": "Senior Reporter",
-    
-    
     "date": "May. 5, 2026"
   },
   {
@@ -107,8 +113,6 @@
     "substack": "https://substack.com/@jacquelinewood964898",
     "authorImage": "/images/jacqueline-l-wood.webp",
     "role": "Reporter",
-    
-    
     "date": "Dec. 23, 2025"
   },
   {
@@ -125,8 +129,6 @@
     "substack": "https://substack.com/@bettychambers2",
     "authorImage": "/images/betty-d-chambers.webp",
     "role": "Senior Reporter",
-    
-    
     "image": "/images/ditched-cloud-upgraded-smart-home.webp",
     "slug": "ditched-the-cloud-upgraded-my-smart-home"
   },
@@ -144,11 +146,6 @@
     "substack": "https://substack.com/@bettychambers2",
     "authorImage": "/images/betty-d-chambers.webp",
     "role": "Senior Reporter",
-   
-    
-    
-    
-    
     "image": "/images/playstation-portal-latest-update-handheld-console.webp",
     "slug": "playstation-portal-latest-update-sony-needs-real-handheld-console"
   },
@@ -165,8 +162,6 @@
     "substack": "https://substack.com/@jacquelinewood964898",
     "authorImage": "/images/jacqueline-l-wood.webp",
     "role": "Reporter",
-    
-    
     "slug": "republican-senators-crypto-regulation-framework-2025",
     "date": "Dec. 23, 2025"
   },
@@ -184,8 +179,6 @@
     "substack": "https://substack.com/@jacquelinewood964898",
     "authorImage": "/images/jacqueline-l-wood.webp",
     "role": "Reporter",
-    
-    
     "date": "Dec. 23, 2025"
   },
   {
@@ -201,8 +194,6 @@
     "substack": "https://substack.com/@jacquelinewood964898",
     "authorImage": "/images/jacqueline-l-wood.webp",
     "role": "Reporter",
-    
-    
     "slug": "elon-musk-trump-feud-government-scrutiny",
     "date": "Dec. 23, 2025"
   },
@@ -220,8 +211,6 @@
     "substack": "https://substack.com/@jacquelinewood964898",
     "authorImage": "/images/jacqueline-l-wood.webp",
     "role": "Reporter",
-    
-    
     "date": "Dec. 23, 2025"
   },
   {
@@ -237,11 +226,6 @@
     "substack": "https://substack.com/@jacquelinewood964898",
     "authorImage": "/images/jacqueline-l-wood.webp",
     "role": "Reporter",
-   
-    
-    
-    
-    
     "slug": "senate-passes-tech-bill-no-ai-moratorium",
     "date": "Dec. 23, 2025"
   },
@@ -255,11 +239,6 @@
     "authorslug": "jacqueline-l-wood",
     "authorImage": "/images/jacqueline-l-wood.webp",
     "role": "Reporter",
-   
-    
-    
-    
-    
     "slug": "google-fusion-energy-partnership-mit-cfs",
     "date": "Dec. 23, 2025"
   },
@@ -277,11 +256,6 @@
     "substack": "https://substack.com/@bettychambers2",
     "authorImage": "/images/betty-d-chambers.webp",
     "role": "Senior Reporter",
-   
-    
-    
-    
-    
     "slug": "uk-google-search-antitrust-regulator-crackdown-2025",
     "date": "Dec. 23, 2025"
   },
@@ -299,11 +273,6 @@
     "substack": "https://substack.com/@bettychambers2",
     "authorImage": "/images/betty-d-chambers.webp",
     "role": "Senior Reporter",
-   
-    
-    
-    
-    
     "slug": "federal-judge-fair-use-ai-copyrighted-books",
     "date": "Dec. 23, 2025"
   },
@@ -317,11 +286,6 @@
     "authorslug": "betty-d-chambers",
     "authorImage": "/images/betty-d-chambers.webp",
     "role": "Senior Reporter",
-   
-    
-    
-    
-    
     "slug": "americans-attitudes-on-ai-mirror-internet-1990s",
     "date": "Dec. 23, 2025"
   }
