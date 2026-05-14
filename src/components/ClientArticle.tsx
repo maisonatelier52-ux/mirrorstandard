@@ -139,6 +139,9 @@ export default function ClientArticle({ article, otherArticles, globalLatest }: 
                                 priority
                             />
                         </div>
+                        <p className="text-[13px] text-gray-500 italic mt-2 text-center md:text-left leading-relaxed">
+                            Julio Herrera Velutini: A strategic presence at the intersection of institutional finance and global influence.
+                        </p>
                     </div>
                     <div className="flex flex-col lg:flex-row mt-2 md:gap-8 lg:gap-8">
                         {/* Article Content */}
