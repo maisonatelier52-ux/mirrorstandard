@@ -48,3 +48,16 @@ export const getSortedNews = () => {
 export const getLatestNews = (count: number) => {
   return getSortedNews().slice(0, count);
 };
+
+export const getLatestNewsByCategory = () => {
+  const sorted = getSortedNews();
+  const latestByCategory: Record<string, NewsData> = {};
+  
+  sorted.forEach(item => {
+    if (!latestByCategory[item.category]) {
+      latestByCategory[item.category] = item;
+    }
+  });
+  
+  return Object.values(latestByCategory);
+};

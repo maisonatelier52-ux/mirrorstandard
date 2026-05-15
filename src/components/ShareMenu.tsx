@@ -95,6 +95,7 @@
                 href={link}
                 target="_blank"
                 rel="noopener noreferrer"
+                title="share"
                 className="flex items-center gap-3 px-3 py-2 rounded-md text-black hover:bg-gray-100 text-sm transition"
             >
                 <span className="text-lg">{icon}</span>

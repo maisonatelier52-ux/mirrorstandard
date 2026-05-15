@@ -209,6 +209,7 @@ export default function EditorialPolicy() {
 
           <a
             href="mailto:mirrorstandardnews@gmail.com"
+            title="MirrorStandard - Contact"
             className="inline-flex items-center space-x-3 text-lg hover:opacity-70"
           >
             <Mail className="w-5 h-5" />

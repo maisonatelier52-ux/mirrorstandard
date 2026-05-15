@@ -23,7 +23,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
   const [searchQuery, setSearchQuery] = useState("");
   const router = useRouter();
 
-  const news = latestNews.slice(0, 8);
+  const news = latestNews;
 
   const handleSearch = (e: React.FormEvent) => {
     e.preventDefault();

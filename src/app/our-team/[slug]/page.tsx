@@ -153,7 +153,7 @@ export default async function AuthorPage({
             <p className="text-gray-600 mt-1" itemProp="jobTitle">{author.role}</p>
             <div className="flex items-center gap-5 mt-4">
               {author.social?.reddit && (
-                <a
+                <Link
                   href={author.social.reddit}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -162,10 +162,10 @@ export default async function AuthorPage({
                   itemProp="sameAs"
                 >
                   <FaReddit />
-                </a>
+                </Link>
               )}
               {author.social?.substack && (
-                <a
+                <Link
                   href={author.social.substack}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -174,10 +174,10 @@ export default async function AuthorPage({
                   itemProp="sameAs"
                 >
                   <SiSubstack />
-                </a>
+                </Link>
               )}
               {author.social?.medium && (
-                <a
+                <Link
                   href={author.social.medium}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -186,10 +186,10 @@ export default async function AuthorPage({
                   itemProp="sameAs"
                 >
                   <SiMedium />
-                </a>
+                </Link>
               )}
               {author.social?.quora && (
-                <a
+                <Link
                   href={author.social.quora}
                   target="_blank"
                   rel="noopener noreferrer"
@@ -198,7 +198,7 @@ export default async function AuthorPage({
                   itemProp="sameAs"
                 >
                   <FaQuora />
-                </a>
+                </Link>
               )}
             </div>
           </div>
@@ -213,7 +213,7 @@ export default async function AuthorPage({
             <span className="font-medium">Want to get in touch or share a tip?</span>
             <br />
             Email:{" "}
-            <a
+            <Link
               href={`mailto:${author.email}`}
               title="mail"
               aria-label="mail"
@@ -221,7 +221,7 @@ export default async function AuthorPage({
               itemProp="email"
             >
               {author.email}
-            </a>
+            </Link>
           </p>
         </section>
       </div>

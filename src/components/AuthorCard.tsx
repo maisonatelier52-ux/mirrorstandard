@@ -28,10 +28,10 @@ const AuthorCard: React.FC<AuthorProps> = ({
   substack,
 }) => {
   const socialLinks = [
-    { icon: <FaReddit />, url: reddit },
-    { icon: <SiMedium />, url: medium },
-    { icon: <FaQuora />, url: quora },
-    { icon: <SiSubstack />, url: substack },
+    { icon: <FaReddit />, url: reddit , title: "reddit"},
+    { icon: <SiMedium />, url: medium , title: "medium"},
+    { icon: <FaQuora />, url: quora , title: "quora"},
+    { icon: <SiSubstack />, url: substack , title: "substack"},
   ];
 
   return (
@@ -62,14 +62,15 @@ const AuthorCard: React.FC<AuthorProps> = ({
               {socialLinks.map(
                 (social, index) =>
                   social.url && (
-                    <a
+                    <Link
                       key={index}
                       href={social.url}
                       target="_blank"
                       rel="noopener noreferrer"
+                      title={social.title}
                   className="text-gray-500  transition-colors text-lg"   >
                       {social.icon}
-                    </a>
+                    </Link>
                   )
               )}
             </div>

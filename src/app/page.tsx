@@ -1,4 +1,3 @@
-  import Header from "@/components/Header";
   import Navbar from "@/components/Navbar";
   import NewsFirstLayout from "@/components/NewsFristLayout";
   import ArticleLayout from "@/components/ArticleLayout";

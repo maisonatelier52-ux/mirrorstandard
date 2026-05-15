@@ -86,14 +86,14 @@ export const metadata: Metadata = {
   },
 };
 
-import { getLatestNews } from "@/lib/news";
+import { getLatestNewsByCategory } from "@/lib/news";
 
 export default function RootLayout({
   children,
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-  const latestNews = getLatestNews(10);
+  const latestNews = getLatestNewsByCategory();
 
   return (
     <html lang="en" suppressHydrationWarning>

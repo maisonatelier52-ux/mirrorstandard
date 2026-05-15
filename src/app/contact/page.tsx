@@ -142,7 +142,7 @@ export default function Contact() {
               For all the above inquiries, please reach out to our team directly.
             </p>
             <p className="text-xl font-medium">
-              Contact: <a href="mailto:mirrorstandardnews@gmail.com" className="text-black border-b-2 border-black hover:opacity-70 transition" itemProp="email">mirrorstandardnews@gmail.com</a>
+              Contact: <a href="mailto:mirrorstandardnews@gmail.com" title="MirrorStandard - Contact" className="text-black border-b-2 border-black hover:opacity-70 transition" itemProp="email">mirrorstandardnews@gmail.com</a>
             </p>
           </div>
         </section>
