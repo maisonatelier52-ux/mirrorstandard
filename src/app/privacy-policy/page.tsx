@@ -177,11 +177,11 @@ export default function PrivacyPolicy() {
             the contact below.
           </p>
           <a
-            href="mailto:privacy@mirrorstandard.com"
+            href="mailto:mirrorstandardnews@gmail.com"
             className="inline-flex items-center space-x-3 text-lg hover:opacity-70"
           >
             <Mail className="w-5 h-5" />
-            <span>privacy@mirrorstandard.com</span>
+            <span>mirrorstandardnews@gmail.com</span>
             <Shield className="w-4 h-4" />
           </a>
         </section>

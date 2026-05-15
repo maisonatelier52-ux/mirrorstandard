@@ -42,25 +42,21 @@ export default function Contact() {
     {
       title: "Editorial & General Contact",
       description: "Questions about our reporting, coverage ideas, or editorial matters.",
-      email: "mirrorstandardnews@gmail.com",
       icon: Mail,
     },
     {
       title: "Confidential News Tips",
       description: "Share information that you believe should be investigated or reported.",
-      email: "mirrorstandardnews@gmail.com",
       icon: Send,
     },
     {
       title: "Corrections",
       description: "If you believe we made an error, please notify us so we can correct it promptly.",
-      email: "mirrorstandardnews@gmail.com",
       icon: AlertCircle,
     },
     {
       title: "Media & Press Inquiries",
       description: "Journalists, researchers, or organizations seeking collaboration.",
-      email: "mirrorstandardnews@gmail.com",
       icon: Users,
     },
   ];
@@ -118,7 +114,7 @@ export default function Contact() {
           </p>
         </header>
 
-        <section className="grid gap-12 mb-20">
+        <section className="grid gap-12 mb-12">
           {contacts.map((item, idx) => (
             <div
               key={idx}
@@ -133,18 +129,22 @@ export default function Contact() {
                   {item.title}
                 </h2>
               </div>
-              <p className="font-light leading-relaxed mb-3">
+              <p className="font-light leading-relaxed mb-1">
                 {item.description}
               </p>
-              <a
-                href={`mailto:${item.email}`}
-                className="inline-block text-sm px-4 py-2 rounded-full border border-gray-300 hover:opacity-80 transition"
-                itemProp="email"
-              >
-                {item.email}
-              </a>
             </div>
           ))}
+        </section>
+
+        <section className="text-center mb-20">
+          <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
+            <p className="text-lg font-light text-gray-700 mb-2">
+              For all the above inquiries, please reach out to our team directly.
+            </p>
+            <p className="text-xl font-medium">
+              Contact: <a href="mailto:mirrorstandardnews@gmail.com" className="text-black border-b-2 border-black hover:opacity-70 transition" itemProp="email">mirrorstandardnews@gmail.com</a>
+            </p>
+          </div>
         </section>
 
         <section className="text-center mb-20">

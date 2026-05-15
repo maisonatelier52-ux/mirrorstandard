@@ -89,7 +89,7 @@ const ScrollLayout: React.FC<Props> = ({ data }) => {
         {/* RIGHT */}
         <div className="col-span-1 lg:col-span-1 mt-6 lg:mt-0">
           <div className="sticky top-10">
-            <SubHeadline title="Science" />
+            <SubHeadline title="EDITOR’S PICK" />
             <div className="mt-4">
               <MoreSideCard data={data[8]} />
               <MoreSideCard data={data[9]} />

@@ -21,7 +21,7 @@ interface Props {
 const EntertainmentSection: React.FC<Props> = ({ data }) => {
   return (
     <div className="mt-15">
-      <SubHeadline title="Health" />
+      <SubHeadline title="GLOBAL NEWS" />
       <div className="grid grid-cols-1 lg:grid-cols-3 md:gap-4 gap-12 mt-4">
         <div className="lg:col-span-2">
           <LifestyleCard data={data[0]} />

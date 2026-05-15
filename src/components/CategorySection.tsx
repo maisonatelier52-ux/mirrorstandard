@@ -73,8 +73,16 @@ const PaginationComponent = ({
 };
 
 export default function CategorySection({ data }: Props) {
+  // Define Trending News (indices 9 to 13)
+  const trendingNews = data.slice(9, 13);
+  
+  // Filter out trending news from the main list data
+  const mainListData = data.filter(
+    (item) => !trendingNews.some((trending) => trending.slug === item.slug)
+  );
+
   const ITEMS_PER_PAGE = 5;
-  const totalItems = data.length;
+  const totalItems = mainListData.length;
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
   const showPagination = totalItems > ITEMS_PER_PAGE;
 
@@ -90,7 +98,7 @@ export default function CategorySection({ data }: Props) {
 
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
-  const currentPageData = data.slice(startIndex, endIndex);
+  const currentPageData = mainListData.slice(startIndex, endIndex);
 
   return (
     <div className="w-full">
@@ -121,7 +129,7 @@ export default function CategorySection({ data }: Props) {
               Trending News
             </h2>
             <div className="divide-y divide-[#615e5e54]">
-              {data.slice(9, 13).map((item, idx) => (
+              {trendingNews.map((item, idx) => (
                 <div key={idx} className="py-3">
                   <HorizontalNewsCard data={item} />
                 </div>

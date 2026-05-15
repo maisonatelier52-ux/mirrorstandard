@@ -5,14 +5,7 @@ import { useSearchParams } from "next/navigation";
 import HorizontalNewsCard from "../../components/HorizontalNewsCard";
 import CategoryLeftSection from "../../components/CategoryLeftSection";
 import NotFoundPage from "@/components/NotFoundPage";
-import businessData from "../../../public/data/business.json";
-import sportsData from "../../../public/data/sports.json";
-import educationData from "../../../public/data/education.json";
-import healthData from "../../../public/data/health.json";
-import politicsData from "../../../public/data/politics.json";
-import technologyData from "../../../public/data/technology.json";
-import scienceData from "../../../public/data/science.json";
-import entertainmentData from "../../../public/data/entertainment.json";
+import { allNews, getSortedNews } from "@/lib/news";
 import ScrollToTopButton from "@/components/ScrollToTopButton";
 
 const PaginationComponent = ({
@@ -74,19 +67,13 @@ const PaginationComponent = ({
 };
 
 function SearchContent({ query }: { query: string }) {
-  const allArticles = [
-    ...businessData,
-    ...sportsData,
-    ...educationData,
-    ...healthData,
-    ...politicsData,
-    ...technologyData,
-    ...scienceData,
-    ...entertainmentData,
-  ];
+  const allArticles = allNews;
 
   const filteredArticles = allArticles.filter(
-    (article) => article.category.toLowerCase() === query
+    (article) => 
+      article.category.toLowerCase() === query ||
+      article.title.toLowerCase().includes(query) ||
+      article.shortdescription.toLowerCase().includes(query)
   );
 
   const hasResults = filteredArticles.length > 0;
@@ -110,6 +97,11 @@ function SearchContent({ query }: { query: string }) {
   const startIndex = (currentPage - 1) * ITEMS_PER_PAGE;
   const endIndex = startIndex + ITEMS_PER_PAGE;
   const currentPageData = filteredArticles.slice(startIndex, endIndex);
+
+  // Popular news should be from all news, but excluding those in the current search results if possible
+  const popularNews = getSortedNews()
+    .filter(article => !filteredArticles.some(filtered => filtered.slug === article.slug))
+    .slice(0, 4);
 
   return (
     <div className="w-full max-w-7xl px-5 md:px-8 mx-auto md:py-8 py-0">
@@ -146,7 +138,7 @@ function SearchContent({ query }: { query: string }) {
               POPULAR NEWS
             </h2>
             <div className="divide-y divide-[#615e5e54]">
-              {businessData.slice(0, 4).map((item, idx) => (
+              {popularNews.map((item, idx) => (
                 <div key={idx} className="py-3">
                   <HorizontalNewsCard data={item} />
                 </div>

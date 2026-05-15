@@ -18,16 +18,20 @@ export interface NewsData {
   image: string;
 }
 
-export const allNews: NewsData[] = [
-  ...businessData,
-  ...technologyData,
-  ...sportsData,
-  ...healthData,
-  ...politicsData,
-  ...scienceData,
-  ...entertainmentData,
-  ...educationData
-];
+export const allNews: NewsData[] = Array.from(
+  new Map(
+    [
+      ...businessData,
+      ...technologyData,
+      ...sportsData,
+      ...healthData,
+      ...politicsData,
+      ...scienceData,
+      ...entertainmentData,
+      ...educationData
+    ].map(item => [item.slug, item])
+  ).values()
+);
 
 export const parseDate = (dateStr: string) => {
   const cleanedDate = dateStr.replace('.', '');
