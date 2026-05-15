@@ -140,6 +140,7 @@ export default function TermsConditions() {
             accordance with our{" "}
             <Link
               href="/corrections-policy"
+              title='MirrorStandard - Corrections Policy'
               className="text-blue-500 underline hover:opacity-70"
             >
               Corrections Policy

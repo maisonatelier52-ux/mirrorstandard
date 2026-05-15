@@ -152,19 +152,19 @@ export default function Contact() {
             Stay Connected
           </h2>
           <div className="flex justify-center gap-10">
-            <Link href="https://x.com/Mirrorstan68694" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
+            <Link href="https://x.com/Mirrorstan68694" title="MirrorStandard on X" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
               <FaXTwitter className="w-5 h-5" />
               <span>X (Twitter)</span>
             </Link>
-            <Link href="https://www.instagram.com/mirrorstandardnews2026/" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.instagram.com/mirrorstandardnews2026/" title="MirrorStandard on Instagram" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
               <FaInstagram className="w-5 h-5" />
               <span>Instagram</span>
             </Link>
-            <Link href="https://www.youtube.com/@mirrorstandardUS" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
+            <Link href="https://www.youtube.com/@mirrorstandardUS" title="MirrorStandard on Youtube" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
               <FaYoutube className="w-5 h-5" />
               <span>YouTube</span>
             </Link>
-            <Link href="https://substack.com/@mirrorstandardnews" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
+            <Link href="https://substack.com/@mirrorstandardnews" title="MirrorStandard on Substack" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
               <SiSubstack className="w-5 h-5" />
               <span>Substack</span>
             </Link>

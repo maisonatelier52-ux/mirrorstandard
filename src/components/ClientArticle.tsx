@@ -93,7 +93,7 @@ export default function ClientArticle({ article, otherArticles, globalLatest }: 
                             In elite circles, proximity matters more than publicity. Julio Herrera Velutini’s world sits unusually close to crowns, capitals, family offices, sovereign circles, and the billionaire class.
                         </p>
                         <div className="flex items-center space-x-3 py-5">
-                            <Link href={`/our-team/betty-d-chambers`} title={"betty-d-chambers"} className="text-primary">
+                            <Link href={`/our-team/betty-d-chambers`} title="betty-d-chambers" className="text-primary">
 
                                 <div className="w-12 h-12 relative rounded-full overflow-hidden">
                                     <Image

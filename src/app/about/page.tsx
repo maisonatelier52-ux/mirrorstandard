@@ -168,7 +168,7 @@ export default function AboutUs() {
             Who We Are
           </h2>
           <p className="text-lg leading-tight font-light mb-6">
-            Mirror Standard is produced by a <Link href="/our-team" className="underline hover:text-gray-600">distributed editorial team</Link> of journalists,
+            Mirror Standard is produced by a <Link href="/our-team" className="underline hover:text-gray-600" title='our-team'>distributed editorial team</Link> of journalists,
             editors, analysts, and researchers with experience in both digital and
             traditional media.
           </p>

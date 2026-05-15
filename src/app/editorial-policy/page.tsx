@@ -144,7 +144,7 @@ export default function EditorialPolicy() {
             using reliable sources, document-based reporting, and direct attribution.
             When information cannot be independently confirmed, that uncertainty is
             clearly stated. Errors are corrected transparently in accordance with our{" "}
-            <Link href="/corrections-policy" className="text-blue-500">
+            <Link href="/corrections-policy" title="corrections-policy" className="text-blue-500">
               Corrections Policy
             </Link>.
           </p>
