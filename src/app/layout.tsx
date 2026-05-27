@@ -1,0 +1,178 @@
+import type { Metadata } from "next";
+import { Geist, Geist_Mono, Oswald } from "next/font/google";
+import "./globals.css";
+import Header from "../components/Header";
+import { Providers } from '../components/ThemeProvider'
+import Footer from "../components/Footer";
+import { Roboto } from 'next/font/google';
+import Script from "next/script";
+import { getLatestNewsByCategory } from "../lib/news";
+
+const geistSans = Geist({
+  variable: "--font-geist-sans",
+  subsets: ["latin"],
+});
+
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
+  subsets: ["latin"],
+});
+
+const oswald = Oswald({
+  subsets: ["latin"],
+  weight: ["200", "300", "400", "500", "600", "700"],
+  variable: "--font-oswald",
+});
+
+const roboto = Roboto({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-roboto',
+});
+
+export const metadata: Metadata = {
+  metadataBase: new URL("https://www.mirrorstandard.com"),
+  title: "Mirror Standard | Trusted News, Politics & Business",
+  description: "Mirror Standard provides trusted global news with in-depth political analysis, business insights, and technology updates.",
+  keywords: "breaking news, latest news, political news, business news, world news, global news, technology news, investigative journalism, current events, trusted news source, Mirror Standard",
+  openGraph: {
+    title: "Mirror Standard | Breaking News, Politics & Global Analysis",
+    description: "Trusted, independent journalism from Mirror Standard covering breaking news, politics, business, and global analysis.",
+    url: "https://www.mirrorstandard.com",
+    siteName: "Mirror Standard",
+    locale: "en_US",
+    images: [
+      {
+        url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mirror Standard logo",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Mirror Standard – Breaking News, Politics & Business",
+    description: "Breaking news and in-depth analysis on politics, business, tech, and world events from Mirror Standard—trusted, clear, and timely.",
+    images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
+    site: "@Mirrorstandard",
+    creator: "@Mirrorstandard"
+  },
+  alternates: {
+    canonical: "https://www.mirrorstandard.com",
+    languages: {
+      "en-US": "https://www.mirrorstandard.com",
+      "x-default": "https://www.mirrorstandard.com",
+    },
+  },
+  authors: [{ name: "Mirror Standard Staff" }],
+  publisher: "Mirror Standard",
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  verification: {
+    google: "yJBvvr61HsIIbHKVTR5dNmkkHrx6puybsWaSI42qoq8",
+  },
+  icons: {
+    icon: "/favicon.ico"
+  },
+};
+
+export default function RootLayout({
+  children,
+}: Readonly<{
+  children: React.ReactNode;
+}>) {
+  const latestNews = getLatestNewsByCategory();
+
+  return (
+    <html lang="en" suppressHydrationWarning>
+      <head>
+        <Script
+          id="structured-data-common"
+          type="application/ld+json"
+          strategy="beforeInteractive"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify([
+              {
+                "@context": "https://schema.org",
+                "@type": "NewsMediaOrganization",
+                "@id": "https://www.mirrorstandard.com/#organization",
+                "name": "Mirror Standard",
+                "url": "https://www.mirrorstandard.com",
+                "logo": {
+                  "@type": "ImageObject",
+                  "url": "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+                  "width": 1024,
+                  "height": 1024
+                },
+                "sameAs": [
+                  "https://x.com/Mirrorstan68694",
+                  "https://www.instagram.com/mirrorstandardnews2026/",
+                  "https://www.youtube.com/@mirrorstandardUS",
+                  "https://substack.com/@mirrorstandardnews"
+                ],
+                "contactPoint": {
+                  "@type": "ContactPoint",
+                  "contactType": "editorial",
+                  "email": "editorial@mirrorstandard.com",
+                  "availableLanguage": ["English"]
+                }
+              },
+              {
+                "@context": "https://schema.org",
+                "@type": "WebSite",
+                "@id": "https://www.mirrorstandard.com/#website",
+                "url": "https://www.mirrorstandard.com",
+                "name": "Mirror Standard",
+                "description": "Trusted News, Politics & Business Analysis",
+                "publisher": {
+                  "@id": "https://www.mirrorstandard.com/#organization"
+                },
+                "potentialAction": {
+                  "@type": "SearchAction",
+                  "target": {
+                    "@type": "EntryPoint",
+                    "urlTemplate": "https://www.mirrorstandard.com/search?query={search_term_string}"
+                  },
+                  "query-input": "required name=search_term_string"
+                }
+              }
+            ])
+          }}
+        />
+        <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
+        <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
+      </head>
+      <body
+        className={`
+          ${geistSans?.variable ?? ''} 
+          ${geistMono?.variable ?? ''} 
+          ${oswald?.variable ?? ''} 
+          ${roboto?.variable ?? ''} 
+          font-sans
+          antialiased
+        `}
+        suppressHydrationWarning
+      >
+        {/* 
+          Header is now a lean social/search bar only.
+          The full masthead (logo + tagline) lives inside NewspaperHero on the homepage.
+          On article pages, you can add a simpler sticky header separately.
+        */}
+        <Header latestNews={latestNews} />
+        {children}
+        <Footer />
+      </body>
+    </html>
+  );
+}

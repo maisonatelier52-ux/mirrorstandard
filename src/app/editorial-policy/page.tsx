@@ -1,0 +1,254 @@
+import { Mail, ArrowRight, Check } from 'lucide-react';
+import Link from 'next/link';
+import Script from "next/script";
+import { Metadata } from 'next';
+
+export const metadata: Metadata = {
+  title: "Editorial Policy | Mirror Standard | Journalism Standards",
+  description: "Read Mirror Standard's editorial policy. We are committed to accuracy, transparency, and independent journalism through strict editorial standards.",
+  keywords: "editorial policy, journalism standards, mirror standard ethics, independent news policy, factual reporting standards",
+  alternates: { canonical: "https://www.mirrorstandard.com/editorial-policy" },
+  robots: {
+    index: true,
+    follow: true,
+    googleBot: {
+      index: true,
+      follow: true,
+      'max-video-preview': -1,
+      'max-image-preview': 'large',
+      'max-snippet': -1,
+    },
+  },
+  openGraph: {
+    title: "Editorial Policy | Mirror Standard | Journalism Standards",
+    description: "Read Mirror Standard's editorial policy. Committed to accuracy, transparency, and independent journalism.",
+    url: "https://www.mirrorstandard.com/editorial-policy",
+    siteName: "Mirror Standard",
+    images: [
+      {
+        url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
+        width: 1200,
+        height: 630,
+        alt: "Mirror Standard Editorial Policy",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Editorial Policy | Mirror Standard | Journalism Standards",
+    description: "Read Mirror Standard's editorial policy. Committed to accuracy, transparency, and independent journalism.",
+    images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
+    site: "@Mirrorstandard",
+    creator: "@Mirrorstandard",
+  },
+};
+
+export default function EditorialPolicy() {
+  const transparencyPoints = [
+    "Clearly distinguish between news reporting, opinion, and analysis",
+    "Publish articles under an individual journalist’s byline whenever possible",
+    "Use a “Mirror Standard Staff” byline for collaborative reporting",
+    "Label sponsored, paid, affiliate, or partner-funded material clearly enough that readers do not mistake it for independent reporting"
+  ];
+
+  const ethicalStandards = [
+    {
+      title: "No undisclosed conflicts of interest",
+      description: "Journalists disclose relevant personal or financial relationships when applicable."
+    },
+    {
+      title: "No hidden sponsored content",
+      description: "Paid or sponsored material is clearly labeled and separated from news coverage."
+    },
+    {
+      title: "Respect for privacy",
+      description: "We balance the public’s right to know with individual rights and personal dignity."
+    }
+  ];
+
+  return (
+    <div className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
+      {/* ✅ EDITORIAL POLICY STRUCTURED DATA (CRITICAL FOR GOOGLE NEWS) */}
+      <Script
+        id="structured-data-editorial-policy"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify([
+            {
+              "@context": "https://schema.org",
+              "@type": "WebPage",
+              "name": "Editorial Policy | Mirror Standard",
+              "url": "https://www.mirrorstandard.com/editorial-policy",
+              "publisher": {
+                "@type": "NewsMediaOrganization",
+                "@id": "https://www.mirrorstandard.com/#organization"
+              }
+            },
+            {
+              "@context": "https://schema.org",
+              "@type": "BreadcrumbList",
+              "itemListElement": [
+                {
+                  "@type": "ListItem",
+                  "position": 1,
+                  "name": "Home",
+                  "item": "https://www.mirrorstandard.com"
+                },
+                {
+                  "@type": "ListItem",
+                  "position": 2,
+                  "name": "Editorial Policy",
+                  "item": "https://www.mirrorstandard.com/editorial-policy"
+                }
+              ]
+            }
+          ])
+        }}
+      />
+
+      <div className="max-w-4xl mx-auto px-6 py-16">
+        <header className="text-center mb-20">
+          <h1 className="text-6xl font-light mb-4 tracking-tight">
+            Editorial Policy
+          </h1>
+          <div className="w-16 h-[2px] bg-gray-600 mx-auto mb-8"></div>
+        </header>
+
+        <section className="mb-10">
+          <p className="text-lg leading-relaxed mb-8 font-light">
+            Mirror Standard is an independent digital newsroom committed to factual,
+            transparent, and accountable journalism. Our editorial standards exist to
+            ensure that readers can trust our reporting and understand how our stories
+            are produced.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
+            Editorial Independence
+          </h2>
+          <p className="text-lg leading-relaxed font-light">
+            We do not accept payment, favors, or influence in exchange for coverage.
+            Editorial decisions are made solely by journalists and editors, free from
+            corporate, political, or government interference. Commercial support,
+            advertising, sponsorship, and distribution relationships do not grant
+            editorial control over reported articles.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
+            Accuracy and Verification
+          </h2>
+          <p className="text-lg leading-relaxed font-light">
+            Accuracy is more important than speed. Our journalists verify information
+            using reliable sources, document-based reporting, and direct attribution.
+            When information cannot be independently confirmed, that uncertainty is
+            clearly stated. Errors are corrected transparently in accordance with our{" "}
+            <Link href="/corrections-policy" title="corrections-policy" className="text-blue-500">
+              Corrections Policy
+            </Link>. Stories involving criticism, allegations, finance, legal context,
+            or reputationally sensitive facts are expected to use careful wording and,
+            where appropriate, source notes and pre-publication outreach.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
+            Fairness and Balance
+          </h2>
+          <p className="text-lg leading-relaxed font-light">
+            We seek diverse perspectives on complex issues while avoiding false balance.
+            Claims are evaluated on evidence and credibility, not ideology.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
+            Transparency
+          </h2>
+          <p className="text-lg leading-relaxed mb-8 font-light">
+            Readers deserve to know how reporting decisions are made. We commit to the
+            following practices:
+          </p>
+
+          <div className="space-y-4">
+            {transparencyPoints.map((point, index) => (
+              <div key={index} className="flex items-start space-x-3">
+                <Check className="w-5 h-5 mt-0.5" />
+                <span className="text-lg font-light">{point}</span>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
+            Disclosure and Labeling
+          </h2>
+          <p className="text-lg leading-relaxed font-light">
+            Mirror Standard aims to disclose material relationships that a reasonable
+            reader would consider relevant to understanding a piece of coverage. Paid
+            content, sponsored placements, affiliate links, or partner-funded material
+            should be labeled clearly and kept distinct from independent reporting.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-light mb-8 pb-3 border-b border-gray-200">
+            Ethical Standards
+          </h2>
+
+          <div className="space-y-8">
+            {ethicalStandards.map((standard, index) => (
+              <div key={index} className="border-l-2 border-gray-200 pl-6">
+                <h3 className="text-lg font-medium mb-2">
+                  {standard.title}
+                </h3>
+                <p className="font-light leading-relaxed">
+                  {standard.description}
+                </p>
+              </div>
+            ))}
+          </div>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-light mb-8 pb-3 border-b">
+            Reader Feedback and Accountability
+          </h2>
+          <p className="text-lg leading-relaxed font-light mb-6">
+            Journalism improves through dialogue. Readers are encouraged to contact our
+            editorial team with feedback, corrections, or concerns.
+          </p>
+
+          <a
+            href="mailto:editorial@mirrorstandard.com"
+            title="MirrorStandard - Contact"
+            className="inline-flex items-center space-x-3 text-lg hover:opacity-70"
+          >
+            <Mail className="w-5 h-5" />
+            <span>editorial@mirrorstandard.com</span>
+            <ArrowRight className="w-4 h-4" />
+          </a>
+        </section>
+
+        <div className="border-t border-gray-200 pt-10 mt-16 text-center">
+          <p className="text-lg font-light italic max-w-2xl mx-auto">
+            Our commitment is to independent, fact-based journalism — accountable to
+            readers and guided by evidence.
+          </p>
+        </div>
+        {/* ✅ AUTHORITY SIGNAL: LAST UPDATED */}
+        <section className="mt-16 pt-8 border-t border-gray-100 text-center">
+          <p className="text-xs text-gray-400 font-light italic">
+            Last Updated: May 22, 2026
+          </p>
+        </section>
+      </div>
+    </div>
+
+  );
+}
