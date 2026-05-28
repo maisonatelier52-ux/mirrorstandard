@@ -1,7 +1,6 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import Script from "next/script";
-import Navbar from "../../components/Navbar";
 import { profiles } from "../../lib/news";
 
 export const metadata: Metadata = {
@@ -42,10 +41,6 @@ export default function ProfilesIndexPage() {
           }),
         }}
       />
-
-      <div className="hidden lg:block">
-        <Navbar />
-      </div>
 
       <div className="mx-auto w-full max-w-[1380px] px-4 py-4 sm:px-6 md:px-8 md:py-8 lg:px-10">
 

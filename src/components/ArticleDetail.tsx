@@ -1,5 +1,5 @@
 import Image from "next/image";
-import type { NewsArticle } from "@/lib/news";
+import type { NewsArticle } from "../lib/news";
 
 interface Props {
   data: NewsArticle;

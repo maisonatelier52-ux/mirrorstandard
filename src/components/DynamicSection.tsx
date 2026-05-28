@@ -1,8 +1,8 @@
 "use client";
 import React, { useState, useMemo } from "react";
 import Categories from "./Categories";
-import LatestNewsSection from "@/components/LatestNewsSection";
-import FourCardGrid from "@/components/FourCardGrid";
+import LatestNewsSection from "../components/LatestNewsSection";
+import FourCardGrid from "../components/FourCardGrid";
 
 interface NewsData {
   slug: string;

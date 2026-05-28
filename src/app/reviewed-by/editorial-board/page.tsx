@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import TrustPage from "@/components/TrustPage";
+import TrustPage from "../../../components/TrustPage";
 
 export const metadata: Metadata = {
   title: "Mirror Standard Editorial Board | Reviewed By",
