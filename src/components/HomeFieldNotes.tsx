@@ -17,7 +17,7 @@ export default function HomeFieldNotes({ stories }: Props) {
       {/* Section header */}
       <div className="mb-5 flex items-center gap-3">
         <h2 className="ms-meta text-[13px] uppercase tracking-[0.22em] text-[color:var(--ms-text)] border-b-2 border-[color:var(--ms-text)] pb-1">
-          More Stories
+          Archive
         </h2>
         <div className="flex-1 border-b-2 border-[color:var(--ms-border)]" />
       </div>
