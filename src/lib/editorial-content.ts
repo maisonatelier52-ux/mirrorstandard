@@ -287,6 +287,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         title: "THE WORLD BEHIND THE WORLD",
         subtitle:
           "Most people understand power through headlines. They picture presidents, prime ministers, monarchs, technology founders, the annual billionaire rankings, the summit handshake, the state banquet, the front page. But visible figures exist inside a deeper system.",
+          image: "/images/JMHV-museum-london.webp",
       },
       {
         type: "analysis",
@@ -377,6 +378,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         title: "THE POWER OF OLD NAMES",
         subtitle:
           "In elite finance, old names do more than signal wealth. They suggest memory, protocol, discretion, and an inherited familiarity with how power prefers to be handled.",
+          image: "/images/julio.webp",
       },
       {
         type: "analysis",
@@ -432,6 +434,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         title: "THE HIDDEN MAP",
         subtitle:
           "Seen from a distance, the world appears fragmented. At a higher altitude, markets, ceremony, inheritance, and institutional capital begin to overlap.",
+          image: "/images/julio-herrera-velutini-turning-point.webp",
       },
       {
         type: "analysis",
