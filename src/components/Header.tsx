@@ -1,7 +1,8 @@
+
 "use client";
 
 import { Search, X, Menu } from "lucide-react";
-import { useState, useEffect } from "react";
+import { useState, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
@@ -55,9 +56,194 @@ function isActive(href: string, pathname: string) {
   return pathname === href || pathname.startsWith(href + "/");
 }
 
+/* ─────────────────────────────────────────────
+   SUBSCRIBE MODAL
+───────────────────────────────────────────── */
+function SubscribeModal({ onClose }: { onClose: () => void }) {
+  const [email, setEmail] = useState("");
+  const [error, setError] = useState("");
+  const [submitted, setSubmitted] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const inputRef = useRef<HTMLInputElement>(null);
+
+  // Focus input on open
+  useEffect(() => {
+    inputRef.current?.focus();
+  }, []);
+
+  // Close on Escape
+  useEffect(() => {
+    const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
+    document.addEventListener("keydown", handler);
+    return () => document.removeEventListener("keydown", handler);
+  }, [onClose]);
+
+  function validateEmail(val: string) {
+    return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(val.trim());
+  }
+
+  async function handleSubmit(e: React.FormEvent) {
+    e.preventDefault();
+    setError("");
+    if (!email.trim()) {
+      setError("Please enter your email address.");
+      return;
+    }
+    if (!validateEmail(email)) {
+      setError("Please enter a valid email address.");
+      return;
+    }
+    setLoading(true);
+    // Simulate network request
+    await new Promise((r) => setTimeout(r, 900));
+    setLoading(false);
+    setSubmitted(true);
+  }
+
+  return (
+    <>
+      {/* Backdrop */}
+      <div
+        className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
+        onClick={onClose}
+        aria-hidden="true"
+      />
+
+      {/* Modal panel */}
+      <div
+        role="dialog"
+        aria-modal="true"
+        aria-labelledby="subscribe-title"
+        className="fixed left-1/2 top-1/2 z-50 w-[min(92vw,480px)] -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl"
+      >
+        {/* Top accent bar */}
+        <div className="h-[3px] w-full bg-[color:var(--ms-accent)]" />
+
+        <div className="px-8 py-8">
+          {/* Close button */}
+          <button
+            type="button"
+            onClick={onClose}
+            aria-label="Close"
+            className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:border-[color:var(--ms-text-soft)] hover:text-[color:var(--ms-text)] transition-colors"
+          >
+            <X size={15} />
+          </button>
+
+          {!submitted ? (
+            <>
+              {/* Header */}
+              <div className="mb-6">
+                <p className="font-[oswald] text-[10px] font-bold uppercase tracking-[0.26em] text-[color:var(--ms-accent)]">
+                  Mirror Standard
+                </p>
+                <h2
+                  id="subscribe-title"
+                  className="ms-editorial-serif mt-2 text-[28px] leading-[1.05] tracking-[-0.02em] text-[color:var(--ms-text)]"
+                >
+                  Stay informed.
+                </h2>
+                <p className="mt-2 text-[14px] leading-[1.7] text-[color:var(--ms-text-soft)]">
+                  Get independent journalism on politics, business, and markets delivered to your inbox — free.
+                </p>
+              </div>
+
+              {/* Divider */}
+              <div className="mb-5 flex items-center gap-3">
+                <div className="h-px flex-1 bg-[color:var(--ms-border)]" />
+                <span className="font-[oswald] text-[9px] uppercase tracking-[0.3em] text-[color:var(--ms-text-faint)]">✦</span>
+                <div className="h-px flex-1 bg-[color:var(--ms-border)]" />
+              </div>
+
+              {/* Form */}
+              <form onSubmit={handleSubmit} noValidate>
+                <label
+                  htmlFor="subscribe-email"
+                  className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--ms-text-faint)]"
+                >
+                  Email address
+                </label>
+                <input
+                  ref={inputRef}
+                  id="subscribe-email"
+                  type="email"
+                  value={email}
+                  onChange={(e) => { setEmail(e.target.value); setError(""); }}
+                  placeholder="you@example.com"
+                  className={`w-full border px-4 py-3 text-[15px] text-[color:var(--ms-text)] outline-none placeholder:text-[color:var(--ms-text-faint)] transition-colors focus:border-[color:var(--ms-accent)] ${
+                    error ? "border-red-400 bg-red-50" : "border-[color:var(--ms-border)] bg-white"
+                  }`}
+                  autoComplete="email"
+                />
+                {error && (
+                  <p className="mt-1.5 flex items-center gap-1.5 text-[12px] text-red-500">
+                    <svg viewBox="0 0 16 16" fill="currentColor" className="h-3.5 w-3.5 flex-none">
+                      <path d="M8 1a7 7 0 100 14A7 7 0 008 1zm.75 4a.75.75 0 00-1.5 0v3.5a.75.75 0 001.5 0V5zm-.75 6a.875.875 0 110-1.75.875.875 0 010 1.75z"/>
+                    </svg>
+                    {error}
+                  </p>
+                )}
+
+                <button
+                  type="submit"
+                  disabled={loading}
+                  className="mt-4 w-full bg-[color:var(--ms-accent)] px-6 py-3 font-[oswald] text-[13px] font-bold uppercase tracking-[0.18em] text-white transition-opacity hover:opacity-90 disabled:opacity-60"
+                >
+                  {loading ? (
+                    <span className="flex items-center justify-center gap-2">
+                      <svg className="h-4 w-4 animate-spin" viewBox="0 0 24 24" fill="none">
+                        <circle className="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" strokeWidth="3" />
+                        <path className="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8v8H4z" />
+                      </svg>
+                      Subscribing…
+                    </span>
+                  ) : (
+                    "Subscribe — it's free"
+                  )}
+                </button>
+              </form>
+
+              <p className="mt-4 text-center text-[11px] leading-5 text-[color:var(--ms-text-faint)]">
+                No spam, ever. Unsubscribe at any time.
+              </p>
+            </>
+          ) : (
+            /* ── Success state ── */
+            <div className="py-4 text-center">
+              <div className="mx-auto mb-4 flex h-14 w-14 items-center justify-center rounded-full bg-[color:var(--ms-accent)]">
+                <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={2.5} className="h-7 w-7">
+                  <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+                </svg>
+              </div>
+              <p className="font-[oswald] text-[10px] font-bold uppercase tracking-[0.26em] text-[color:var(--ms-accent)]">
+                You&apos;re in
+              </p>
+              <h2 className="ms-editorial-serif mt-2 text-[26px] leading-[1.1] tracking-[-0.02em] text-[color:var(--ms-text)]">
+                Welcome to Mirror Standard.
+              </h2>
+              <p className="mt-3 text-[14px] leading-[1.7] text-[color:var(--ms-text-soft)]">
+                Thanks for subscribing. Your first briefing will arrive shortly at{" "}
+                <span className="font-semibold text-[color:var(--ms-text)]">{email}</span>.
+              </p>
+              <button
+                type="button"
+                onClick={onClose}
+                className="mt-6 border border-[color:var(--ms-border)] px-6 py-2.5 font-[oswald] text-[12px] uppercase tracking-[0.18em] text-[color:var(--ms-text)] transition-colors hover:border-[color:var(--ms-text)] hover:text-[color:var(--ms-accent)]"
+              >
+                Continue Reading
+              </button>
+            </div>
+          )}
+        </div>
+      </div>
+    </>
+  );
+}
+
 export default function Header({ latestNews = [] }: { latestNews?: NewsData[] }) {
   const [isSearchOpen, setIsSearchOpen] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isSubscribeOpen, setIsSubscribeOpen] = useState(false);
   const [searchQuery, setSearchQuery] = useState("");
   const [breakingIdx, setBreakingIdx] = useState(0);
   const [dateStr, setDateStr] = useState("");
@@ -125,7 +311,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
       ══════════════════════════════════════════ */}
       <header className="hidden bg-[#ffffff] lg:block">
 
-        {/* ROW 1: Date · Weather · Tagline · Newsletter / Sign In / Search */}
+        {/* ROW 1: Date · Weather · Tagline · About / Contact / Search */}
         <div className="border-b border-[color:var(--ms-border)]">
           <div className="mx-auto flex items-center justify-between gap-6 px-8 py-[8px] bg-[color:var(--ms-footer-bg)]">
             <div className="flex items-center gap-3 text-[12px] text-white">
@@ -154,7 +340,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
 
             <div className="flex items-center divide-x divide-[color:var(--ms-border)]">
               <Link href="/about" className="px-4 text-[12px] text-white hover:text-gray-300 transition-colors cursor-pointer">About</Link>
-              <Link href="/contact" className="px-4 text-[12px] text-white hhover:text-gray-300 transition-colors cursor-pointer">Contact Us</Link>
+              <Link href="/contact" className="px-4 text-[12px] text-white hover:text-gray-300 transition-colors cursor-pointer">Contact Us</Link>
               <button
                 onClick={() => setIsSearchOpen(true)}
                 className="flex items-center gap-1.5 pl-4 text-[12px] text-white hover:text-gray-300 transition-colors cursor-pointer"
@@ -166,7 +352,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
           </div>
         </div>
 
-        {/* ROW 2: Social icons · Masthead · MS badge + E-Edition */}
+        {/* ROW 2: Social icons · Masthead · Subscribe button */}
         <div className="border-b border-[color:var(--ms-border)] py-5">
           <div className="mx-auto flex max-w-[1280px] items-center px-8">
 
@@ -214,25 +400,25 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               </p>
             </div>
 
-            {/* Right: MS badge + E-Edition label */}
-            <div className="flex w-[180px] items-center justify-end gap-3">
-              <div className="flex h-[56px] w-[56px] flex-shrink-0 items-center justify-center bg-[color:var(--ms-accent)]">
-                <span
-                  className="text-white leading-none"
-                  style={{
-                    fontFamily: '"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif',
-                    fontSize: "22px",
-                    fontWeight: 700,
-                    letterSpacing: "-0.02em",
-                  }}
-                >
-                  MS
-                </span>
-              </div>
-              <div>
-                <p className="text-[11px] leading-5 text-[color:var(--ms-text-soft)]">Read Today&apos;s</p>
-                <p className="text-[11px] font-bold text-[color:var(--ms-accent)]">E-Edition</p>
-              </div>
+            {/* Right: Subscribe button */}
+            <div className="flex w-[180px] items-center justify-end">
+              <button
+                type="button"
+                onClick={() => setIsSubscribeOpen(true)}
+                className="group flex flex-col items-center gap-1 cursor-pointer"
+              >
+                {/* Icon badge */}
+                <div className="flex h-[44px] w-[44px] flex-shrink-0 items-center justify-center bg-[color:var(--ms-accent)] transition-opacity group-hover:opacity-90">
+                  <svg viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth={1.8} className="h-5 w-5">
+                    <path strokeLinecap="round" strokeLinejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                  </svg>
+                </div>
+                {/* Label */}
+                <div className="text-center leading-none">
+                  <p className="text-[10px] text-[color:var(--ms-text-soft)]">Free newsletter</p>
+                  <p className="text-[11px] font-bold uppercase tracking-[0.1em] text-[color:var(--ms-accent)]">Subscribe</p>
+                </div>
+              </button>
             </div>
           </div>
         </div>
@@ -265,43 +451,14 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               </Link>
               <div className="flex flex-shrink-0 items-center gap-2">
                 <span className="text-[12px] text-[color:var(--ms-text-faint)]">{currentBreaking.date}</span>
-                <button
-                  onClick={prevBreaking}
-                  aria-label="Previous"
-                  className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer"
-                >
-                  <svg
-                    className="h-3 w-3"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M15 18l-6-6 6-6"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                <button onClick={prevBreaking} aria-label="Previous" className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
+                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
-
-                <button
-                  onClick={nextBreaking}
-                  aria-label="Next"
-                  className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer"
-                >
-                  <svg
-                    className="h-3 w-3"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M9 18l6-6-6-6"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                <button onClick={nextBreaking} aria-label="Next" className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
+                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
               </div>
@@ -328,13 +485,22 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               </svg>
               {dateStr}
             </span>
-            <button onClick={() => setIsSearchOpen(true)} className="flex items-center gap-1 text-[12px] text-white hover:text-[color:var(--ms-accent)]">
-              <Search size={13} /> Search
-            </button>
+            <div className="flex items-center gap-3">
+              <button
+                type="button"
+                onClick={() => setIsSubscribeOpen(true)}
+                className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.1em] text-[color:var(--ms-accent)] border border-[color:var(--ms-accent)] px-2.5 py-1 hover:bg-[color:var(--ms-accent)] hover:text-white transition-colors"
+              >
+                Subscribe
+              </button>
+              <button onClick={() => setIsSearchOpen(true)} className="flex items-center gap-1 text-[12px] text-white hover:text-[color:var(--ms-accent)]">
+                <Search size={13} /> Search
+              </button>
+            </div>
           </div>
         </div>
 
-        {/* Mobile Row 3: Social · Masthead · Hamburger */}
+        {/* Mobile Row 2: Social · Masthead · Hamburger */}
         <div className="border-b border-[color:var(--ms-border)] py-3">
           <div className="flex items-center px-4">
             <div className="flex items-center gap-1.5">
@@ -366,13 +532,13 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
         </div>
 
         {/* Mobile Navbar: horizontal scroll + active underline */}
-       <nav className="border-b-2 border-t-2 border-[color:var(--ms-text)] bg-white">
-        <div className="flex items-center overflow-x-auto scrollbar-hide">
-          {navCategories.map((item) => (
-            <NavLink key={item.href} item={item} mobile />
-          ))}
-        </div>
-      </nav>
+        <nav className="border-b-2 border-t-2 border-[color:var(--ms-text)] bg-white">
+          <div className="flex items-center overflow-x-auto scrollbar-hide">
+            {navCategories.map((item) => (
+              <NavLink key={item.href} item={item} mobile />
+            ))}
+          </div>
+        </nav>
 
         {/* Mobile Breaking News — HOMEPAGE ONLY */}
         {isHomePage && (
@@ -382,49 +548,19 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                 <span className="bg-red-600 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.08em] text-white">Breaking News</span>
                 <div className="border-l-[5px] border-y-[9px] border-y-transparent border-l-red-600" />
               </div>
-              {/* <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" /> */}
               <Link href={`/${currentBreaking.category}/${currentBreaking.slug}`} className="min-w-0 flex-1 truncate text-[11px] text-[color:var(--ms-text)]">
                 {currentBreaking.title}
               </Link>
               <div className="flex flex-shrink-0 items-center gap-1">
                 <span className="text-[10px] text-[color:var(--ms-text-faint)]">{currentBreaking.date}</span>
-               <button
-                  onClick={prevBreaking}
-                  aria-label="Previous"
-                  className="flex h-4 w-4 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer"
-                >
-                  <svg
-                    className="h-3 w-3"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M15 18l-6-6 6-6"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                <button onClick={prevBreaking} aria-label="Previous" className="flex h-4 w-4 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
+                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
-
-                <button
-                  onClick={nextBreaking}
-                  aria-label="Next"
-                  className="flex h-4 w-4 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer"
-                >
-                  <svg
-                    className="h-3 w-3"
-                    fill="none"
-                    stroke="currentColor"
-                    viewBox="0 0 24 24"
-                  >
-                    <path
-                      d="M9 18l6-6-6-6"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    />
+                <button onClick={nextBreaking} aria-label="Next" className="flex h-4 w-4 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
+                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
                   </svg>
                 </button>
               </div>
@@ -473,7 +609,17 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                 );
               })}
             </ul>
-            <div className="mt-6">
+
+            {/* Subscribe CTA in drawer */}
+            <button
+              type="button"
+              onClick={() => { setIsMobileMenuOpen(false); setIsSubscribeOpen(true); }}
+              className="mt-5 w-full bg-[color:var(--ms-accent)] py-3 font-[oswald] text-[12px] font-bold uppercase tracking-[0.18em] text-white hover:opacity-90 transition-opacity"
+            >
+              Subscribe — Free Newsletter
+            </button>
+
+            <div className="mt-5">
               <p className="ms-meta mb-3 text-[10px] uppercase tracking-[0.2em] text-[color:var(--ms-footer-muted)]">Follow Us</p>
               <div className="flex items-center gap-2">
                 {socialLinks.map((social) => (
@@ -529,6 +675,13 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
             </form>
           </div>
         </div>
+      )}
+
+      {/* ══════════════════════════════════════════
+          SUBSCRIBE MODAL
+      ══════════════════════════════════════════ */}
+      {isSubscribeOpen && (
+        <SubscribeModal onClose={() => setIsSubscribeOpen(false)} />
       )}
     </>
   );
