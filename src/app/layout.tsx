@@ -1,12 +1,13 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono, Oswald } from "next/font/google";
 import "./globals.css";
-import Header from "../components/Header";
+
 import { Providers } from '../components/ThemeProvider'
-import Footer from "../components/Footer";
 import { Roboto } from 'next/font/google';
 import Script from "next/script";
 import { getLatestNewsByCategory } from "../lib/news";
+import Header from "../components/Header";
+import Footer from "../components/Footer";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",

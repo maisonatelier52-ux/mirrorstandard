@@ -1,4 +1,3 @@
-import Navbar from "../components/Navbar";
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import { getCategoryDescription } from "../lib/category-copy";
 import { getCategoryNews, getSortedNews } from "../lib/news";
