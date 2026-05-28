@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { allNews, authors, normalizeDateToIso, profiles } from "@/lib/news";
+import { allNews, authors, normalizeDateToIso, profiles } from "../lib/news";
 
 const siteUrl = "https://www.mirrorstandard.com";
 
