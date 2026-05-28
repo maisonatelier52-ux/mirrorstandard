@@ -117,7 +117,7 @@ export default async function Home() {
         }}
       />
 
-      <div className="newspaper-container px-3 sm:px-5">
+      <div className="newspaper-container px-3 sm:px-8">
 
         {/* ── Hero ── */}
         <NewspaperHero

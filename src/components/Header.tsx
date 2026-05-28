@@ -249,7 +249,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
         {/* ROW 4: Breaking News — HOMEPAGE ONLY */}
         {isHomePage && (
           <div className="border-b border-[color:var(--ms-border)] bg-white">
-            <div className="mx-auto flex max-w-[1280px] items-center gap-3 px-8 py-[9px]">
+            <div className="mx-auto flex items-center gap-3 px-8 py-[9px]">
               <div className="flex flex-shrink-0 items-center">
                 <span className="bg-red-600 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-white">
                   Breaking News
