@@ -687,7 +687,6 @@
 //   );
 // }
 
-
 "use client";
 
 import { Search, X, Menu } from "lucide-react";
@@ -714,17 +713,10 @@ function useWeather() {
         `https://api.open-meteo.com/v1/forecast?latitude=${lat}&longitude=${lon}&current_weather=true`
       );
       const weatherData = await weatherRes.json();
-      return {
-        temp: Math.round(weatherData.current_weather.temperature),
-        city,
-      };
+      return { temp: Math.round(weatherData.current_weather.temperature), city };
     }
 
     async function fetchWeather() {
-      // Always IP-based — intentionally avoids browser geolocation so VPN is respected.
-      // Priority: ipwho.is → ipapi.co → freeipapi.com
-
-      // --- Provider 1: ipwho.is (free, HTTPS, works on localhost) ---
       try {
         const res = await fetch("https://ipwho.is/");
         const data = await res.json();
@@ -734,7 +726,6 @@ function useWeather() {
         }
       } catch { /* fall through */ }
 
-      // --- Provider 2: ipapi.co (free tier, 1k/day) ---
       try {
         const res = await fetch("https://ipapi.co/json/");
         const data = await res.json();
@@ -744,7 +735,6 @@ function useWeather() {
         }
       } catch { /* fall through */ }
 
-      // --- Provider 3: freeipapi.com ---
       try {
         const res = await fetch("https://freeipapi.com/api/json");
         const data = await res.json();
@@ -754,7 +744,6 @@ function useWeather() {
         }
       } catch { /* fall through */ }
 
-      // All providers failed — widget stays hidden
       setWeather(null);
     }
 
@@ -776,30 +765,27 @@ interface NewsData {
 }
 
 const navCategories = [
-  { label: "Home", href: "/" },
-  { label: "Politics", href: "/politics" },
-  { label: "Business", href: "/business" },
-  { label: "Technology", href: "/technology" },
-  { label: "Health", href: "/health" },
-  { label: "Science", href: "/science" },
-  { label: "Education", href: "/education" },
-  { label: "Entertainment", href: "/entertainment" },
-  { label: "Sports", href: "/sports" },
+  { label: "Home",          href: "/",             title: "Mirror Standard – Latest News & Analysis" },
+  { label: "Politics",      href: "/politics",      title: "Politics News – Mirror Standard" },
+  { label: "Business",      href: "/business",      title: "Business & Finance News – Mirror Standard" },
+  { label: "Technology",    href: "/technology",    title: "Technology News – Mirror Standard" },
+  { label: "Health",        href: "/health",        title: "Health News – Mirror Standard" },
+  { label: "Science",       href: "/science",       title: "Science News – Mirror Standard" },
+  { label: "Education",     href: "/education",     title: "Education News – Mirror Standard" },
+  { label: "Entertainment", href: "/entertainment", title: "Entertainment News – Mirror Standard" },
+  { label: "Sports",        href: "/sports",        title: "Sports News – Mirror Standard" },
 ];
 
 const socialLinks = [
-  { href: "https://x.com/Mirrorstan68694", label: "X / Twitter", icon: <FaXTwitter size={15} /> },
-  { href: "https://www.instagram.com/mirrorstandardnews2026/", label: "Instagram", icon: <FaInstagram size={15} /> },
-  { href: "https://www.youtube.com/@mirrorstandardUS", label: "YouTube", icon: <FaYoutube size={15} /> },
-  { href: "https://substack.com/@mirrorstandardnews", label: "Substack", icon: <SiSubstack size={15} /> },
+  { href: "https://x.com/Mirrorstan68694",                        label: "Follow Mirror Standard on X / Twitter",  icon: <FaXTwitter size={15} /> },
+  { href: "https://www.instagram.com/mirrorstandardnews2026/",    label: "Follow Mirror Standard on Instagram",    icon: <FaInstagram size={15} /> },
+  { href: "https://www.youtube.com/@mirrorstandardUS",            label: "Watch Mirror Standard on YouTube",       icon: <FaYoutube size={15} /> },
+  { href: "https://substack.com/@mirrorstandardnews",             label: "Read Mirror Standard on Substack",       icon: <SiSubstack size={15} /> },
 ];
 
 function getFormattedDate() {
   return new Date().toLocaleDateString("en-US", {
-    weekday: "long",
-    month: "long",
-    day: "numeric",
-    year: "numeric",
+    weekday: "long", month: "long", day: "numeric", year: "numeric",
   });
 }
 
@@ -818,9 +804,7 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
   const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
-  useEffect(() => {
-    inputRef.current?.focus();
-  }, []);
+  useEffect(() => { inputRef.current?.focus(); }, []);
 
   useEffect(() => {
     const handler = (e: KeyboardEvent) => { if (e.key === "Escape") onClose(); };
@@ -835,14 +819,8 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
   async function handleSubmit(e: React.FormEvent) {
     e.preventDefault();
     setError("");
-    if (!email.trim()) {
-      setError("Please enter your email address.");
-      return;
-    }
-    if (!validateEmail(email)) {
-      setError("Please enter a valid email address.");
-      return;
-    }
+    if (!email.trim()) { setError("Please enter your email address."); return; }
+    if (!validateEmail(email)) { setError("Please enter a valid email address."); return; }
     setLoading(true);
     await new Promise((r) => setTimeout(r, 900));
     setLoading(false);
@@ -851,29 +829,20 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
 
   return (
     <>
-      {/* Backdrop */}
-      <div
-        className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm"
-        onClick={onClose}
-        aria-hidden="true"
-      />
-
-      {/* Modal panel */}
+      <div className="fixed inset-0 z-50 bg-black/60 backdrop-blur-sm" onClick={onClose} aria-hidden="true" />
       <div
         role="dialog"
         aria-modal="true"
         aria-labelledby="subscribe-title"
         className="fixed left-1/2 top-1/2 z-50 w-[min(92vw,480px)] -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl"
       >
-        {/* Top accent bar */}
         <div className="h-[3px] w-full bg-[color:var(--ms-accent)]" />
-
         <div className="px-8 py-8">
-          {/* Close button */}
           <button
             type="button"
             onClick={onClose}
-            aria-label="Close"
+            aria-label="Close subscribe modal"
+            title="Close"
             className="absolute right-4 top-4 flex h-8 w-8 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:border-[color:var(--ms-text-soft)] hover:text-[color:var(--ms-text)] transition-colors cursor-pointer"
           >
             <X size={15} />
@@ -882,31 +851,21 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
           {!submitted ? (
             <>
               <div className="mb-6">
-                <p className="font-[oswald] text-[10px] font-bold uppercase tracking-[0.26em] text-[color:var(--ms-accent)]">
-                  Mirror Standard
-                </p>
-                <h2
-                  id="subscribe-title"
-                  className="ms-editorial-serif mt-2 text-[28px] leading-[1.05] tracking-[-0.02em] text-[color:var(--ms-text)]"
-                >
+                <p className="font-[oswald] text-[10px] font-bold uppercase tracking-[0.26em] text-[color:var(--ms-accent)]">Mirror Standard</p>
+                <h2 id="subscribe-title" className="ms-editorial-serif mt-2 text-[28px] leading-[1.05] tracking-[-0.02em] text-[color:var(--ms-text)]">
                   Stay informed.
                 </h2>
                 <p className="mt-2 text-[14px] leading-[1.7] text-[color:var(--ms-text-soft)]">
                   Get independent journalism on politics, business, and markets delivered to your inbox — free.
                 </p>
               </div>
-
               <div className="mb-5 flex items-center gap-3">
                 <div className="h-px flex-1 bg-[color:var(--ms-border)]" />
                 <span className="font-[oswald] text-[9px] uppercase tracking-[0.3em] text-[color:var(--ms-text-faint)]">✦</span>
                 <div className="h-px flex-1 bg-[color:var(--ms-border)]" />
               </div>
-
               <form onSubmit={handleSubmit} noValidate>
-                <label
-                  htmlFor="subscribe-email"
-                  className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--ms-text-faint)]"
-                >
+                <label htmlFor="subscribe-email" className="mb-1.5 block text-[11px] font-semibold uppercase tracking-[0.14em] text-[color:var(--ms-text-faint)]">
                   Email address
                 </label>
                 <input
@@ -916,9 +875,7 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
                   value={email}
                   onChange={(e) => { setEmail(e.target.value); setError(""); }}
                   placeholder="you@example.com"
-                  className={`w-full border px-4 py-3 text-[15px] text-[color:var(--ms-text)] outline-none placeholder:text-[color:var(--ms-text-faint)] transition-colors focus:border-[color:var(--ms-accent)] ${
-                    error ? "border-red-400 bg-red-50" : "border-[color:var(--ms-border)] bg-white"
-                  }`}
+                  className={`w-full border px-4 py-3 text-[15px] text-[color:var(--ms-text)] outline-none placeholder:text-[color:var(--ms-text-faint)] transition-colors focus:border-[color:var(--ms-accent)] ${error ? "border-red-400 bg-red-50" : "border-[color:var(--ms-border)] bg-white"}`}
                   autoComplete="email"
                 />
                 {error && (
@@ -929,7 +886,6 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
                     {error}
                   </p>
                 )}
-
                 <button
                   type="submit"
                   disabled={loading}
@@ -943,12 +899,9 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
                       </svg>
                       Subscribing…
                     </span>
-                  ) : (
-                    "Subscribe — it's free"
-                  )}
+                  ) : "Subscribe — it's free"}
                 </button>
               </form>
-
               <p className="mt-4 text-center text-[11px] leading-5 text-[color:var(--ms-text-faint)]">
                 No spam, ever. Unsubscribe at any time.
               </p>
@@ -960,9 +913,7 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p className="font-[oswald] text-[10px] font-bold uppercase tracking-[0.26em] text-[color:var(--ms-accent)]">
-                You&apos;re in
-              </p>
+              <p className="font-[oswald] text-[10px] font-bold uppercase tracking-[0.26em] text-[color:var(--ms-accent)]">You&apos;re in</p>
               <h2 className="ms-editorial-serif mt-2 text-[26px] leading-[1.1] tracking-[-0.02em] text-[color:var(--ms-text)]">
                 Welcome to Mirror Standard.
               </h2>
@@ -973,6 +924,7 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
               <button
                 type="button"
                 onClick={onClose}
+                title="Close and continue reading Mirror Standard"
                 className="mt-6 border border-[color:var(--ms-border)] px-6 py-2.5 font-[oswald] text-[12px] uppercase tracking-[0.18em] text-[color:var(--ms-text)] transition-colors hover:border-[color:var(--ms-text)] hover:text-[color:var(--ms-accent)] cursor-pointer"
               >
                 Continue Reading
@@ -989,23 +941,19 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
    MAIN HEADER
 ───────────────────────────────────────────── */
 export default function Header({ latestNews = [] }: { latestNews?: NewsData[] }) {
-  const [isSearchOpen, setIsSearchOpen] = useState(false);
+  const [isSearchOpen, setIsSearchOpen]       = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [isSubscribeOpen, setIsSubscribeOpen] = useState(false);
-  const [searchQuery, setSearchQuery] = useState("");
-  const [breakingIdx, setBreakingIdx] = useState(0);
-  const [dateStr, setDateStr] = useState("");
-  const router = useRouter();
+  const [searchQuery, setSearchQuery]         = useState("");
+  const [breakingIdx, setBreakingIdx]         = useState(0);
+  const [dateStr, setDateStr]                 = useState("");
+  const router   = useRouter();
   const pathname = usePathname();
 
-  // Live weather for visitor's location
-  const weather = useWeather();
-
+  const weather    = useWeather();
   const isHomePage = pathname === "/";
 
-  useEffect(() => {
-    setDateStr(getFormattedDate());
-  }, []);
+  useEffect(() => { setDateStr(getFormattedDate()); }, []);
 
   const breakingStories =
     latestNews.length > 0
@@ -1031,10 +979,9 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
       return (
         <Link
           href={item.href}
+          title={item.title}
           onClick={() => setIsMobileMenuOpen(false)}
-          className={`ms-meta relative flex-shrink-0 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.1em] transition-colors hover:text-[color:var(--ms-accent)] ${
-            active ? "text-[color:var(--ms-accent)]" : "text-[color:var(--ms-text)]"
-          }`}
+          className={`ms-meta relative flex-shrink-0 px-4 py-2.5 text-[11px] font-bold uppercase tracking-[0.1em] transition-colors hover:text-[color:var(--ms-accent)] ${active ? "text-[color:var(--ms-accent)]" : "text-[color:var(--ms-text)]"}`}
         >
           {item.label}
           {active && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[color:var(--ms-accent)]" />}
@@ -1044,9 +991,8 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
     return (
       <Link
         href={item.href}
-        className={`ms-meta relative whitespace-nowrap px-4 py-3 text-[12px] font-bold uppercase tracking-[0.1em] transition-colors hover:text-[color:var(--ms-accent)] ${
-          active ? "text-[color:var(--ms-accent)]" : "text-[color:var(--ms-text)]"
-        }`}
+        title={item.title}
+        className={`ms-meta relative whitespace-nowrap px-4 py-3 text-[12px] font-bold uppercase tracking-[0.1em] transition-colors hover:text-[color:var(--ms-accent)] ${active ? "text-[color:var(--ms-accent)]" : "text-[color:var(--ms-text)]"}`}
       >
         {item.label}
         {active && <span className="absolute bottom-0 left-0 right-0 h-[2px] bg-[color:var(--ms-accent)]" />}
@@ -1065,7 +1011,6 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
         <div className="border-b border-[color:var(--ms-border)]">
           <div className="mx-auto flex items-center justify-between gap-6 px-8 py-[8px] bg-[color:var(--ms-footer-bg)]">
             <div className="flex items-center gap-3 text-[12px] text-white">
-              {/* Date */}
               <span className="flex items-center gap-1.5">
                 <svg className="h-3.5 w-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
                   <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -1075,20 +1020,13 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                 </svg>
                 {dateStr}
               </span>
-
-              {/* Weather — only shown once data loads */}
               {weather && (
                 <>
                   <span className="text-[color:var(--ms-border-strong)]">·</span>
                   <span className="flex items-center gap-1">
                     <svg className="h-3.5 w-3.5 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
                       <circle cx="12" cy="12" r="4" />
-                      <path
-                        d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        fill="none"
-                      />
+                      <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2" fill="none" />
                     </svg>
                     {weather.city}&nbsp;{weather.temp}°C
                   </span>
@@ -1096,15 +1034,14 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               )}
             </div>
 
-            <span className="text-[12px] font-medium text-white">
-              Independent Journalism
-            </span>
+            <span className="text-[12px] font-medium text-white">Independent Journalism</span>
 
             <div className="flex items-center divide-x divide-[color:var(--ms-border)]">
-              <Link href="/about" className="px-4 text-[12px] text-white hover:text-gray-300 transition-colors cursor-pointer">About</Link>
-              <Link href="/contact" className="px-4 text-[12px] text-white hover:text-gray-300 transition-colors cursor-pointer">Contact Us</Link>
+              <Link href="/about"   title="About Mirror Standard – Our mission and editorial values" className="px-4 text-[12px] text-white hover:text-gray-300 transition-colors cursor-pointer">About</Link>
+              <Link href="/contact" title="Contact Mirror Standard – Get in touch with our editorial team" className="px-4 text-[12px] text-white hover:text-gray-300 transition-colors cursor-pointer">Contact Us</Link>
               <button
                 onClick={() => setIsSearchOpen(true)}
+                title="Search Mirror Standard"
                 className="flex items-center gap-1.5 pl-4 text-[12px] text-white hover:text-gray-300 transition-colors cursor-pointer"
               >
                 <Search size={13} strokeWidth={2} />
@@ -1118,7 +1055,6 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
         <div className="border-b border-[color:var(--ms-border)] py-5">
           <div className="mx-auto flex max-w-[1280px] items-center px-8">
 
-            {/* Left: social icons */}
             <div className="flex w-[180px] items-center gap-2">
               {socialLinks.map((social) => (
                 <Link
@@ -1134,17 +1070,11 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               ))}
             </div>
 
-            {/* Center: masthead + ornament + tagline */}
             <div className="flex flex-1 flex-col items-center gap-1">
-              <Link href="/" title="Mirror Standard home" className="text-center">
+              <Link href="/" title="Mirror Standard – Home" className="text-center">
                 <span
                   className="block text-[color:var(--ms-text)] leading-none"
-                  style={{
-                    fontFamily: '"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif',
-                    fontSize: "clamp(28px, 4.5vw, 58px)",
-                    fontWeight: 900,
-                    letterSpacing: "-0.01em",
-                  }}
+                  style={{ fontFamily: '"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif', fontSize: "clamp(28px, 4.5vw, 58px)", fontWeight: 900, letterSpacing: "-0.01em" }}
                 >
                   MIRROR STANDARD
                 </span>
@@ -1161,11 +1091,11 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               </p>
             </div>
 
-            {/* Right: Subscribe button */}
             <div className="flex w-[180px] items-center justify-end">
               <button
                 type="button"
                 onClick={() => setIsSubscribeOpen(true)}
+                title="Subscribe to the Mirror Standard free newsletter"
                 className="group flex flex-col items-center gap-1 cursor-pointer"
               >
                 <div className="flex h-[44px] w-[44px] flex-shrink-0 items-center justify-center bg-[color:var(--ms-accent)] transition-opacity group-hover:opacity-90">
@@ -1183,7 +1113,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
         </div>
 
         {/* ROW 3: Navbar */}
-        <nav className="sticky top-0 z-30 border-b-2 border-t-2 border-[color:var(--ms-text)] bg-white shadow-sm">
+        <nav aria-label="Main navigation" className="sticky top-0 z-30 border-b-2 border-t-2 border-[color:var(--ms-text)] bg-white shadow-sm">
           <div className="mx-auto flex max-w-[1280px] items-center justify-center px-8">
             {navCategories.map((item) => (
               <NavLink key={item.href} item={item} />
@@ -1196,29 +1126,24 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
           <div className="border-b border-[color:var(--ms-border)] bg-white">
             <div className="mx-auto flex items-center gap-3 px-8 py-[9px]">
               <div className="flex flex-shrink-0 items-center">
-                <span className="bg-red-600 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-white">
-                  Breaking News
-                </span>
+                <span className="bg-red-600 px-3 py-1 text-[11px] font-bold uppercase tracking-[0.1em] text-white">Breaking News</span>
                 <div className="border-l-[7px] border-y-[11px] border-y-transparent border-l-red-600" />
               </div>
               <span className="h-1.5 w-1.5 flex-shrink-0 rounded-full bg-red-500" />
               <Link
                 href={`/${currentBreaking.category}/${currentBreaking.slug}`}
+                title={currentBreaking.title}
                 className="min-w-0 flex-1 truncate text-[13px] text-[color:var(--ms-text)] hover:text-[color:var(--ms-accent)] transition-colors"
               >
                 {currentBreaking.title}
               </Link>
               <div className="flex flex-shrink-0 items-center gap-2">
                 <span className="text-[12px] text-[color:var(--ms-text-faint)]">{currentBreaking.date}</span>
-                <button onClick={prevBreaking} aria-label="Previous" className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
-                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                <button onClick={prevBreaking} aria-label="Previous breaking news story" title="Previous story" className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
+                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </button>
-                <button onClick={nextBreaking} aria-label="Next" className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
-                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                <button onClick={nextBreaking} aria-label="Next breaking news story" title="Next story" className="flex h-5 w-5 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
+                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </button>
               </div>
             </div>
@@ -1243,18 +1168,12 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                 <line x1="3" y1="10" x2="21" y2="10" />
               </svg>
               {dateStr}
-              {/* Mobile weather inline with date */}
               {weather && (
                 <>
                   <span className="mx-1 opacity-50">·</span>
                   <svg className="h-3 w-3 text-amber-400" fill="currentColor" viewBox="0 0 24 24">
                     <circle cx="12" cy="12" r="4" />
-                    <path
-                      d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      fill="none"
-                    />
+                    <path d="M12 2v2M12 20v2M4.22 4.22l1.42 1.42M18.36 18.36l1.42 1.42M2 12h2M20 12h2M4.22 19.78l1.42-1.42M18.36 5.64l1.42-1.42" stroke="currentColor" strokeWidth="2" fill="none" />
                   </svg>
                   {weather.city}&nbsp;{weather.temp}°C
                 </>
@@ -1264,11 +1183,16 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               <button
                 type="button"
                 onClick={() => setIsSubscribeOpen(true)}
+                title="Subscribe to the Mirror Standard newsletter"
                 className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.1em] text-[color:var(--ms-accent)] border border-[color:var(--ms-accent)] px-2.5 py-1 hover:bg-[color:var(--ms-accent)] hover:text-white transition-colors"
               >
                 Subscribe
               </button>
-              <button onClick={() => setIsSearchOpen(true)} className="flex items-center gap-1 text-[12px] text-white hover:text-[color:var(--ms-accent)]">
+              <button
+                onClick={() => setIsSearchOpen(true)}
+                title="Search Mirror Standard"
+                className="flex items-center gap-1 text-[12px] text-white hover:text-[color:var(--ms-accent)]"
+              >
                 <Search size={13} /> Search
               </button>
             </div>
@@ -1286,28 +1210,20 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               ))}
             </div>
             <div className="flex flex-1 justify-center">
-              <Link href="/" title="Mirror Standard home">
-                <span
-                  className="block text-center text-[color:var(--ms-text)] leading-none"
-                  style={{
-                    fontFamily: '"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif',
-                    fontSize: "clamp(16px, 4.5vw, 24px)",
-                    fontWeight: 900,
-                    letterSpacing: "-0.01em",
-                  }}
-                >
+              <Link href="/" title="Mirror Standard – Home">
+                <span className="block text-center text-[color:var(--ms-text)] leading-none" style={{ fontFamily: '"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif', fontSize: "clamp(16px, 4.5vw, 24px)", fontWeight: 900, letterSpacing: "-0.01em" }}>
                   MIRROR STANDARD
                 </span>
               </Link>
             </div>
-            <button onClick={() => setIsMobileMenuOpen(true)} aria-label="Open menu" className="flex h-9 w-9 items-center justify-center rounded-sm border border-[color:var(--ms-border)] text-[color:var(--ms-text)]">
+            <button onClick={() => setIsMobileMenuOpen(true)} aria-label="Open navigation menu" title="Open menu" className="flex h-9 w-9 items-center justify-center rounded-sm border border-[color:var(--ms-border)] text-[color:var(--ms-text)]">
               <Menu size={18} />
             </button>
           </div>
         </div>
 
         {/* Mobile Navbar */}
-        <nav className="border-b-2 border-t-2 border-[color:var(--ms-text)] bg-white">
+        <nav aria-label="Main navigation" className="border-b-2 border-t-2 border-[color:var(--ms-text)] bg-white">
           <div className="flex items-center overflow-x-auto scrollbar-hide">
             {navCategories.map((item) => (
               <NavLink key={item.href} item={item} mobile />
@@ -1323,20 +1239,20 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                 <span className="bg-red-600 px-2 py-0.5 text-[8px] font-bold uppercase tracking-[0.08em] text-white">Breaking News</span>
                 <div className="border-l-[5px] border-y-[9px] border-y-transparent border-l-red-600" />
               </div>
-              <Link href={`/${currentBreaking.category}/${currentBreaking.slug}`} className="min-w-0 flex-1 truncate text-[11px] text-[color:var(--ms-text)]">
+              <Link
+                href={`/${currentBreaking.category}/${currentBreaking.slug}`}
+                title={currentBreaking.title}
+                className="min-w-0 flex-1 truncate text-[11px] text-[color:var(--ms-text)]"
+              >
                 {currentBreaking.title}
               </Link>
               <div className="flex flex-shrink-0 items-center gap-1">
                 <span className="text-[10px] text-[color:var(--ms-text-faint)]">{currentBreaking.date}</span>
-                <button onClick={prevBreaking} aria-label="Previous" className="flex h-4 w-4 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
-                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                <button onClick={prevBreaking} aria-label="Previous breaking news story" title="Previous story" className="flex h-4 w-4 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
+                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M15 18l-6-6 6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </button>
-                <button onClick={nextBreaking} aria-label="Next" className="flex h-4 w-4 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
-                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" />
-                  </svg>
+                <button onClick={nextBreaking} aria-label="Next breaking news story" title="Next story" className="flex h-4 w-4 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-faint)] hover:text-[color:var(--ms-accent)] hover:border-[color:var(--ms-accent)] transition-all duration-200 cursor-pointer">
+                  <svg className="h-3 w-3" fill="none" stroke="currentColor" viewBox="0 0 24 24"><path d="M9 18l6-6-6-6" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" /></svg>
                 </button>
               </div>
             </div>
@@ -1357,7 +1273,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
             <span style={{ fontFamily: '"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif', fontSize: "18px", fontWeight: 900 }} className="text-white">
               MIRROR STANDARD
             </span>
-            <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close menu" className="flex h-8 w-8 items-center justify-center rounded-full border border-[color:var(--ms-footer-border)] text-[color:var(--ms-footer-text)]">
+            <button onClick={() => setIsMobileMenuOpen(false)} aria-label="Close navigation menu" title="Close menu" className="flex h-8 w-8 items-center justify-center rounded-full border border-[color:var(--ms-footer-border)] text-[color:var(--ms-footer-text)]">
               <X size={16} />
             </button>
           </div>
@@ -1371,12 +1287,9 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                   <li key={item.href}>
                     <Link
                       href={item.href}
+                      title={item.title}
                       onClick={() => setIsMobileMenuOpen(false)}
-                      className={`ms-meta block border px-4 py-3 text-[13px] uppercase tracking-[0.12em] transition-colors ${
-                        active
-                          ? "border-[color:var(--ms-accent)] bg-white/10 text-white"
-                          : "border-[color:var(--ms-footer-border)] bg-white/5 text-[color:var(--ms-footer-text)] hover:bg-white/10"
-                      }`}
+                      className={`ms-meta block border px-4 py-3 text-[13px] uppercase tracking-[0.12em] transition-colors ${active ? "border-[color:var(--ms-accent)] bg-white/10 text-white" : "border-[color:var(--ms-footer-border)] bg-white/5 text-[color:var(--ms-footer-text)] hover:bg-white/10"}`}
                     >
                       {item.label}
                     </Link>
@@ -1388,6 +1301,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
             <button
               type="button"
               onClick={() => { setIsMobileMenuOpen(false); setIsSubscribeOpen(true); }}
+              title="Subscribe to the Mirror Standard newsletter"
               className="mt-5 w-full bg-[color:var(--ms-accent)] py-3 font-[oswald] text-[12px] font-bold uppercase tracking-[0.18em] text-white hover:opacity-90 transition-opacity"
             >
               Subscribe — Free Newsletter
@@ -1403,11 +1317,12 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                 ))}
               </div>
             </div>
+
             <div className="mt-6 space-y-2 text-[13px] text-[color:var(--ms-footer-muted)]">
-              <Link href="/newsletter" className="block hover:text-white transition-colors">Newsletter</Link>
-              <Link href="/about" className="block hover:text-white transition-colors">About</Link>
-              <Link href="/our-team" className="block hover:text-white transition-colors">Our Team</Link>
-              <Link href="/contact" className="block hover:text-white transition-colors">Contact</Link>
+              <Link href="/newsletter" title="Mirror Standard newsletter sign-up"  className="block hover:text-white transition-colors">Newsletter</Link>
+              <Link href="/about"      title="About Mirror Standard"               className="block hover:text-white transition-colors">About</Link>
+              <Link href="/our-team"   title="Meet the Mirror Standard team"       className="block hover:text-white transition-colors">Our Team</Link>
+              <Link href="/contact"    title="Contact Mirror Standard"             className="block hover:text-white transition-colors">Contact</Link>
             </div>
           </div>
 
@@ -1430,7 +1345,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                   Find reporting &amp; analysis
                 </h2>
               </div>
-              <button type="button" onClick={() => setIsSearchOpen(false)} className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--ms-footer-border)] text-[color:var(--ms-footer-text)]">
+              <button type="button" onClick={() => setIsSearchOpen(false)} title="Close search" className="flex h-10 w-10 items-center justify-center rounded-full border border-[color:var(--ms-footer-border)] text-[color:var(--ms-footer-text)]">
                 <X size={20} />
               </button>
             </div>
@@ -1443,7 +1358,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                 value={searchQuery}
                 onChange={(e) => setSearchQuery(e.target.value)}
               />
-              <button type="submit" aria-label="Search" className="flex h-11 w-11 items-center justify-center bg-white text-[color:var(--ms-accent)]">
+              <button type="submit" aria-label="Submit search" title="Search" className="flex h-11 w-11 items-center justify-center bg-white text-[color:var(--ms-accent)]">
                 <Search size={20} strokeWidth={2} />
               </button>
             </form>
