@@ -1,5 +1,7 @@
 "use client";
 
+import { useState } from "react";
+
 export default function ShareBar({
   title,
   category,
@@ -12,6 +14,31 @@ export default function ShareBar({
   const url = `https://www.mirrorstandard.com/${category}/${slug}/`;
   const encoded = encodeURIComponent(url);
   const encodedTitle = encodeURIComponent(title);
+  const [copied, setCopied] = useState(false);
+
+  async function handleCopy() {
+    try {
+      if (navigator.clipboard && window.isSecureContext) {
+        await navigator.clipboard.writeText(url);
+      } else {
+        // Fallback for non-secure contexts or older browsers
+        const textarea = document.createElement("textarea");
+        textarea.value = url;
+        textarea.style.position = "fixed";
+        textarea.style.left = "-9999px";
+        textarea.style.top = "-9999px";
+        document.body.appendChild(textarea);
+        textarea.focus();
+        textarea.select();
+        document.execCommand("copy");
+        document.body.removeChild(textarea);
+      }
+      setCopied(true);
+      setTimeout(() => setCopied(false), 2000);
+    } catch (err) {
+      console.error("Failed to copy:", err);
+    }
+  }
 
   return (
     <div className="flex items-center gap-2">
@@ -72,14 +99,28 @@ export default function ShareBar({
 
       {/* Copy link */}
       <button
-        onClick={() => navigator.clipboard?.writeText(url)}
-        className="flex h-7 w-7 items-center justify-center rounded-full border border-[color:var(--ms-border)] text-[color:var(--ms-text-soft)] hover:border-[color:var(--ms-text)] hover:text-[color:var(--ms-text)] transition-colors"
-        aria-label="Copy link"
+        type="button"
+        onClick={handleCopy}
+        className={`relative flex h-7 w-7 items-center justify-center rounded-full border transition-colors cursor-pointer ${
+          copied
+            ? "border-green-500 text-green-500"
+            : "border-[color:var(--ms-border)] text-[color:var(--ms-text-soft)] hover:border-[color:var(--ms-text)] hover:text-[color:var(--ms-text)]"
+        }`}
+        aria-label={copied ? "Copied!" : "Copy link"}
+        title={copied ? "Copied!" : "Copy link"}
       >
-        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-3.5 w-3.5">
-          <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
-          <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
-        </svg>
+        {copied ? (
+          /* Checkmark when copied */
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2.5} className="h-3.5 w-3.5">
+            <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
+          </svg>
+        ) : (
+          /* Chain link icon */
+          <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth={2} className="h-3.5 w-3.5">
+            <path d="M10 13a5 5 0 0 0 7.54.54l3-3a5 5 0 0 0-7.07-7.07l-1.72 1.71" />
+            <path d="M14 11a5 5 0 0 0-7.54-.54l-3 3a5 5 0 0 0 7.07 7.07l1.71-1.71" />
+          </svg>
+        )}
       </button>
     </div>
   );

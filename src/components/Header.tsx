@@ -149,7 +149,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
             </div>
 
             <span className="text-[12px] font-medium text-white">
-              Independent Journalism Since 2025
+              Independent Journalism
             </span>
 
             <div className="flex items-center divide-x divide-[color:var(--ms-border)]">

@@ -88,7 +88,7 @@ export default async function Home() {
       getSortedNews(getCategoryNews("entertainment")),
       getSortedNews(getCategoryNews("sports")),
     ),
-    3,
+    5,
   );
 
   // ─── More Stories: education + everything left ────────────────────────────
@@ -177,7 +177,7 @@ export default async function Home() {
         {inFocusStories.length >= 1 && (
           <HomeInFocus
             lead={inFocusStories[0]}
-            secondary={inFocusStories.slice(1, 3)}
+            secondary={inFocusStories.slice(1, 5)}
           />
         )}
 
