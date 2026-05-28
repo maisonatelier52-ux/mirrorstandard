@@ -117,7 +117,7 @@ export default async function Home() {
         }}
       />
 
-      <div className="newspaper-container mx-auto max-w-[1280px] px-3 sm:px-5">
+      <div className="newspaper-container px-3 sm:px-5">
 
         {/* ── Hero ── */}
         <NewspaperHero

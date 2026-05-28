@@ -127,7 +127,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
 
         {/* ROW 1: Date · Weather · Tagline · Newsletter / Sign In / Search */}
         <div className="border-b border-[color:var(--ms-border)]">
-          <div className="mx-auto flex max-w-[1280px] items-center justify-between gap-6 px-8 py-[8px] bg-[color:var(--ms-footer-bg)]">
+          <div className="mx-auto flex items-center justify-between gap-6 px-8 py-[8px] bg-[color:var(--ms-footer-bg)]">
             <div className="flex items-center gap-3 text-[12px] text-white">
               <span className="flex items-center gap-1.5">
                 <svg className="h-3.5 w-3.5 flex-shrink-0" fill="none" stroke="currentColor" strokeWidth="1.8" viewBox="0 0 24 24">
