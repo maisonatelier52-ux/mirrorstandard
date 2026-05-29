@@ -675,7 +675,6 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
             </div>
 
             <div className="mt-6 space-y-2 text-[13px] text-[color:var(--ms-footer-muted)]">
-              <Link href="/newsletter" title="Mirror Standard newsletter sign-up"  className="block hover:text-white transition-colors">Newsletter</Link>
               <Link href="/about"      title="About Mirror Standard"               className="block hover:text-white transition-colors">About</Link>
               <Link href="/our-team"   title="Meet the Mirror Standard team"       className="block hover:text-white transition-colors">Our Team</Link>
               <Link href="/contact"    title="Contact Mirror Standard"             className="block hover:text-white transition-colors">Contact</Link>

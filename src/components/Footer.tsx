@@ -15,8 +15,7 @@ const categories = [
   { slug: "health",        label: "Health" },
   { slug: "sports",        label: "Sports" },
   { slug: "science",       label: "Science" },
-  { slug: "entertainment", label: "Entertainment" },
-  { slug: "world",         label: "World" },
+  { slug: "entertainment", label: "Entertainment" }
 ];
 
 const newsroomLinks = [
@@ -26,8 +25,6 @@ const newsroomLinks = [
   { href: "/editorial-policy",         label: "Editorial Policy",   title: "Mirror Standard editorial policy and standards" },
   { href: "/corrections-policy",       label: "Corrections Policy", title: "Mirror Standard corrections and clarifications policy" },
   { href: "/source-methodology",       label: "Source Methodology", title: "How Mirror Standard sources and verifies information" },
-  { href: "/advertise",                label: "Advertise With Us",  title: "Advertise with Mirror Standard" },
-  { href: "/careers",                  label: "Careers",            title: "Careers at Mirror Standard" },
 ];
 
 const trustLinks = [
