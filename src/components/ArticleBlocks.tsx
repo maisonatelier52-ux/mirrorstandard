@@ -306,14 +306,14 @@ function SectionBreakBlock({ block }: { block: ArticleStoryBlock }) {
               </p>
             ) : null}
 
-            {block.title ? (
+            {/* {block.title ? (
               <h2 className="ms-editorial-serif mt-3 text-[2rem] leading-[1.0] tracking-[-0.01em] text-[color:var(--ms-text)] sm:text-[2.4rem]">
                 {block.title}
               </h2>
-            ) : null}
+            ) : null} */}
 
             {block.subtitle ? (
-              <p className="mt-4 text-[15px] leading-[1.8] text-[color:var(--ms-text-soft)] sm:text-[16px]">
+              <p className="mt-4 text-[15px] leading-[1.4] text-[color:var(--ms-text-soft)] sm:text-[16px]">
                 {renderInlineLinks(block.subtitle)}
               </p>
             ) : null}
