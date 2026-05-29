@@ -7,6 +7,7 @@ import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import { SiSubstack } from "react-icons/si";
+import Image from "next/image";
 
 /* ─────────────────────────────────────────────
    WEATHER HOOK
@@ -382,25 +383,55 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               ))}
             </div>
 
-            <div className="flex flex-1 flex-col items-center gap-1">
+            {/* <div className="flex flex-1 flex-col items-center gap-1">
               <Link href="/" title="Mirror Standard – Home" className="text-center">
                 <span
                   className="block text-[color:var(--ms-text)] leading-none"
-                  style={{ fontFamily: '"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif', fontSize: "clamp(28px, 4.5vw, 58px)", fontWeight: 900, letterSpacing: "-0.01em" }}
+                  style={{
+                    fontFamily: '"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif',
+                    fontSize: "clamp(28px, 4.5vw, 58px)",
+                    fontWeight: 100,
+                    letterSpacing: "0.18em",
+                  }}
                 >
                   MIRROR STANDARD
                 </span>
               </Link>
-              <div className="flex items-center gap-2 mt-1">
-                <span className="h-px w-14 bg-[color:var(--ms-border-strong)]" />
-                <svg className="h-3 w-3 text-[color:var(--ms-accent)]" viewBox="0 0 24 24" fill="currentColor">
-                  <path d="M12 2l2 7h7l-5.5 4 2 7L12 16l-5.5 4 2-7L3 9h7z" />
+              <div className="flex items-center gap-3 mt-2">
+                <span className="h-px w-16 bg-[color:var(--ms-text)]" style={{ opacity: 0.4 }} />
+                <svg
+                  className="h-[10px] w-[10px] text-[color:var(--ms-text)]"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                  style={{ opacity: 0.7 }}
+                >
+                  <path d="M12 2l2.09 6.26H21l-5.47 3.97 2.09 6.26L12 14.52l-5.62 3.97 2.09-6.26L3 8.26h6.91z" />
                 </svg>
-                <span className="h-px w-14 bg-[color:var(--ms-border-strong)]" />
+                <span className="h-px w-16 bg-[color:var(--ms-text)]" style={{ opacity: 0.4 }} />
               </div>
-              <p className="text-[10px] uppercase tracking-[0.3em] text-[color:var(--ms-text-soft)]">
+              <p
+                className="mt-1.5 text-[color:var(--ms-text-soft)]"
+                style={{
+                  fontSize: "10px",
+                  letterSpacing: "0.28em",
+                  textTransform: "uppercase",
+                  fontWeight: 400,
+                }}
+              >
                 Truth, Policy, Markets &amp; Public Affairs
               </p>
+            </div> */}
+
+
+            <div className="flex flex-1 flex-col items-center gap-1">
+              <Link href="/" title="Mirror Standard – Home" className="text-center">
+                <img
+                  src="/images/logo-mirrorstandard.webp"
+                  alt="Mirror Standard – Truth, Policy, Markets & Public Affairs"
+                  className="mx-auto"
+                  style={{ height: "clamp(80px, 10vw, 130px)", width: "auto" }}
+                />
+              </Link>
             </div>
 
             <div className="flex w-[180px] items-center justify-end">
@@ -512,7 +543,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
         </div>
 
         {/* Mobile Row 2: Social · Masthead · Hamburger */}
-        <div className="border-b border-[color:var(--ms-border)] py-3">
+        <div className="border-b border-[color:var(--ms-border)] bg-white py-3">
           <div className="flex items-center px-4">
             <div className="flex items-center gap-1.5">
               {socialLinks.slice(0, 3).map((social) => (
@@ -522,10 +553,23 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
               ))}
             </div>
             <div className="flex flex-1 justify-center">
-              <Link href="/" title="Mirror Standard – Home">
+              {/* <Link href="/" title="Mirror Standard – Home">
                 <span className="block text-center text-[color:var(--ms-text)] leading-none" style={{ fontFamily: '"Iowan Old Style","Palatino Linotype","Book Antiqua",Georgia,serif', fontSize: "clamp(16px, 4.5vw, 24px)", fontWeight: 900, letterSpacing: "-0.01em" }}>
                   MIRROR STANDARD
                 </span>
+              </Link> */}
+              <Link href="/" title="Mirror Standard – Home">
+                <Image
+                  src="/images/logo-mirrorstandard.webp"
+                  alt="Mirror Standard"
+                  width={180}
+                  height={60}
+                  className="mx-auto h-auto w-auto"
+                  style={{
+                    height: "clamp(42px, 8vw, 60px)",
+                  }}
+                  priority
+                />
               </Link>
             </div>
             <button onClick={() => setIsMobileMenuOpen(true)} aria-label="Open navigation menu" title="Open menu" className="flex h-9 w-9 items-center justify-center rounded-sm border border-[color:var(--ms-border)] text-[color:var(--ms-text)]">
