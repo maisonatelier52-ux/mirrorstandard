@@ -190,26 +190,20 @@ export default async function Home() {
             ))}
           </div>
 
-          <div className="hidden lg:block">
-            <div className="newspaper-rule mt-2 mb-6 invisible" />
-            <div className="sticky top-4">
-              <div className="flex min-h-[520px] flex-col justify-center bg-[color:var(--ms-footer-bg)] p-5 text-[color:var(--ms-footer-text)]">
-                <p className="ms-editorial-serif text-[28px] leading-[1.1] tracking-[-0.03em] text-white">
-                  Insight. Analysis. Impact.
-                </p>
-                <p className="mt-3 text-[13px] leading-6 text-[color:var(--ms-footer-muted)]">
-                  Independent journalism that informs decisions.
-                </p>
-                <a
-                  href="/about"
-                  title="Learn more about Mirror Standard and subscribe to our newsletter"
-                  className="ms-meta mt-5 inline-block rounded-sm bg-white px-4 py-2 text-[11px] uppercase tracking-[0.16em] text-[color:var(--ms-accent)] hover:bg-[color:var(--ms-accent-soft)] transition-colors text-center"
-                >
-                  Subscribe Now
-                </a>
-              </div>
-            </div>
+         <div className="hidden lg:block">
+          <div className="newspaper-rule mt-2 mb-6 invisible" />
+
+          <div className="sticky top-4 overflow-hidden rounded-md">
+            <video
+              autoPlay
+              muted
+              playsInline
+              className="h-[520px] w-full object-cover"
+            >
+              <source src="/videos/mirrorstandar_ads-video.mp4" type="video/mp4" />
+            </video>
           </div>
+        </div>
         </div>
 
         {pulseStories.length >= 2 && <HomePulseStrip stories={pulseStories} />}
