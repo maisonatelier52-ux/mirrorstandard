@@ -522,15 +522,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
                 </>
               )}
             </span>
-            <div className="flex items-center gap-3">
-              <button
-                type="button"
-                onClick={() => setIsSubscribeOpen(true)}
-                title="Subscribe to the Mirror Standard newsletter"
-                className="flex items-center gap-1 text-[11px] font-bold uppercase tracking-[0.1em] text-[color:var(--ms-accent)] border border-[color:var(--ms-accent)] px-2.5 py-1 hover:bg-[color:var(--ms-accent)] hover:text-white transition-colors"
-              >
-                Subscribe
-              </button>
+            <div>
               <button
                 onClick={() => setIsSearchOpen(true)}
                 title="Search Mirror Standard"
