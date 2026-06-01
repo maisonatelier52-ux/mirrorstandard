@@ -147,7 +147,7 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
         role="dialog"
         aria-modal="true"
         aria-labelledby="subscribe-title"
-        className="fixed left-1/2 top-1/2 z-50 w-[min(92vw,480px)] -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl"
+        className="fixed left-1/2 top-1/2 z-50 w-[85vw] max-w-[480px] sm:w-[92vw] -translate-x-1/2 -translate-y-1/2 bg-white shadow-2xl"
       >
         <div className="h-[3px] w-full bg-[color:var(--ms-accent)]" />
         <div className="px-8 py-8">
