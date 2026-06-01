@@ -253,14 +253,13 @@ function SidebarContent({
       </div>
 
       <div className="overflow-hidden rounded-md">
-        <video
-          autoPlay
-          muted
-          playsInline
+        <Image
+          src="/images/mirrorstandar_ads.webp"
+          alt="Mirror Standard Advertisement"
+          width={600}
+          height={450}
           className="h-[450px] w-full object-cover"
-        >
-          <source src="/videos/mirrorstandar_ads-video.mp4" type="video/mp4" />
-        </video>
+        />
       </div>
     </div>
   );

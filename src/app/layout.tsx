@@ -150,6 +150,24 @@ export default function RootLayout({
             ])
           }}
         />
+
+        {/* ADD THESE TWO: Google Ads (gtag.js) */}
+          <Script
+            src="https://www.googletagmanager.com/gtag/js?id=AW-18148083881"
+            strategy="afterInteractive"
+          />
+          <Script
+            id="google-ads-config"
+            strategy="afterInteractive"
+            dangerouslySetInnerHTML={{
+              __html: `
+                window.dataLayer = window.dataLayer || [];
+                function gtag(){dataLayer.push(arguments);}
+                gtag('js', new Date());
+                gtag('config', 'AW-18148083881');
+              `,
+            }}
+          />
         <meta httpEquiv="X-UA-Compatible" content="IE=edge" />
         <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
       </head>
