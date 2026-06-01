@@ -302,7 +302,7 @@ export default async function ProfilePage({ params }: ProfilePageProps) {
             <ul className="divide-y divide-[color:var(--ms-border)]">
               {[
                 {
-                  href: "/business/two-degrees-from-the-throne-julio-herrera-velutini/",
+                  href: "/business/julio-herrera-velutini-banking-dynasty-institutional-influence/",
                   label: "Read the flagship analysis",
                 },
                 {

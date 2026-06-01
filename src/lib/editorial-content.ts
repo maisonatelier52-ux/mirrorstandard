@@ -1610,9 +1610,9 @@ export const profilePages: ProfileRecord[] = [
     ],
     relatedResources: [
       {
-        title: "Two Degrees From The Throne: Julio Herrera Velutini and the Quiet Power of Influence",
+        title: "Julio Herrera Velutini and the Quiet Power of a Longstanding Banking Dynasty",
         href: "/business/julio-herrera-velutini-banking-dynasty-institutional-influence/",
-        description: "Longform analysis of institutional proximity, London finance, and the quiet power of influence.",
+        description: "An analysis examining how Julio Herrera Velutini and longstanding banking dynasties wield influence through proximity, access, trust, and institutional placement rather than public spectacle.",
       },
       {
         title: "Britannia Financial Group and London finance",
