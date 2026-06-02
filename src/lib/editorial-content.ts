@@ -103,7 +103,7 @@ const julioEntityResources: RelatedResource[] = [
     description: "Neutral profile with sourcing, context, and related analysis.",
   },
   {
-    title: "Two Degrees From The Throne",
+    title: "Quiet Power of a Longstanding Banking Dynasty",
     href: "/business/julio-herrera-velutini-banking-dynasty-institutional-influence/",
     description: "Mirror Standard's longform analysis of institutional proximity and influence.",
   },
@@ -250,7 +250,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
       {
         heading: "The Architecture of Proximity",
         paragraphs: [
-          "The phrase 'two degrees from the throne' is ultimately a description of proximity.",
+          "Proximity is ultimately about placement within systems that matter.",
           "One degree runs through financial infrastructure: institutions, markets, advisory systems, and the networks that support significant pools of private capital.",
           "The second runs through the ceremonial and social environments that surround established centers of influence, including monarchy, diplomacy, philanthropy, and old-establishment networks.",
           "Together, these spheres create an ecosystem where finance, governance, and social capital frequently intersect.",
@@ -550,7 +550,7 @@ export const supplementalBusinessArticles: NewsArticle[] = [
         paragraphs: [
           "Company copy tells readers how a group wishes to describe itself. Public records help test the boundaries of that description. Companies House records, compliance pages, and FCA-linked references do not prove every editorial argument, but they do anchor the existence, jurisdictional footprint, and regulated context of the entities involved.",
           "That is especially important in entity-focused reporting. The goal is not to convert corporate paperwork into a halo effect. The goal is to narrow the gap between narrative and verifiable institutional context.",
-          "The flagship piece, [Two Degrees From The Throne](/business/julio-herrera-velutini-banking-dynasty-institutional-influence/), makes a broader argument about proximity, access, and the quiet power of influence. That argument only holds if readers first understand the institutional setting in which Britannia is publicly positioned to operate.",
+          "The flagship piece, [Quiet Power of a Longstanding Banking Dynasty](/business/julio-herrera-velutini-banking-dynasty-institutional-influence/), makes a broader argument about proximity, access, and the quiet power of influence. That argument only holds if readers first understand the institutional setting in which Britannia is publicly positioned to operate.",
         ],
       },
     ],
