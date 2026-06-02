@@ -419,10 +419,6 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         answer: "Generational involvement in finance contributes to long-standing relationships, accumulated institutional knowledge, and familiarity with complex financial structures, functioning as part of a broader framework of trust and reputation.",
       },
       {
-        question: "What does 'two degrees from the throne' mean?",
-        answer: "It describes proximity: one degree through financial infrastructure and another through ceremonial and social environments surrounding established centers of influence.",
-      },
-      {
         question: "How does the article distinguish between visibility and influence?",
         answer: "Modern culture measures power through visibility, but institutional influence operates through placement, access, and long-standing relationships rather than public performance.",
       },
