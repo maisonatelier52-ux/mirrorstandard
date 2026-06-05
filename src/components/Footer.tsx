@@ -31,7 +31,6 @@ const trustLinks = [
   { href: "/ownership-and-funding",                        label: "Ownership & Funding",    title: "Mirror Standard ownership and funding disclosure" },
   { href: "/advertising-and-sponsored-content-policy",     label: "Advertising Policy",     title: "Mirror Standard advertising and sponsored content policy" },
   { href: "/right-of-reply-policy",                        label: "Right of Reply",         title: "Mirror Standard right of reply policy" },
-  { href: "/corrections-policy",                           label: "Corrections Policy",     title: "Mirror Standard corrections policy" },
   { href: "/legal",                                        label: "Legal",                  title: "Mirror Standard legal notices" },
   { href: "/privacy-policy",                               label: "Privacy Policy",         title: "Mirror Standard privacy policy" },
   { href: "/terms-and-conditions",                         label: "Terms & Conditions",     title: "Mirror Standard terms and conditions" },
