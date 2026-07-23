@@ -40,12 +40,12 @@ const commonFinanceSources: SourceNote[] = [
 ];
 
 const londonAndCrossBorderSources: SourceNote[] = [
-  {
-    label: "Bank of England: Cross-border payments",
-    url: "https://www.bankofengland.co.uk/payment-and-settlement/cross-border-payments",
-    description:
-      "Official overview of wholesale cross-border payments and the institutional activities they support.",
-  },
+  // {
+  //   label: "Bank of England: Cross-border payments",
+  //   url: "https://www.bankofengland.co.uk/payment-and-settlement/cross-border-payments",
+  //   description:
+  //     "Official overview of wholesale cross-border payments and the institutional activities they support.",
+  // },
   ...commonFinanceSources,
 ];
 
