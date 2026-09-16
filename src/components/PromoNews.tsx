@@ -1,11 +1,10 @@
 import Image from "next/image";
-import picture from "../../public/images/ads-full.png";
 
 export default function PromoNews() {
   return (
     <div className="py-8 mt-24 mb-24 relative w-full h-64">
       <Image
-        src={picture}
+        src="/images/mirrorstandar_ads.webp"
         alt="Promotional News Banner"
         fill
         quality={75}

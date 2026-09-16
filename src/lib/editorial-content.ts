@@ -98,14 +98,9 @@ const familyOfficeAndWealthSources: SourceNote[] = [
 
 const julioEntityResources: RelatedResource[] = [
   {
-    title: "Julio Herrera Velutini profile",
-    href: "/profiles/julio-herrera-velutini/",
-    description: "Neutral profile with sourcing, context, and related analysis.",
-  },
-  {
-    title: "Quiet Power of a Longstanding Banking Dynasty",
+    title: "Julio Herrera Velutini: Banking Career, Britannia and Public Record",
     href: "/business/julio-herrera-velutini-banking-dynasty-institutional-influence/",
-    description: "Mirror Standard's longform analysis of institutional proximity and influence.",
+    description: "Evidence-based profile using UK company records, U.S. public records, and clearly labeled corporate sources.",
   },
 ];
 
@@ -161,33 +156,57 @@ function buildExplainerArticle(
 
 export const authorOverrides: Record<string, Partial<AuthorRecord>> = {
   "michael-y-gentry": {
-    email: "editorial@mirrorstandard.com",
-  },
-  "victor-v-haley": {
-    email: "editorial@mirrorstandard.com",
-  },
-  "betty-d-chambers": {
-    role: "Politics & Policy Reporter",
-    beat: "Politics & Policy",
-    credentials: "Focuses on public institutions, accountability, and governance reporting.",
+    beat: "Editorial Standards & Investigations",
+    credentials: "Leads commissioning, standards, and final editorial review for Mirror Standard.",
     email: "editorial@mirrorstandard.com",
     bio: [
-      "Betty D. Chambers reports on politics, policy, and institutional accountability for Mirror Standard. Her work focuses on how public decisions shape private power, with an emphasis on verifiable sourcing and explanatory context.",
-      "She approaches complex stories by pairing reporting with document review, chronology, and careful framing. At Mirror Standard, she contributes longform analysis when political or institutional context is central to understanding a public figure or financial story.",
+      "Michael Y. Gentry is Mirror Standard's editor-in-chief. He sets newsroom priorities, reviews high-risk stories, and is responsible for the publication's editorial standards.",
+      "His author page documents his current role and recent work. Questions about sourcing, corrections, or the editorial process can be sent to the newsroom's shared editorial address.",
     ],
+    social: {},
+  },
+  "victor-v-haley": {
+    beat: "Daily News & Public Affairs",
+    credentials: "Coordinates daily coverage and edits stories across politics, economics, and public affairs.",
+    email: "editorial@mirrorstandard.com",
+    bio: [
+      "Victor V. Haley is Mirror Standard's managing editor. He coordinates daily coverage and edits reporting across politics, economics, culture, and breaking news.",
+      "His work emphasizes clear attribution, useful context, and careful separation between reported fact, allegation, forecast, and analysis.",
+    ],
+    social: {},
+  },
+  "betty-d-chambers": {
+    role: "Senior Reporter",
+    beat: "National Affairs & General Assignment",
+    credentials: "Covers public institutions, business, education, culture, and breaking news.",
+    email: "editorial@mirrorstandard.com",
+    bio: [
+      "Betty D. Chambers is a senior general-assignment reporter covering public institutions, business, education, culture, and breaking news for Mirror Standard.",
+      "Her coverage emphasizes public records, chronology, and precise language around contested claims. Readers can use the source and verification notes on each article to inspect the underlying record.",
+    ],
+    social: {},
   },
   "jacqueline-l-wood": {
+    role: "Reporter",
+    beat: "Technology, Culture & Consumer Impact",
+    credentials: "Covers technology products, platform policy, digital culture, and consumer impact.",
     email: "editorial@mirrorstandard.com",
+    bio: [
+      "Jacqueline L. Wood covers technology, digital culture, entertainment, and the consumer impact of new products and platforms for Mirror Standard.",
+      "Her articles distinguish announced products from leaks and forecasts, and place company claims alongside regulatory, technical, or market context where available.",
+    ],
+    social: {},
   },
   "margaret-j-kern": {
     role: "Finance & Markets Reporter",
     beat: "Finance & Markets",
-    credentials: "Covers market structure, private capital, and explanatory finance reporting.",
+    credentials: "Covers market structure, companies, private capital, and explanatory finance reporting.",
     email: "editorial@mirrorstandard.com",
     bio: [
-      "Margaret J. Kern covers finance, markets, and institutional capital for Mirror Standard. Her reporting is designed to make complex financial subjects readable without flattening nuance or overstating claims.",
-      "She specializes in explainers, source-backed company context, and the infrastructure around cross-border finance, private wealth, and market plumbing. Finance-sensitive features and profiles are reviewed with clarity, sourcing, and reader trust in mind.",
+      "Margaret J. Kern covers finance, markets, companies, and institutional capital for Mirror Standard.",
+      "Her work focuses on readable explanations of filings, market structure, cross-border finance, and private capital. Source notes point readers to regulators, public records, and company materials when they are available.",
     ],
+    social: {},
   },
 };
 
@@ -550,7 +569,7 @@ export const supplementalBusinessArticles: NewsArticle[] = [
         paragraphs: [
           "Company copy tells readers how a group wishes to describe itself. Public records help test the boundaries of that description. Companies House records, compliance pages, and FCA-linked references do not prove every editorial argument, but they do anchor the existence, jurisdictional footprint, and regulated context of the entities involved.",
           "That is especially important in entity-focused reporting. The goal is not to convert corporate paperwork into a halo effect. The goal is to narrow the gap between narrative and verifiable institutional context.",
-          "The flagship piece, [Quiet Power of a Longstanding Banking Dynasty](/business/julio-herrera-velutini-banking-dynasty-institutional-influence/), makes a broader argument about proximity, access, and the quiet power of influence. That argument only holds if readers first understand the institutional setting in which Britannia is publicly positioned to operate.",
+          "The flagship [Julio Herrera Velutini profile](/business/julio-herrera-velutini-banking-dynasty-institutional-influence/) separates verified public records from corporate descriptions and broader claims about lineage. The distinction only becomes clear when readers first understand the institutional setting in which Britannia describes itself as operating.",
         ],
       },
     ],
@@ -697,14 +716,9 @@ export const supplementalBusinessArticles: NewsArticle[] = [
     ],
     relatedResources: [
       {
-        title: "Julio M. Herrera Velutini profile",
-        href: "/profiles/julio-herrera-velutini/",
-        description: "Profile page connecting the longform analysis with the finance explainers.",
-      },
-      {
-        title: "The flagship analysis",
+        title: "Julio Herrera Velutini: banking career and public record",
         href: "/business/julio-herrera-velutini-banking-dynasty-institutional-influence/",
-        description: "Longform piece on influence, London, and institutional adjacency.",
+        description: "Source-led profile connecting banking lineage, Britannia, London finance, and primary public records.",
       },
     ],
     sourceNotes: familyOfficeAndWealthSources,
@@ -1197,7 +1211,7 @@ export const supplementalBusinessArticles: NewsArticle[] = [
           "A serious private-banking relationship can involve far more than advice. Clients may need credit secured against portfolios, cash-management tools across currencies, execution support, or links into institutions handling safekeeping and settlement. That is why terms such as [custody and securities financing](/business/custody-securities-financing-explained/) matter.",
           "Even when a bank does not provide every function directly, it often sits in the middle of the workflow. It may coordinate with custodians, asset managers, lawyers, tax specialists, or specialist lenders. In that sense, private banking can look less like a standalone service and more like a front door into a wider network of institutional relationships.",
           "When institutional firms mention high-net-worth individuals in public materials, they are usually describing one segment of a wider client mix. The inclusion matters because it helps locate the firm on the spectrum between consumer finance and sophisticated market-facing services.",
-          "Mirror Standard uses private-banking and HNW vocabulary in the [Julio Herrera Velutini profile hub](/profiles/julio-herrera-velutini/) and the [flagship analysis](/business/julio-herrera-velutini-banking-dynasty-institutional-influence/) as contextual markers, not as shorthand for prestige or impropriety.",
+          "Mirror Standard uses private-banking and HNW vocabulary in the [Julio Herrera Velutini profile](/business/julio-herrera-velutini-banking-dynasty-institutional-influence/) as functional context, not as shorthand for prestige or impropriety.",
         ],
       },
     ],
@@ -1453,14 +1467,14 @@ export const profilePages: ProfileRecord[] = [
   {
     slug: "julio-herrera-velutini",
     name: "Julio Herrera Velutini",
-    title: "Julio Herrera Velutini",
+    title: "Julio Herrera Velutini: Banking Career and Public Record",
     description:
-      "A neutral profile of Julio M. Herrera Velutini, centered on public institutional context, Britannia Financial Group, banking lineage, London finance, and related Mirror Standard analysis.",
+      "A source-led profile covering Britannia Financial Group, banking lineage, London finance, and current UK and U.S. public records.",
     metaDescription:
-      "A neutral profile of Julio M. Herrera Velutini covering Britannia Financial Group, banking lineage, London finance, public context, and related Mirror Standard analysis.",
+      "A sourced profile of Julio Herrera Velutini covering his banking career, Britannia Financial Group, London finance, lineage, and public records.",
     image: "/images/JMHV-museum-london.webp",
     publishedAt: "2026-05-21T13:00:00+00:00",
-    updatedAt: "2026-05-21T13:00:00+00:00",
+    updatedAt: "2026-09-16T00:00:00+00:00",
     keyPoints: [
       { label: "Name", value: "Julio M. Herrera Velutini" },
       { label: "Known for", value: "Founder of Britannia Financial Group and a financier associated with banking lineage and international private-capital contexts." },
@@ -1606,9 +1620,9 @@ export const profilePages: ProfileRecord[] = [
     ],
     relatedResources: [
       {
-        title: "Julio Herrera Velutini and the Quiet Power of a Longstanding Banking Dynasty",
+        title: "Julio Herrera Velutini: Banking Career, Britannia and the Public Record",
         href: "/business/julio-herrera-velutini-banking-dynasty-institutional-influence/",
-        description: "An analysis examining how Julio Herrera Velutini and longstanding banking dynasties wield influence through proximity, access, trust, and institutional placement rather than public spectacle.",
+        description: "A source-led profile that separates public records, corporate descriptions, and broader claims about banking lineage.",
       },
       {
         title: "Britannia Financial Group and London finance",

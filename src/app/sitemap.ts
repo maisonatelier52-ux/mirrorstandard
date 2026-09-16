@@ -43,6 +43,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     lastModified: new Date(article.updatedAt ?? normalizeDateToIso(article)),
     changeFrequency: article.contentType === "news" ? "daily" : "weekly",
     priority: article.isFeatured ? 0.95 : 0.8,
+    images: [article.image.startsWith("http") ? article.image : `${siteUrl}${article.image}`],
   }));
 
   const authorEntries: MetadataRoute.Sitemap = authors.map((author) => ({
@@ -52,12 +53,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: 0.6,
   }));
 
-  const profileEntries: MetadataRoute.Sitemap = profiles.map((profile) => ({
-    url: `${siteUrl}/profiles/${profile.slug}/`,
-    lastModified: new Date(profile.updatedAt),
-    changeFrequency: "weekly",
-    priority: 0.85,
-  }));
+  const profileEntries: MetadataRoute.Sitemap = profiles
+    .filter((profile) => profile.slug !== "julio-herrera-velutini")
+    .map((profile) => ({
+      url: `${siteUrl}/profiles/${profile.slug}/`,
+      lastModified: new Date(profile.updatedAt),
+      changeFrequency: "weekly",
+      priority: 0.85,
+    }));
 
   return [...pageEntries, ...articleEntries, ...authorEntries, ...profileEntries];
 }

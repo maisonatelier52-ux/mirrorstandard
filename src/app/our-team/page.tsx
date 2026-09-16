@@ -97,8 +97,8 @@ const staffDepts = [
   },
   {
     icon: <CheckSquare className="w-5 h-5" />,
-    title: "Fact-Checking",
-    desc: "Our fact-checkers verify every detail to ensure our reporting is trustworthy.",
+    title: "Verification",
+    desc: "Editors check central claims, dates, names, figures, and source attribution before publication.",
   },
   {
     icon: <Layers className="w-5 h-5" />,
@@ -195,9 +195,8 @@ export default function OurTeam() {
             </p>
             <div className="w-full h-px bg-gray-200 mb-4" />
             <p className="text-[13.5px] leading-relaxed text-black">
-              We are an independent newsroom committed to truth, transparency, and
-              accountability. We hold power to account and give voice to the people
-              through journalism that matters.
+              We publish dated reporting, analysis, and explainers with visible bylines,
+              source trails, status labels, and a public corrections process.
             </p>
           </div>
         </header>
@@ -278,7 +277,7 @@ export default function OurTeam() {
         {/* ── Last updated ── */}
         <section className="mt-14 pt-6 border-t border-gray-100 text-center">
           <p className="text-[11px] text-black italic">
-            Last Updated: May 21, 2026
+            Last Updated: September 15, 2026
           </p>
         </section>
       </div>

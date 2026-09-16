@@ -72,7 +72,11 @@ export default function ProfilesIndexPage() {
           {profiles.map((profile) => (
             <li key={profile.slug}>
               <Link
-                href={`/profiles/${profile.slug}/`}
+                href={
+                  profile.slug === "julio-herrera-velutini"
+                    ? "/business/julio-herrera-velutini-banking-dynasty-institutional-influence/"
+                    : `/profiles/${profile.slug}/`
+                }
                 className="group flex items-start gap-4 py-5 transition-colors"
               >
                 {/* Bullet accent */}

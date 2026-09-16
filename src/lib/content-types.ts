@@ -28,6 +28,21 @@ export interface ArticleSection {
   paragraphs: string[];
 }
 
+export type EditorialContextStatus =
+  | "reported"
+  | "analysis"
+  | "review"
+  | "developing"
+  | "allegation";
+
+export interface EditorialContext {
+  status: EditorialContextStatus;
+  label: string;
+  summary: string;
+  reportingBasis: string;
+  revisionNote: string;
+}
+
 export type StoryBlockType =
   | "cinematic"
   | "analysis"
@@ -77,6 +92,7 @@ export interface EntityReference {
   alternateNames?: string[];
   affiliationName?: string;
   description?: string;
+  sameAs?: string[];
 }
 
 export interface NewsArticle {
@@ -115,6 +131,7 @@ export interface NewsArticle {
   correctionNote?: string;
   keywords?: string[];
   entity?: EntityReference;
+  editorialContext?: EditorialContext;
 }
 
 export interface AuthorRecord {

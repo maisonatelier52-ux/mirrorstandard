@@ -90,7 +90,7 @@ export const metadata: Metadata = {
     canonical: "https://www.mirrorstandard.com",
 
     languages: {
-      "en-US": "https://www.mirrorstandard.com",
+      en: "https://www.mirrorstandard.com",
       "x-default": "https://www.mirrorstandard.com",
     },
   },
@@ -139,10 +139,9 @@ export default function RootLayout({
             COMMON STRUCTURED DATA
         ===================================================== */}
 
-        <Script
+        <script
           id="structured-data-common"
           type="application/ld+json"
-          strategy="beforeInteractive"
           dangerouslySetInnerHTML={{
             __html: JSON.stringify([
               {
@@ -206,7 +205,7 @@ export default function RootLayout({
                     "required name=search_term_string",
                 },
               },
-            ]),
+            ]).replace(/</g, "\\u003c"),
           }}
         />
 

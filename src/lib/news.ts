@@ -13,6 +13,10 @@ import {
   profilePages,
   supplementalBusinessArticles,
 } from "../lib/editorial-content";
+import {
+  enhanceArticle,
+  getArticleReadingTime,
+} from "../lib/editorial-enhancements";
 import type {
   AuthorRecord,
   NewsArticle,
@@ -47,15 +51,15 @@ function applyOverrides(
 const businessArticles = [
   ...applyOverrides(baseBusinessData as NewsArticle[], businessArticleOverrides),
   ...supplementalBusinessArticles,
-];
+].map(enhanceArticle);
 
-const technologyArticles = baseTechnologyData as NewsArticle[];
-const sportsArticles = baseSportsData as NewsArticle[];
-const healthArticles = baseHealthData as NewsArticle[];
-const politicsArticles = basePoliticsData as NewsArticle[];
-const scienceArticles = baseScienceData as NewsArticle[];
-const entertainmentArticles = baseEntertainmentData as NewsArticle[];
-const educationArticles = baseEducationData as NewsArticle[];
+const technologyArticles = (baseTechnologyData as NewsArticle[]).map(enhanceArticle);
+const sportsArticles = (baseSportsData as NewsArticle[]).map(enhanceArticle);
+const healthArticles = (baseHealthData as NewsArticle[]).map(enhanceArticle);
+const politicsArticles = (basePoliticsData as NewsArticle[]).map(enhanceArticle);
+const scienceArticles = (baseScienceData as NewsArticle[]).map(enhanceArticle);
+const entertainmentArticles = (baseEntertainmentData as NewsArticle[]).map(enhanceArticle);
+const educationArticles = (baseEducationData as NewsArticle[]).map(enhanceArticle);
 
 export const newsByCategory: Record<string, NewsArticle[]> = {
   business: businessArticles,
@@ -244,4 +248,4 @@ export function getArticleBodyPreview(article: NewsArticle) {
   return (article.description || article.shortdescription).slice(0, 500);
 }
 
-export { categories };
+export { categories, getArticleReadingTime };

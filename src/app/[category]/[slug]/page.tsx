@@ -1,12 +1,10 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import Script from "next/script";
 import DetailSection from "../../../components/DetailSection";
 import ScrollToTopButton from "../../../components/ScrollToTopButton";
 import {
   categories,
   getArticle,
-  getArticleBodyPreview,
   getCategoryNews,
   getNavigationNews,
   getPopularNews,
@@ -68,7 +66,7 @@ export async function generateMetadata({
       article.title,
       ...(article.keywords ?? []),
     ]),
-  ).join(", ");
+  );
 
   return {
     title,
@@ -98,7 +96,7 @@ export async function generateMetadata({
       modifiedTime: article.updatedAt ?? normalizeDateToIso(article),
       authors: [article.author],
       section: article.category,
-      images: [{ url: imageUrl, width: 1200, height: 630, alt: article.title }],
+      images: [{ url: imageUrl, alt: article.title }],
     },
     twitter: {
       card: "summary_large_image",
@@ -133,6 +131,11 @@ export default async function DetailPage({ params }: DetailPageProps) {
 
   const siteUrl = "https://www.mirrorstandard.com";
   const articleUrl = `${siteUrl}/${category}/${slug}/`;
+  const webpageId = `${articleUrl}#webpage`;
+  const articleId = `${articleUrl}#article`;
+  const personId = `${articleUrl}#subject`;
+  const authorUrl = `${siteUrl}/our-team/${article.authorslug}/`;
+  const imageUrl = article.image.startsWith("http") ? article.image : `${siteUrl}${article.image}`;
 
   // SEO FIX: truncated description also used in schema
   const rawDescription = article.metaDescription ?? article.shortdescription;
@@ -145,21 +148,32 @@ export default async function DetailPage({ params }: DetailPageProps) {
     "@context": "https://schema.org",
     "@graph": [
       {
+        "@type": "WebPage",
+        "@id": webpageId,
+        url: articleUrl,
+        name: article.title,
+        description: schemaDescription,
+        inLanguage: "en",
+        isPartOf: { "@id": `${siteUrl}/#website` },
+        breadcrumb: { "@id": `${articleUrl}#breadcrumb` },
+        primaryImageOfPage: { "@id": `${articleUrl}#primaryimage` },
+        mainEntity: { "@id": articleId },
+      },
+      {
         "@type": "NewsArticle",
-        "@id": `${articleUrl}#article`,
+        "@id": articleId,
         headline: article.title,
         description: schemaDescription,
         datePublished: normalizeDateToIso(article),
         dateModified: article.updatedAt ?? normalizeDateToIso(article),
-        mainEntityOfPage: articleUrl,
-        image: {
-          "@type": "ImageObject",
-          url: article.image.startsWith("http") ? article.image : `${siteUrl}${article.image}`,
-        },
+        mainEntityOfPage: { "@id": webpageId },
+        image: [imageUrl],
+        inLanguage: "en",
+        isAccessibleForFree: true,
         author: {
-          "@type": "Person",
+          "@type": article.authorslug === "mirror-standard-staff" ? "Organization" : "Person",
           name: article.author,
-          url: `${siteUrl}/our-team/${article.authorslug}/`,
+          url: authorUrl,
         },
         publisher: {
           "@type": "Organization",
@@ -173,7 +187,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
         },
         articleSection: article.category,
         keywords: article.keywords,
-        articleBody: getArticleBodyPreview(article),
+        about: article.entity ? { "@id": personId } : undefined,
+        citation: article.sourceNotes?.map((source) =>
+          source.url.startsWith("http") ? source.url : `${siteUrl}${source.url}`,
+        ),
         reviewedBy: article.reviewedByName
           ? {
               "@type": article.reviewedByUrl?.includes("/our-team/") ? "Person" : "Organization",
@@ -181,17 +198,13 @@ export default async function DetailPage({ params }: DetailPageProps) {
               url: article.reviewedByUrl ? `${siteUrl}${article.reviewedByUrl}` : undefined,
             }
           : undefined,
-        mainEntity: article.entity
-          ? {
-              "@type": article.entity.type,
-              name: article.entity.name,
-              alternateName: article.entity.alternateNames,
-              affiliation: article.entity.affiliationName
-                ? { "@type": "Organization", name: article.entity.affiliationName }
-                : undefined,
-              description: article.entity.description,
-            }
-          : undefined,
+      },
+      {
+        "@type": "ImageObject",
+        "@id": `${articleUrl}#primaryimage`,
+        url: imageUrl,
+        contentUrl: imageUrl,
+        caption: article.imageCaption ?? article.title,
       },
       {
         "@type": "BreadcrumbList",
@@ -207,18 +220,32 @@ export default async function DetailPage({ params }: DetailPageProps) {
           { "@type": "ListItem", position: 3, name: article.title, item: articleUrl },
         ],
       },
+      ...(article.entity
+        ? [
+            {
+              "@type": article.entity.type,
+              "@id": personId,
+              name: article.entity.name,
+              alternateName: article.entity.alternateNames,
+              description: article.entity.description,
+              sameAs: article.entity.sameAs,
+              affiliation: article.entity.affiliationName
+                ? { "@type": "Organization", name: article.entity.affiliationName }
+                : undefined,
+            },
+          ]
+        : []),
     ],
   };
 
   return (
     <main className="relative overflow-x-clip bg-[color:var(--ms-surface)]">
-      {/* SEO FIX: strategy="beforeInteractive" ensures schema is in initial HTML, 
-          not injected after load — critical for crawlers reading JSON-LD */}
-      <Script
+      <script
         id={`structured-data-article-${article.slug}`}
         type="application/ld+json"
-        strategy="beforeInteractive"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify(articleSchema).replace(/</g, "\\u003c"),
+        }}
       />
       <div className="pointer-events-none absolute inset-x-0 top-0 h-[420px]" />
       <div className="relative mx-auto w-full max-w-[1380px] px-4 py-4 sm:px-6 md:px-8 md:py-8 lg:px-10">

@@ -9,7 +9,11 @@ import AuthorCard from "./AuthorCard";
 import NewsNavigation from "./NewsNavigation";
 import RichContent from "./RichContent";
 
-import type { NewsArticle } from "../lib/news";
+import {
+  getArticleReadingTime,
+  normalizeDateToIso,
+  type NewsArticle,
+} from "../lib/news";
 import ShareBar from "./Sharebar";
 
 interface Props {
@@ -223,6 +227,64 @@ function KeyPointsStrip({ points }: { points: Array<{ label: string; value: stri
 }
 
 /* ─────────────────────────────────────────────
+   EDITORIAL CONTEXT — format and evidence label
+───────────────────────────────────────────── */
+function EditorialContextPanel({
+  context,
+}: {
+  context: NonNullable<NewsArticle["editorialContext"]>;
+}) {
+  const statusClass = {
+    allegation: "bg-[#fff2df] text-[#7a3e00]",
+    analysis: "bg-[#eaf0f7] text-[#173c63]",
+    developing: "bg-[#fff7d7] text-[#695300]",
+    reported: "bg-[#eaf5ef] text-[#23563b]",
+    review: "bg-[#f3eafa] text-[#5f347c]",
+  }[context.status];
+
+  return (
+    <aside
+      aria-labelledby="editorial-context-title"
+      className="mt-5 border-y border-[color:var(--ms-border)] bg-[#faf8f3]"
+    >
+      <div className="grid gap-5 px-5 py-5 sm:grid-cols-[minmax(0,0.95fr)_minmax(0,1.05fr)] sm:px-6">
+        <div>
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[color:var(--ms-text-faint)]">
+            Editorial context
+          </p>
+          <div className="mt-2 flex flex-wrap items-center gap-2.5">
+            <span
+              id="editorial-context-title"
+              className={`rounded-sm px-2.5 py-1 text-[10px] font-bold uppercase tracking-[0.12em] ${statusClass}`}
+            >
+              {context.label}
+            </span>
+          </div>
+          <p className="mt-3 text-[13px] leading-6 text-[color:var(--ms-text-soft)]">
+            {context.summary}
+          </p>
+        </div>
+        <div className="border-t border-[color:var(--ms-border)] pt-4 sm:border-l sm:border-t-0 sm:pl-5 sm:pt-0">
+          <p className="text-[10px] font-bold uppercase tracking-[0.2em] text-[color:var(--ms-text-faint)]">
+            Reporting basis
+          </p>
+          <p className="mt-2 text-[13px] leading-6 text-[color:var(--ms-text)]">
+            {context.reportingBasis}
+          </p>
+          <p className="mt-2 text-[12px] leading-5 text-[color:var(--ms-text-faint)]">
+            {context.revisionNote}
+          </p>
+          <div className="mt-3 flex flex-wrap gap-x-4 gap-y-2 text-[11px] font-semibold uppercase tracking-[0.11em] text-[color:var(--ms-accent)]">
+            <Link href="/source-methodology/">Source methodology</Link>
+            <Link href="/corrections-policy/">Corrections policy</Link>
+          </div>
+        </div>
+      </div>
+    </aside>
+  );
+}
+
+/* ─────────────────────────────────────────────
    SIDEBAR CONTENT
 ───────────────────────────────────────────── */
 function SidebarContent({
@@ -322,6 +384,8 @@ export default function DetailSection({
   );
   const tocSections = article.sections ?? [];
   const articleRef = useRef<HTMLElement>(null);
+  const readingTime = getArticleReadingTime(article);
+  const publishedIso = normalizeDateToIso(article);
 
   const categoryLabel = article.category.charAt(0).toUpperCase() + article.category.slice(1);
 
@@ -392,7 +456,7 @@ export default function DetailSection({
             */}
             <meta itemProp="url" content={articleUrl} />
             <meta itemProp="mainEntityOfPage" content={articleUrl} />
-            <meta itemProp="datePublished" content={article.date} />
+            <meta itemProp="datePublished" content={publishedIso} />
             {article.updatedAt && <meta itemProp="dateModified" content={article.updatedAt} />}
             <meta itemProp="articleSection" content={article.category} />
             {article.keywords?.map((kw) => (
@@ -424,7 +488,12 @@ export default function DetailSection({
                 {article.category}
               </Link>
               <span className="text-[11px] text-[color:var(--ms-text-faint)]">·</span>
-              <span className="text-[11px] uppercase tracking-[0.1em] text-[color:var(--ms-text-faint)]">{article.date}</span>
+              <time
+                dateTime={publishedIso}
+                className="text-[11px] uppercase tracking-[0.1em] text-[color:var(--ms-text-faint)]"
+              >
+                {article.date}
+              </time>
               {isLongform && (
                 <>
                   <span className="text-[11px] text-[color:var(--ms-text-faint)]">·</span>
@@ -445,7 +514,7 @@ export default function DetailSection({
                 className="mt-3 max-w-[72ch] text-[16px] italic leading-[1.7] text-[color:var(--ms-text-soft)] sm:text-[17px]"
                 itemProp="description"
               >
-                {article.metaDescription ?? article.shortdescription}
+                {article.shortdescription}
               </p>
             </div>
 
@@ -456,7 +525,11 @@ export default function DetailSection({
                   className="flex items-center gap-2.5"
                   itemProp="author"
                   itemScope
-                  itemType="https://schema.org/Person"
+                  itemType={
+                    article.authorslug === "mirror-standard-staff"
+                      ? "https://schema.org/Organization"
+                      : "https://schema.org/Person"
+                  }
                 >
                   {article.authorImage && (
                     <Link
@@ -488,8 +561,25 @@ export default function DetailSection({
                       </Link>
                     </p>
                     <p className="mt-0.5 text-[11px] text-[color:var(--ms-text-faint)]">
-                      <span itemProp="jobTitle">{article.role}</span>
-                      &nbsp;&nbsp;|&nbsp;&nbsp;{article.date}&nbsp;&nbsp;|&nbsp;&nbsp;6 min read
+                      <span
+                        itemProp={article.authorslug === "mirror-standard-staff" ? undefined : "jobTitle"}
+                      >
+                        {article.role}
+                      </span>
+                      &nbsp;&nbsp;|&nbsp;&nbsp;{article.date}&nbsp;&nbsp;|&nbsp;&nbsp;{readingTime} min read
+                      {article.updatedAt ? (
+                        <>
+                          &nbsp;&nbsp;|&nbsp;&nbsp;Updated{" "}
+                          <time dateTime={article.updatedAt}>
+                            {new Date(article.updatedAt).toLocaleDateString("en-US", {
+                              month: "short",
+                              day: "numeric",
+                              year: "numeric",
+                              timeZone: "UTC",
+                            })}
+                          </time>
+                        </>
+                      ) : null}
                     </p>
                   </div>
                 </div>
@@ -506,12 +596,10 @@ export default function DetailSection({
                 className="relative aspect-[16/9] w-full overflow-hidden"
                 itemProp="image"
                 itemScope
-                itemType="https://schema.org/ImageObject"
-              >
-                <meta itemProp="url" content={imageUrl} />
-                <meta itemProp="width" content="1200" />
-                <meta itemProp="height" content="675" />
-                <Image
+              itemType="https://schema.org/ImageObject"
+            >
+              <meta itemProp="url" content={imageUrl} />
+              <Image
                   src={article.image}
                   alt={article.title}
                   fill
@@ -558,6 +646,10 @@ export default function DetailSection({
               </div>
             )}
 
+            {article.editorialContext ? (
+              <EditorialContextPanel context={article.editorialContext} />
+            ) : null}
+
             {/* Body — itemProp="articleBody" */}
             <div className="mt-6" itemProp="articleBody">
               {article.sections?.length || article.storyBlocks?.length ? (
@@ -586,12 +678,9 @@ export default function DetailSection({
             <div className="mt-8">
               <AuthorCard
                 author={article.author}
+                authorSlug={article.authorslug}
+                authorImage={article.authorImage}
                 role={article.role}
-                articleTitle={article.title}
-                reddit={article.reddit}
-                medium={article.medium}
-                quora={article.quora}
-                substack={article.substack}
               />
             </div>
 

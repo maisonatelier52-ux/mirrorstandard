@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "audit:content": "node --experimental-strip-types --experimental-transform-types --experimental-specifier-resolution=node scripts/audit-content.mjs"
   },
   "dependencies": {
     "lucide-react": "^1.16.0",

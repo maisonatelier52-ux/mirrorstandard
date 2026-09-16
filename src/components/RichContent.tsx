@@ -188,10 +188,13 @@ function SourceNotesBlock({ notes }: { notes: SourceNote[] }) {
     <aside aria-labelledby="source-notes-title" className="border-t-2 border-[color:var(--ms-text)] pt-5">
       <h2
         id="source-notes-title"
-        className="mb-4 font-[oswald] text-[11px] font-bold uppercase tracking-[0.22em] text-[color:var(--ms-text-faint)]"
+        className="font-[oswald] text-[11px] font-bold uppercase tracking-[0.22em] text-[color:var(--ms-text-faint)]"
       >
-        Source Notes
+        Sources &amp; verification
       </h2>
+      <p className="mb-4 mt-2 max-w-[72ch] text-[12px] leading-5 text-[color:var(--ms-text-faint)]">
+        Links below include cited material where available and authoritative starting points for checking records, data, and later developments. A directory link does not, by itself, support every claim in the article.
+      </p>
       <ol className="space-y-3">
         {notes.map((source, idx) => (
           <li
