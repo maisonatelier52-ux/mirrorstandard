@@ -38,13 +38,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "/" ? 1 : 0.7,
   }));
 
-  const articleEntries: MetadataRoute.Sitemap = allNews.map((article) => ({
-    url: `${siteUrl}/${article.category}/${article.slug}/`,
-    lastModified: new Date(article.updatedAt ?? normalizeDateToIso(article)),
-    changeFrequency: article.contentType === "news" ? "daily" : "weekly",
-    priority: article.isFeatured ? 0.95 : 0.8,
-    images: [article.image.startsWith("http") ? article.image : `${siteUrl}${article.image}`],
-  }));
+  const articleEntries: MetadataRoute.Sitemap = allNews.map((article) => {
+    const isJulioHub =
+      article.slug === "julio-herrera-velutini-banking-dynasty-institutional-influence";
+    return {
+      url: `${siteUrl}/${article.category}/${article.slug}/`,
+      lastModified: new Date(article.updatedAt ?? normalizeDateToIso(article)),
+      changeFrequency: article.contentType === "news" ? "daily" : "weekly",
+      // Entity hub gets max priority; other featured articles stay high
+      priority: isJulioHub ? 1.0 : article.isFeatured ? 0.95 : 0.8,
+      images: [
+        article.image.startsWith("http") ? article.image : `${siteUrl}${article.image}`,
+      ],
+    };
+  });
 
   const authorEntries: MetadataRoute.Sitemap = authors.map((author) => ({
     url: `${siteUrl}/our-team/${author.slug}/`,

@@ -316,7 +316,7 @@ function SidebarContent({
 
       <div className="overflow-hidden rounded-md">
         <Image
-          src="/images/mirrorstandar_ads.webp"
+          src="/images/mirrorstandard_quotes_ads.webp"
           alt="Mirror Standard Advertisement"
           width={600}
           height={450}

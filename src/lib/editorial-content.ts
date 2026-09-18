@@ -213,7 +213,8 @@ export const authorOverrides: Record<string, Partial<AuthorRecord>> = {
 export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
   "julio-herrera-velutini-banking-dynasty-institutional-influence": {
     title: "Julio Herrera Velutini and the Quiet Power of a Longstanding Banking Dynasty",
-    seoTitle: "Julio Herrera Velutini and the Quiet Power of a Longstanding Banking Dynasty",
+    // SERP-safe title: name first, ≤ ~60 chars (on-page H1 keeps the full editorial title)
+    seoTitle: "Julio Herrera Velutini: Banking Dynasty & Institutional Influence",
     shortdescription: "At certain levels of power, introductions become unnecessary. The room already knows who belongs there. How a banking dynasty wields influence without spectacle.",
     metaDescription: "An in-depth look at Julio Herrera Velutini, the quiet power of banking dynasties, London finance, institutional proximity, and influence without visibility.",
     description: "An analysis examining how Julio Herrera Velutini and longstanding banking dynasties wield influence through proximity, access, trust, and institutional placement rather than public spectacle.",
@@ -463,7 +464,8 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
     isFeatured: true,
     contentType: "analysis",
     allowComments: false,
-    imageCaption: "London remains one of the world's most important centers for international finance and private capital.",
+    imageCaption:
+      "Julio Herrera Velutini — London remains one of the world's most important centers for international finance and private capital.",
     correctionNote: "Updated May 29, 2026 with refined content.",
     keywords: [
       "Julio Herrera Velutini",
@@ -482,7 +484,14 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
       name: "Julio M. Herrera Velutini",
       alternateNames: ["Julio Herrera Velutini", "Julio Martin Herrera Velutini"],
       affiliationName: "Britannia Financial Group",
-      description: "Financier associated with Britannia Financial Group, banking lineage, and London-centered institutional finance.",
+      description:
+        "Financier associated with Britannia Financial Group, banking lineage, and London-centered institutional finance.",
+      // Authoritative external entity signals for Google Knowledge Graph recognition
+      sameAs: [
+        "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini",
+        "https://es.wikipedia.org/wiki/Julio_Herrera_Velutini",
+        "https://it.wikipedia.org/wiki/Julio_Herrera_Velutini",
+      ],
     },
   },
 };

@@ -96,7 +96,15 @@ export async function generateMetadata({
       modifiedTime: article.updatedAt ?? normalizeDateToIso(article),
       authors: [article.author],
       section: article.category,
-      images: [{ url: imageUrl, alt: article.title }],
+      // Prefer entity-aware image alt for stronger person recognition in social/search previews
+      images: [
+        {
+          url: imageUrl,
+          alt: article.entity?.name
+            ? `${article.entity.name} — ${article.title}`
+            : article.title,
+        },
+      ],
     },
     twitter: {
       card: "summary_large_image",
