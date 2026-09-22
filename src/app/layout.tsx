@@ -113,7 +113,7 @@ export const metadata: Metadata = {
   },
 
   verification: {
-    google: "yJBvvr61HsIIbHKVTR5dNmkkHrx6puybsWaSI42qoq8",
+    google: "-JiKRi--_IaLbqtRxNaC1UaT6LP8lVqz8ecNHXVUmG8",
   },
 
   icons: {
