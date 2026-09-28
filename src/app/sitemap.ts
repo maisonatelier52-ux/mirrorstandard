@@ -1,5 +1,6 @@
 import type { MetadataRoute } from "next";
 import { allNews, authors, normalizeDateToIso, profiles } from "../lib/news";
+import { entityPages } from "../lib/entity-content";
 
 const siteUrl = "https://www.mirrorstandard.com";
 
@@ -20,6 +21,9 @@ const staticPages = [
   "/right-of-reply-policy/",
   "/reviewed-by/editorial-board/",
   "/profiles/",
+  "/people/",
+  "/organizations/",
+  "/places/",
   "/business/",
   "/technology/",
   "/sports/",
@@ -69,5 +73,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.85,
     }));
 
-  return [...pageEntries, ...articleEntries, ...authorEntries, ...profileEntries];
+  const entityEntries: MetadataRoute.Sitemap = entityPages.map((entity) => ({
+    url: `${siteUrl}/${entity.section}/${entity.slug}/`,
+    lastModified: new Date(entity.updatedAt),
+    changeFrequency: "weekly",
+    priority: entity.section === "people" ? 0.95 : 0.9,
+    images: entity.image ? [`${siteUrl}${entity.image}`] : undefined,
+  }));
+
+  return [
+    ...pageEntries,
+    ...articleEntries,
+    ...authorEntries,
+    ...profileEntries,
+    ...entityEntries,
+  ];
 }

@@ -6,8 +6,7 @@ const nextConfig: NextConfig = {
     return [
       {
         source: "/profiles/julio-herrera-velutini/",
-        destination:
-          "/business/julio-herrera-velutini-banking-dynasty-institutional-influence/",
+        destination: "/people/julio-herrera-velutini/",
         permanent: true,
       },
     ];

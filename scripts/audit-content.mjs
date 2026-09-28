@@ -6,6 +6,7 @@ import {
   businessArticleOverrides,
   supplementalBusinessArticles,
 } from "../src/lib/editorial-content.ts";
+import { entityPages } from "../src/lib/entity-content.ts";
 
 const root = fileURLToPath(new URL("../", import.meta.url));
 const categories = [
@@ -69,6 +70,34 @@ for (const article of articles) {
   }
 }
 
+const entityPaths = new Set();
+for (const entity of entityPages) {
+  const path = `/${entity.section}/${entity.slug}/`;
+  if (entityPaths.has(path)) errors.push(`${path}: duplicate entity path`);
+  entityPaths.add(path);
+
+  if (entity.sections.length < 4) errors.push(`${path}: fewer than four reference sections`);
+  if (entity.sourceNotes.length < 3) errors.push(`${path}: fewer than three source notes`);
+  if (entity.metaTitle.length > 67) errors.push(`${path}: SEO title exceeds 67 characters`);
+  if (entity.metaDescription.length > 160) {
+    errors.push(`${path}: meta description exceeds 160 characters`);
+  }
+  if (Number.isNaN(Date.parse(entity.updatedAt))) errors.push(`${path}: invalid updatedAt`);
+  if (entity.sourceNotes.some((source) => !/^(https?:\/\/|\/)/.test(source.url))) {
+    errors.push(`${path}: invalid source URL`);
+  }
+
+  const visibleCopy = [
+    entity.title,
+    entity.description,
+    ...entity.sections.flatMap((section) => [section.heading, ...section.paragraphs]),
+    ...entity.faq.flatMap((item) => [item.question, item.answer]),
+  ].join(" ");
+  if (/\b(indictment|criminal charge|court case|prosecution)\b/i.test(visibleCopy)) {
+    errors.push(`${path}: contains out-of-scope legal or case terminology`);
+  }
+}
+
 const statusCounts = articles.reduce((counts, article) => {
   const status = article.editorialContext?.status ?? "missing";
   counts[status] = (counts[status] ?? 0) + 1;
@@ -90,6 +119,7 @@ const summary = {
   structuredBodies: articles.filter((article) => article.sections?.length || article.storyBlocks?.length).length,
   sourceTrails: articles.filter((article) => article.sourceNotes?.length).length,
   commentsDisabled: articles.filter((article) => article.allowComments === false).length,
+  entityPages: entityPages.map((entity) => `/${entity.section}/${entity.slug}/`),
   errors,
 };
 

@@ -11,6 +11,7 @@ import {
   getRelatedNews,
   normalizeDateToIso,
 } from "../../../lib/news";
+import type { EntityReference } from "../../../lib/content-types";
 
 export async function generateStaticParams() {
   return categories.flatMap((category) =>
@@ -32,6 +33,25 @@ function truncateDescription(text: string, maxLen = 155): string {
   return text.slice(0, cut > 0 ? cut : maxLen) + "…";
 }
 
+function getEntityId(
+  entity: EntityReference,
+  siteUrl: string,
+  articleUrl: string,
+  fallbackFragment: string,
+) {
+  if (entity.canonicalPath) {
+    const fragment =
+      entity.type === "Person"
+        ? "person"
+        : entity.type === "Organization"
+          ? "organization"
+          : "place";
+    return `${siteUrl}${entity.canonicalPath}#${fragment}`;
+  }
+
+  return `${articleUrl}#${fallbackFragment}`;
+}
+
 export async function generateMetadata({
   params,
 }: DetailPageProps): Promise<Metadata> {
@@ -51,6 +71,10 @@ export async function generateMetadata({
   const imageUrl = article.image.startsWith("http")
     ? article.image
     : `${siteUrl}${article.image}`;
+  const authorUrl =
+    article.authorslug === "mirror-standard-staff"
+      ? `${siteUrl}/our-team/mirror-standard-staff/`
+      : `${siteUrl}/our-team/${article.authorslug}/`;
 
   // SEO FIX: title should be ≤ 66 chars; use seoTitle if provided, else truncate
   const title = article.seoTitle ?? article.title;
@@ -72,7 +96,7 @@ export async function generateMetadata({
     title,
     description,
     keywords,
-    authors: [{ name: article.author, url: `${siteUrl}/our-team/${article.authorslug}/` }],
+    authors: [{ name: article.author, url: authorUrl }],
     alternates: { canonical: currentUrl },
     robots: {
       index: true,
@@ -141,9 +165,20 @@ export default async function DetailPage({ params }: DetailPageProps) {
   const articleUrl = `${siteUrl}/${category}/${slug}/`;
   const webpageId = `${articleUrl}#webpage`;
   const articleId = `${articleUrl}#article`;
-  const personId = `${articleUrl}#subject`;
-  const authorUrl = `${siteUrl}/our-team/${article.authorslug}/`;
+  const subjectId = article.entity
+    ? getEntityId(article.entity, siteUrl, articleUrl, "subject")
+    : `${articleUrl}#subject`;
+  const authorUrl =
+    article.authorslug === "mirror-standard-staff"
+      ? `${siteUrl}/our-team/mirror-standard-staff/`
+      : `${siteUrl}/our-team/${article.authorslug}/`;
   const imageUrl = article.image.startsWith("http") ? article.image : `${siteUrl}${article.image}`;
+  const organizationMention = article.mentions?.find(
+    (entity) => entity.type === "Organization",
+  );
+  const organizationMentionId = organizationMention
+    ? getEntityId(organizationMention, siteUrl, articleUrl, "affiliation")
+    : undefined;
 
   // SEO FIX: truncated description also used in schema
   const rawDescription = article.metaDescription ?? article.shortdescription;
@@ -195,7 +230,10 @@ export default async function DetailPage({ params }: DetailPageProps) {
         },
         articleSection: article.category,
         keywords: article.keywords,
-        about: article.entity ? { "@id": personId } : undefined,
+        about: article.entity ? { "@id": subjectId } : undefined,
+        mentions: article.mentions?.map((entity, index) => ({
+          "@id": getEntityId(entity, siteUrl, articleUrl, `mention-${index + 1}`),
+        })),
         citation: article.sourceNotes?.map((source) =>
           source.url.startsWith("http") ? source.url : `${siteUrl}${source.url}`,
         ),
@@ -232,17 +270,33 @@ export default async function DetailPage({ params }: DetailPageProps) {
         ? [
             {
               "@type": article.entity.type,
-              "@id": personId,
+              "@id": subjectId,
+              url: article.entity.canonicalPath
+                ? `${siteUrl}${article.entity.canonicalPath}`
+                : undefined,
               name: article.entity.name,
               alternateName: article.entity.alternateNames,
               description: article.entity.description,
               sameAs: article.entity.sameAs,
               affiliation: article.entity.affiliationName
-                ? { "@type": "Organization", name: article.entity.affiliationName }
+                ? {
+                    "@type": "Organization",
+                    "@id": organizationMentionId,
+                    name: article.entity.affiliationName,
+                  }
                 : undefined,
             },
           ]
         : []),
+      ...(article.mentions ?? []).map((entity, index) => ({
+        "@type": entity.type,
+        "@id": getEntityId(entity, siteUrl, articleUrl, `mention-${index + 1}`),
+        name: entity.name,
+        alternateName: entity.alternateNames,
+        description: entity.description,
+        sameAs: entity.sameAs,
+        url: entity.canonicalPath ? `${siteUrl}${entity.canonicalPath}` : undefined,
+      })),
     ],
   };
 

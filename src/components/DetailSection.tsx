@@ -392,6 +392,10 @@ export default function DetailSection({
   const siteUrl = "https://www.mirrorstandard.com";
   const articleUrl = `${siteUrl}/${article.category}/${article.slug}/`;
   const imageUrl = article.image.startsWith("http") ? article.image : `${siteUrl}${article.image}`;
+  const authorHref =
+    article.authorslug === "mirror-standard-staff"
+      ? "/our-team/mirror-standard-staff/"
+      : `/our-team/${article.authorslug}/`;
 
   return (
     <>
@@ -533,7 +537,7 @@ export default function DetailSection({
                 >
                   {article.authorImage && (
                     <Link
-                      href={`/our-team/${article.authorslug}/`}
+                      href={authorHref}
                       title={`About ${article.author}`}
                       itemProp="url"
                     >
@@ -552,7 +556,7 @@ export default function DetailSection({
                     <p className="text-[12px] font-semibold leading-none text-[color:var(--ms-text)]">
                       <span className="font-normal text-[color:var(--ms-text-faint)]">By </span>
                       <Link
-                        href={`/our-team/${article.authorslug}/`}
+                        href={authorHref}
                         title={`About ${article.author}`}
                         className="transition-colors hover:text-[color:var(--ms-accent)]"
                         itemProp="url"

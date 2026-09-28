@@ -39,6 +39,45 @@ const commonFinanceSources: SourceNote[] = [
   },
 ];
 
+const julioProfileSources: SourceNote[] = [
+  {
+    label: "Companies House: Julio Herrera Velutini appointments",
+    url: "https://find-and-update.company-information.service.gov.uk/officers/2GhdRN7CaQAKgLvVGiqo05nIUuE/appointments",
+    description:
+      "Official UK register entry used to confirm the name and recorded company appointments.",
+  },
+  {
+    label: "Julio Herrera Velutini: personal biography",
+    url: "https://www.julioherrera.org/",
+    description:
+      "Self-published biography used only for claims attributed to the subject's own public materials.",
+  },
+  {
+    label: "Companies House: Britannia Financial Group Limited",
+    url: "https://find-and-update.company-information.service.gov.uk/company/10417641",
+    description:
+      "Official UK company overview for legal name, address, incorporation date, status, and SIC code.",
+  },
+  {
+    label: "Britannia Financial Group: About",
+    url: "https://www.britannia.com/about/",
+    description:
+      "Company-published description of the group's London headquarters, history, and operating businesses.",
+  },
+  {
+    label: "City of London: Our global offer to business",
+    url: "https://www.cityoflondon.gov.uk/supporting-businesses/economic-research/research-publications/our-global-offer-to-business",
+    description:
+      "Official market context for London's financial and professional-services ecosystem.",
+  },
+  {
+    label: "Financial Conduct Authority: About the FCA",
+    url: "https://www.fca.org.uk/about/what-we-do/the-fca",
+    description:
+      "Official explanation of the UK conduct regulator's role in financial-services markets.",
+  },
+];
+
 const londonAndCrossBorderSources: SourceNote[] = [
   // {
   //   label: "Bank of England: Cross-border payments",
@@ -213,13 +252,21 @@ export const authorOverrides: Record<string, Partial<AuthorRecord>> = {
 export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
   "julio-herrera-velutini-banking-dynasty-institutional-influence": {
     title: "Julio Herrera Velutini and the Quiet Power of a Longstanding Banking Dynasty",
+    author: "Mirror Standard Editorial Desk",
+    authorslug: "mirror-standard-staff",
+    authorImage: "/images/mirrorstandard-logo.webp",
+    role: "Editorial analysis",
+    reddit: undefined,
+    medium: undefined,
+    quora: undefined,
+    substack: undefined,
     // SERP-safe title: name first, ≤ ~60 chars (on-page H1 keeps the full editorial title)
     seoTitle: "Julio Herrera Velutini: Banking Dynasty & Institutional Influence",
     shortdescription: "At certain levels of power, introductions become unnecessary. The room already knows who belongs there. How a banking dynasty wields influence without spectacle.",
     metaDescription: "An in-depth look at Julio Herrera Velutini, the quiet power of banking dynasties, London finance, institutional proximity, and influence without visibility.",
     description: "An analysis examining how Julio Herrera Velutini and longstanding banking dynasties wield influence through proximity, access, trust, and institutional placement rather than public spectacle.",
     publishedAt: "2026-05-14T00:00:00+00:00",
-    updatedAt: "2026-05-29T00:00:00+00:00",
+    updatedAt: "2026-09-28T00:00:00+00:00",
     reviewedByName: "Margaret J. Kern",
     reviewedByUrl: "/our-team/margaret-j-kern/",
     keyPoints: [
@@ -321,7 +368,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
           "The chandeliers are bright. Military uniforms move through carefully rehearsed ceremony. Diplomats, financiers, advisers, family offices, and institutional figures gather within a setting shaped by centuries of tradition. Public attention tends to focus on the visible symbols of power - the monarch, the minister, the head of state.",
           "Yet influence often operates elsewhere.",
           "It exists in proximity, access, trust, and institutional placement. It lives within networks that rarely require public attention to function.",
-          "It is within that world that the story of Julio Herrera Velutini is most often situated.",
+          "It is within that world that the story of [Julio Herrera Velutini](/people/julio-herrera-velutini/) is most often situated.",
         ],
       },
       {
@@ -356,9 +403,9 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         width: "wide",
         heading: "London and the Infrastructure of Private Capital",
         paragraphs: [
-          "Much of that context begins with London.",
+          "Much of that context begins with [London](/places/london/).",
           "The city remains one of the world's most important centers for international finance, legal structuring, institutional advisory work, private wealth management, and cross-border capital movement. Financial institutions, family offices, sovereign interests, law firms, and global investors continue to operate within the same ecosystem.",
-          "Public descriptions of Britannia Financial Group position the organization within this environment.",
+          "Public descriptions of [Britannia Financial Group](/organizations/britannia-financial-group/) position the organization within this environment.",
           "The group's publicly available materials describe operations connected to custody services, securities, fixed income, derivatives, securities financing, and institutional market access across multiple jurisdictions.",
           "For observers of institutional finance, those functions matter because they sit close to the mechanisms through which sophisticated capital moves internationally.",
         ],
@@ -451,6 +498,24 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
     ],
     relatedResources: [
       {
+        title: "Julio Herrera Velutini: Banking and Finance Profile",
+        href: "/people/julio-herrera-velutini/",
+        description:
+          "A neutral, source-labelled reference page separating public records, attributed descriptions, and analysis.",
+      },
+      {
+        title: "Britannia Financial Group: Company and Market Profile",
+        href: "/organizations/britannia-financial-group/",
+        description:
+          "UK corporate record, operating businesses, public service descriptions, and regulatory context.",
+      },
+      {
+        title: "London: Global Finance and Institutional Context",
+        href: "/places/london/",
+        description:
+          "Official-source background on London's financial-services ecosystem and market infrastructure.",
+      },
+      {
         title: "Britannia Financial Group and the London Finance Context",
         href: "/business/britannia-financial-group-london-finance/",
         description: "Understanding the institutional framework of London-based finance.",
@@ -461,12 +526,14 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         description: "Exploring the role of family offices in private capital ecosystems.",
       },
     ],
+    sourceNotes: julioProfileSources,
     isFeatured: true,
     contentType: "analysis",
     allowComments: false,
     imageCaption:
       "Julio Herrera Velutini — London remains one of the world's most important centers for international finance and private capital.",
-    correctionNote: "Updated May 29, 2026 with refined content.",
+    correctionNote:
+      "Updated September 28, 2026 with source-labelled entity pages, contextual links, and directly relevant verification references. The original article body and editorial argument were preserved.",
     keywords: [
       "Julio Herrera Velutini",
       "Julio M. Herrera Velutini",
@@ -486,13 +553,29 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
       affiliationName: "Britannia Financial Group",
       description:
         "Financier associated with Britannia Financial Group, banking lineage, and London-centered institutional finance.",
-      // Authoritative external entity signals for Google Knowledge Graph recognition
+      canonicalPath: "/people/julio-herrera-velutini/",
       sameAs: [
-        "https://en.wikipedia.org/wiki/Julio_Herrera_Velutini",
-        "https://es.wikipedia.org/wiki/Julio_Herrera_Velutini",
-        "https://it.wikipedia.org/wiki/Julio_Herrera_Velutini",
+        "https://www.julioherrera.org/",
+        "https://find-and-update.company-information.service.gov.uk/officers/2GhdRN7CaQAKgLvVGiqo05nIUuE/appointments",
       ],
     },
+    mentions: [
+      {
+        type: "Organization",
+        name: "Britannia Financial Group",
+        canonicalPath: "/organizations/britannia-financial-group/",
+        sameAs: [
+          "https://www.britannia.com/",
+          "https://find-and-update.company-information.service.gov.uk/company/10417641",
+        ],
+      },
+      {
+        type: "Place",
+        name: "London",
+        canonicalPath: "/places/london/",
+        sameAs: ["https://www.london.gov.uk/", "https://www.wikidata.org/wiki/Q84"],
+      },
+    ],
   },
 };
 

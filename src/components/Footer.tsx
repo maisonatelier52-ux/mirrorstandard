@@ -25,6 +25,9 @@ const newsroomLinks = [
   { href: "/editorial-policy",         label: "Editorial Policy",   title: "Mirror Standard editorial policy and standards" },
   { href: "/corrections-policy",       label: "Corrections Policy", title: "Mirror Standard corrections and clarifications policy" },
   { href: "/source-methodology",       label: "Source Methodology", title: "How Mirror Standard sources and verifies information" },
+  { href: "/people",                   label: "People",             title: "Mirror Standard people reference profiles" },
+  { href: "/organizations",            label: "Organizations",      title: "Mirror Standard organization reference profiles" },
+  { href: "/places",                   label: "Places",             title: "Mirror Standard place reference guides" },
 ];
 
 const trustLinks = [

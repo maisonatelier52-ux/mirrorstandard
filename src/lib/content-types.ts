@@ -87,12 +87,13 @@ export interface ArticleStoryBlock {
 }
 
 export interface EntityReference {
-  type: "Person" | "Organization";
+  type: "Person" | "Organization" | "Place";
   name: string;
   alternateNames?: string[];
   affiliationName?: string;
   description?: string;
   sameAs?: string[];
+  canonicalPath?: string;
 }
 
 export interface NewsArticle {
@@ -131,6 +132,7 @@ export interface NewsArticle {
   correctionNote?: string;
   keywords?: string[];
   entity?: EntityReference;
+  mentions?: EntityReference[];
   editorialContext?: EditorialContext;
 }
 
