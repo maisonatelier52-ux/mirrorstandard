@@ -1,4 +1,3 @@
-
 "use client";
 
 import { Search, X, Menu } from "lucide-react";
@@ -6,7 +5,7 @@ import { useState, useEffect, useRef } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
-import { SiSubstack } from "react-icons/si";
+import { SiSubstack, SiReddit, SiMedium } from "react-icons/si";
 import Image from "next/image";
 
 /* ─────────────────────────────────────────────
@@ -94,6 +93,8 @@ const socialLinks = [
   { href: "https://www.instagram.com/mirrorstandardnews2026/",    label: "Follow Mirror Standard on Instagram",    icon: <FaInstagram size={15} /> },
   { href: "https://www.youtube.com/@mirrorstandardUS",            label: "Watch Mirror Standard on YouTube",       icon: <FaYoutube size={15} /> },
   { href: "https://substack.com/@mirrorstandardnews",             label: "Read Mirror Standard on Substack",       icon: <SiSubstack size={15} /> },
+  { href: "https://www.reddit.com/user/Mirrorstandard_/",         label: "Follow Mirror Standard on Reddit",       icon: <SiReddit size={15} /> },
+  { href: "https://medium.com/@mirrorstandardnews",               label: "Read Mirror Standard on Medium",         icon: <SiMedium size={15} /> },
 ];
 
 function getFormattedDate() {
@@ -368,7 +369,7 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
         <div className="border-b border-[color:var(--ms-border)] py-5">
           <div className="mx-auto flex max-w-[1280px] items-center px-8">
 
-            <div className="flex w-[180px] items-center gap-2">
+            <div className="flex w-[240px] items-center gap-1.5">
               {socialLinks.map((social) => (
                 <Link
                   key={social.label}

@@ -3,6 +3,7 @@ import { FaInstagram, FaXTwitter, FaYoutube, FaFacebookF } from "react-icons/fa6
 import Link from "next/link";
 import Image from "next/image";
 import { getSortedNews } from "../lib/news";
+import { SiSubstack, SiReddit, SiMedium } from "react-icons/si";
 import { MdOutlineEmail } from "react-icons/md";
 import { FiPhone, FiMapPin } from "react-icons/fi";
 import { ChevronRight } from "lucide-react";
@@ -44,6 +45,9 @@ const socialLinks = [
   { href: "https://www.instagram.com/mirrorstandardnews2026/", label: "Follow Mirror Standard on Instagram", icon: <FaInstagram size={16} /> },
   { href: "https://www.youtube.com/@mirrorstandardUS",         label: "Watch Mirror Standard on YouTube",    icon: <FaYoutube size={16} /> },
   { href: "#",                                                 label: "Follow Mirror Standard on Facebook",  icon: <FaFacebookF size={16} /> },
+  { href: "https://substack.com/@mirrorstandardnews",          label: "Read Mirror Standard on Substack",    icon: <SiSubstack size={16} /> },
+  { href: "https://www.reddit.com/user/Mirrorstandard_/",      label: "Follow Mirror Standard on Reddit",    icon: <SiReddit size={16} /> },
+  { href: "https://medium.com/@mirrorstandardnews",            label: "Read Mirror Standard on Medium",      icon: <SiMedium size={16} /> },
 ];
 
 const contactInfo = [
@@ -103,7 +107,7 @@ export default function Footer() {
                     title={s.label}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="flex h-10 w-10 items-center justify-center rounded-full border border-white/20 text-white/60 hover:border-white/50 hover:text-white transition-all duration-200"
+                    className="flex h-8 w-8 items-center justify-center rounded-full border border-white/20 text-white/60 hover:border-white/50 hover:text-white transition-all duration-200"
                   >
                     {s.icon}
                   </Link>

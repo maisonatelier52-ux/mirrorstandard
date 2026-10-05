@@ -3,7 +3,7 @@ import Link from "next/link";
 import Script from "next/script";
 import { FaInstagram, FaYoutube } from "react-icons/fa";
 import { FaXTwitter } from "react-icons/fa6";
-import { SiSubstack } from "react-icons/si";
+import { SiSubstack, SiReddit, SiMedium } from "react-icons/si";
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -190,7 +190,7 @@ export default function Contact() {
           <h2 className="text-2xl font-light mb-8">
             Stay Connected
           </h2>
-          <div className="flex justify-center gap-10">
+          <div className="flex flex-wrap justify-center gap-x-10 gap-y-4">
             <Link href="https://x.com/Mirrorstan68694" title="MirrorStandard on X" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
               <FaXTwitter className="w-5 h-5" />
               <span>X (Twitter)</span>
@@ -206,6 +206,14 @@ export default function Contact() {
             <Link href="https://substack.com/@mirrorstandardnews" title="MirrorStandard on Substack" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
               <SiSubstack className="w-5 h-5" />
               <span>Substack</span>
+            </Link>
+            <Link href="https://www.reddit.com/user/Mirrorstandard_/" title="MirrorStandard on Reddit" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
+              <SiReddit className="w-5 h-5" />
+              <span>Reddit</span>
+            </Link>
+            <Link href="https://medium.com/@mirrorstandardnews" title="MirrorStandard on Medium" className="flex items-center gap-2 hover:opacity-70" target="_blank" rel="noopener noreferrer">
+              <SiMedium className="w-5 h-5" />
+              <span>Medium</span>
             </Link>
           </div>
         </section>

@@ -165,6 +165,8 @@ export default function RootLayout({
                   "https://www.instagram.com/mirrorstandardnews2026/",
                   "https://www.youtube.com/@mirrorstandardUS",
                   "https://substack.com/@mirrorstandardnews",
+                  "https://www.reddit.com/user/Mirrorstandard_/",
+                  "https://medium.com/@mirrorstandardnews",
                 ],
 
                 contactPoint: {
