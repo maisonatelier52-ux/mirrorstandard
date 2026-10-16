@@ -163,7 +163,7 @@ export default function StaffByline() {
               Our editorial team is always ready to hear from you.
             </p>
             <a
-              href="mailto:editorial@mirrorstandard.com"
+              href="mailto:mirrorstandardnews@gmail.com"
               aria-label="mail"
               title="MirrorStandard - Contact"
               className="inline-flex items-center px-8 py-3 bg-blue-600 text-white font-medium rounded-md hover:bg-blue-700 transition-colors duration-200"

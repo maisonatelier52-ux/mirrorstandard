@@ -97,7 +97,7 @@ export default function AboutUs() {
               "contactPoint": {
                 "@type": "ContactPoint",
                 "contactType": "editorial",
-                "email": "editorial@mirrorstandard.com",
+                "email": "mirrorstandardnews@gmail.com",
                 "availableLanguage": ["English"]
               },
               "ethicsPolicy": "https://www.mirrorstandard.com/about",
@@ -214,12 +214,12 @@ export default function AboutUs() {
 
           <div className="mt-10 flex justify-center gap-6">
             <a
-              href="mailto:editorial@mirrorstandard.com"
+              href="mailto:mirrorstandardnews@gmail.com"
               title='MirrorStandard - contact'
               className="inline-flex items-center gap-2 hover:opacity-70"
             >
               <Mail className="w-5 h-5" />
-              editorial@mirrorstandard.com
+              mirrorstandardnews@gmail.com
             </a>
           </div>
         </section>

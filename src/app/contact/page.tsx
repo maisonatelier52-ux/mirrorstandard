@@ -145,41 +145,41 @@ export default function Contact() {
               <p>
                 Editorial:{" "}
                 <a
-                  href="mailto:editorial@mirrorstandard.com"
+                  href="mailto:mirrorstandardnews@gmail.com"
                   title="Mirror Standard Editorial"
                   className="border-b-2 border-black text-black hover:opacity-70 transition"
                 >
-                  editorial@mirrorstandard.com
+                  mirrorstandardnews@gmail.com
                 </a>
               </p>
               <p>
                 Tips:{" "}
                 <a
-                  href="mailto:tips@mirrorstandard.com"
+                  href="mailto:mirrorstandardnews@gmail.com"
                   title="Mirror Standard Tips"
                   className="border-b-2 border-black text-black hover:opacity-70 transition"
                 >
-                  tips@mirrorstandard.com
+                  mirrorstandardnews@gmail.com
                 </a>
               </p>
               <p itemProp="email">
                 Corrections:{" "}
                 <a
-                  href="mailto:corrections@mirrorstandard.com"
+                  href="mailto:mirrorstandardnews@gmail.com"
                   title="Mirror Standard Corrections"
                   className="border-b-2 border-black text-black hover:opacity-70 transition"
                 >
-                  corrections@mirrorstandard.com
+                  mirrorstandardnews@gmail.com
                 </a>
               </p>
               <p>
                 Rights, permissions, and formal notices:{" "}
                 <a
-                  href="mailto:editorial@mirrorstandard.com"
+                  href="mailto:mirrorstandardnews@gmail.com"
                   title="Mirror Standard Rights and Permissions"
                   className="border-b-2 border-black text-black hover:opacity-70 transition"
                 >
-                  editorial@mirrorstandard.com
+                  mirrorstandardnews@gmail.com
                 </a>
               </p>
             </div>

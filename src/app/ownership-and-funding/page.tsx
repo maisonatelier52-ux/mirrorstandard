@@ -20,13 +20,13 @@ export default function OwnershipAndFundingPage() {
       contactLinks={[
         {
           label: "Editorial",
-          href: "mailto:editorial@mirrorstandard.com",
-          value: "editorial@mirrorstandard.com",
+          href: "mailto:mirrorstandardnews@gmail.com",
+          value: "mirrorstandardnews@gmail.com",
         },
         {
           label: "Corrections and transparency",
-          href: "mailto:corrections@mirrorstandard.com",
-          value: "corrections@mirrorstandard.com",
+          href: "mailto:mirrorstandardnews@gmail.com",
+          value: "mirrorstandardnews@gmail.com",
         },
       ]}
       sections={[

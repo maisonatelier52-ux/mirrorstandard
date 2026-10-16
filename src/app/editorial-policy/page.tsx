@@ -225,12 +225,12 @@ export default function EditorialPolicy() {
           </p>
 
           <a
-            href="mailto:editorial@mirrorstandard.com"
+            href="mailto:mirrorstandardnews@gmail.com"
             title="MirrorStandard - Contact"
             className="inline-flex items-center space-x-3 text-lg hover:opacity-70"
           >
             <Mail className="w-5 h-5" />
-            <span>editorial@mirrorstandard.com</span>
+            <span>mirrorstandardnews@gmail.com</span>
             <ArrowRight className="w-4 h-4" />
           </a>
         </section>

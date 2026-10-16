@@ -20,13 +20,13 @@ export default function FinanceCoverageStandardsPage() {
       contactLinks={[
         {
           label: "Finance desk",
-          href: "mailto:editorial@mirrorstandard.com",
-          value: "editorial@mirrorstandard.com",
+          href: "mailto:mirrorstandardnews@gmail.com",
+          value: "mirrorstandardnews@gmail.com",
         },
         {
           label: "Corrections",
-          href: "mailto:corrections@mirrorstandard.com",
-          value: "corrections@mirrorstandard.com",
+          href: "mailto:mirrorstandardnews@gmail.com",
+          value: "mirrorstandardnews@gmail.com",
         },
       ]}
       sections={[

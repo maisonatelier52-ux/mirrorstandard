@@ -197,7 +197,7 @@ export const authorOverrides: Record<string, Partial<AuthorRecord>> = {
   "michael-y-gentry": {
     beat: "Editorial Standards & Investigations",
     credentials: "Leads commissioning, standards, and final editorial review for Mirror Standard.",
-    email: "editorial@mirrorstandard.com",
+    email: "mirrorstandardnews@gmail.com",
     bio: [
       "Michael Y. Gentry is Mirror Standard's editor-in-chief. He sets newsroom priorities, reviews high-risk stories, and is responsible for the publication's editorial standards.",
       "His author page documents his current role and recent work. Questions about sourcing, corrections, or the editorial process can be sent to the newsroom's shared editorial address.",
@@ -207,7 +207,7 @@ export const authorOverrides: Record<string, Partial<AuthorRecord>> = {
   "victor-v-haley": {
     beat: "Daily News & Public Affairs",
     credentials: "Coordinates daily coverage and edits stories across politics, economics, and public affairs.",
-    email: "editorial@mirrorstandard.com",
+    email: "mirrorstandardnews@gmail.com",
     bio: [
       "Victor V. Haley is Mirror Standard's managing editor. He coordinates daily coverage and edits reporting across politics, economics, culture, and breaking news.",
       "His work emphasizes clear attribution, useful context, and careful separation between reported fact, allegation, forecast, and analysis.",
@@ -218,7 +218,7 @@ export const authorOverrides: Record<string, Partial<AuthorRecord>> = {
     role: "Senior Reporter",
     beat: "National Affairs & General Assignment",
     credentials: "Covers public institutions, business, education, culture, and breaking news.",
-    email: "editorial@mirrorstandard.com",
+    email: "mirrorstandardnews@gmail.com",
     bio: [
       "Betty D. Chambers is a senior general-assignment reporter covering public institutions, business, education, culture, and breaking news for Mirror Standard.",
       "Her coverage emphasizes public records, chronology, and precise language around contested claims. Readers can use the source and verification notes on each article to inspect the underlying record.",
@@ -229,7 +229,7 @@ export const authorOverrides: Record<string, Partial<AuthorRecord>> = {
     role: "Reporter",
     beat: "Technology, Culture & Consumer Impact",
     credentials: "Covers technology products, platform policy, digital culture, and consumer impact.",
-    email: "editorial@mirrorstandard.com",
+    email: "mirrorstandardnews@gmail.com",
     bio: [
       "Jacqueline L. Wood covers technology, digital culture, entertainment, and the consumer impact of new products and platforms for Mirror Standard.",
       "Her articles distinguish announced products from leaks and forecasts, and place company claims alongside regulatory, technical, or market context where available.",
@@ -240,7 +240,7 @@ export const authorOverrides: Record<string, Partial<AuthorRecord>> = {
     role: "Finance & Markets Reporter",
     beat: "Finance & Markets",
     credentials: "Covers market structure, companies, private capital, and explanatory finance reporting.",
-    email: "editorial@mirrorstandard.com",
+    email: "mirrorstandardnews@gmail.com",
     bio: [
       "Margaret J. Kern covers finance, markets, companies, and institutional capital for Mirror Standard.",
       "Her work focuses on readable explanations of filings, market structure, cross-border finance, and private capital. Source notes point readers to regulators, public records, and company materials when they are available.",

@@ -21,13 +21,13 @@ export default function AdvertisingPolicyPage() {
       contactLinks={[
         {
           label: "Advertising and partnerships",
-          href: "mailto:editorial@mirrorstandard.com",
-          value: "editorial@mirrorstandard.com",
+          href: "mailto:mirrorstandardnews@gmail.com",
+          value: "mirrorstandardnews@gmail.com",
         },
         {
           label: "Reader concerns",
-          href: "mailto:corrections@mirrorstandard.com",
-          value: "corrections@mirrorstandard.com",
+          href: "mailto:mirrorstandardnews@gmail.com",
+          value: "mirrorstandardnews@gmail.com",
         },
       ]}
       sections={[

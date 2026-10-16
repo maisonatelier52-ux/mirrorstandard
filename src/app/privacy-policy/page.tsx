@@ -136,6 +136,32 @@ export default function PrivacyPolicy() {
 
         <section className="mb-10">
           <h2 className="text-2xl font-light mb-8 pb-3 border-b">
+            Newsletter Subscriptions
+          </h2>
+          <p className="text-lg leading-relaxed mb-6 font-light">
+            If you subscribe to the Mirror Standard newsletter, we collect your
+            email address so we can send you our reporting. We use double opt-in:
+            after you subscribe we email you a confirmation link, and you are not
+            added to the active list until you click it.
+          </p>
+          <p className="text-lg leading-relaxed mb-6 font-light">
+            We use Kit (kit.com) as our email service provider. Kit stores your
+            email address and sends our emails on our behalf, under its own privacy
+            policy. We do not sell, rent, or trade our subscriber list.
+          </p>
+          <p className="text-lg leading-relaxed font-light">
+            You can unsubscribe at any time using the link at the bottom of every
+            email, or by writing to{" "}
+            <a href="mailto:mirrorstandardnews@gmail.com" className="underline">
+              mirrorstandardnews@gmail.com
+            </a>
+            . Your subscription is based on your consent, and you may withdraw it
+            whenever you wish.
+          </p>
+        </section>
+
+        <section className="mb-10">
+          <h2 className="text-2xl font-light mb-8 pb-3 border-b">
             How Information Is Used
           </h2>
           <div className="space-y-4 mb-6">
@@ -177,12 +203,12 @@ export default function PrivacyPolicy() {
             the contact below.
           </p>
           <a
-            href="mailto:editorial@mirrorstandard.com"
+            href="mailto:mirrorstandardnews@gmail.com"
             title="MirrorStandard - Contact"
             className="inline-flex items-center space-x-3 text-lg hover:opacity-70"
           >
             <Mail className="w-5 h-5" />
-            <span>editorial@mirrorstandard.com</span>
+            <span>mirrorstandardnews@gmail.com</span>
             <Shield className="w-4 h-4" />
           </a>
         </section>
@@ -207,7 +233,7 @@ export default function PrivacyPolicy() {
         {/* ✅ AUTHORITY SIGNAL: LAST UPDATED */}
         <section className="mt-16 pt-8 border-t border-gray-100 text-center">
           <p className="text-xs text-gray-400 font-light italic">
-            Last Updated: May 21, 2026
+            Last Updated: October 16, 2026
           </p>
         </section>
       </div>

@@ -20,13 +20,13 @@ export default function LegalPage() {
       contactLinks={[
         {
           label: "General legal contact",
-          href: "mailto:editorial@mirrorstandard.com",
-          value: "editorial@mirrorstandard.com",
+          href: "mailto:mirrorstandardnews@gmail.com",
+          value: "mirrorstandardnews@gmail.com",
         },
         {
           label: "Corrections and factual concerns",
-          href: "mailto:corrections@mirrorstandard.com",
-          value: "corrections@mirrorstandard.com",
+          href: "mailto:mirrorstandardnews@gmail.com",
+          value: "mirrorstandardnews@gmail.com",
         },
       ]}
       sections={[

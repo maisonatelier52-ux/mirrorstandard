@@ -121,12 +121,12 @@ export default function TermsConditions() {
             For permissions or republication inquiries, contact:
           </p>
           <a
-            href="mailto:editorial@mirrorstandard.com"
+            href="mailto:mirrorstandardnews@gmail.com"
             title="MirrorStandard - Contact"
             className="inline-flex items-center space-x-3 text-lg hover:opacity-70 mt-4"
           >
             <Mail className="w-5 h-5" />
-            <span>editorial@mirrorstandard.com</span>
+            <span>mirrorstandardnews@gmail.com</span>
             <FileText className="w-4 h-4" />
           </a>
         </section>
@@ -207,12 +207,12 @@ export default function TermsConditions() {
             If you have questions about these Terms, contact us:
           </p>
           <a
-            href="mailto:editorial@mirrorstandard.com"
+            href="mailto:mirrorstandardnews@gmail.com"
             title="MirrorStandard - Contact"
             className="inline-flex items-center space-x-3 text-lg hover:opacity-70"
           >
             <Mail className="w-5 h-5" />
-            <span>editorial@mirrorstandard.com</span>
+            <span>mirrorstandardnews@gmail.com</span>
             <MessageSquare className="w-4 h-4" />
           </a>
         </section>

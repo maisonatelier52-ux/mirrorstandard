@@ -20,8 +20,8 @@ export default function EditorialBoardPage() {
       contactLinks={[
         {
           label: "Editorial",
-          href: "mailto:editorial@mirrorstandard.com",
-          value: "editorial@mirrorstandard.com",
+          href: "mailto:mirrorstandardnews@gmail.com",
+          value: "mirrorstandardnews@gmail.com",
         },
       ]}
       sections={[

@@ -51,7 +51,7 @@ const socialLinks = [
 ];
 
 const contactInfo = [
-  { icon: <MdOutlineEmail size={16} />, value: "editorial@mirrorstandard.com", href: "mailto:editorial@mirrorstandard.com", title: "Email Mirror Standard editorial team" },
+  { icon: <MdOutlineEmail size={16} />, value: "mirrorstandardnews@gmail.com", href: "mailto:mirrorstandardnews@gmail.com", title: "Email Mirror Standard editorial team" },
   // { icon: <FiMapPin size={15} />,       value: "1490 K Street NW, Suite 900\nWashington, DC 20005, USA", href: null, title: null },
 ];
 

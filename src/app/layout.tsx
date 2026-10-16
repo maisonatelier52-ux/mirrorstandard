@@ -172,7 +172,7 @@ export default function RootLayout({
                 contactPoint: {
                   "@type": "ContactPoint",
                   contactType: "editorial",
-                  email: "editorial@mirrorstandard.com",
+                  email: "mirrorstandardnews@gmail.com",
                   availableLanguage: ["English"],
                 },
               },
