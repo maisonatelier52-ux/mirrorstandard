@@ -3,7 +3,7 @@ import { Mail, Shield, CheckCircle2 } from "lucide-react";
 import Script from "next/script";
 
 export async function generateMetadata(): Promise<Metadata> {
-  const url = "https://www.mirrorstandard.com/privacy-policy";
+  const url = "https://www.mirrorstandard.com/privacy-policy/";
 
   return {
     title: "Privacy Policy | Mirror Standard | Trusted Data Protection",
@@ -69,7 +69,7 @@ export default function PrivacyPolicy() {
               "@context": "https://schema.org",
               "@type": "WebPage",
               "name": "Privacy Policy | Mirror Standard",
-              "url": "https://www.mirrorstandard.com/privacy-policy",
+              "url": "https://www.mirrorstandard.com/privacy-policy/",
               "publisher": {
                 "@type": "NewsMediaOrganization",
                 "@id": "https://www.mirrorstandard.com/#organization"
@@ -89,7 +89,7 @@ export default function PrivacyPolicy() {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Privacy Policy",
-                  "item": "https://www.mirrorstandard.com/privacy-policy"
+                  "item": "https://www.mirrorstandard.com/privacy-policy/"
                 }
               ]
             }

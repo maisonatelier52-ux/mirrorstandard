@@ -13,7 +13,7 @@ export const metadata: Metadata = {
   title: "Corrections Policy | Mirror Standard | Transparency & Accuracy",
   description: "Learn how Mirror Standard handles factual errors and corrections. We are committed to transparency, accountability, and maintaining the highest standards of accuracy.",
   keywords: "corrections policy, newsroom accuracy, factual corrections, mirror standard ethics, journalism transparency",
-  alternates: { canonical: "https://www.mirrorstandard.com/corrections-policy" },
+  alternates: { canonical: "https://www.mirrorstandard.com/corrections-policy/" },
   robots: {
     index: true,
     follow: true,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Corrections Policy | Mirror Standard | Transparency & Accuracy",
     description: "Learn how Mirror Standard handles factual errors and corrections. Committed to transparency and accuracy.",
-    url: "https://www.mirrorstandard.com/corrections-policy",
+    url: "https://www.mirrorstandard.com/corrections-policy/",
     siteName: "Mirror Standard",
     images: [
       {
@@ -92,7 +92,7 @@ export default function CorrectionsPolicy() {
               "@context": "https://schema.org",
               "@type": "WebPage",
               "name": "Corrections Policy | Mirror Standard",
-              "url": "https://www.mirrorstandard.com/corrections-policy",
+              "url": "https://www.mirrorstandard.com/corrections-policy/",
               "publisher": {
                 "@type": "NewsMediaOrganization",
                 "@id": "https://www.mirrorstandard.com/#organization"
@@ -112,7 +112,7 @@ export default function CorrectionsPolicy() {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Corrections Policy",
-                  "item": "https://www.mirrorstandard.com/corrections-policy"
+                  "item": "https://www.mirrorstandard.com/corrections-policy/"
                 }
               ]
             }

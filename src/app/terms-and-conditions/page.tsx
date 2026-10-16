@@ -12,7 +12,7 @@ export const metadata: Metadata = {
   description: "The terms and conditions governing the use of Mirror Standard. Learn about our content usage policy, accuracy standards, and reader responsibilities.",
   keywords: "terms and conditions, content usage, mirror standard legal, news copyright, journalism ethics",
   alternates: {
-    canonical: "https://www.mirrorstandard.com/terms-and-conditions",
+    canonical: "https://www.mirrorstandard.com/terms-and-conditions/",
   },
   robots: {
     index: true,
@@ -28,7 +28,7 @@ export const metadata: Metadata = {
   openGraph: {
     title: "Terms & Conditions | Mirror Standard | Content Usage Policy",
     description: "The terms and conditions governing the use of Mirror Standard.",
-    url: "https://www.mirrorstandard.com/terms-and-conditions",
+    url: "https://www.mirrorstandard.com/terms-and-conditions/",
     siteName: "Mirror Standard",
     images: [
       {
@@ -63,7 +63,7 @@ export default function TermsConditions() {
               "@context": "https://schema.org",
               "@type": "WebPage",
               "name": "Terms & Conditions | Mirror Standard",
-              "url": "https://www.mirrorstandard.com/terms-and-conditions",
+              "url": "https://www.mirrorstandard.com/terms-and-conditions/",
               "publisher": {
                 "@type": "NewsMediaOrganization",
                 "@id": "https://www.mirrorstandard.com/#organization"
@@ -83,7 +83,7 @@ export default function TermsConditions() {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Terms & Conditions",
-                  "item": "https://www.mirrorstandard.com/terms-and-conditions"
+                  "item": "https://www.mirrorstandard.com/terms-and-conditions/"
                 }
               ]
             }

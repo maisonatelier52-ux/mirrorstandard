@@ -10,11 +10,11 @@ export const metadata: Metadata = {
   title: "Contact Mirror Standard | Reach Our Editorial Team & Newsroom",
   description: "Get in touch with Mirror Standard. Send us news tips, feedback, or media inquiries. Our editorial team is dedicated to transparent and accountable reporting.",
   keywords: "contact mirror standard, news tips, media inquiries, press contact, editorial team, newsroom contact",
-  alternates: { canonical: "https://www.mirrorstandard.com/contact" },
+  alternates: { canonical: "https://www.mirrorstandard.com/contact/" },
   openGraph: {
     title: "Contact Mirror Standard | Reach Our Editorial Team & Newsroom",
     description: "Get in touch with Mirror Standard. Send us news tips, feedback, or media inquiries.",
-    url: "https://www.mirrorstandard.com/contact",
+    url: "https://www.mirrorstandard.com/contact/",
     siteName: "Mirror Standard",
     images: [
       {
@@ -75,7 +75,7 @@ export default function Contact() {
               "@type": "ContactPage",
               "name": "Contact Mirror Standard",
               "description": "Contact page for Mirror Standard newsroom. Reach out for tips, corrections, or media inquiries.",
-              "url": "https://www.mirrorstandard.com/contact",
+              "url": "https://www.mirrorstandard.com/contact/",
               "mainEntity": {
                 "@id": "https://www.mirrorstandard.com/#organization"
               }
@@ -94,7 +94,7 @@ export default function Contact() {
                   "@type": "ListItem",
                   "position": 2,
                   "name": "Contact",
-                  "item": "https://www.mirrorstandard.com/contact"
+                  "item": "https://www.mirrorstandard.com/contact/"
                 }
               ]
             }

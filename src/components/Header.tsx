@@ -115,6 +115,7 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
   const [email, setEmail] = useState("");
   const [error, setError] = useState("");
   const [submitted, setSubmitted] = useState(false);
+  const [alreadySubscribed, setAlreadySubscribed] = useState(false);
   const [loading, setLoading] = useState(false);
   const inputRef = useRef<HTMLInputElement>(null);
 
@@ -136,9 +137,30 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
     if (!email.trim()) { setError("Please enter your email address."); return; }
     if (!validateEmail(email)) { setError("Please enter a valid email address."); return; }
     setLoading(true);
-    await new Promise((r) => setTimeout(r, 900));
-    setLoading(false);
-    setSubmitted(true);
+    try {
+      const res = await fetch("/api/subscribe/", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ email: email.trim(), source: "header-modal" }),
+      });
+      if (!res.ok) throw new Error("Subscribe failed");
+
+      const data = (await res.json().catch(() => ({}))) as { status?: string };
+      const already = data.status === "already_subscribed";
+      setAlreadySubscribed(already);
+
+      if (!already) {
+        const w = window as unknown as { dataLayer?: Record<string, unknown>[] };
+        w.dataLayer = w.dataLayer || [];
+        w.dataLayer.push({ event: "newsletter_signup", signup_source: "header-modal" });
+      }
+
+      setSubmitted(true);
+    } catch {
+      setError("Something went wrong. Please try again in a moment.");
+    } finally {
+      setLoading(false);
+    }
   }
 
   return (
@@ -227,13 +249,24 @@ function SubscribeModal({ onClose }: { onClose: () => void }) {
                   <path strokeLinecap="round" strokeLinejoin="round" d="M5 13l4 4L19 7" />
                 </svg>
               </div>
-              <p className="font-[oswald] text-[10px] font-bold uppercase tracking-[0.26em] text-[color:var(--ms-accent)]">You&apos;re in</p>
+              <p className="font-[oswald] text-[10px] font-bold uppercase tracking-[0.26em] text-[color:var(--ms-accent)]">{alreadySubscribed ? "Already subscribed" : "Almost there"}</p>
               <h2 className="ms-editorial-serif mt-2 text-[26px] leading-[1.1] tracking-[-0.02em] text-[color:var(--ms-text)]">
-                Welcome to Mirror Standard.
+                {alreadySubscribed ? "You are already on the list." : "Welcome to Mirror Standard."}
               </h2>
               <p className="mt-3 text-[14px] leading-[1.7] text-[color:var(--ms-text-soft)]">
-                Thanks for subscribing. Your first briefing will arrive shortly at{" "}
-                <span className="font-semibold text-[color:var(--ms-text)]">{email}</span>.
+                {alreadySubscribed ? (
+                  <>
+                    <span className="font-semibold text-[color:var(--ms-text)]">{email}</span> is
+                    already subscribed to Mirror Standard. Nothing more to do.
+                  </>
+                ) : (
+                  <>
+                    Check the inbox of{" "}
+                    <span className="font-semibold text-[color:var(--ms-text)]">{email}</span> and
+                    click the confirmation link to finish subscribing. No email after a few minutes?
+                    Check your spam folder.
+                  </>
+                )}
               </p>
               <button
                 type="button"

@@ -1,9 +1,7 @@
 # *
 User-agent: *
 Allow: /
-
-# Host
-Host: https://www.mirrorstandard.com/
+Disallow: /search
 
 # Sitemaps
 Sitemap: https://www.mirrorstandard.com/sitemap.xml
