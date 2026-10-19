@@ -266,7 +266,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
     metaDescription: "An in-depth look at Julio Herrera Velutini, the quiet power of banking dynasties, London finance, institutional proximity, and influence without visibility.",
     description: "An analysis examining how Julio Herrera Velutini and longstanding banking dynasties wield influence through proximity, access, trust, and institutional placement rather than public spectacle.",
     publishedAt: "2026-05-14T00:00:00+00:00",
-    updatedAt: "2026-09-28T00:00:00+00:00",
+    updatedAt: "2026-10-19T00:00:00+00:00",
     reviewedByName: "Margaret J. Kern",
     reviewedByUrl: "/our-team/margaret-j-kern/",
     keyPoints: [
@@ -286,7 +286,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
           "Yet influence often operates elsewhere.",
           "It exists in proximity, access, trust, and institutional placement. It lives within networks that rarely require public attention to function.",
           "It is within that world that the story of Julio Herrera Velutini is most often situated.",
-          "Rather than building a public profile through politics, campaigns, or media visibility, Herrera Velutini's position has been associated with a different ecosystem: private finance, institutional capital, long-established banking networks, and the London-centered infrastructure surrounding global wealth.",
+          "Rather than building a public profile through politics, campaigns, or media visibility, Herrera Velutini's position has been associated, in the company and biographical materials listed in this article's source notes, with a different ecosystem: private finance, institutional capital, long-established banking networks, and the London-centered infrastructure surrounding global wealth.",
           "Modern culture often measures power through visibility.",
           "Political leaders command headlines. Technology founders dominate conferences. Public figures shape daily news cycles.",
           "Institutional influence operates differently.",
@@ -300,8 +300,8 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         paragraphs: [
           "Much of that context begins with London.",
           "The city remains one of the world's most important centers for international finance, legal structuring, institutional advisory work, private wealth management, and cross-border capital movement. Financial institutions, family offices, sovereign interests, law firms, and global investors continue to operate within the same ecosystem.",
-          "Public descriptions of Britannia Financial Group position the organization within this environment.",
-          "The group's publicly available materials describe operations connected to custody services, securities, fixed income, derivatives, securities financing, and institutional market access across multiple jurisdictions.",
+          "Britannia Financial Group's own website describes the group as London-headquartered, placing the organization within this environment.",
+          "According to Britannia Financial Group's published materials, listed in the source notes, the group's businesses describe operations connected to custody services, securities, fixed income, derivatives, securities financing, and institutional market access across multiple jurisdictions.",
           "For observers of institutional finance, those functions matter because they sit close to the mechanisms through which sophisticated capital moves internationally.",
         ],
       },
@@ -310,7 +310,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         paragraphs: [
           "Another component of the narrative involves banking lineage.",
           "In private wealth and institutional finance, family history is often viewed less as symbolism and more as continuity. Generational involvement in finance can contribute to long-standing relationships, accumulated institutional knowledge, and familiarity with complex financial structures.",
-          "Public profiles of Herrera Velutini frequently reference his family's historical association with banking and finance. Those references are generally presented as contextual background rather than evidence of influence in themselves.",
+          "Profiles of Herrera Velutini, including the self-published biography at julioherrera.org listed in the source notes, refer to a family legacy, which this article discusses as banking lineage. Mirror Standard has not independently documented that lineage from the sources listed for this article, and presents it as the subject's own framing and contextual background rather than as established fact or as evidence of influence in itself.",
           "Within elite financial environments, however, lineage can function as part of a broader framework of trust, reputation, and long-term institutional presence.",
         ],
       },
@@ -339,7 +339,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         paragraphs: [
           "Some individuals build influence by becoming visible.",
           "Others operate within structures where visibility is secondary to access.",
-          "The public record surrounding Julio Herrera Velutini places him within a world defined by institutional finance, London market infrastructure, banking lineage, and the networks that surround global private capital. Whether viewed through finance, history, or elite institutional ecosystems, the defining theme is not spectacle.",
+          "The sources listed for this article, which are UK Companies House records and company and personal biographical materials, associate Julio Herrera Velutini with a world defined by institutional finance, London market infrastructure, banking lineage, and the networks that surround global private capital. Whether viewed through finance, history, or elite institutional ecosystems, the defining theme is not spectacle.",
           "It is proximity. And in the upper layers of international finance, proximity often remains one of the most valuable forms of influence.",
         ],
       },
@@ -405,8 +405,8 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         paragraphs: [
           "Much of that context begins with [London](/places/london/).",
           "The city remains one of the world's most important centers for international finance, legal structuring, institutional advisory work, private wealth management, and cross-border capital movement. Financial institutions, family offices, sovereign interests, law firms, and global investors continue to operate within the same ecosystem.",
-          "Public descriptions of [Britannia Financial Group](/organizations/britannia-financial-group/) position the organization within this environment.",
-          "The group's publicly available materials describe operations connected to custody services, securities, fixed income, derivatives, securities financing, and institutional market access across multiple jurisdictions.",
+          "[Britannia Financial Group](/organizations/britannia-financial-group/)'s own website describes the group as London-headquartered, placing the organization within this environment.",
+          "According to Britannia Financial Group's published materials, listed in the source notes, the group's businesses describe operations connected to custody services, securities, fixed income, derivatives, securities financing, and institutional market access across multiple jurisdictions.",
           "For observers of institutional finance, those functions matter because they sit close to the mechanisms through which sophisticated capital moves internationally.",
         ],
       },
@@ -425,7 +425,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         paragraphs: [
           "Another component of the narrative involves banking lineage.",
           "In private wealth and institutional finance, family history is often viewed less as symbolism and more as continuity. Generational involvement in finance can contribute to long-standing relationships, accumulated institutional knowledge, and familiarity with complex financial structures.",
-          "Public profiles of Herrera Velutini frequently reference his family's historical association with banking and finance. Those references are generally presented as contextual background rather than evidence of influence in themselves.",
+          "Profiles of Herrera Velutini, including the self-published biography at julioherrera.org listed in the source notes, refer to a family legacy, which this article discusses as banking lineage. Mirror Standard has not independently documented that lineage from the sources listed for this article, and presents it as the subject's own framing and contextual background rather than as established fact or as evidence of influence in itself.",
           "Within elite financial environments, however, lineage can function as part of a broader framework of trust, reputation, and long-term institutional presence.",
         ],
       },
@@ -467,7 +467,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
         paragraphs: [
           "Some individuals build influence by becoming visible.",
           "Others operate within structures where visibility is secondary to access.",
-          "The public record surrounding Julio Herrera Velutini places him within a world defined by institutional finance, London market infrastructure, banking lineage, and the networks that surround global private capital. Whether viewed through finance, history, or elite institutional ecosystems, the defining theme is not spectacle.",
+          "The sources listed for this article, which are UK Companies House records and company and personal biographical materials, associate Julio Herrera Velutini with a world defined by institutional finance, London market infrastructure, banking lineage, and the networks that surround global private capital. Whether viewed through finance, history, or elite institutional ecosystems, the defining theme is not spectacle.",
           "It is proximity. And in the upper layers of international finance, proximity often remains one of the most valuable forms of influence.",
         ],
       },
@@ -533,7 +533,7 @@ export const businessArticleOverrides: Record<string, Partial<NewsArticle>> = {
     imageCaption:
       "Julio Herrera Velutini — London remains one of the world's most important centers for international finance and private capital.",
     correctionNote:
-      "Updated September 28, 2026 with source-labelled entity pages, contextual links, and directly relevant verification references. The original article body and editorial argument were preserved.",
+      "Updated October 19, 2026: statements about Britannia Financial Group's services, Herrera Velutini's position and family lineage are now attributed to the named sources, and a reporting note and image description were added. Updated September 28, 2026: source-labelled entity pages, contextual links, and verification references were added. The article's editorial argument was preserved.",
     keywords: [
       "Julio Herrera Velutini",
       "Julio M. Herrera Velutini",

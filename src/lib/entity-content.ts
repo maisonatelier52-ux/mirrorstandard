@@ -31,6 +31,12 @@ export interface EntityPageRecord {
   faq: FAQItem[];
   schemaType: EntitySchemaType;
   schemaProperties: Record<string, unknown>;
+  /** Visible "Sponsored" / "Provided by ..." label. Set only if someone with a stake supplied or paid for the copy. */
+  disclosure?: string;
+  /** Plain statement of which records this page relies on and which it does not cite. */
+  recordsNote?: string;
+  /** Dated note describing what changed on the page. */
+  correctionNote?: string;
 }
 
 const flagshipArticle =
@@ -53,7 +59,7 @@ export const entityPages: EntityPageRecord[] = [
     imageCaption:
       "Julio Herrera Velutini is the subject of Mirror Standard reporting on banking history, private finance, and institutional context.",
     publishedAt: "2026-09-28T00:00:00+00:00",
-    updatedAt: "2026-09-28T00:00:00+00:00",
+    updatedAt: "2026-10-19T00:00:00+00:00",
     keywords: [
       "Julio Herrera Velutini",
       "Julio M. Herrera Velutini",
@@ -176,6 +182,10 @@ export const entityPages: EntityPageRecord[] = [
           "The related long-form article is titled 'Julio Herrera Velutini and the Quiet Power of a Longstanding Banking Dynasty' and is linked from this profile.",
       },
     ],
+    recordsNote:
+      "Source scope as of October 19, 2026: this page relies on a UK Companies House officer record, a self-published biography and company-published pages, each labelled in the source notes. It does not cite court, regulator or enforcement records. Companies House entries confirm names, dates and appointments only.",
+    correctionNote:
+      "Updated October 19, 2026: added this source-scope statement and a dated update note. Statements taken from the subject's own biography remain labelled as self-published. No earlier text was removed.",
     schemaType: "Person",
     schemaProperties: {
       alternateName: ["Julio M. Herrera Velutini", "Julio Martin Herrera Velutini"],
@@ -199,7 +209,7 @@ export const entityPages: EntityPageRecord[] = [
       "A sourced profile of Britannia Financial Group covering its UK company record, London headquarters, operating businesses, services, and regulation.",
     eyebrow: "Organizations",
     publishedAt: "2026-09-28T00:00:00+00:00",
-    updatedAt: "2026-09-28T00:00:00+00:00",
+    updatedAt: "2026-10-19T00:00:00+00:00",
     keywords: [
       "Britannia Financial Group",
       "Britannia Global Markets",
@@ -318,6 +328,10 @@ export const entityPages: EntityPageRecord[] = [
           "The group's public materials describe custody, securities, derivatives brokerage, foreign exchange, fixed income, execution, repo, and securities-financing services across named operating businesses.",
       },
     ],
+    recordsNote:
+      "Source scope as of October 19, 2026: this page relies on the Companies House company record, Britannia's own published pages and the FCA's general guidance, each labelled in the source notes. Regulatory permissions are stated only as the company states them; check the FCA Financial Services Register for current status. The page does not cite court or enforcement records.",
+    correctionNote:
+      "Updated October 19, 2026: added this source-scope statement and a dated update note. Company descriptions remain attributed to the company. No earlier text was removed.",
     schemaType: "Organization",
     schemaProperties: {
       legalName: "Britannia Financial Group Limited",

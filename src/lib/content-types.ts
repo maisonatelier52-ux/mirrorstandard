@@ -133,6 +133,11 @@ export interface NewsArticle {
   imageAlt?: string;
   /** One-line "How we reported this" sentence shown at the top of the article. */
   reportingNote?: string;
+  /**
+   * Visible commercial-relationship label, e.g. "Sponsored: provided by Example Ltd".
+   * Set it when anyone with a stake supplied or paid for the copy. Leave it unset otherwise.
+   */
+  disclosure?: string;
   correctionNote?: string;
   keywords?: string[];
   entity?: EntityReference;

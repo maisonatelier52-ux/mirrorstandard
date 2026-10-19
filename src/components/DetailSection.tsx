@@ -657,6 +657,15 @@ export default function DetailSection({
 
             <HowWeReportedLine article={article} />
 
+            {article.disclosure ? (
+              <p
+                role="note"
+                className="mt-3 border-l-[3px] border-l-[color:var(--ms-accent)] bg-[color:var(--ms-surface-muted)] px-4 py-2 text-[13px] font-semibold leading-6 text-[color:var(--ms-text)]"
+              >
+                {article.disclosure}
+              </p>
+            ) : null}
+
             {article.editorialContext ? (
               <EditorialContextPanel context={article.editorialContext} />
             ) : null}

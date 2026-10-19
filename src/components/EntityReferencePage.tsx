@@ -192,6 +192,24 @@ export default function EntityReferencePage({ entity }: { entity: EntityPageReco
               </p>
             </aside>
 
+            {entity.disclosure ? (
+              <p
+                role="note"
+                className="mt-3 border-l-[3px] border-l-[color:var(--ms-accent)] bg-[color:var(--ms-surface-muted)] px-5 py-3 text-[14px] font-semibold leading-6 text-[color:var(--ms-text)]"
+              >
+                {entity.disclosure}
+              </p>
+            ) : null}
+
+            {entity.recordsNote ? (
+              <p className="mt-3 text-[13px] leading-6 text-[color:var(--ms-text-soft)]">
+                <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[color:var(--ms-text-faint)]">
+                  Records and sources
+                </span>{" "}
+                {entity.recordsNote}
+              </p>
+            ) : null}
+
             <div className="mt-8">
               <RichContent
                 keyPoints={entity.keyPoints}
@@ -199,6 +217,7 @@ export default function EntityReferencePage({ entity }: { entity: EntityPageReco
                 sourceNotes={entity.sourceNotes}
                 faq={entity.faq}
                 relatedResources={entity.relatedResources}
+                correctionNote={entity.correctionNote}
               />
             </div>
           </article>
