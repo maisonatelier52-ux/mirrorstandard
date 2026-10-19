@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     title: "Terms & Conditions | Mirror Standard | Content Usage Policy",
     description: "The terms and conditions governing the use of Mirror Standard.",
     images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
-    site: "@Mirrorstandard",
-    creator: "@Mirrorstandard",
+    site: "@Mirrorstan68694",
+    creator: "@Mirrorstan68694",
   },
 };
 

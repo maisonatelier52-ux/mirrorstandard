@@ -53,7 +53,7 @@ const ArticleDetail = ({ data }: Props) => {
         <div className="w-full relative aspect-[16/9]">
           <Image
             src={data.image}
-            alt={data.title}
+            alt={data.imageAlt ?? data.title}
             fill
             quality={75}
             placeholder="blur"

@@ -196,6 +196,43 @@ function KeyPointsStrip({ points }: { points: Array<{ label: string; value: stri
 }
 
 /* ─────────────────────────────────────────────
+   HOW WE REPORTED THIS — one line near the top
+───────────────────────────────────────────── */
+function HowWeReportedLine({ article }: { article: NewsArticle }) {
+  const count = article.sourceNotes?.length ?? 0;
+  const sentence =
+    article.reportingNote ??
+    (count
+      ? `This story is based on ${count} listed source${count === 1 ? "" : "s"}.`
+      : "Verification starting points for this story are listed below.");
+
+  return (
+    <p className="mt-4 text-[13px] leading-6 text-[color:var(--ms-text-soft)]">
+      <span className="text-[10px] font-bold uppercase tracking-[0.18em] text-[color:var(--ms-text-faint)]">
+        How we reported this
+      </span>{" "}
+      {sentence}{" "}
+      {count ? (
+        <a
+          href="#source-notes-title"
+          className="font-semibold text-[color:var(--ms-accent)] underline-offset-2 hover:underline"
+        >
+          See the source notes
+        </a>
+      ) : null}
+      {count ? " or read our " : "Read our "}
+      <Link
+        href="/source-methodology/"
+        className="font-semibold text-[color:var(--ms-accent)] underline-offset-2 hover:underline"
+      >
+        source methodology
+      </Link>
+      .
+    </p>
+  );
+}
+
+/* ─────────────────────────────────────────────
    EDITORIAL CONTEXT — format and evidence label
 ───────────────────────────────────────────── */
 function EditorialContextPanel({
@@ -446,7 +483,7 @@ export default function DetailSection({
               <meta itemProp="name" content="Mirror Standard" />
               <meta itemProp="url" content={siteUrl} />
               <span itemProp="logo" itemScope itemType="https://schema.org/ImageObject">
-                <meta itemProp="url" content={`${siteUrl}/images/mirrorstandard-logo.webp`} />
+                <meta itemProp="url" content={`${siteUrl}/images/logo-512.png`} />
               </span>
             </span>
 
@@ -573,7 +610,7 @@ export default function DetailSection({
               <meta itemProp="url" content={imageUrl} />
               <Image
                   src={article.image}
-                  alt={article.title}
+                  alt={article.imageAlt ?? article.title}
                   fill
                   priority
                   className="object-cover"
@@ -617,6 +654,8 @@ export default function DetailSection({
                 </p>
               </div>
             )}
+
+            <HowWeReportedLine article={article} />
 
             {article.editorialContext ? (
               <EditorialContextPanel context={article.editorialContext} />

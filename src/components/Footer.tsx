@@ -2,7 +2,7 @@ import React from "react";
 import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
-import { getSortedNews } from "../lib/news";
+import { getPromotedSortedNews } from "../lib/news";
 import { SiSubstack, SiReddit, SiMedium } from "react-icons/si";
 import { MdOutlineEmail } from "react-icons/md";
 import { ChevronRight } from "lucide-react";
@@ -61,7 +61,7 @@ const bottomLinks = [
 ];
 
 export default function Footer() {
-  const sortedNews = getSortedNews();
+  const sortedNews = getPromotedSortedNews();
   const editorPicks = sortedNews.slice(0, 3);
   const year = new Date().getFullYear();
 

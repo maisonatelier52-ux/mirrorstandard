@@ -46,8 +46,8 @@ export const metadata: Metadata = {
     title: "Corrections Policy | Mirror Standard | Transparency & Accuracy",
     description: "Learn how Mirror Standard handles factual errors and corrections. Committed to transparency and accuracy.",
     images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
-    site: "@Mirrorstandard",
-    creator: "@Mirrorstandard",
+    site: "@Mirrorstan68694",
+    creator: "@Mirrorstan68694",
   },
 };
 

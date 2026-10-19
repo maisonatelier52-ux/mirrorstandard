@@ -51,8 +51,8 @@ export function createEntityMetadata(entity: EntityPageRecord): Metadata {
       title: entity.metaTitle,
       description: entity.metaDescription,
       images: [imageUrl],
-      site: "@Mirrorstandard",
-      creator: "@Mirrorstandard",
+      site: "@Mirrorstan68694",
+      creator: "@Mirrorstan68694",
     },
   };
 }

@@ -1,5 +1,5 @@
 import type { MetadataRoute } from "next";
-import { allNews, authors, normalizeDateToIso, profiles } from "../lib/news";
+import { authors, getPromotedNews, normalizeDateToIso, profiles } from "../lib/news";
 import { entityPages } from "../lib/entity-content";
 
 const siteUrl = "https://www.mirrorstandard.com";
@@ -42,7 +42,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     priority: path === "/" ? 1 : 0.7,
   }));
 
-  const articleEntries: MetadataRoute.Sitemap = allNews.map((article) => {
+  // Thin articles (under 300 words) are not promoted, so they stay out of the sitemap
+  const articleEntries: MetadataRoute.Sitemap = getPromotedNews().map((article) => {
     const isJulioHub =
       article.slug === "julio-herrera-velutini-banking-dynasty-institutional-influence";
     return {

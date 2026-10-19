@@ -63,8 +63,8 @@ export async function generateMetadata({
       title: profile.title,
       description: profile.metaDescription,
       images: [imageUrl],
-      site: "@Mirrorstandard",
-      creator: "@Mirrorstandard",
+      site: "@Mirrorstan68694",
+      creator: "@Mirrorstan68694",
     },
   };
 }

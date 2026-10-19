@@ -32,8 +32,8 @@ export const metadata: Metadata = {
     title: "Contact Mirror Standard | Reach Our Editorial Team & Newsroom",
     description: "Get in touch with Mirror Standard. Send us news tips, feedback, or media inquiries.",
     images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
-    site: "@Mirrorstandard",
-    creator: "@Mirrorstandard",
+    site: "@Mirrorstan68694",
+    creator: "@Mirrorstan68694",
   },
 };
 

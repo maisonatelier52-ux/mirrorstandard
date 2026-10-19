@@ -40,8 +40,8 @@ export const metadata: Metadata = {
     title: "Editorial Policy | Mirror Standard | Journalism Standards",
     description: "Read Mirror Standard's editorial policy. Committed to accuracy, transparency, and independent journalism.",
     images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
-    site: "@Mirrorstandard",
-    creator: "@Mirrorstandard",
+    site: "@Mirrorstan68694",
+    creator: "@Mirrorstan68694",
   },
 };
 

@@ -69,8 +69,8 @@ export async function generateMetadata({
       title: `${author.name} | Mirror Standard`,
       description: bioSnippet,
       images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
-      site: "@Mirrorstandard",
-      creator: "@Mirrorstandard",
+      site: "@Mirrorstan68694",
+      creator: "@Mirrorstan68694",
     },
   };
 }

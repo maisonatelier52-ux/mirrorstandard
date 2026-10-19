@@ -1,6 +1,6 @@
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import { getCategoryDescription } from "../lib/category-copy";
-import { getCategoryNews, getSortedNews } from "../lib/news";
+import { getCategoryNews, getPromotedSortedNews } from "../lib/news";
 import HomeCategoryFront from "../components/HomeCategoryFront";
 import NewspaperHero from "../components/NewspaperHero";
 import HomeFieldNotes from "../components/HomeFieldNotes";
@@ -8,12 +8,12 @@ import HomePulseStrip from "../components/Homepulsestrip";
 import HomeInFocus from "../components/Homeinfocus";
 
 export default async function Home() {
-  const sortedNews = getSortedNews();
+  const sortedNews = getPromotedSortedNews();
 
   const usedSlugs = new Set<string>();
 
-  function pickUnique(candidates: ReturnType<typeof getSortedNews>, n: number) {
-    const result: ReturnType<typeof getSortedNews> = [];
+  function pickUnique(candidates: ReturnType<typeof getPromotedSortedNews>, n: number) {
+    const result: ReturnType<typeof getPromotedSortedNews> = [];
     for (const s of candidates) {
       if (result.length >= n) break;
       if (!usedSlugs.has(s.slug)) {
@@ -25,10 +25,10 @@ export default async function Home() {
   }
 
   function interleave(
-    a: ReturnType<typeof getSortedNews>,
-    b: ReturnType<typeof getSortedNews>,
+    a: ReturnType<typeof getPromotedSortedNews>,
+    b: ReturnType<typeof getPromotedSortedNews>,
   ) {
-    const result: ReturnType<typeof getSortedNews> = [];
+    const result: ReturnType<typeof getPromotedSortedNews> = [];
     const max = Math.max(a.length, b.length);
     for (let i = 0; i < max; i++) {
       if (a[i]) result.push(a[i]);
@@ -46,7 +46,7 @@ export default async function Home() {
 
   const sectionPackages = frontCategories
     .map((category) => {
-      const categoryStories = getSortedNews(getCategoryNews(category));
+      const categoryStories = getPromotedSortedNews(getCategoryNews(category));
       const selected = pickUnique(categoryStories, 4);
       return {
         category,
@@ -59,21 +59,21 @@ export default async function Home() {
 
   const pulseStories = pickUnique(
     interleave(
-      getSortedNews(getCategoryNews("science")),
-      getSortedNews(getCategoryNews("health")),
+      getPromotedSortedNews(getCategoryNews("science")),
+      getPromotedSortedNews(getCategoryNews("health")),
     ),
     4,
   );
 
   const inFocusStories = pickUnique(
     interleave(
-      getSortedNews(getCategoryNews("entertainment")),
-      getSortedNews(getCategoryNews("sports")),
+      getPromotedSortedNews(getCategoryNews("entertainment")),
+      getPromotedSortedNews(getCategoryNews("sports")),
     ),
     5,
   );
 
-  const educationStories = getSortedNews(getCategoryNews("education"));
+  const educationStories = getPromotedSortedNews(getCategoryNews("education"));
   const fieldNotesPool = [...educationStories, ...sortedNews];
   const fieldNotes = pickUnique(fieldNotesPool, 6);
 

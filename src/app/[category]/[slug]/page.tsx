@@ -135,8 +135,8 @@ export async function generateMetadata({
       title,
       description,
       images: [imageUrl],
-      site: "@Mirrorstandard",
-      creator: "@Mirrorstandard",
+      site: "@Mirrorstan68694",
+      creator: "@Mirrorstan68694",
     },
   };
 }
@@ -225,7 +225,9 @@ export default async function DetailPage({ params }: DetailPageProps) {
           url: siteUrl,
           logo: {
             "@type": "ImageObject",
-            url: `${siteUrl}/images/mirrorstandard-logo.webp`,
+            url: `${siteUrl}/images/logo-512.png`,
+            width: 512,
+            height: 512,
           },
         },
         articleSection: article.category,

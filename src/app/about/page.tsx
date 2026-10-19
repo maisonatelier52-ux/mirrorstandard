@@ -29,8 +29,8 @@ export const metadata: Metadata = {
     title: "About Mirror Standard | Independent News & Journalism Excellence",
     description: "Learn about Mirror Standard's commitment to independent, factual, and transparent journalism.",
     images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
-    site: "@Mirrorstandard",
-    creator: "@Mirrorstandard",
+    site: "@Mirrorstan68694",
+    creator: "@Mirrorstan68694",
   },
 };
 

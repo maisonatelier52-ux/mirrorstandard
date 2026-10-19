@@ -71,8 +71,8 @@ export const metadata: Metadata = {
       "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
     ],
 
-    site: "@Mirrorstandard",
-    creator: "@Mirrorstandard",
+    site: "@Mirrorstan68694",
+    creator: "@Mirrorstan68694",
   },
 
   alternates: {
@@ -144,9 +144,9 @@ export default function RootLayout({
 
                 logo: {
                   "@type": "ImageObject",
-                  url: "https://www.mirrorstandard.com/images/mirrorstandard-logo.webp",
-                  width: 1024,
-                  height: 1024,
+                  url: "https://www.mirrorstandard.com/images/logo-512.png",
+                  width: 512,
+                  height: 512,
                 },
 
                 sameAs: [

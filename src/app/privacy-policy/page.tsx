@@ -44,8 +44,8 @@ export async function generateMetadata(): Promise<Metadata> {
       description:
         "How Mirror Standard safeguards privacy while delivering independent news.",
       images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
-      site: "@Mirrorstandard",
-      creator: "@Mirrorstandard",
+      site: "@Mirrorstan68694",
+      creator: "@Mirrorstan68694",
     },
   };
 }

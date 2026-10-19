@@ -129,6 +129,10 @@ export interface NewsArticle {
   sections?: ArticleSection[];
   storyBlocks?: ArticleStoryBlock[];
   imageCaption?: string;
+  /** Short description of the image for screen readers and search. Falls back to the title. */
+  imageAlt?: string;
+  /** One-line "How we reported this" sentence shown at the top of the article. */
+  reportingNote?: string;
   correctionNote?: string;
   keywords?: string[];
   entity?: EntityReference;

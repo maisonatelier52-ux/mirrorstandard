@@ -13,6 +13,7 @@ import {
   profilePages,
   supplementalBusinessArticles,
 } from "../lib/editorial-content";
+import { articleReportingOverrides } from "../lib/article-reporting";
 import {
   enhanceArticle,
   getArticleReadingTime,
@@ -48,18 +49,21 @@ function applyOverrides(
   }));
 }
 
-const businessArticles = [
-  ...applyOverrides(baseBusinessData as NewsArticle[], businessArticleOverrides),
-  ...supplementalBusinessArticles,
-].map(enhanceArticle);
+const businessArticles = applyOverrides(
+  [
+    ...applyOverrides(baseBusinessData as NewsArticle[], businessArticleOverrides),
+    ...supplementalBusinessArticles,
+  ],
+  articleReportingOverrides,
+).map(enhanceArticle);
 
-const technologyArticles = (baseTechnologyData as NewsArticle[]).map(enhanceArticle);
-const sportsArticles = (baseSportsData as NewsArticle[]).map(enhanceArticle);
-const healthArticles = (baseHealthData as NewsArticle[]).map(enhanceArticle);
-const politicsArticles = (basePoliticsData as NewsArticle[]).map(enhanceArticle);
-const scienceArticles = (baseScienceData as NewsArticle[]).map(enhanceArticle);
-const entertainmentArticles = (baseEntertainmentData as NewsArticle[]).map(enhanceArticle);
-const educationArticles = (baseEducationData as NewsArticle[]).map(enhanceArticle);
+const technologyArticles = applyOverrides((baseTechnologyData as NewsArticle[]), articleReportingOverrides).map(enhanceArticle);
+const sportsArticles = applyOverrides((baseSportsData as NewsArticle[]), articleReportingOverrides).map(enhanceArticle);
+const healthArticles = applyOverrides((baseHealthData as NewsArticle[]), articleReportingOverrides).map(enhanceArticle);
+const politicsArticles = applyOverrides((basePoliticsData as NewsArticle[]), articleReportingOverrides).map(enhanceArticle);
+const scienceArticles = applyOverrides((baseScienceData as NewsArticle[]), articleReportingOverrides).map(enhanceArticle);
+const entertainmentArticles = applyOverrides((baseEntertainmentData as NewsArticle[]), articleReportingOverrides).map(enhanceArticle);
+const educationArticles = applyOverrides((baseEducationData as NewsArticle[]), articleReportingOverrides).map(enhanceArticle);
 
 export const newsByCategory: Record<string, NewsArticle[]> = {
   business: businessArticles,
@@ -134,12 +138,52 @@ export function getSortedNews(items: NewsArticle[] = allNews) {
   });
 }
 
+/* ─────────────────────────────────────────────
+   THIN ARTICLES — kept on the site, but not promoted
+   (home page, footer picks, ticker, related lists, sitemap)
+───────────────────────────────────────────── */
+export const THIN_ARTICLE_WORD_LIMIT = 300;
+
+function countWords(text: string) {
+  return (text.match(/[\p{L}\p{N}’'-]+/gu) ?? []).length;
+}
+
+export function getArticleWordCount(article: NewsArticle) {
+  const parts: string[] = [];
+
+  article.sections?.forEach((section) => parts.push(...section.paragraphs));
+  article.storyBlocks?.forEach((block) => {
+    parts.push(...(block.paragraphs ?? []), block.quote ?? "", block.noteBody ?? "");
+    block.items?.forEach((item) =>
+      parts.push(item.label, item.value, item.description ?? ""),
+    );
+    block.timeline?.forEach((item) =>
+      parts.push(item.label, item.title ?? "", item.description),
+    );
+  });
+
+  const text = parts.length ? parts.join(" ") : article.description;
+  return countWords(text.replace(/\[([^\]]+)\]\(([^)]+)\)/g, "$1"));
+}
+
+export function isThinArticle(article: NewsArticle) {
+  return getArticleWordCount(article) < THIN_ARTICLE_WORD_LIMIT;
+}
+
+export function getPromotedNews(items: NewsArticle[] = allNews) {
+  return items.filter((article) => !isThinArticle(article));
+}
+
+export function getPromotedSortedNews(items: NewsArticle[] = allNews) {
+  return getSortedNews(getPromotedNews(items));
+}
+
 export function getLatestNews(count: number) {
-  return getSortedNews().slice(0, count);
+  return getPromotedSortedNews().slice(0, count);
 }
 
 export function getLatestNewsByCategory() {
-  const sorted = getSortedNews();
+  const sorted = getPromotedSortedNews();
   const latestByCategory: Record<string, NewsArticle> = {};
 
   sorted.forEach((item) => {
@@ -181,10 +225,10 @@ export function getRelatedNews(article: NewsArticle, limit = 3) {
   const prioritized = (article.relatedSlugs ?? [])
     .map((slug) => getArticleBySlug(slug))
     .filter((item): item is NewsArticle => item !== undefined)
-    .filter((item) => item.slug !== article.slug);
+    .filter((item) => item.slug !== article.slug && !isThinArticle(item));
 
   const fallback = getSortedNews(
-    allNews.filter(
+    getPromotedNews().filter(
       (item) =>
         item.slug !== article.slug &&
         item.category === article.category &&
@@ -199,7 +243,7 @@ export function getPopularNews(article: NewsArticle, limit = 6) {
   const prioritized = getRelatedNews(article, Math.min(limit, 3));
 
   const fallback = getSortedNews(
-    allNews.filter(
+    getPromotedNews().filter(
       (item) =>
         item.slug !== article.slug &&
         !prioritized.some((candidate) => candidate.slug === item.slug),
@@ -211,7 +255,7 @@ export function getPopularNews(article: NewsArticle, limit = 6) {
 
 export function getNavigationNews(article: NewsArticle, usedSlugs: string[], limit = 2) {
   return getSortedNews(
-    getCategoryNews(article.category).filter(
+    getPromotedNews(getCategoryNews(article.category)).filter(
       (item) => item.slug !== article.slug && !usedSlugs.includes(item.slug),
     ),
   ).slice(0, limit);

@@ -30,8 +30,8 @@ export const metadata: Metadata = {
     title: "Mirror Standard Staff | Collaborative Newsroom Byline",
     description: "Learn about the Mirror Standard Staff byline. It represents the collective effort of our independent newsroom.",
     images: ["https://www.mirrorstandard.com/images/mirrorstandard-logo.webp"],
-    site: "@Mirrorstandard",
-    creator: "@Mirrorstandard",
+    site: "@Mirrorstan68694",
+    creator: "@Mirrorstan68694",
   },
 };
 
