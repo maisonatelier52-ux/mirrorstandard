@@ -29,6 +29,7 @@ const CategoryArticleCard: React.FC<Props> = ({ data }) => {
               src={data.image}
               alt={data.title}
               fill
+              sizes="(max-width: 768px) 100vw, 40vw"
               className="object-cover transition-transform duration-700 group-hover:scale-105"
               quality={85}
             />

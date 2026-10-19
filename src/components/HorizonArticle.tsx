@@ -29,6 +29,7 @@ const HorizonArticle: React.FC<Props> = ({ data }) => {
             src={data.image}
             alt={data.title}
             fill
+            sizes="(max-width: 768px) 100vw, 50vw"
             quality={75}
             placeholder="blur"
             blurDataURL="data:image/webp;base64,UklGRhIAAABXRUJQVlA4IBYAAAAwAQCdASoBAAEAAQAcJaQAA3AA/vuUAAA=" // example tiny placeholder

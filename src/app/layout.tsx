@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Oswald, Roboto } from "next/font/google";
+import { Geist, Oswald } from "next/font/google";
 import Script from "next/script";
 import "./globals.css";
 
@@ -16,21 +16,10 @@ const geistSans = Geist({
   subsets: ["latin"],
 });
 
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 const oswald = Oswald({
   subsets: ["latin"],
   weight: ["200", "300", "400", "500", "600", "700"],
   variable: "--font-oswald",
-});
-
-const roboto = Roboto({
-  subsets: ["latin"],
-  weight: ["400", "500", "700"],
-  variable: "--font-roboto",
 });
 
 /* =========================================================
@@ -226,7 +215,7 @@ export default function RootLayout({
 
         <Script
           id="google-tag-manager"
-          strategy="beforeInteractive"
+          strategy="afterInteractive"
           dangerouslySetInnerHTML={{
             __html: `
               (function(w,d,s,l,i){
@@ -270,9 +259,7 @@ export default function RootLayout({
       <body
         className={`
           ${geistSans?.variable ?? ""}
-          ${geistMono?.variable ?? ""}
           ${oswald?.variable ?? ""}
-          ${roboto?.variable ?? ""}
           font-sans
           antialiased
         `}
