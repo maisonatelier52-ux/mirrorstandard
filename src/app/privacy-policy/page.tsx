@@ -53,7 +53,7 @@ export async function generateMetadata(): Promise<Metadata> {
 export default function PrivacyPolicy() {
   const purposes = [
     "To keep the website operating smoothly and securely.",
-    "To understand which stories resonate with readers.",
+    "To understand which stories resonate with readers and measure the performance of articles we promote.",
     "To respond to messages, tips, or correction requests.",
     "To provide updates when readers request them.",
   ];
@@ -173,8 +173,12 @@ export default function PrivacyPolicy() {
             ))}
           </div>
           <p className="text-lg leading-relaxed font-light">
-            We do not use personal data for advertising sales, profiling, or
-            promotional targeting.
+            We do not sell personal data, and we do not use the information you
+            give us directly, such as your name or email address, for advertising.
+            We do promote some articles through Google Ads. To measure how those
+            promotions perform, we use Google tags that place cookies on your
+            device and may collect information such as pages viewed, device and
+            browser details, and a cookie identifier.
           </p>
         </section>
 
@@ -183,13 +187,24 @@ export default function PrivacyPolicy() {
             Cookies and Analytics
           </h2>
           <p className="text-lg leading-relaxed mb-6 font-light">
-            We use cookies and analytics tools to understand how readers interact
-            with our content. You may disable cookies in your browser without
-            affecting access to our reporting.
+            We use cookies and similar technologies, including Google Tag Manager,
+            Google Analytics, and Google Ads measurement tags, to understand how
+            readers use our site and to measure the performance of articles we
+            promote. These services are provided by Google and process data under
+            Google&apos;s own privacy policy.
           </p>
           <p className="text-lg leading-relaxed font-light">
-            Third-party analytics services may process anonymized data under their
-            own privacy policies.
+            You can block or delete cookies in your browser settings, and you can
+            opt out of Google Ads personalization at{" "}
+            <a
+              href="https://adssettings.google.com"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="underline"
+            >
+              adssettings.google.com
+            </a>
+            . Blocking cookies will not affect your access to our reporting.
           </p>
         </section>
 
@@ -233,7 +248,7 @@ export default function PrivacyPolicy() {
         {/* ✅ AUTHORITY SIGNAL: LAST UPDATED */}
         <section className="mt-16 pt-8 border-t border-gray-100 text-center">
           <p className="text-xs text-gray-400 font-light italic">
-            Last Updated: October 16, 2026
+            Last Updated: October 19, 2026
           </p>
         </section>
       </div>
