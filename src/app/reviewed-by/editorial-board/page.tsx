@@ -16,7 +16,7 @@ export default function EditorialBoardPage() {
       title="Mirror Standard Editorial Board"
       description="Mirror Standard uses a reviewed-by layer on finance-sensitive, profile, and standards-driven coverage to distinguish reporting, editing, and subject-matter review."
       url="https://www.mirrorstandard.com/reviewed-by/editorial-board/"
-      updatedLabel="May 21, 2026"
+      updatedLabel="October 16, 2026"
       contactLinks={[
         {
           label: "Editorial",

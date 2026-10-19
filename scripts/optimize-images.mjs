@@ -1,8 +1,10 @@
-const sharp = require('sharp');
-const fs = require('fs');
-const path = require('path');
+import sharp from 'sharp';
+import fs from 'node:fs';
+import path from 'node:path';
+import { fileURLToPath } from 'node:url';
 
-const inputDir = path.join(__dirname, '../public/images');
+const here = path.dirname(fileURLToPath(import.meta.url));
+const inputDir = path.join(here, '..', 'public', 'images');
 
 fs.readdir(inputDir, (err, files) => {
     if (err) {

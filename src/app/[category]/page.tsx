@@ -1,7 +1,6 @@
 import React from 'react';
 import { categories, getCategoryNews, getSortedNews } from '../../lib/news';
 import CategoryHeader from '../../components/CategoryHeader';
-import Navbar from '../../components/Navbar';
 import { Metadata } from 'next';
 import CategorySection from '../../components/CategorySection';
 import ScrollToTopButton from '../../components/ScrollToTopButton';

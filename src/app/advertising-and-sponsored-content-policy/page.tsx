@@ -17,7 +17,7 @@ export default function AdvertisingPolicyPage() {
       title="Advertising and Sponsored Content Policy"
       description="Mirror Standard separates commercial material from editorial reporting and aims to label advertising, sponsorships, affiliate links, and other paid relationships clearly and conspicuously for readers."
       url="https://www.mirrorstandard.com/advertising-and-sponsored-content-policy/"
-      updatedLabel="May 22, 2026"
+      updatedLabel="October 16, 2026"
       contactLinks={[
         {
           label: "Advertising and partnerships",

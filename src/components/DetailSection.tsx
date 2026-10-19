@@ -61,37 +61,6 @@ function PopularNewsItem({ item, index }: { item: NewsArticle; index: number }) 
 }
 
 /* ─────────────────────────────────────────────
-   RELATED SIDEBAR CARD
-───────────────────────────────────────────── */
-function RelatedSidebarCard({ item }: { item: NewsArticle }) {
-  return (
-    <Link
-      href={`/${item.category}/${item.slug}`}
-      title={item.title}
-      className="group flex gap-3 py-3 first:pt-0 last:pb-0"
-    >
-      <div className="relative h-[72px] w-[88px] flex-shrink-0 overflow-hidden">
-        <Image
-          src={item.image}
-          alt={item.title}
-          fill
-          className="object-cover transition-transform duration-500 group-hover:scale-105"
-          sizes="88px"
-        />
-      </div>
-      <div className="flex flex-col justify-center">
-        <p className="text-[10px] font-bold uppercase tracking-[0.14em] text-[color:var(--ms-accent)]">
-          {item.category}&nbsp;·&nbsp;{item.date}
-        </p>
-        <h3 className="ms-editorial-serif mt-1 text-[14px] leading-[1.2] text-[color:var(--ms-text)] group-hover:text-[color:var(--ms-accent)] transition-colors line-clamp-3">
-          {item.title}
-        </h3>
-      </div>
-    </Link>
-  );
-}
-
-/* ─────────────────────────────────────────────
    RELATED BOTTOM CARD
 ───────────────────────────────────────────── */
 function RelatedBottomCard({ item }: { item: NewsArticle }) {
@@ -289,7 +258,6 @@ function EditorialContextPanel({
 ───────────────────────────────────────────── */
 function SidebarContent({
   popularNews,
-  relatedNews,
   variant = "desktop",
 }: {
   popularNews: NewsArticle[];

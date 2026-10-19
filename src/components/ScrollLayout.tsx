@@ -4,11 +4,9 @@ import { useEffect, useState, useRef } from "react";
 import MoreFirstSection from "./MoreFirstSection";
 import MoreSecondSection from "./MoreSecondSection";
 import SubHeadline from "./SubHeadline";
-import RightSidebar from "./RightSidebar";
 import MoreSideCard from "./MoreSideCard";
 import TopHorizontalCard from "./TopHorizontalCard";
 import VibeNewsCard from "./VibeNewsCard";
-import VibeNewsCard2 from "./VibeNewscard2";
 
 interface NewsData {
   slug: string;

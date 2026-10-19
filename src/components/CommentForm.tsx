@@ -20,7 +20,7 @@ const CommentForm = () => {
   };
 
   const validate = () => {
-    let newErrors: { [key: string]: string } = {};
+    const newErrors: { [key: string]: string } = {};
 
     if (!formData.name.trim()) {
       newErrors.name = "Please enter your name";

@@ -8,6 +8,20 @@ export const metadata: Metadata = {
   alternates: {
     canonical: "https://www.mirrorstandard.com/ownership-and-funding/",
   },
+  openGraph: {
+    title: "Ownership and Funding | Mirror Standard",
+    description:
+      "Detailed information about Mirror Standard's editorial independence, commercial relationships, conflicts standards, and ownership and funding disclosures.",
+    url: "https://www.mirrorstandard.com/ownership-and-funding/",
+    siteName: "Mirror Standard",
+    type: "website",
+  },
+  twitter: {
+    card: "summary",
+    title: "Ownership and Funding | Mirror Standard",
+    description:
+      "Detailed information about Mirror Standard's editorial independence, commercial relationships, conflicts standards, and ownership and funding disclosures.",
+  },
 };
 
 export default function OwnershipAndFundingPage() {
@@ -16,7 +30,7 @@ export default function OwnershipAndFundingPage() {
       title="Ownership and Funding"
       description="This page explains who controls editorial decisions at Mirror Standard, how commercial support is separated from reporting, and how the newsroom handles conflicts, material relationships, and future ownership or funding disclosures."
       url="https://www.mirrorstandard.com/ownership-and-funding/"
-      updatedLabel="May 22, 2026"
+      updatedLabel="October 16, 2026"
       contactLinks={[
         {
           label: "Editorial",

@@ -26,7 +26,7 @@ const ArticleLayout: React.FC<Props> = ({ data }) => {
       <div className="mb-6 flex items-center justify-between gap-4 border-b border-[color:var(--ms-border)] pb-5">
         <div>
           <p className="mb-2 text-[11px] uppercase tracking-[0.22em] text-[color:var(--ms-text-faint)]">
-            Editor's line
+            Editor&apos;s line
           </p>
           <h2 className="font-['Oswald'] text-[30px] font-bold tracking-tight text-[color:var(--ms-text)]">
             Analysis and latest reporting

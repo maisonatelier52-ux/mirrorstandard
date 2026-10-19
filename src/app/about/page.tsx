@@ -1,7 +1,6 @@
 import { Mail, Check } from 'lucide-react';
 import Link from 'next/link';
 import Script from "next/script";
-import { FaXTwitter } from 'react-icons/fa6';
 import { Metadata } from 'next';
 
 export const metadata: Metadata = {
@@ -225,7 +224,7 @@ export default function AboutUs() {
         </section>
         <section className="mt-16 pt-8 border-t border-gray-100 text-center">
           <p className="text-xs text-gray-400 font-light italic">
-            Last Updated: May 21, 2026
+            Last Updated: October 16, 2026
           </p>
         </section>
       </div>

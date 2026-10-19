@@ -16,7 +16,7 @@ export default function LegalPage() {
       title="Legal"
       description="This page provides a plain-language overview of legal and compliance topics relevant to Mirror Standard's publishing, reader use of site content, complaints, permissions, and formal requests."
       url="https://www.mirrorstandard.com/legal/"
-      updatedLabel="May 22, 2026"
+      updatedLabel="October 16, 2026"
       contactLinks={[
         {
           label: "General legal contact",

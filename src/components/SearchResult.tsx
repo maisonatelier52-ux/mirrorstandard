@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import HorizontalNewsCard from "./HorizontalNewsCard";
 import CategoryLeftSection from "./CategoryLeftSection";
 
@@ -105,11 +105,9 @@ export default function SearchPage() {
   const totalPages = Math.ceil(totalItems / ITEMS_PER_PAGE);
   const showPagination = totalItems > ITEMS_PER_PAGE;
 
-  const [currentPage, setCurrentPage] = useState(1);
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [query]);
+  const [pageState, setPageState] = useState({ query, page: 1 });
+  const currentPage = pageState.query === query ? pageState.page : 1;
+  const setCurrentPage = (page: number) => setPageState({ query, page });
 
   const handlePageChange = (page: number) => {
     if (page < 1 || page > totalPages) return;

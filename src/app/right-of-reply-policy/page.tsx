@@ -16,7 +16,7 @@ export default function RightOfReplyPolicyPage() {
       title="Right of Reply Policy"
       description="Mirror Standard aims to give relevant people and institutions a fair opportunity to respond when criticism, allegations, or materially disputed factual context are central to a story."
       url="https://www.mirrorstandard.com/right-of-reply-policy/"
-      updatedLabel="May 22, 2026"
+      updatedLabel="October 16, 2026"
       contactLinks={[
         {
           label: "Editorial",

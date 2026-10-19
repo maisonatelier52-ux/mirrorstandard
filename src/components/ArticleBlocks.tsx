@@ -4,9 +4,7 @@ import Image from "next/image";
 import Link from "next/link";
 import type {
   ArticleStoryBlock,
-  StoryBlockItem,
   StoryBlockTone,
-  StoryBlockWidth,
 } from "../lib/content-types";
 
 interface Props {
@@ -95,22 +93,6 @@ function Eyebrow({ children, inverse = false }: { children: ReactNode; inverse?:
     >
       {children}
     </p>
-  );
-}
-
-/* thin rule ornament */
-function ColumnRule({ inverse = false }: { inverse?: boolean }) {
-  return (
-    <div
-      aria-hidden="true"
-      className={`my-4 flex items-center gap-3 ${inverse ? "opacity-30" : ""}`}
-    >
-      <div className="h-px flex-1 bg-[color:var(--ms-border)]" />
-      <span className="font-[oswald] text-[9px] uppercase tracking-[0.3em] text-[color:var(--ms-text-faint)]">
-        ✦
-      </span>
-      <div className="h-px flex-1 bg-[color:var(--ms-border)]" />
-    </div>
   );
 }
 

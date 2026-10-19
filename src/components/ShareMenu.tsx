@@ -1,22 +1,23 @@
     "use client";
 
-    import { useEffect, useState } from "react";
+    import { useState, useSyncExternalStore } from "react";
     import {
         FaFacebookF,
         FaLinkedinIn,
         FaRedditAlien,
         FaWhatsapp,
     } from "react-icons/fa";
-    import { FiMail, FiShare, FiX } from "react-icons/fi";
+    import { FiShare, FiX } from "react-icons/fi";
     import { SiX } from "react-icons/si";
 
     export default function ShareMenu({ title }: { title: string }) {
         const [open, setOpen] = useState(false);
-        const [url, setUrl] = useState("");
-
-        useEffect(() => {
-            setUrl(window.location.href);
-        }, []);
+        // Empty on the server, the page address in the browser
+        const url = useSyncExternalStore(
+            () => () => {},
+            () => window.location.href,
+            () => ""
+        );
 
         const encodedUrl = encodeURIComponent(url);
         const encodedTitle = encodeURIComponent(title);

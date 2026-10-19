@@ -1,6 +1,6 @@
 
 "use client";
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import type { NewsArticle } from "../lib/news";
 import Image from "next/image";
 import Link from "next/link";
@@ -112,17 +112,15 @@ function HorizontalCard({ story }: { story: NewsArticle }) {
 }
 
 /* ─── Main export ───────────────────────────────────────────────── */
-export default function CategorySection({ data, category }: Props) {
+export default function CategorySection({ data }: Props) {
   // Skip first 4 articles already used in CategoryHeader (1 lead + 3 secondary)
   const listData = data.length > 4 ? data.slice(4) : data;
 
   const ITEMS_PER_PAGE = 8;
   const totalPages = Math.max(1, Math.ceil(listData.length / ITEMS_PER_PAGE));
-  const [currentPage, setCurrentPage] = useState(1);
-
-  useEffect(() => {
-    setCurrentPage(1);
-  }, [data]);
+  const [pageState, setPageState] = useState({ data, page: 1 });
+  const currentPage = pageState.data === data ? pageState.page : 1;
+  const setCurrentPage = (page: number) => setPageState({ data, page });
 
   const pageData = listData.slice(
     (currentPage - 1) * ITEMS_PER_PAGE,

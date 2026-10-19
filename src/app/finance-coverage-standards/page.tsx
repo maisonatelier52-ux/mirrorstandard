@@ -16,7 +16,7 @@ export default function FinanceCoverageStandardsPage() {
       title="Finance Coverage Standards"
       description="Finance coverage requires careful sourcing, cautious wording, and a clear separation between factual reporting, market context, analysis, and anything that could be mistaken for advice or promotion."
       url="https://www.mirrorstandard.com/finance-coverage-standards/"
-      updatedLabel="May 22, 2026"
+      updatedLabel="October 16, 2026"
       contactLinks={[
         {
           label: "Finance desk",

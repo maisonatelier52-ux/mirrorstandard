@@ -3,7 +3,6 @@ import Image from "next/image";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Script from "next/script";
-import Navbar from "../../../components/Navbar";
 import RichContent from "../../../components/RichContent";
 import ScrollToTopButton from "../../../components/ScrollToTopButton";
 import { getProfileBySlug, profiles } from "../../../lib/news";

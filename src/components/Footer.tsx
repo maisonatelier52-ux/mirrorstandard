@@ -1,11 +1,10 @@
 import React from "react";
-import { FaInstagram, FaXTwitter, FaYoutube, FaFacebookF } from "react-icons/fa6";
+import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
 import Link from "next/link";
 import Image from "next/image";
 import { getSortedNews } from "../lib/news";
 import { SiSubstack, SiReddit, SiMedium } from "react-icons/si";
 import { MdOutlineEmail } from "react-icons/md";
-import { FiPhone, FiMapPin } from "react-icons/fi";
 import { ChevronRight } from "lucide-react";
 
 const categories = [
@@ -44,7 +43,6 @@ const socialLinks = [
   { href: "https://x.com/Mirrorstan68694",                     label: "Follow Mirror Standard on X",        icon: <FaXTwitter size={16} /> },
   { href: "https://www.instagram.com/mirrorstandardnews2026/", label: "Follow Mirror Standard on Instagram", icon: <FaInstagram size={16} /> },
   { href: "https://www.youtube.com/@mirrorstandardUS",         label: "Watch Mirror Standard on YouTube",    icon: <FaYoutube size={16} /> },
-  { href: "#",                                                 label: "Follow Mirror Standard on Facebook",  icon: <FaFacebookF size={16} /> },
   { href: "https://substack.com/@mirrorstandardnews",          label: "Read Mirror Standard on Substack",    icon: <SiSubstack size={16} /> },
   { href: "https://www.reddit.com/user/Mirrorstandard_/",      label: "Follow Mirror Standard on Reddit",    icon: <SiReddit size={16} /> },
   { href: "https://medium.com/@mirrorstandardnews",            label: "Read Mirror Standard on Medium",      icon: <SiMedium size={16} /> },

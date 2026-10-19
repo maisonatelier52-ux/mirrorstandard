@@ -139,44 +139,14 @@ export default function Contact() {
         <section className="text-center mb-20">
           <div className="p-8 bg-gray-50 rounded-2xl border border-gray-100">
             <p className="text-lg font-light text-gray-700 mb-2">
-              Contact the newsroom through the address that best matches your request. If you are reporting an error, challenging a factual claim, requesting a reply, or sending a permissions or legal concern, include the article URL and the specific issue so the request can be routed quickly.
+              Contact the newsroom by email. If you are reporting an error, challenging a factual claim, requesting a reply, or sending a permissions or legal concern, include the article URL and the specific issue so the request can be routed quickly.
             </p>
             <div className="space-y-2 text-lg">
-              <p>
-                Editorial:{" "}
-                <a
-                  href="mailto:mirrorstandardnews@gmail.com"
-                  title="Mirror Standard Editorial"
-                  className="border-b-2 border-black text-black hover:opacity-70 transition"
-                >
-                  mirrorstandardnews@gmail.com
-                </a>
-              </p>
-              <p>
-                Tips:{" "}
-                <a
-                  href="mailto:mirrorstandardnews@gmail.com"
-                  title="Mirror Standard Tips"
-                  className="border-b-2 border-black text-black hover:opacity-70 transition"
-                >
-                  mirrorstandardnews@gmail.com
-                </a>
-              </p>
               <p itemProp="email">
-                Corrections:{" "}
+                Email:{" "}
                 <a
                   href="mailto:mirrorstandardnews@gmail.com"
-                  title="Mirror Standard Corrections"
-                  className="border-b-2 border-black text-black hover:opacity-70 transition"
-                >
-                  mirrorstandardnews@gmail.com
-                </a>
-              </p>
-              <p>
-                Rights, permissions, and formal notices:{" "}
-                <a
-                  href="mailto:mirrorstandardnews@gmail.com"
-                  title="Mirror Standard Rights and Permissions"
+                  title="Email Mirror Standard"
                   className="border-b-2 border-black text-black hover:opacity-70 transition"
                 >
                   mirrorstandardnews@gmail.com
@@ -228,7 +198,7 @@ export default function Contact() {
         {/* ✅ AUTHORITY SIGNAL: LAST UPDATED */}
         <section className="mt-16 pt-8 border-t border-gray-100 text-center">
           <p className="text-xs text-gray-400 font-light italic">
-            Last Updated: May 22, 2026
+            Last Updated: October 16, 2026
           </p>
         </section>
       </div>

@@ -224,7 +224,7 @@ export default function CorrectionsPolicy() {
         {/* ✅ AUTHORITY SIGNAL: LAST UPDATED */}
         <section className="mt-16 pt-8 border-t border-gray-100 text-center">
           <p className="text-xs text-gray-400 font-light italic">
-            Last Updated: May 22, 2026
+            Last Updated: October 16, 2026
           </p>
         </section>
       </div>

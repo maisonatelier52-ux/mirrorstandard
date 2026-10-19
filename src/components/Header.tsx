@@ -1,7 +1,7 @@
 "use client";
 
 import { Search, X, Menu } from "lucide-react";
-import { useState, useEffect, useRef } from "react";
+import { useState, useEffect, useRef, useSyncExternalStore } from "react";
 import { useRouter, usePathname } from "next/navigation";
 import Link from "next/link";
 import { FaInstagram, FaXTwitter, FaYoutube } from "react-icons/fa6";
@@ -96,6 +96,8 @@ const socialLinks = [
   { href: "https://www.reddit.com/user/Mirrorstandard_/",         label: "Follow Mirror Standard on Reddit",       icon: <SiReddit size={15} /> },
   { href: "https://medium.com/@mirrorstandardnews",               label: "Read Mirror Standard on Medium",         icon: <SiMedium size={15} /> },
 ];
+
+const subscribeToNothing = () => () => {};
 
 function getFormattedDate() {
   return new Date().toLocaleDateString("en-US", {
@@ -293,14 +295,14 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
   const [isSubscribeOpen, setIsSubscribeOpen] = useState(false);
   const [searchQuery, setSearchQuery]         = useState("");
   const [breakingIdx, setBreakingIdx]         = useState(0);
-  const [dateStr, setDateStr]                 = useState("");
   const router   = useRouter();
   const pathname = usePathname();
 
   const weather    = useWeather();
   const isHomePage = pathname === "/";
 
-  useEffect(() => { setDateStr(getFormattedDate()); }, []);
+  // Empty on the server, today's date in the browser (no hydration mismatch)
+  const dateStr = useSyncExternalStore(subscribeToNothing, getFormattedDate, () => "");
 
   const breakingStories =
     latestNews.length > 0
@@ -459,9 +461,12 @@ export default function Header({ latestNews = [] }: { latestNews?: NewsData[] })
 
             <div className="flex flex-1 flex-col items-center gap-1">
               <Link href="/" title="Mirror Standard – Home" className="text-center">
-                <img
+                <Image
                   src="/images/logo-mirrorstandard.webp"
                   alt="Mirror Standard – Truth, Policy, Markets & Public Affairs"
+                  width={831}
+                  height={207}
+                  priority
                   className="mx-auto"
                   style={{ height: "clamp(80px, 10vw, 130px)", width: "auto" }}
                 />

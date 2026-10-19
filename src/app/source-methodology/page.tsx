@@ -16,7 +16,7 @@ export default function SourceMethodologyPage() {
       title="Source Methodology"
       description="Mirror Standard aims to show readers how articles are built: what is sourced directly, what comes from public records or official documents, what remains unverified, and where interpretation begins."
       url="https://www.mirrorstandard.com/source-methodology/"
-      updatedLabel="May 22, 2026"
+      updatedLabel="October 16, 2026"
       contactLinks={[
         {
           label: "Editorial",

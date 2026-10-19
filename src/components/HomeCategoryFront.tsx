@@ -13,7 +13,7 @@ interface Props {
   tone?: Tone;
 }
 
-export default function HomeCategoryFront({ category, description, lead, secondary, tone = "ivory" }: Props) {
+export default function HomeCategoryFront({ category, lead, secondary }: Props) {
   if (!lead) return null;
 
   return (

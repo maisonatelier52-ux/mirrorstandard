@@ -7,7 +7,7 @@ interface Props {
   title: string;
 }
 
-const StaticImage: React.FC<Props> = ({ image, alt, title }) => {
+const StaticImage: React.FC<Props> = ({ image, alt }) => {
   return (
     <div className="relative w-full h-auto">
       <Image
