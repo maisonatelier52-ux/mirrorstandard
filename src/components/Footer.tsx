@@ -22,6 +22,7 @@ const newsroomLinks = [
   { href: "/about",                    label: "About Us",           title: "About Mirror Standard – Our mission and editorial values" },
   { href: "/our-team",                 label: "Our Team",           title: "Meet the Mirror Standard editorial team" },
   { href: "/contact",                  label: "Contact Us",         title: "Contact Mirror Standard" },
+  { href: "/press/",                   label: "Press",              title: "Mirror Standard press and media information" },
   { href: "/editorial-policy",         label: "Editorial Policy",   title: "Mirror Standard editorial policy and standards" },
   { href: "/corrections-policy",       label: "Corrections Policy", title: "Mirror Standard corrections and clarifications policy" },
   { href: "/source-methodology",       label: "Source Methodology", title: "How Mirror Standard sources and verifies information" },

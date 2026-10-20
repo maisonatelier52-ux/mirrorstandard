@@ -13,6 +13,19 @@ interface ContactLink {
   value: string;
 }
 
+interface LinkItem {
+  label: string;
+  href: string;
+  note?: string;
+  download?: boolean;
+}
+
+interface LinkSection {
+  title: string;
+  intro?: string;
+  links: LinkItem[];
+}
+
 interface Props {
   title: string;
   description: string;
@@ -20,6 +33,7 @@ interface Props {
   sections: TrustSection[];
   updatedLabel: string;
   contactLinks?: ContactLink[];
+  linkSections?: LinkSection[];
 }
 
 export default function TrustPage({
@@ -29,6 +43,7 @@ export default function TrustPage({
   sections,
   updatedLabel,
   contactLinks = [],
+  linkSections = [],
 }: Props) {
   return (
     <div className="min-h-screen" itemScope itemType="https://schema.org/WebPage">
@@ -103,6 +118,43 @@ export default function TrustPage({
             </section>
           ))}
         </div>
+
+        {linkSections.map((section) => (
+          <section key={section.title} className="mt-12">
+            <h2 className="mb-6 border-b border-gray-200 pb-3 text-2xl font-light">
+              {section.title}
+            </h2>
+            {section.intro ? (
+              <p className="mb-4 text-lg leading-relaxed text-gray-600">{section.intro}</p>
+            ) : null}
+            <ul className="space-y-3 text-lg leading-relaxed text-gray-600">
+              {section.links.map((link) => (
+                <li key={link.href} className="flex gap-3">
+                  <span className="mt-2.5 h-2 w-2 shrink-0 rounded-full bg-gray-400" />
+                  <span>
+                    {link.download ? (
+                      <a
+                        href={link.href}
+                        download
+                        className="font-medium text-[#041f4a] hover:underline"
+                      >
+                        {link.label}
+                      </a>
+                    ) : (
+                      <Link
+                        href={link.href}
+                        className="font-medium text-[#041f4a] hover:underline"
+                      >
+                        {link.label}
+                      </Link>
+                    )}
+                    {link.note ? <span className="text-gray-500"> ({link.note})</span> : null}
+                  </span>
+                </li>
+              ))}
+            </ul>
+          </section>
+        ))}
 
         {contactLinks.length ? (
           <section className="mt-12 rounded-xl border border-gray-200 bg-gray-50 px-6 py-6">
