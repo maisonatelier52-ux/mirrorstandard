@@ -9,6 +9,7 @@ import type {
   ArticleStoryBlock,
 } from "../lib/content-types";
 import ArticleBlocks from "./ArticleBlocks";
+import Image from "next/image";
 
 interface Props {
   keyPoints?: KeyPoint[];
@@ -18,6 +19,9 @@ interface Props {
   faq?: FAQItem[];
   relatedResources?: RelatedResource[];
   correctionNote?: string;
+  secondImage?: string;
+  secondImageAlt?: string;
+  secondImageCaption?: string;
 }
 
 /* ─────────────────────────────────────────────
@@ -326,6 +330,38 @@ function CorrectionNoteBlock({ note }: { note: string }) {
   );
 }
 
+function ArticleEndImage({
+  src,
+  alt,
+  caption,
+}: {
+  src: string;
+  alt?: string;
+  caption?: string;
+}) {
+  return (
+    <figure className="">
+      <div className="relative mx-auto w-full max-w-[680px] overflow-hidden rounded-md border border-[color:var(--ms-border)]">
+        <Image
+          src={src}
+          alt={alt ?? "Related Twitter/X post"}
+          width={1200}
+          height={1500}
+          className="h-auto w-full object-contain"
+          sizes="(max-width: 768px) 100vw, 680px"
+        />
+      </div>
+
+      {caption && (
+        <figcaption className="mx-auto mt-2 max-w-[680px] text-[11px] italic leading-5 text-[color:var(--ms-text-faint)]">
+          {caption}
+        </figcaption>
+      )}
+    </figure>
+  );
+}
+
+
 /* ─────────────────────────────────────────────
    MAIN EXPORT
 ───────────────────────────────────────────── */
@@ -337,6 +373,9 @@ export default function RichContent({
   faq,
   relatedResources,
   correctionNote,
+  secondImage,
+  secondImageAlt,
+  secondImageCaption,
 }: Props) {
   const hasStoryBlocks = Boolean(storyBlocks?.length);
 
@@ -400,6 +439,8 @@ export default function RichContent({
             <div key={section.heading}>
               <ArticleSectionBlock section={section} index={index} />
 
+              
+
               <div className="my-8">
                 {showPullQuote ? (
                   <>
@@ -416,6 +457,13 @@ export default function RichContent({
             </div>
           );
         })}
+        {secondImage ? (
+          <ArticleEndImage
+            src={secondImage}
+            alt={secondImageAlt}
+            caption={secondImageCaption}
+          />
+        ) : null}
       </div>
 
       {/* Tail blocks */}

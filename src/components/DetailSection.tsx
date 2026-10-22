@@ -681,6 +681,9 @@ export default function DetailSection({
                   faq={article.faq}
                   relatedResources={article.relatedResources}
                   correctionNote={article.correctionNote}
+                  secondImage={article.secondImage}
+                  secondImageAlt={article.secondImageAlt}
+                  secondImageCaption={article.secondImageCaption}
                 />
               ) : (
                 <ArticleParagraph data={article} />
