@@ -1,16 +1,25 @@
 import ScrollToTopButton from "../components/ScrollToTopButton";
 import { getCategoryDescription } from "../lib/category-copy";
-import { getCategoryNews, getPromotedSortedNews } from "../lib/news";
+import { getArticleBySlug, getCategoryNews, getPromotedSortedNews } from "../lib/news";
 import HomeCategoryFront from "../components/HomeCategoryFront";
 import NewspaperHero from "../components/NewspaperHero";
 import HomeFieldNotes from "../components/HomeFieldNotes";
 import HomePulseStrip from "../components/Homepulsestrip";
 import HomeInFocus from "../components/Homeinfocus";
 
+// Article pinned to the first slot of the hero's secondary stories.
+// It stays there no matter how many new articles are published.
+const PINNED_HERO_SLUG =
+  "doj-white-house-denials-alina-habba-julio-herrera-velutini-pardon-2026";
+
 export default async function Home() {
   const sortedNews = getPromotedSortedNews();
 
   const usedSlugs = new Set<string>();
+
+  // Reserve the pinned article first so it is not reused elsewhere on the page
+  const pinnedStory = getArticleBySlug(PINNED_HERO_SLUG);
+  if (pinnedStory) usedSlugs.add(pinnedStory.slug);
 
   function pickUnique(candidates: ReturnType<typeof getPromotedSortedNews>, n: number) {
     const result: ReturnType<typeof getPromotedSortedNews> = [];
@@ -172,6 +181,7 @@ export default async function Home() {
           latestHeadlines={latestHeadlines}
           editorPicks={editorPicks}
           mostRead={mostRead}
+          pinnedStory={pinnedStory}
         />
 
         {/* Category Sections + Sticky Sidebar */}

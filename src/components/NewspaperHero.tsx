@@ -8,12 +8,26 @@ interface Props {
   latestHeadlines: NewsArticle[];
   editorPicks: NewsArticle[];
   mostRead: NewsArticle[];
+  /** Article pinned to the first slot of the two secondary stories under the hero */
+  pinnedStory?: NewsArticle;
 }
 
-export default function NewspaperHero({ lead, latestHeadlines, editorPicks, mostRead }: Props) {
+export default function NewspaperHero({
+  lead,
+  latestHeadlines,
+  editorPicks,
+  mostRead,
+  pinnedStory,
+}: Props) {
   if (!lead) return null;
 
   const featuredCard = mostRead[0];
+
+  // Slot 0 is the pinned article (if found); slot 1 is the newest headline.
+  // Falls back to the two latest headlines if the pinned article is missing.
+  const secondaryStories = pinnedStory
+    ? [pinnedStory, ...latestHeadlines.slice(0, 1)]
+    : latestHeadlines.slice(0, 2);
 
   return (
     <section className="pt-4">
@@ -58,9 +72,9 @@ export default function NewspaperHero({ lead, latestHeadlines, editorPicks, most
             </div>
           </Link>
 
-          {/* Two secondary stories below hero */}
+          {/* Two secondary stories below hero (first one is pinned) */}
           <div className="mt-5 grid grid-cols-2 gap-4 border-t-2 border-[color:var(--ms-text)] pt-5">
-            {latestHeadlines.slice(0, 2).map((story) => (
+            {secondaryStories.map((story) => (
               <Link
                 key={story.slug}
                 href={`/${story.category}/${story.slug}`}

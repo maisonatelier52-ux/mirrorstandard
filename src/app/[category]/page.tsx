@@ -7,6 +7,13 @@ import ScrollToTopButton from '../../components/ScrollToTopButton';
 import Script from 'next/script';
 import { notFound } from 'next/navigation';
 
+// Articles pinned to the "Featured" (lead) slot of a category page.
+// The pinned article stays there no matter how many new articles are published.
+const PINNED_LEAD_BY_CATEGORY: Record<string, string> = {
+  politics:
+    'doj-white-house-denials-alina-habba-julio-herrera-velutini-pardon-2026',
+};
+
 export async function generateStaticParams() {
   return categories.map((category) => ({
     category,
@@ -141,11 +148,22 @@ export default async function CategoryPage({
   params: Promise<{ category: string }>;
 }) {
   const { category } = await params;
-  const data = getSortedNews(getCategoryNews(category));
+  const sortedData = getSortedNews(getCategoryNews(category));
 
-  if (data.length === 0) {
+  if (sortedData.length === 0) {
     notFound();
   }
+
+  // Pin the configured article (if any) to the front of this category's list.
+  // If the slug isn't found in this category, the normal date order is used.
+  const pinnedSlug = PINNED_LEAD_BY_CATEGORY[category];
+  const pinnedArticle = pinnedSlug
+    ? sortedData.find((article) => article.slug === pinnedSlug)
+    : undefined;
+
+  const data = pinnedArticle
+    ? [pinnedArticle, ...sortedData.filter((article) => article.slug !== pinnedSlug)]
+    : sortedData;
 
   const leadArticle = data[0];
   // secondaryArticles[0] and [1] → col2 (stacked small)
